@@ -1,0 +1,23 @@
+@import "./styles/font-styles";
+@import "./styles/utils";
+
+:root {
+  --roundness: 8px;
+  --disabledOpacity: 0.4;
+  --lessRoundness: 4px;
+  font-size: 1rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--primary);
+}
+
+i {
+  font-style: italic;
+}
+
