@@ -9,33 +9,68 @@ $sizeOfREM: 16;
 }
 
 %headline_01 {
-  font-weight: 700;
-  font-size: #{34/ $sizeOfREM}rem;
-  line-height: #{48/ $sizeOfREM}rem;
+  font-weight: 600;
+  font-size: #{144/ $sizeOfREM}rem;
+  line-height: #{176/ $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
   margin: 0;
 }
 
 %headline_02 {
-  font-weight: 700;
-  font-size: #{28/ $sizeOfREM}rem;
-  line-height: #{36/ $sizeOfREM}rem;
+  font-weight: 600;
+  font-size: #{96/ $sizeOfREM}rem;
+  line-height: #{128/ $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
   margin: 0;
 }
 
 %headline_03 {
-  font-weight: 500;
+  font-weight: 600;
+  font-size: #{64/ $sizeOfREM}rem;
+  line-height: #{88/ $sizeOfREM}rem;
+  font-family: "Epilogue", sans-serif;
+  margin: 0;
+}
+
+
+%headline_04 {
+  font-weight: 600;
+  font-size: #{48/ $sizeOfREM}rem;
+  line-height: #{64 / $sizeOfREM}rem;
+  font-family: "Epilogue", sans-serif;
+  margin: 0;
+}
+
+
+%headline_05 {
+  font-weight: 600;
+  font-size: #{28/ $sizeOfREM}rem;
+  line-height: #{32/ $sizeOfREM}rem;
+  font-family: "Epilogue", sans-serif;
+  margin: 0;
+}
+
+
+%headline_06 {
+  font-weight: 600;
   font-size: #{20/ $sizeOfREM}rem;
   line-height: #{28/ $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
   margin: 0;
 }
 
-%callout {
-  font-weight: 500;
-  font-size: #{16/ $sizeOfREM}rem;
+%callout_01 {
+  font-weight: 600;
+  font-size: #{16 / $sizeOfREM}rem;
   line-height: #{24/ $sizeOfREM}rem;
+  font-family: "Epilogue", sans-serif;
+  margin: 0;
+}
+
+%callout_02 {
+  font-weight: 600;
+  font-size: #{14 / $sizeOfREM}rem;
+  line-height: #{20/ $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
   margin: 0;
 }
@@ -57,7 +92,7 @@ $sizeOfREM: 16;
 }
 
 %caption_01 {
-  font-weight: 500;
+  font-weight: 600;
   font-size: #{12/ $sizeOfREM}rem;
   line-height: #{16/ $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
@@ -70,6 +105,24 @@ $sizeOfREM: 16;
   line-height: #{16/ $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
   margin: 0;
+}
+
+%overline_01 {
+  font-weight: 600;
+  font-size: #{12/ $sizeOfREM}rem;
+  line-height: #{16/ $sizeOfREM}rem;
+  font-family: "Epilogue", sans-serif;
+  margin: 0;
+  text-transform: lowercase;
+}
+
+%overline_02 {
+  font-weight: 400;
+  font-size: #{12/ $sizeOfREM}rem;
+  line-height: #{16/ $sizeOfREM}rem;
+  font-family: "Epilogue", sans-serif;
+  margin: 0;
+  text-transform: lowercase;
 }
 
 %code {
