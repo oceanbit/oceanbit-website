@@ -7,14 +7,9 @@
 }
 
 .logoText {
-// replace with   @extend %headline_06;
 margin-left: 8px;
 margin-right: 24px;
-font-family: Epilogue;
-font-style: normal;
-font-weight: 600;
-font-size: 20px;
-line-height: 28px;
+@extend %headline_06;
 }
 
 .hr {

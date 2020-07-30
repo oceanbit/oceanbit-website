@@ -1,6 +1,17 @@
 @import "./styles/font-styles";
 @import "./styles/utils";
 
+@font-face {
+  font-family: "Epilogue";
+  src: url("../static/fonts/epilogue.ttf") format('truetype');
+}
+
+@font-face {
+ font-family: 'Epilogue';
+ src: url("../static/fonts/epilogue_italic.ttf") format('truetype');
+ font-style: italic;
+}
+
 :root {
   --roundness: 8px;
   --disabledOpacity: 0.4;
