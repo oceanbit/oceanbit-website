@@ -1,26 +1,33 @@
 module.exports = {
   siteMetadata: {
-    title: `GitShark - A Git client for mobile`,
-    siteUrl: `https://gitshark.dev`,
+    title: `OceanBit`,
+    siteUrl: `https://oceanbit.dev`,
     description: `Surf through your repos, wherever you go. From changing branches, commiting data, or just navigating Git, GitShark has you covered!`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				path: `${__dirname}/src/assets`,
+				name: `assets`
+			}
+		},
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `GitShark`,
-        short_name: `GitShark`,
+        name: `OceanBit`,
+        short_name: `OceanBit`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#002BFF`,
         display: `minimal-ui`,
-        icon: `src/assets/gitshark_logo.png`
+        icon: `src/assets/oceanbit_logo.png`
       }
     },
     `gatsby-plugin-sass`,
@@ -28,7 +35,7 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: [`Roboto Mono:400`, `Rubik:400,500,700`],
+          families: [`Roboto Mono:400`, `Epilogue:400,500,600,700`],
         },
       },
     },
@@ -61,6 +68,20 @@ module.exports = {
         sitemap: 'https://gitshark.dev/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/', disallow: ['/terms', '/privacy'] }]
       }
-    }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/posts`,
+        name: `blog`
+      }
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        // Plugins configs
+        plugins: [],
+      },
+    },
   ],
 }
