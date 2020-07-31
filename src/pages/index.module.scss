@@ -55,14 +55,27 @@
   padding-left: 16px;
   padding-top: 8px;
   padding-bottom: 8px;
-  padding-right: 16px;
+  padding-right: 8px;
   border-radius: 8px;
   border: none;
+  display: flex;
+  align-items: center;
+
+  > svg {
+    margin-left: 4px;
+    height: 1.5rem;
+    width: 1.5rem;
+  }
 }
 
 .meetButton {
   color: var(--primary);
   background: var(--base);
+}
+
+.contributionsButton {
+  color: var(--base);
+  background: var(--primary);
 }
 
 .waveSvg {

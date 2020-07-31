@@ -6,6 +6,7 @@ import { useDimensions } from "../hooks/use-dimention"
 import { useMedia } from "../hooks/use-media"
 import { Screens } from "../components/screens"
 import { ButtonBase } from "@material-ui/core"
+import ChevronIcon from '../assets/chevron.svg';
 
 const IndexPage = () => {
   const [waveRef, { height: waveHeight }] = useDimensions()
@@ -28,7 +29,7 @@ const IndexPage = () => {
               <p className={styles.headingBody}>Manage repositories, checkout branches, write and commit changes and
                 much more, right from your mobile device</p>
               <ButtonBase>
-                <button className={`${styles.meetButton} ${styles.mainButton}`}>Meet GitShark</button>
+                <button className={`${styles.meetButton} ${styles.mainButton}`}>Meet GitShark <ChevronIcon/></button>
               </ButtonBase>
             </div>
             <Screens/>
@@ -47,6 +48,7 @@ const IndexPage = () => {
             <h3 className={styles.contributingHeader}>Contributing back</h3>
             <p className={styles.contributingBody}>At OceanBit we believe in open code, which is why we’re always happy
               to support open-source projects and share our own code as well</p>
+            <button className={`${styles.contributionsButton} ${styles.mainButton}`}>OceanBit’s contributions <ChevronIcon/></button>
           </div>
         </div>
       </div>
