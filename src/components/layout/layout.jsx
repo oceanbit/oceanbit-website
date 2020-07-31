@@ -94,6 +94,7 @@ export const Layout = ({ children, title }) => {
         aria-label={"Toolbar for primary action buttons"}
         style={{ position: "relative" }}
         ref={headerRef}
+        className={layoutStyles.bothHeader}
       >
         <div className={layoutStyles.desktopHeader}>
           <a href="/" className={layoutStyles.logoContainer}>
