@@ -13,7 +13,56 @@
 }
 
 .headingContents {
-  height: 60vh;
+  padding-bottom: 50px;
+  max-width: $maxContentWidth;
+  margin: 0 auto;
+  padding-left: $mobilePadding;
+  padding-right: $mobilePadding;
+
+  @include forDesktop() {
+    padding-bottom: 240px;
+    padding-left: $desktopPadding;
+    padding-right: $desktopPadding;
+  }
+}
+
+.headingBodyContainer {
+  max-width: 456px;
+
+  margin-top: 24px;
+  position: relative;
+  z-index: 1;
+
+  @include forDesktop() {
+    margin-top: 96px;
+  }
+}
+
+.headingTitle {
+  @include headline_02();
+  color: var(--base);
+}
+
+.headingBody {
+  @include body_01();
+  color: var(--base);
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+.mainButton {
+  @include callout_01();
+  padding-left: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 16px;
+  border-radius: 8px;
+  border: none;
+}
+
+.meetButton {
+  color: var(--primary);
+  background: var(--base);
 }
 
 .waveSvg {

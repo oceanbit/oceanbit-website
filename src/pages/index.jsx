@@ -5,6 +5,7 @@ import styles from "./index.module.scss"
 import { useDimensions } from "../hooks/use-dimention"
 import { useMedia } from "../hooks/use-media"
 import { Screens } from "../components/screens"
+import { ButtonBase } from "@material-ui/core"
 
 const IndexPage = () => {
   const [waveRef, { height: waveHeight }] = useDimensions()
@@ -22,6 +23,14 @@ const IndexPage = () => {
       <div className={styles.relativeContainer}>
         <div className={styles.headingContainer} style={{ paddingBottom: waveHeight }}>
           <div className={styles.headingContents}>
+            <div className={styles.headingBodyContainer}>
+              <p className={styles.headingTitle}>Surf through your repos, wherever you go</p>
+              <p className={styles.headingBody}>Manage repositories, checkout branches, write and commit changes and
+                much more, right from your mobile device</p>
+              <ButtonBase>
+                <button className={`${styles.meetButton} ${styles.mainButton}`}>Meet GitShark</button>
+              </ButtonBase>
+            </div>
             <Screens/>
           </div>
         </div>
