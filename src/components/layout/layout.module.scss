@@ -99,7 +99,7 @@ $mobileHeaderPadding: 18px;
   position: absolute;
   transition: top 300ms ease-in-out;
   background: var(--base);
-  width: 100%;
+  width: calc(100% - #{$mobileHeaderPadding * 2});
   padding: $mobileHeaderPadding;
 
   @include from($mobileBreakpoint) {
@@ -117,7 +117,7 @@ $mobileHeaderPadding: 18px;
   width: 100vw;
   opacity: 0;
   transition: opacity 300ms ease-in-out;
-  
+
   @include from($mobileBreakpoint) {
     display: none;
   }

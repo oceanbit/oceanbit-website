@@ -4,6 +4,8 @@ import layoutStyles from "./layout.module.scss"
 import { ThemeProvider } from "../../constants/theme-context"
 import { ButtonBase } from "@material-ui/core"
 import "../../global.scss"
+import { useOutsideFocus } from "../../hooks/use-outside-focus"
+import { useEffect } from "react"
 
 export const Layout = ({ children, title }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -21,6 +23,35 @@ export const Layout = ({ children, title }) => {
   `)
 
   const [expanded, setExpanded] = React.useState(false);
+
+  const headerRef = React.useRef();
+  const toggleRef = React.useRef();
+
+  useOutsideFocus(headerRef, expanded, () => setExpanded(false))
+
+  React.useEffect(() => {
+    if (!expanded) {
+      toggleRef.current.focus();
+    }
+  }, [expanded, toggleRef])
+
+  /**
+   * Add escape key listener
+   */
+  useEffect(() => {
+    if (expanded) {
+      const escape = (e) => {
+        if (e.keyCode === 27) {
+          setExpanded(false);
+        }
+      }
+      document.addEventListener('keydown', escape);
+
+      return () => {
+        document.removeEventListener('keydown', escape);
+      };
+    }
+  }, [expanded]);
 
   const links = (
     <div className={layoutStyles.linkContainer}>
@@ -61,6 +92,7 @@ export const Layout = ({ children, title }) => {
       <header
         aria-label={"Toolbar for primary action buttons"}
         style={{ position: "relative" }}
+        ref={headerRef}
       >
         <div className={layoutStyles.desktopHeader}>
           <a href="/" className={layoutStyles.logoContainer}>
@@ -68,6 +100,7 @@ export const Layout = ({ children, title }) => {
               height="48"
               width="48"
               src={data.file.childImageSharp.fixed.src}
+              alt=""
             />
             <span className={layoutStyles.logoText}>OceanBit</span>
           </a>
@@ -75,18 +108,23 @@ export const Layout = ({ children, title }) => {
           {links}
         </div>
         <div className={layoutStyles.mobileHeader}>
-          <div
+          <button
+            aria-label={expanded ? 'Close the navigation menu' : 'Open the navigation menu'}
             onClick={() => setExpanded(v => !v)}
+            aria-controls="mobileDropdownContents" aria-expanded={expanded}
             style={{ background: "blue", width: "24px", height: "24px" }}
-          ></div>
+            ref={toggleRef}
+          />
           <h1 className={layoutStyles.pageTitle}>{title}</h1>
           <img
             height="36"
             width="36"
             src={data.file.childImageSharp.fixed.src}
+            alt=""
           />
         </div>
         <div
+          id="mobileDropdownContents"
           className={layoutStyles.mobileExpandedContainer}
           style={{ top: expanded ? "100%" : "-100vh" }}
         >
