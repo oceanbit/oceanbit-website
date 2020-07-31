@@ -3,9 +3,17 @@ import SEO from "../components/seo"
 import { Layout } from "../components/layout"
 import styles from "./index.module.scss"
 import { useDimensions } from "../hooks/use-dimention"
+import { useMedia } from "../hooks/use-media"
 
 const IndexPage = () => {
   const [waveRef, {height: waveHeight}] = useDimensions()
+
+  const showTextUnder = useMedia(
+    // This is where the text stops fitting under the waves realistically
+    ['(min-width: 900px)', '(max-width: 900px)'],
+    [false, true],
+    false
+  );
 
   return (
     <Layout title="Home">
@@ -18,7 +26,14 @@ const IndexPage = () => {
             fill="var(--base)"/>
         </svg>
       </div>
-      <h1>Home</h1>
+      <div className={styles.mainContents} style={{marginTop: showTextUnder ? 0 : 0 - (waveHeight / 3)}}>
+        <div className="mainContents">
+          <div>
+            <h3 className={styles.contributingHeader}>Contributing back</h3>
+            <p className={styles.contributingBody}>At OceanBit we believe in open code, which is why we’re always happy to support open-source projects and share our own code as well</p>
+          </div>
+        </div>
+      </div>
     </Layout>
   )
 }

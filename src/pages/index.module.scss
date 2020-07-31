@@ -11,7 +11,6 @@
   height: 60vh;
 }
 
-
 .waveSvg {
   width: 100%;
   position: absolute;
@@ -30,4 +29,22 @@
   @include from(2400px) {
     transform: scaleY(0.3);
   }
+}
+
+.mainContents {
+  position: relative;
+  z-index: 1;
+}
+
+.contributingHeader {
+  @include headline_02();
+  color: var(--highEmphesis);
+}
+
+.contributingBody {
+  @include body_01();
+  color: var(--mediumEmphesis);
+  margin-top: 8px;
+  margin-bottom: 24px;
+  max-width: 465px;
 }

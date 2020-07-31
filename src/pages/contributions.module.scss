@@ -3,12 +3,12 @@
 @import "../styles/font-styles";
 
 .header {
-  @include headline_06;
+  @include headline_06();
   margin-top: $mobileTop;
   margin-bottom: $mobileTop;
 
   @include forDesktop() {
-    @include headline_02;
+    @include headline_02();
     margin-top: $desktopTop;
     margin-bottom: $desktopTop;
   }
