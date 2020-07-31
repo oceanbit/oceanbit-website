@@ -5,7 +5,7 @@ import { Layout } from "../../components/layout"
 
 const BlogPostListTemplate = ({ data: { markdownRemark } }) => {
 	return (
-		<Layout>
+		<Layout title="Blog">
 			<SEO
 				title={markdownRemark.frontmatter.title}
 				description={markdownRemark.excerpt}

@@ -10,20 +10,22 @@ const BlogPostListTemplate = ({ pageContext }) => {
 	const SEOTitle = pageIndex === 1 ? "Blog" : `Blog page ${pageIndex}`;
 
 	return (
-    <Layout>
-			<SEO
-				title={SEOTitle}
-				meta={[
-					{
-						property: `og:type`,
-						content: `website`,
-					},
-				]}
-			/>
+    <Layout title="Blog">
+      <SEO
+        title={SEOTitle}
+        meta={[
+          {
+            property: `og:type`,
+            content: `website`,
+          },
+        ]}
+      />
       <ul aria-label={"Blog posts"}>
         {posts.map(post => (
           <li key={post.fields.slug}>
-            <Link to={`/blog${post.fields.slug}`}>{post.frontmatter.title}</Link>
+            <Link to={`/blog${post.fields.slug}`}>
+              {post.frontmatter.title}
+            </Link>
           </li>
         ))}
       </ul>

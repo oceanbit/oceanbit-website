@@ -1,7 +1,7 @@
 @import "../../styles/font-styles";
+@import "../../styles/utils";
 
-.header {
-  display: flex;
+.desktopHeader {
   align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -9,6 +9,31 @@
   max-width: 958px;
   padding-left: 48px;
   padding-right: 48px;
+  display: none;
+  @include from($mobileBreakpoint) {
+    display: flex;
+  }
+}
+
+.mobileHeader {
+  display: flex;
+  padding: 18px;
+  align-items: center;
+  box-shadow: 0 1px var(--on_surface_01);
+  // To make z-index apply
+  position: relative;
+  // To have the box shadow apply to the bottom background
+  z-index: 1;
+
+  @include from($mobileBreakpoint) {
+    display: none;
+  }
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
 .logoText {
@@ -28,9 +53,27 @@
   outline: none;
 }
 
+.linkContainer {
+  display: flex;
+  flex-direction: column;
+
+  @include from($mobileBreakpoint) {
+    flex-direction: row;
+  }
+}
+
+.pageTitle {
+  @extend %headline_06;
+  color: var(--mediumEmphasis);
+  margin-left: 24px;
+  margin-right: auto;
+}
+
 .linkBase {
-  margin-left: 24px !important;
   border-radius: 8px !important;
+  @include from($mobileBreakpoint) {
+    margin-left: 24px !important;
+  }
 }
 
 .headerLink {

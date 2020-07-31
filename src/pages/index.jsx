@@ -4,9 +4,9 @@ import {Layout} from '../components/layout';
 
 const IndexPage = () => {
   return (
-    <Layout>
-      <SEO title="GitShark"/>
-       <h1>Home</h1>
+    <Layout title="Home">
+      <SEO title="GitShark" />
+      <h1>Home</h1>
     </Layout>
   )
 }
