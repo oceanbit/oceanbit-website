@@ -1,6 +1,7 @@
 import * as React from "react"
 import TwitterIcon from "../../assets/twitter.svg"
 import GitHubIcon from "../../assets/github.svg"
+import EmailIcon from "../../assets/email.svg"
 import styles from "./footer.module.scss"
 import { useWave } from "../wave"
 
@@ -15,7 +16,7 @@ export const Footer = ({ waveFooter }) => {
         oceanbit_dev
       </a>
       <a href="mailto:contact@oceanbit.dev" className={styles.linkText}>
-        <TwitterIcon className={styles.icon}/>
+        <EmailIcon className={styles.icon}/>
         contact@oceanbit.dev
       </a>
       <a href="https://github.com/oceanbit-dev" className={styles.linkText}>
