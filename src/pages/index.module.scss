@@ -1,0 +1,33 @@
+@import "../styles/font-styles";
+@import "../styles/utils";
+@import "../styles/vars";
+
+.headingContainer {
+  background: var(--primary);
+  position: relative;
+}
+
+.headingContents {
+  height: 60vh;
+}
+
+
+.waveSvg {
+  width: 100%;
+  position: absolute;
+  bottom: -10px;
+  transform-origin: bottom;
+  transition: transform 500ms ease-in-out;
+
+  @include from(1130px) {
+    transform: scaleY(0.7);
+  }
+
+  @include from(1650px) {
+    transform: scaleY(0.5);
+  }
+
+  @include from(2400px) {
+    transform: scaleY(0.3);
+  }
+}
