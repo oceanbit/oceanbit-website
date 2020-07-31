@@ -2,8 +2,13 @@
 @import "../styles/utils";
 @import "../styles/vars";
 
+.relativeContainer {
+  position: relative;
+}
+
 .headingContainer {
   background: var(--primary);
+  overflow: hidden;
   position: relative;
 }
 

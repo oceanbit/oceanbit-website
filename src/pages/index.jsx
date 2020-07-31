@@ -4,33 +4,40 @@ import { Layout } from "../components/layout"
 import styles from "./index.module.scss"
 import { useDimensions } from "../hooks/use-dimention"
 import { useMedia } from "../hooks/use-media"
+import { Screens } from "../components/screens"
 
 const IndexPage = () => {
-  const [waveRef, {height: waveHeight}] = useDimensions()
+  const [waveRef, { height: waveHeight }] = useDimensions()
 
   const showTextUnder = useMedia(
     // This is where the text stops fitting under the waves realistically
-    ['(min-width: 900px)', '(max-width: 900px)'],
+    ["(min-width: 900px)", "(max-width: 900px)"],
     [false, true],
     false
-  );
+  )
 
   return (
     <Layout title="Home">
       <SEO/>
-      <div className={styles.headingContainer} style={{paddingBottom: waveHeight}}>
-        <div className={styles.headingContents}/>
-        <svg className={styles.waveSvg} viewBox="0 0 1152 256" fill="none" xmlns="http://www.w3.org/2000/svg" ref={waveRef}>
+      <div className={styles.relativeContainer}>
+        <div className={styles.headingContainer} style={{ paddingBottom: waveHeight }}>
+          <div className={styles.headingContents}>
+            <Screens/>
+          </div>
+        </div>
+        <svg className={styles.waveSvg} viewBox="0 0 1152 256" fill="none" xmlns="http://www.w3.org/2000/svg"
+             ref={waveRef}>
           <path
             d="M328 5.24949C120.01 -26.8156 0 91.8827 0 255.749L1152 255.75V79.7495C1152 409.749 568 42.2495 328 5.24949Z"
             fill="var(--base)"/>
         </svg>
       </div>
-      <div className={styles.mainContents} style={{marginTop: showTextUnder ? 0 : 0 - (waveHeight / 3)}}>
+      <div className={styles.mainContents} style={{ marginTop: showTextUnder ? 0 : 0 - (waveHeight / 3) }}>
         <div className="mainContents">
           <div>
             <h3 className={styles.contributingHeader}>Contributing back</h3>
-            <p className={styles.contributingBody}>At OceanBit we believe in open code, which is why we’re always happy to support open-source projects and share our own code as well</p>
+            <p className={styles.contributingBody}>At OceanBit we believe in open code, which is why we’re always happy
+              to support open-source projects and share our own code as well</p>
           </div>
         </div>
       </div>

@@ -1,0 +1,64 @@
+@import "../../styles/utils";
+@import "../../styles/vars";
+@import "../../styles/font-styles";
+
+.mainContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: rotate(20deg);
+
+
+  opacity: 30%;
+  margin-top: 70%;
+  transform-origin: right;
+
+  @include from(650px) {
+    margin-top: 40%;
+    transform: rotate(20deg) scale(0.6);
+  }
+
+  @include from(1450px) {
+    transform-origin: center;
+    transform: rotate(20deg);
+    opacity: 100%;
+    margin-top: 40%;
+  }
+
+  @include from(1800px) {
+    margin-top: 20%;
+  }
+
+  @include from(2200px) {
+    margin-top: 10%;
+  }
+
+  @include from(3400px) {
+    margin-top: 0%;
+  }
+}
+
+.row {
+  width: 25%;
+  max-width: 240px;
+  height: fit-content;
+}
+
+.row:not(:first-child) {
+  margin-left: 10px;
+
+  @include forDesktop() {
+    margin-left: 20px;
+  }
+}
+
+.item:not(:first-child) {
+  margin-top: 10px;
+
+  @include forDesktop() {
+    margin-top: 20px;
+  }
+}
