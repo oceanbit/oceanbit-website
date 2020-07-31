@@ -1,10 +1,13 @@
 import React from "react"
 import {Layout} from '../components/layout';
+import styles from "./contributions.module.scss"
 
 const ContributionsPage = () => {
   return (
     <Layout title="Contributions">
-      <h1>Contributions</h1>
+      <div className="mainContents">
+        <h1 className={styles.header}>Open-source libraries</h1>
+      </div>
     </Layout>
   )
 }

@@ -1,5 +1,6 @@
 @import "./styles/font-styles";
 @import "./styles/utils";
+@import "./styles/vars";
 
 @font-face {
   font-family: "Epilogue";
@@ -33,3 +34,22 @@ i {
   font-style: italic;
 }
 
+.mainContents {
+  padding-left: $mobilePadding;
+  padding-right: $mobilePadding;
+
+  @include forDesktop() {
+    max-width: $maxContentWidth;
+    margin: 0 auto;
+    padding-left: $desktopPadding;
+    padding-right: $desktopPadding;
+  }
+}
+
+.topContents {
+  margin-top: $mobileTop;
+
+  @include forDesktop() {
+    margin-top: $desktopTop;
+  }
+}

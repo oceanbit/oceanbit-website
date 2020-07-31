@@ -1,0 +1,15 @@
+@import "../styles/utils";
+@import "../styles/vars";
+@import "../styles/font-styles";
+
+.header {
+  @include headline_06;
+  margin-top: $mobileTop;
+  margin-bottom: $mobileTop;
+
+  @include forDesktop() {
+    @include headline_04;
+    margin-top: $desktopTop;
+    margin-bottom: $desktopTop;
+  }
+}

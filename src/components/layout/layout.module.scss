@@ -1,24 +1,21 @@
 @import "../../styles/font-styles";
 @import "../../styles/utils";
+@import "../../styles/vars";
 
 .desktopHeader {
   align-items: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
   margin: 0 auto;
-  max-width: 958px;
-  padding-left: 48px;
-  padding-right: 48px;
+  max-width: $maxContentWidth;
+  padding: 20px $desktopPadding;
   display: none;
   @include from($mobileBreakpoint) {
     display: flex;
   }
 }
 
-$mobileHeaderPadding: 18px;
 .mobileHeader {
   display: flex;
-  padding: $mobileHeaderPadding;
+  padding: $mobilePadding;
   align-items: center;
   box-shadow: 0 1px var(--on_surface_01);
   // To make z-index apply
@@ -40,7 +37,7 @@ $mobileHeaderPadding: 18px;
 .logoText {
   margin-left: 8px;
   margin-right: 24px;
-  @extend %headline_06;
+  @include headline_06;
   color: var(--highEmphasis);
 }
 
@@ -64,7 +61,7 @@ $mobileHeaderPadding: 18px;
 }
 
 .pageTitle {
-  @extend %headline_06;
+  @include headline_06;
   color: var(--mediumEmphasis);
   margin-left: 24px;
   margin-right: auto;
@@ -80,7 +77,7 @@ $mobileHeaderPadding: 18px;
 }
 
 .headerLink {
-  @extend %callout_01;
+  @include callout_01;
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 16px;
@@ -90,7 +87,7 @@ $mobileHeaderPadding: 18px;
 }
 
 .activeLink {
-  @extend %headline_06;
+  @include headline_06;
   color: var(--primary);
 }
 
@@ -99,8 +96,8 @@ $mobileHeaderPadding: 18px;
   position: absolute;
   transition: top 300ms ease-in-out;
   background: var(--base);
-  width: calc(100% - #{$mobileHeaderPadding * 2});
-  padding: $mobileHeaderPadding;
+  width: calc(100% - #{$mobilePadding * 2});
+  padding: $mobilePadding;
 
   @include from($mobileBreakpoint) {
     display: none;

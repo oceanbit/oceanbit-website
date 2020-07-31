@@ -1,11 +1,12 @@
 import * as React from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
-import layoutStyles from "./layout.module.scss"
 import { ThemeProvider } from "../../constants/theme-context"
 import { ButtonBase } from "@material-ui/core"
-import "../../global.scss"
 import { useOutsideFocus } from "../../hooks/use-outside-focus"
 import { useEffect } from "react"
+
+import layoutStyles from "./layout.module.scss"
+import "../../global.scss"
 
 export const Layout = ({ children, title }) => {
   const rootPath = `${__PATH_PREFIX__}/`

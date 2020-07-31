@@ -1,6 +1,6 @@
 $sizeOfREM: 16;
 
-%display {
+@mixin display {
   font-weight: 700;
   font-size: #{48/ $sizeOfREM}rem;
   line-height: #{64/ $sizeOfREM}rem;
@@ -9,7 +9,7 @@ $sizeOfREM: 16;
   margin: 0;
 }
 
-%headline_01 {
+@mixin headline_01 {
   font-weight: 600;
   font-size: #{144/ $sizeOfREM}rem;
   line-height: #{176/ $sizeOfREM}rem;
@@ -18,7 +18,7 @@ $sizeOfREM: 16;
   margin: 0;
 }
 
-%headline_02 {
+@mixin headline_02 {
   font-weight: 600;
   font-size: #{96/ $sizeOfREM}rem;
   line-height: #{128/ $sizeOfREM}rem;
@@ -27,7 +27,7 @@ $sizeOfREM: 16;
   margin: 0;
 }
 
-%headline_03 {
+@mixin headline_03 {
   font-weight: 600;
   font-size: #{64/ $sizeOfREM}rem;
   line-height: #{88/ $sizeOfREM}rem;
@@ -37,7 +37,7 @@ $sizeOfREM: 16;
 }
 
 
-%headline_04 {
+@mixin headline_04 {
   font-weight: 600;
   font-size: #{48/ $sizeOfREM}rem;
   line-height: #{64 / $sizeOfREM}rem;
@@ -47,7 +47,7 @@ $sizeOfREM: 16;
 }
 
 
-%headline_05 {
+@mixin headline_05 {
   font-weight: 600;
   font-size: #{28/ $sizeOfREM}rem;
   line-height: #{32/ $sizeOfREM}rem;
@@ -57,7 +57,7 @@ $sizeOfREM: 16;
 }
 
 
-%headline_06 {
+@mixin headline_06 {
   font-weight: 600;
   font-size: #{20/ $sizeOfREM}rem;
   line-height: #{28/ $sizeOfREM}rem;
@@ -66,7 +66,7 @@ $sizeOfREM: 16;
   margin: 0;
 }
 
-%callout_01 {
+@mixin callout_01 {
   font-weight: 600;
   font-size: #{16 / $sizeOfREM}rem;
   line-height: #{24/ $sizeOfREM}rem;
@@ -75,7 +75,7 @@ $sizeOfREM: 16;
   margin: 0;
 }
 
-%callout_02 {
+@mixin callout_02 {
   font-weight: 600;
   font-size: #{14 / $sizeOfREM}rem;
   line-height: #{20/ $sizeOfREM}rem;
@@ -84,7 +84,7 @@ $sizeOfREM: 16;
   margin: 0;
 }
 
-%body_01 {
+@mixin body_01 {
   font-weight: 400;
   font-size: #{16/ $sizeOfREM}rem;
   line-height: #{24/ $sizeOfREM}rem;
@@ -93,7 +93,7 @@ $sizeOfREM: 16;
   margin: 0;
 }
 
-%body_02 {
+@mixin body_02 {
   font-weight: 400;
   font-size: #{14/ $sizeOfREM}rem;
   line-height: #{20/ $sizeOfREM}rem;
@@ -102,7 +102,7 @@ $sizeOfREM: 16;
   margin: 0;
 }
 
-%caption_01 {
+@mixin caption_01 {
   font-weight: 600;
   font-size: #{12/ $sizeOfREM}rem;
   line-height: #{16/ $sizeOfREM}rem;
@@ -111,7 +111,7 @@ $sizeOfREM: 16;
   margin: 0;
 }
 
-%caption_02 {
+@mixin caption_02 {
   font-weight: 400;
   font-size: #{12/ $sizeOfREM}rem;
   line-height: #{16/ $sizeOfREM}rem;
@@ -120,7 +120,7 @@ $sizeOfREM: 16;
   margin: 0;
 }
 
-%overline_01 {
+@mixin overline_01 {
   font-weight: 600;
   font-size: #{12/ $sizeOfREM}rem;
   line-height: #{16/ $sizeOfREM}rem;
@@ -130,7 +130,7 @@ $sizeOfREM: 16;
   text-transform: lowercase;
 }
 
-%overline_02 {
+@mixin overline_02 {
   font-weight: 400;
   font-size: #{12/ $sizeOfREM}rem;
   line-height: #{16/ $sizeOfREM}rem;
@@ -140,7 +140,7 @@ $sizeOfREM: 16;
   text-transform: lowercase;
 }
 
-%code {
+@mixin code {
   font-weight: 400;
   font-family: "Roboto Mono", monospace;
   font-size: #{12/ $sizeOfREM}rem;
