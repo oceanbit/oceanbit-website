@@ -2,8 +2,8 @@ $sizeOfREM: 16;
 
 @mixin display_01 {
   font-weight: 700;
-  font-size: #{48/ $sizeOfREM}rem;
-  line-height: #{64/ $sizeOfREM}rem;
+  font-size: #{48 / $sizeOfREM}rem;
+  line-height: #{64 / $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
   font-feature-settings: "ss01";
   margin: 0;
@@ -12,8 +12,8 @@ $sizeOfREM: 16;
 
 @mixin display_02 {
   font-weight: 600;
-  font-size: #{96/ $sizeOfREM}rem;
-  line-height: #{128/ $sizeOfREM}rem;
+  font-size: #{96 / $sizeOfREM}rem;
+  line-height: #{128 / $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
   font-feature-settings: "ss01";
   margin: 0;
@@ -22,8 +22,17 @@ $sizeOfREM: 16;
 
 @mixin headline_01 {
   font-weight: 600;
-  font-size: #{64/ $sizeOfREM}rem;
-  line-height: #{80/ $sizeOfREM}rem;
+  font-size: #{64 / $sizeOfREM}rem;
+  line-height: #{80 / $sizeOfREM}rem;
+  font-family: "Epilogue", sans-serif;
+  font-feature-settings: "ss01";
+  margin: 0;
+}
+
+@mixin headline_01_mobile {
+  font-weight: 600;
+  font-size: #{32 / $sizeOfREM}rem;
+  line-height: #{40 / $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
   font-feature-settings: "ss01";
   margin: 0;
@@ -31,8 +40,17 @@ $sizeOfREM: 16;
 
 @mixin headline_02 {
   font-weight: 600;
-  font-size: #{48/ $sizeOfREM}rem;
-  line-height: #{56/ $sizeOfREM}rem;
+  font-size: #{48 / $sizeOfREM}rem;
+  line-height: #{56 / $sizeOfREM}rem;
+  font-family: "Epilogue", sans-serif;
+  font-feature-settings: "ss01";
+  margin: 0;
+}
+
+@mixin headline_02_mobile {
+  font-weight: 600;
+  font-size: #{28 / $sizeOfREM}rem;
+  line-height: #{40 / $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
   font-feature-settings: "ss01";
   margin: 0;
@@ -40,38 +58,62 @@ $sizeOfREM: 16;
 
 @mixin headline_03 {
   font-weight: 500;
-  font-size: #{40/ $sizeOfREM}rem;
-  line-height: #{48/ $sizeOfREM}rem;
+  font-size: #{40 / $sizeOfREM}rem;
+  line-height: #{48 / $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
   font-feature-settings: "ss01";
   margin: 0;
 }
 
+@mixin headline_03_mobile {
+  font-weight: 500;
+  font-size: #{26 / $sizeOfREM}rem;
+  line-height: #{36 / $sizeOfREM}rem;
+  font-family: "Epilogue", sans-serif;
+  font-feature-settings: "ss01";
+  margin: 0;
+}
 
 @mixin headline_04 {
   font-weight: 500;
-  font-size: #{32/ $sizeOfREM}rem;
+  font-size: #{32 / $sizeOfREM}rem;
   line-height: #{40 / $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
   font-feature-settings: "ss01";
   margin: 0;
 }
 
-
-@mixin headline_05 {
+@mixin headline_04_mobile {
   font-weight: 500;
-  font-size: #{24/ $sizeOfREM}rem;
-  line-height: #{32/ $sizeOfREM}rem;
+  font-size: #{24 / $sizeOfREM}rem;
+  line-height: #{32 / $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
   font-feature-settings: "ss01";
   margin: 0;
 }
 
+@mixin headline_05 {
+  font-weight: 500;
+  font-size: #{24 / $sizeOfREM}rem;
+  line-height: #{32 / $sizeOfREM}rem;
+  font-family: "Epilogue", sans-serif;
+  font-feature-settings: "ss01";
+  margin: 0;
+}
+
+@mixin headline_05_mobile {
+  font-weight: 500;
+  font-size: #{22 / $sizeOfREM}rem;
+  line-height: #{28 / $sizeOfREM}rem;
+  font-family: "Epilogue", sans-serif;
+  font-feature-settings: "ss01";
+  margin: 0;
+}
 
 @mixin headline_06 {
   font-weight: 600;
-  font-size: #{20/ $sizeOfREM}rem;
-  line-height: #{28/ $sizeOfREM}rem;
+  font-size: #{20 / $sizeOfREM}rem;
+  line-height: #{28 / $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
   font-feature-settings: "ss01";
   margin: 0;
@@ -80,7 +122,7 @@ $sizeOfREM: 16;
 @mixin callout_01 {
   font-weight: 600;
   font-size: #{16 / $sizeOfREM}rem;
-  line-height: #{24/ $sizeOfREM}rem;
+  line-height: #{24 / $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
   font-feature-settings: "ss01";
   margin: 0;
@@ -89,7 +131,7 @@ $sizeOfREM: 16;
 @mixin callout_02 {
   font-weight: 600;
   font-size: #{14 / $sizeOfREM}rem;
-  line-height: #{20/ $sizeOfREM}rem;
+  line-height: #{20 / $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
   font-feature-settings: "ss01";
   margin: 0;
@@ -97,8 +139,8 @@ $sizeOfREM: 16;
 
 @mixin body_01 {
   font-weight: 400;
-  font-size: #{16/ $sizeOfREM}rem;
-  line-height: #{24/ $sizeOfREM}rem;
+  font-size: #{16 / $sizeOfREM}rem;
+  line-height: #{24 / $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
   font-feature-settings: "ss01";
   margin: 0;
@@ -106,8 +148,8 @@ $sizeOfREM: 16;
 
 @mixin body_02 {
   font-weight: 400;
-  font-size: #{14/ $sizeOfREM}rem;
-  line-height: #{20/ $sizeOfREM}rem;
+  font-size: #{14 / $sizeOfREM}rem;
+  line-height: #{20 / $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
   font-feature-settings: "ss01";
   margin: 0;
@@ -115,8 +157,8 @@ $sizeOfREM: 16;
 
 @mixin caption_01 {
   font-weight: 600;
-  font-size: #{12/ $sizeOfREM}rem;
-  line-height: #{16/ $sizeOfREM}rem;
+  font-size: #{12 / $sizeOfREM}rem;
+  line-height: #{16 / $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
   font-feature-settings: "ss01";
   margin: 0;
@@ -124,8 +166,8 @@ $sizeOfREM: 16;
 
 @mixin caption_02 {
   font-weight: 400;
-  font-size: #{12/ $sizeOfREM}rem;
-  line-height: #{16/ $sizeOfREM}rem;
+  font-size: #{12 / $sizeOfREM}rem;
+  line-height: #{16 / $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
   font-feature-settings: "ss01";
   margin: 0;
@@ -133,8 +175,8 @@ $sizeOfREM: 16;
 
 @mixin overline_01 {
   font-weight: 600;
-  font-size: #{12/ $sizeOfREM}rem;
-  line-height: #{16/ $sizeOfREM}rem;
+  font-size: #{12 / $sizeOfREM}rem;
+  line-height: #{16 / $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
   font-feature-settings: "ss01";
   margin: 0;
@@ -143,8 +185,8 @@ $sizeOfREM: 16;
 
 @mixin overline_02 {
   font-weight: 400;
-  font-size: #{12/ $sizeOfREM}rem;
-  line-height: #{16/ $sizeOfREM}rem;
+  font-size: #{12 / $sizeOfREM}rem;
+  line-height: #{16 / $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
   font-feature-settings: "ss01";
   margin: 0;
@@ -154,7 +196,7 @@ $sizeOfREM: 16;
 @mixin code {
   font-weight: 400;
   font-family: "Roboto Mono", monospace;
-  font-size: #{12/ $sizeOfREM}rem;
-  line-height: #{20/ 16}rem;
+  font-size: #{12 / $sizeOfREM}rem;
+  line-height: #{20 / 16}rem;
   margin: 0;
 }
