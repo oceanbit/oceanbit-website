@@ -9,9 +9,11 @@ export const Layout = ({ children, title, waveFooter = true }) => {
 
   return (
     <ThemeProvider>
-      <Header title={title}/>
-      <div>{children}</div>
-      <Footer waveFooter={waveFooter}/>
+      <div className={layoutStyles.parentContainer}>
+        <Header title={title}/>
+        <div className={layoutStyles.contentContain}>{children}</div>
+        <Footer waveFooter={waveFooter}/>
+      </div>
     </ThemeProvider>
   )
 }
