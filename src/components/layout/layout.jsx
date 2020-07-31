@@ -5,13 +5,13 @@ import { Header } from "../header"
 import layoutStyles from "./layout.module.scss"
 import "../../global.scss"
 
-export const Layout = ({ children, title }) => {
+export const Layout = ({ children, title, waveFooter = true }) => {
 
   return (
     <ThemeProvider>
       <Header title={title}/>
       <div>{children}</div>
-      <Footer/>
+      <Footer waveFooter={waveFooter}/>
     </ThemeProvider>
   )
 }

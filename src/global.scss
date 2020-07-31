@@ -57,8 +57,6 @@ i {
 .waveSvg {
   width: 100%;
   position: absolute;
-  bottom: -10px;
-  transform-origin: bottom;
   transition: transform 500ms ease-in-out;
 
   @include from(1130px) {

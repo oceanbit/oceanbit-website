@@ -2,8 +2,12 @@
 @import "../../styles/vars";
 @import "../../styles/font-styles";
 
-.mainBG {
+.topContainer {
   margin-top: 4rem;
+  position: relative;
+}
+
+.mainBG {
   padding-top: 4rem;
   padding-bottom: 4rem;
   background: var(--primary);

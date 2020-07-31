@@ -2,8 +2,11 @@ import * as React from "react"
 import TwitterIcon from "../../assets/twitter.svg"
 import GitHubIcon from "../../assets/github.svg"
 import styles from "./footer.module.scss"
+import { useWave } from "../wave"
 
-export const Footer = () => {
+export const Footer = ({ waveFooter }) => {
+  const { wave, waveHeight, marginTopBelow } = useWave("var(--primary)", "top")
+
   const contents = (
     <div className={styles.contents}>
       <h3 className={styles.findUs}>Find us</h3>
@@ -23,9 +26,15 @@ export const Footer = () => {
   )
 
   return (
-    <div className={styles.mainBG}>
-      <div className="mainContents">
-        {contents}
+    <div className={styles.topContainer}>
+      {waveFooter && <>
+        {wave}
+        <div style={{ paddingTop: waveFooter ? waveHeight : 0 }}/>
+      </>}
+      <div className={styles.mainBG}>
+        <div className="mainContents" style={{position: 'relative', marginTop: waveFooter ? marginTopBelow : 0}}>
+          {contents}
+        </div>
       </div>
     </div>
   )

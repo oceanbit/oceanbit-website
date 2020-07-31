@@ -4,8 +4,9 @@ import { useMedia } from "../../hooks/use-media"
 
 /**
  * @param {string} color - the CSS color for the wave
+ * @param {'top' | 'bottom'} position - Placement of the wave
  */
-export const useWave = (color ) => {
+export const useWave = (color, position) => {
   const [waveRef, { height: waveHeight }] = useDimensions()
 
   const showTextUnder = useMedia(
@@ -19,7 +20,7 @@ export const useWave = (color ) => {
 
   const wave = (
     <svg className="waveSvg" viewBox="0 0 1152 256" fill="none" xmlns="http://www.w3.org/2000/svg"
-         ref={waveRef}>
+         ref={waveRef} style={position === 'top' ? {top: '10px', transformOrigin: 'top'} : {bottom: '-10px', transformOrigin: 'bottom'}}>
       <path
         d="M328 5.24949C120.01 -26.8156 0 91.8827 0 255.749L1152 255.75V79.7495C1152 409.749 568 42.2495 328 5.24949Z"
         fill={color}/>

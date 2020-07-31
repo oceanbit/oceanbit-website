@@ -2,18 +2,16 @@ import React from "react"
 import SEO from "../components/seo"
 import { Layout } from "../components/layout"
 import styles from "./index.module.scss"
-import { useDimensions } from "../hooks/use-dimention"
-import { useMedia } from "../hooks/use-media"
 import { Screens } from "../components/screens"
 import { ButtonBase } from "@material-ui/core"
 import ChevronIcon from "../assets/chevron.svg"
 import { useWave } from "../components/wave"
 
 const IndexPage = () => {
-  const { wave, waveHeight, marginTopBelow } = useWave("var(--base)")
+  const { wave, waveHeight, marginTopBelow } = useWave("var(--base)", 'bottom')
 
   return (
-    <Layout title="Home">
+    <Layout title="Home" waveFooter={false}>
       <SEO/>
       <div className={styles.relativeContainer}>
         <div className={styles.headingContainer} style={{ paddingBottom: waveHeight }}>
