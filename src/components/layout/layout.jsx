@@ -20,6 +20,8 @@ export const Layout = ({ children, title }) => {
     }
   `)
 
+  const [expanded, setExpanded] = React.useState(false);
+
   const links = (
     <div className={layoutStyles.linkContainer}>
       <ButtonBase className={layoutStyles.linkBase}>
@@ -56,7 +58,10 @@ export const Layout = ({ children, title }) => {
 
   return (
     <ThemeProvider>
-      <header aria-label={"Toolbar for primary action buttons"}>
+      <header
+        aria-label={"Toolbar for primary action buttons"}
+        style={{ position: "relative" }}
+      >
         <div className={layoutStyles.desktopHeader}>
           <a href="/" className={layoutStyles.logoContainer}>
             <img
@@ -71,6 +76,7 @@ export const Layout = ({ children, title }) => {
         </div>
         <div className={layoutStyles.mobileHeader}>
           <div
+            onClick={() => setExpanded(v => !v)}
             style={{ background: "blue", width: "24px", height: "24px" }}
           ></div>
           <h1 className={layoutStyles.pageTitle}>{title}</h1>
@@ -80,6 +86,13 @@ export const Layout = ({ children, title }) => {
             src={data.file.childImageSharp.fixed.src}
           />
         </div>
+        <div
+          className={layoutStyles.mobileExpandedContainer}
+          style={{ top: expanded ? "100%" : "-100vh" }}
+        >
+          {links}
+        </div>
+        <div className={`${layoutStyles.scrim} ${expanded ? layoutStyles.activeScrim : ''}`} onClick={() => setExpanded(false)}/>
       </header>
       <div>{children}</div>
     </ThemeProvider>
