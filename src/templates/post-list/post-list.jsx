@@ -2,6 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import SEO from "../../components/seo"
 import { Pagination } from "../../components/pagination"
+import { Layout } from "../../components/layout"
 
 const BlogPostListTemplate = ({ pageContext }) => {
 	const { posts, pageIndex, pageCount } = pageContext
@@ -9,7 +10,7 @@ const BlogPostListTemplate = ({ pageContext }) => {
 	const SEOTitle = pageIndex === 1 ? "Blog" : `Blog page ${pageIndex}`;
 
 	return (
-    <div>
+    <Layout>
 			<SEO
 				title={SEOTitle}
 				meta={[
@@ -33,7 +34,7 @@ const BlogPostListTemplate = ({ pageContext }) => {
         rootPath={"/"}
         pagePath={"/page"}
       />
-    </div>
+    </Layout>
   )
 }
 

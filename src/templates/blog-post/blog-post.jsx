@@ -1,10 +1,11 @@
 import * as React from "react"
 import { graphql, Link } from "gatsby"
 import SEO from "../../components/seo"
+import { Layout } from "../../components/layout"
 
 const BlogPostListTemplate = ({ data: { markdownRemark } }) => {
 	return (
-		<div>
+		<Layout>
 			<SEO
 				title={markdownRemark.frontmatter.title}
 				description={markdownRemark.excerpt}
@@ -27,7 +28,7 @@ const BlogPostListTemplate = ({ data: { markdownRemark } }) => {
 			<footer>
 				<Link to={'/blog'}>Back to Blog</Link>
 			</footer>
-		</div>
+		</Layout>
 	)
 }
 

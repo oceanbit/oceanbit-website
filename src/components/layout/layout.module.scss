@@ -1,23 +1,49 @@
-@import '../../styles/font-styles';
+@import "../../styles/font-styles";
 
 .header {
-    padding: 20px;
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0 auto;
+  max-width: 958px;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .logoText {
-margin-left: 8px;
-margin-right: 24px;
-@extend %headline_06;
+  margin-left: 8px;
+  margin-right: 24px;
+  @extend %headline_06;
+  color: var(--highEmphasis);
 }
 
 .hr {
-    width: 1px;
-    background: grey;
-    height: 48px;
-    display: block;
-    margin: 0;
-    border: none;
-    outline: none;
+  width: 1px;
+  background: var(--lowEmphasis);
+  height: 48px;
+  display: block;
+  margin: 0;
+  border: none;
+  outline: none;
+}
+
+.linkBase {
+  margin-left: 24px !important;
+  border-radius: 8px !important;
+}
+
+.headerLink {
+  @extend %callout_01;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: var(--highEmphasis);
+  text-decoration: none;
+}
+
+.activeLink {
+  @extend %headline_06;
+  color: var(--primary);
 }
