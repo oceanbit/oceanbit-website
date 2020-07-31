@@ -39,8 +39,12 @@
 }
 
 .headingTitle {
-  @include headline_02();
+  @include headline_02_mobile();
   color: var(--base);
+
+  @include forDesktop() {
+    @include headline_02();
+  }
 }
 
 .headingBody {
@@ -85,8 +89,12 @@
 }
 
 .contributingHeader {
-  @include headline_02();
+  @include headline_02_mobile();
   color: var(--highEmphesis);
+
+  @include forDesktop() {
+    @include headline_02();
+  }
 }
 
 .contributingBody {

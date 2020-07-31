@@ -20,8 +20,13 @@
 }
 
 .findUs {
-  @include headline_02();
+  @include headline_02_mobile();
   margin-bottom: 24px;
+
+  @include forDesktop() {
+    @include headline_02();
+    margin-bottom: 24px;
+  }
 }
 
 .icon {
