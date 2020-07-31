@@ -1,0 +1,37 @@
+@import "../../styles/utils";
+@import "../../styles/vars";
+@import "../../styles/font-styles";
+
+.mainBG {
+  margin-top: 4rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background: var(--primary);
+}
+
+.contents {
+  color: var(--base);
+  display: flex;
+  flex-direction: column;
+}
+
+.findUs {
+  @include headline_02();
+  margin-bottom: 24px;
+}
+
+.icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-right: 16px;
+}
+
+.linkText {
+  color: var(--base);
+  text-decoration: none;
+  @include callout_01();
+}
+
+.linkText:not(:last-of-type) {
+  margin-bottom: 24px;
+}

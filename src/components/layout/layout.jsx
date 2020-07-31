@@ -7,6 +7,7 @@ import { useEffect } from "react"
 
 import layoutStyles from "./layout.module.scss"
 import "../../global.scss"
+import { Footer } from "../footer"
 
 export const Layout = ({ children, title }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -136,6 +137,7 @@ export const Layout = ({ children, title }) => {
         <div className={`${layoutStyles.scrim} ${expanded ? layoutStyles.activeScrim : ''}`} onClick={() => setExpanded(false)}/>
       </header>
       <div>{children}</div>
+      <Footer/>
     </ThemeProvider>
   )
 }
