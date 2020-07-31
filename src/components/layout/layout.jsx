@@ -100,6 +100,7 @@ export const Layout = ({ children, title }) => {
             <img
               height="48"
               width="48"
+              className={layoutStyles.logoImg}
               src={data.file.childImageSharp.fixed.src}
               alt=""
             />

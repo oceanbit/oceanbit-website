@@ -32,11 +32,14 @@
   display: flex;
   align-items: center;
   text-decoration: none;
+  margin-right: 24px;
+}
+
+.logoImg {
+  margin-right: 8px;
 }
 
 .logoText {
-  margin-left: 8px;
-  margin-right: 24px;
   @include headline_06;
   color: var(--highEmphasis);
 }
