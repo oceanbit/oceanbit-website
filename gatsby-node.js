@@ -86,7 +86,7 @@ exports.createPages = ({ graphql, actions }) => {
       path: `/blog`,
       component: postList,
       context: {
-        pageIndex: 0,
+        pageIndex: 1,
         posts: postPages[0],
         pageCount: postPages.length
       },

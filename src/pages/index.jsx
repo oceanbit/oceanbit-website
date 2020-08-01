@@ -6,6 +6,7 @@ import { Screens } from "../components/screens"
 import { ButtonBase } from "@material-ui/core"
 import ChevronIcon from "../assets/chevron.svg"
 import { useWave } from "../components/wave"
+import { Link } from "gatsby"
 
 const IndexPage = () => {
   const { wave, waveHeight, marginTopBelow } = useWave("var(--base)", 'bottom')
@@ -36,8 +37,8 @@ const IndexPage = () => {
             <h3 className={styles.contributingHeader}>Contributing back</h3>
             <p className={styles.contributingBody}>At OceanBit we believe in open code, which is why we’re always happy
               to support open-source projects and share our own code as well</p>
-            <button className={`${styles.contributionsButton} ${styles.mainButton}`}>OceanBit’s
-              contributions <ChevronIcon/></button>
+            <Link to={'/contributions'} className={`${styles.contributionsButton} ${styles.mainButton}`}>OceanBit’s
+              contributions <ChevronIcon/></Link>
           </div>
         </div>
       </div>

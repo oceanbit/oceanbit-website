@@ -89,7 +89,7 @@ export const Header = ({ title}) => {
       className={styles.bothHeader}
     >
       <div className={styles.desktopHeader}>
-        <a href="/" className={styles.logoContainer}>
+        <Link to="/" className={styles.logoContainer}>
           <img
             height="48"
             width="48"
@@ -98,7 +98,7 @@ export const Header = ({ title}) => {
             alt=""
           />
           <span className={styles.logoText}>OceanBit</span>
-        </a>
+        </Link>
         <hr className={styles.hr} />
         {links}
       </div>

@@ -34,7 +34,7 @@ function SEO({ description, lang, meta, title: propTitle }) {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={!propTitle ? '' : `%s | ${site.siteMetadata.title}`}
       meta={[
         {
           property: `og:title`,

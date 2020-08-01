@@ -2,6 +2,7 @@ import React from "react"
 import {Layout} from '../components/layout';
 import styles from "./contributions.module.scss"
 import {ButtonBase} from "@material-ui/core"
+import SEO from "../components/seo"
 
 const oss_libraries = [
   {
@@ -51,6 +52,15 @@ const weContribute = [
 const ContributionsPage = () => {
   return (
     <Layout title="Contributions">
+      <SEO
+        title={'Contributions'}
+        meta={[
+          {
+            property: `og:type`,
+            content: `website`,
+          },
+        ]}
+      />
       <div className="mainContents">
         <h1 className={styles.header} id="ossLibHead">Open-source libraries</h1>
         <ul className={styles.cardList} aria-describedby="ossLibHead">

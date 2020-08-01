@@ -30,12 +30,12 @@ const BlogPostListTemplate = ({ pageContext }) => {
         ))}
       </ul>
 
-      <Pagination
+      {pageCount > 1 && <Pagination
         pageCount={pageCount}
         pageIndex={pageIndex}
         rootPath={"/"}
         pagePath={"/page"}
-      />
+      />}
     </Layout>
   )
 }
