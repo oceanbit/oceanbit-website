@@ -1,6 +1,6 @@
 import * as React from "react"
 
-import { theme, COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP } from "../theme"
+import { theme, INITIAL_COLOR_MODE_CSS_PROP } from "../theme"
 
 export const ThemeContext = React.createContext({
   colorMode: undefined,
@@ -27,8 +27,6 @@ export const ThemeProvider = ({ children }) => {
     const setColorMode = newValue => {
       const root = window.document.documentElement
 
-      localStorage.setItem(COLOR_MODE_KEY, newValue)
-
       Object.entries(theme.colors).forEach(([name, colorByTheme]) => {
         const cssVarName = `--${name}`
 
@@ -43,6 +41,17 @@ export const ThemeProvider = ({ children }) => {
       setColorMode,
     }
   }, [colorMode, rawSetColorMode])
+
+  React.useEffect(() => {
+    function setVal(e) {
+      contextValue.setColorMode(e.matches ? "dark" : "light")
+    }
+    const matches = window.matchMedia('(prefers-color-scheme: dark)');
+    // Has to use addListener for iOS and Safari
+    matches.addListener(setVal);
+
+    return () => matches.removeListener(setVal);
+  }, [contextValue])
 
   return (
     <ThemeContext.Provider value={contextValue}>

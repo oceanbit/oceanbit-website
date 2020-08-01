@@ -61,5 +61,4 @@ export const theme = {
   },
 };
 
-export const COLOR_MODE_KEY = "currentTheme";
 export const INITIAL_COLOR_MODE_CSS_PROP = "--initial-color-mode";

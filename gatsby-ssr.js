@@ -27,22 +27,14 @@ import rawFocusVisible from 'raw-loader!./node_modules/focus-visible/dist/focus-
  */
 function setColorsByTheme() {
   const colors = "🌈";
-  const colorModeKey = "🔑";
   const colorModeCssProp = "⚡️";
 
   const mql = window.matchMedia("(prefers-color-scheme: dark)");
   const prefersDarkFromMQ = mql.matches;
-  const prefersDarkFromLocalStorage = localStorage.getItem(colorModeKey);
 
   let colorMode = "light";
 
-  const hasUsedToggle = typeof prefersDarkFromLocalStorage === "string";
-
-  if (hasUsedToggle) {
-    colorMode = prefersDarkFromLocalStorage;
-  } else {
-    colorMode = prefersDarkFromMQ ? "dark" : "light";
-  }
+  colorMode = prefersDarkFromMQ ? "dark" : "light";
 
   let root = document.documentElement;
 
@@ -58,7 +50,6 @@ function setColorsByTheme() {
 const MagicScriptTag = () => {
   const boundFn = String(setColorsByTheme)
     .replace('"🌈"', JSON.stringify(theme.colors))
-    .replace("🔑", COLOR_MODE_KEY)
     .replace("⚡️", INITIAL_COLOR_MODE_CSS_PROP);
 
   let calledFunction = `(${boundFn})()`;
@@ -71,16 +62,10 @@ const MagicScriptTag = () => {
 
 export const onRenderBody = ({
                                setPreBodyComponents,
-                               setPostBodyComponents,
                                setHeadComponents
                              }) => {
   // Set the dark mode script
   setPreBodyComponents(<MagicScriptTag />);
-
-  // This must be set for ConvertKit to work properly
-  setPostBodyComponents([
-    <script src="https://f.convertkit.com/ckjs/ck.5.js" />
-  ]);
 
   setHeadComponents([
     React.createElement('script', {
