@@ -39,6 +39,8 @@
   color: var(--base);
   text-decoration: none;
   @include callout_01();
+  display: flex;
+  align-items: center;
 }
 
 .linkText:not(:last-of-type) {
