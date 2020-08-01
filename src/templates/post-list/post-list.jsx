@@ -4,6 +4,9 @@ import SEO from "../../components/seo"
 import { Pagination } from "../../components/pagination"
 import { Layout } from "../../components/layout"
 import style from './post-list.module.scss';
+import { ButtonBase } from "@material-ui/core"
+import styles from "../../pages/contributions.module.scss"
+import ChevronIcon from "../../assets/chevron.svg"
 
 const BlogPostListTemplate = ({ pageContext }) => {
 	const { posts, pageIndex, pageCount } = pageContext
@@ -29,9 +32,10 @@ const BlogPostListTemplate = ({ pageContext }) => {
                 <h2 className={style.postTitle}>{post.frontmatter.title}</h2>
                 <p className={style.date}>July <br/><span className={style.day}>31</span></p>
                 <p className={style.excerpt}>{post.excerpt}</p>
+                <ButtonBase className={style.readMore}>
+                   Read more <ChevronIcon/>
+                </ButtonBase>
               </div>
-
-
             </Link>
           </li>
         ))}

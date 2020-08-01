@@ -6,10 +6,12 @@
   list-style: none;
   padding-left: $mobilePadding;
   padding-right: $mobilePadding;
+  margin-top: $mobileTop;
 
   @include forDesktop() {
     max-width: $maxContentWidth;
     margin: 0 auto;
+    margin-top: $desktopTop;
     padding-left: $desktopPadding;
     padding-right: $desktopPadding;
   }
@@ -89,5 +91,24 @@
   @include forDesktop() {
     margin-bottom: 16px;
     margin-top: 16px;
+  }
+}
+
+
+.readMore {
+  @include callout_01();
+  padding: 8px !important;
+  border-radius: 8px !important;
+  margin-left: -8px !important;
+  border: none;
+  display: flex;
+  align-items: center;
+  color: var(--primary) !important;
+  width: fit-content !important;
+
+  > svg {
+    margin-left: 4px;
+    height: 1.5rem;
+    width: 1.5rem;
   }
 }
