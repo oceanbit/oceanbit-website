@@ -1,8 +1,8 @@
 import * as React from "react"
 import { useOutsideFocus } from "../../hooks/use-outside-focus"
-import { ButtonBase } from "@material-ui/core"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import styles from "./header.module.scss"
+import Ink from "react-ink"
 
 export const Header = ({ title }) => {
   const data = useStaticQuery(graphql`
@@ -50,35 +50,31 @@ export const Header = ({ title }) => {
 
   const links = (
     <nav className={styles.linkContainer}>
-      <ButtonBase className={styles.linkBase}>
-        <Link
-          to="/"
-          className={styles.headerLink}
-          activeClassName={styles.activeLink}
-        >
-          Home
-        </Link>
-      </ButtonBase>
-      <ButtonBase className={styles.linkBase}>
-        <Link
-          to="/contributions"
-          className={styles.headerLink}
-          activeClassName={styles.activeLink}
-        >
-          Contributions
-        </Link>
-      </ButtonBase>
-
-      <ButtonBase className={styles.linkBase}>
-        <Link
-          to="/blog"
-          partiallyActive={true}
-          className={styles.headerLink}
-          activeClassName={styles.activeLink}
-        >
-          Blog
-        </Link>
-      </ButtonBase>
+      <Link
+        to="/"
+        className={styles.headerLink}
+        activeClassName={styles.activeLink}
+      >
+        Home
+        <Ink/>
+      </Link>
+      <Link
+        to="/contributions"
+        className={styles.headerLink}
+        activeClassName={styles.activeLink}
+      >
+        Contributions
+        <Ink/>
+      </Link>
+      <Link
+        to="/blog"
+        partiallyActive={true}
+        className={styles.headerLink}
+        activeClassName={styles.activeLink}
+      >
+        Blog
+        <Ink/>
+      </Link>
     </nav>
   )
 
