@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `OceanBit`,
     siteUrl: `https://oceanbit.dev`,
-    description: `Surf through your repos, wherever you go. From changing branches, commiting data, or just navigating Git, GitShark has you covered!`
+    description: `We build your favorite developer tools! Creators of GitShark, lovers of open source, and collective of quirky nerds!`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -50,7 +50,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-165366849-1",
+        trackingId: "UA-165366849-2",
         head: false,
         respectDNT: true
       }

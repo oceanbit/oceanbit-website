@@ -13,7 +13,12 @@ const IndexPage = () => {
 
   return (
     <Layout title="Home" waveFooter={false}>
-      <SEO/>
+      <SEO meta={[
+        {
+          property: `og:type`,
+          content: `website`
+        }
+      ]}/>
       <div className={styles.relativeContainer}>
         <div className={styles.headingContainer} style={{ paddingBottom: waveHeight }}>
           <div className={styles.headingContents}>
