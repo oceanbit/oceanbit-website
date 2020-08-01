@@ -4,7 +4,7 @@ import { ButtonBase } from "@material-ui/core"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import styles from "./header.module.scss"
 
-export const Header = ({ title}) => {
+export const Header = ({ title }) => {
   const data = useStaticQuery(graphql`
     query BlogListPageQuery {
       file(relativePath: { eq: "oceanbit_logo.png" }) {
@@ -17,16 +17,16 @@ export const Header = ({ title}) => {
     }
   `)
 
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = React.useState(false)
 
-  const headerRef = React.useRef();
-  const toggleRef = React.useRef();
+  const headerRef = React.useRef()
+  const toggleRef = React.useRef()
 
   useOutsideFocus(headerRef, expanded, () => setExpanded(false))
 
   React.useEffect(() => {
     if (!expanded) {
-      toggleRef.current.focus();
+      toggleRef.current.focus()
     }
   }, [expanded, toggleRef])
 
@@ -37,16 +37,16 @@ export const Header = ({ title}) => {
     if (expanded) {
       const escape = (e) => {
         if (e.keyCode === 27) {
-          setExpanded(false);
+          setExpanded(false)
         }
       }
-      document.addEventListener('keydown', escape);
+      document.addEventListener("keydown", escape)
 
       return () => {
-        document.removeEventListener('keydown', escape);
-      };
+        document.removeEventListener("keydown", escape)
+      }
     }
-  }, [expanded]);
+  }, [expanded])
 
   const links = (
     <div className={styles.linkContainer}>
@@ -99,24 +99,26 @@ export const Header = ({ title}) => {
           />
           <span className={styles.logoText}>OceanBit</span>
         </Link>
-        <hr className={styles.hr} />
+        <hr className={styles.hr}/>
         {links}
       </div>
       <div className={styles.mobileHeader}>
         <button
-          aria-label={expanded ? 'Close the navigation menu' : 'Open the navigation menu'}
+          aria-label={expanded ? "Close the navigation menu" : "Open the navigation menu"}
           onClick={() => setExpanded(v => !v)}
           aria-controls="mobileDropdownContents" aria-expanded={expanded}
           style={{ background: "blue", width: "24px", height: "24px" }}
           ref={toggleRef}
         />
         <h1 className={styles.pageTitle}>{title}</h1>
-        <img
-          height="36"
-          width="36"
-          src={data.file.childImageSharp.fixed.src}
-          alt=""
-        />
+        <Link to={"/"} aria-label={"Home"}>
+          <img
+            height="36"
+            width="36"
+            src={data.file.childImageSharp.fixed.src}
+            alt=""
+          />
+        </Link>
       </div>
       <div
         id="mobileDropdownContents"
@@ -125,7 +127,7 @@ export const Header = ({ title}) => {
       >
         {links}
       </div>
-      <div className={`${styles.scrim} ${expanded ? styles.activeScrim : ''}`} onClick={() => setExpanded(false)}/>
+      <div className={`${styles.scrim} ${expanded ? styles.activeScrim : ""}`} onClick={() => setExpanded(false)}/>
     </header>
   )
 }

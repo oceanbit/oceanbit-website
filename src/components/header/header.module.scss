@@ -24,7 +24,7 @@
   align-items: center;
   background: var(--base);
   position: relative;
-  z-index: 3;
+  z-index: 4;
 
   @include from($mobileBreakpoint) {
     display: none;
@@ -90,6 +90,11 @@
   padding-right: 16px;
   color: var(--highEmphasis);
   text-decoration: none;
+
+  @include forMobile() {
+    width: 100%;
+    text-align: left;
+  }
 }
 
 .activeLink {
@@ -98,7 +103,7 @@
 }
 
 .mobileExpandedContainer {
-  z-index: 2;
+  z-index: 3;
   position: absolute;
   transition: top 300ms ease-in-out;
   background: var(--base);
@@ -128,5 +133,5 @@
 
 .activeScrim {
   opacity: 1;
-  z-index: 1;
+  z-index: 2;
 }
