@@ -54,11 +54,6 @@
   margin-bottom: 24px;
 }
 
-.buttonBase {
-  border-radius: 8px !important;
-  overflow: hidden;
-}
-
 .mainButton {
   @include callout_01();
   padding-left: 16px;
@@ -70,6 +65,9 @@
   align-items: center;
   text-decoration: none;
   overflow: hidden;
+  border-radius: 8px !important;
+  overflow: hidden;
+  position: relative;
 
   > svg {
     margin-left: 4px;

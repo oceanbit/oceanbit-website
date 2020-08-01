@@ -1,50 +1,50 @@
 import React from "react"
-import {Layout} from '../components/layout';
+import { Layout } from "../components/layout"
 import styles from "./contributions.module.scss"
-import {ButtonBase} from "@material-ui/core"
 import SEO from "../components/seo"
+import Ink from "react-ink"
 
 const oss_libraries = [
   {
-    type: 'React Native',
-    name: 'Immersive bars',
-    description: 'Allows apps to draw their content behind transparent system bars on Android',
+    type: "React Native",
+    name: "Immersive bars",
+    description: "Allows apps to draw their content behind transparent system bars on Android",
     github: "https://github.com/oceanbit-dev/react-native-immersive-bars"
   },
   {
-    type: 'React Native',
-    name: 'Button Toggle Group',
-    description: 'An animated button toggle group for React Native',
+    type: "React Native",
+    name: "Button Toggle Group",
+    description: "An animated button toggle group for React Native",
     github: "https://github.com/oceanbit-dev/react-native-button-toggle-group"
   },
   {
-    type: 'React Native',
-    name: 'Directory picker',
-    description: 'Allows apps to access Android and iOS’ file pickers',
+    type: "React Native",
+    name: "Directory picker",
+    description: "Allows apps to access Android and iOS’ file pickers",
     github: "https://github.com/oceanbit-dev/react-native-directory-picker"
   },
   {
-    type: 'React Native, Web',
-    name: 'Seaside',
-    description: 'Our open-source design system',
+    type: "React Native, Web",
+    name: "Seaside",
+    description: "Our open-source design system",
     github: "https://github.com/oceanbit-dev/seaside"
-  },
+  }
 ]
 
 const weSponsor = [
   {
-    type: 'JavaScript',
-    name: 'Isomorphic Git',
-    description: 'A pure JavaScript implementation of git for node and browsers!',
+    type: "JavaScript",
+    name: "Isomorphic Git",
+    description: "A pure JavaScript implementation of git for node and browsers!",
     github: "https://github.com/isomorphic-git/isomorphic-git"
   }
 ]
 
 const weContribute = [
   {
-    type: 'JavaScript',
-    name: 'Isomorphic Git',
-    description: 'A pure JavaScript implementation of git for node and browsers!',
+    type: "JavaScript",
+    name: "Isomorphic Git",
+    description: "A pure JavaScript implementation of git for node and browsers!",
     github: "https://github.com/isomorphic-git/isomorphic-git"
   }
 ]
@@ -53,12 +53,12 @@ const ContributionsPage = () => {
   return (
     <Layout title="Contributions">
       <SEO
-        title={'Contributions'}
+        title={"Contributions"}
         meta={[
           {
             property: `og:type`,
-            content: `website`,
-          },
+            content: `website`
+          }
         ]}
       />
       <div className="mainContents">
@@ -70,9 +70,8 @@ const ContributionsPage = () => {
                 <h4 className={styles.cardTitle}>{lib.name}</h4>
                 <p className={styles.cardType}>{lib.type}</p>
                 <p className={styles.cardDesc}>{lib.description}</p>
-                <ButtonBase className={styles.cardLink}>
-                  <a href={lib.github}>View on GitHub</a>
-                </ButtonBase>
+                <a href={lib.github} className={styles.cardLink}>View on GitHub
+                  <Ink/></a>
               </li>
             ))
           }
@@ -85,9 +84,8 @@ const ContributionsPage = () => {
                 <h4 className={styles.cardTitle}>{lib.name}</h4>
                 <p className={styles.cardType}>{lib.type}</p>
                 <p className={styles.cardDesc}>{lib.description}</p>
-                <ButtonBase className={styles.cardLink}>
-                  <a href={lib.github}>View on GitHub</a>
-                </ButtonBase>
+                <a href={lib.github} className={styles.cardLink}>View on GitHub
+                  <Ink/></a>
               </li>
             ))
           }
@@ -100,9 +98,8 @@ const ContributionsPage = () => {
                 <h4 className={styles.cardTitle}>{lib.name}</h4>
                 <p className={styles.cardType}>{lib.type}</p>
                 <p className={styles.cardDesc}>{lib.description}</p>
-                <ButtonBase className={styles.cardLink}>
-                  <a href={lib.github}>View on GitHub</a>
-                </ButtonBase>
+                <a href={lib.github} className={styles.cardLink}>View on GitHub
+                  <Ink/></a>
               </li>
             ))
           }

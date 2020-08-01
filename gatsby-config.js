@@ -55,20 +55,7 @@ module.exports = {
         respectDNT: true
       }
     },
-    {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        exclude: [`/terms`, `/privacy`],
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-robots-txt',
-      options: {
-        host: 'https://gitshark.dev',
-        sitemap: 'https://gitshark.dev/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/', disallow: ['/terms', '/privacy'] }]
-      }
-    },
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

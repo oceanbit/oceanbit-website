@@ -62,14 +62,11 @@
 }
 
 .cardLink {
-  padding: 8px !important;
-  width: fit-content;
-  margin-left: -8px !important;
-  border-radius: 8px !important;
-
-  > a {
-    @include callout_01();
-    text-decoration: none;
-    color: var(--primary);
-  }
+  @include callout_01();
+  text-decoration: none;
+  color: var(--primary);
+  padding: 8px;
+  margin-left: -8px;
+  border-radius: 8px;
+  position: relative;
 }
