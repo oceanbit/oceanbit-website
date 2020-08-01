@@ -57,7 +57,7 @@ $sizeOfREM: 16;
 }
 
 @mixin headline_03 {
-  font-weight: 500;
+  font-weight: 600;
   font-size: #{40 / $sizeOfREM}rem;
   line-height: #{48 / $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
@@ -66,7 +66,7 @@ $sizeOfREM: 16;
 }
 
 @mixin headline_03_mobile {
-  font-weight: 500;
+  font-weight: 600;
   font-size: #{26 / $sizeOfREM}rem;
   line-height: #{36 / $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
@@ -75,7 +75,7 @@ $sizeOfREM: 16;
 }
 
 @mixin headline_04 {
-  font-weight: 500;
+  font-weight: 600;
   font-size: #{32 / $sizeOfREM}rem;
   line-height: #{40 / $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
@@ -84,7 +84,7 @@ $sizeOfREM: 16;
 }
 
 @mixin headline_04_mobile {
-  font-weight: 500;
+  font-weight: 600;
   font-size: #{24 / $sizeOfREM}rem;
   line-height: #{32 / $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
@@ -93,7 +93,7 @@ $sizeOfREM: 16;
 }
 
 @mixin headline_05 {
-  font-weight: 500;
+  font-weight: 600;
   font-size: #{24 / $sizeOfREM}rem;
   line-height: #{32 / $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
@@ -102,7 +102,7 @@ $sizeOfREM: 16;
 }
 
 @mixin headline_05_mobile {
-  font-weight: 500;
+  font-weight: 600;
   font-size: #{22 / $sizeOfREM}rem;
   line-height: #{28 / $sizeOfREM}rem;
   font-family: "Epilogue", sans-serif;
