@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import SEO from "../../components/seo"
 import { Pagination } from "../../components/pagination"
 import { Layout } from "../../components/layout"
+import style from './post-list.module.scss';
 
 const BlogPostListTemplate = ({ pageContext }) => {
 	const { posts, pageIndex, pageCount } = pageContext
@@ -20,11 +21,17 @@ const BlogPostListTemplate = ({ pageContext }) => {
           },
         ]}
       />
-      <ul aria-label={"Blog posts"}>
+      <ul aria-label={"Blog posts"} className={style.postList}>
         {posts.map(post => (
           <li key={post.fields.slug}>
-            <Link to={`/blog${post.fields.slug}`}>
-              {post.frontmatter.title}
+            <Link to={`/blog${post.fields.slug}`} className={style.postLinkCont}>
+              <div className={style.postContents}>
+                <h2 className={style.postTitle}>{post.frontmatter.title}</h2>
+                <p className={style.date}>July <br/><span className={style.day}>31</span></p>
+                <p className={style.excerpt}>{post.excerpt}</p>
+              </div>
+
+
             </Link>
           </li>
         ))}
