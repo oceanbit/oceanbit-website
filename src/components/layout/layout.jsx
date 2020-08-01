@@ -11,7 +11,7 @@ export const Layout = ({ children, title, waveFooter = true }) => {
     <ThemeProvider>
       <div className={layoutStyles.parentContainer}>
         <Header title={title}/>
-        <div className={layoutStyles.contentContain}>{children}</div>
+        <main className={layoutStyles.contentContain}>{children}</main>
         <Footer waveFooter={waveFooter}/>
       </div>
     </ThemeProvider>

@@ -49,7 +49,7 @@ export const Header = ({ title }) => {
   }, [expanded])
 
   const links = (
-    <div className={styles.linkContainer}>
+    <nav className={styles.linkContainer}>
       <ButtonBase className={styles.linkBase}>
         <Link
           to="/"
@@ -79,12 +79,11 @@ export const Header = ({ title }) => {
           Blog
         </Link>
       </ButtonBase>
-    </div>
+    </nav>
   )
 
   return (
     <header
-      aria-label={"Toolbar for primary action buttons"}
       ref={headerRef}
       className={styles.bothHeader}
     >
