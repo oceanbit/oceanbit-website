@@ -102,8 +102,8 @@ export const Header = ({ title }) => {
           aria-label={expanded ? "Close the navigation menu" : "Open the navigation menu"}
           onClick={() => setExpanded(v => !v)}
           aria-controls="mobileDropdownContents" aria-expanded={expanded}
-          style={{ background: "blue", width: "24px", height: "24px" }}
           ref={toggleRef}
+          className={`${styles.menuClose} ${expanded ? styles.close : styles.menu}`}
         />
         <h1 className={styles.pageTitle}>{title}</h1>
         <Link to={"/"} aria-label={"Home"}>
