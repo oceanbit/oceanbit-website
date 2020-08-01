@@ -6,6 +6,7 @@
   @include headline_02_mobile();
   margin-top: $mobileTop;
   margin-bottom: 24px;
+  color: var(--highEmphasis);
 
   @include forDesktop() {
     @include headline_02();

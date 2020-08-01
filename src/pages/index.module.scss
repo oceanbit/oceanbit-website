@@ -92,7 +92,7 @@
 
 .contributingHeader {
   @include headline_02_mobile();
-  color: var(--highEmphesis);
+  color: var(--highEmphasis);
 
   @include forDesktop() {
     @include headline_02();
@@ -101,7 +101,7 @@
 
 .contributingBody {
   @include body_01();
-  color: var(--mediumEmphesis);
+  color: var(--mediumEmphasis);
   margin-top: 8px;
   margin-bottom: 24px;
   max-width: 465px;
