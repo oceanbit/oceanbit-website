@@ -8,6 +8,9 @@
   position: relative;
   border-radius: 20px;
   background: var(--base);
+  // This fixed Safari's out-of-bounds
+  // https://stackoverflow.com/questions/44948735/overflow-hidden-is-not-working-with-absolute-element-in-safari
+  -webkit-transform: translateZ(0);
 
   overflow: hidden;
   border: 8px #8AB0FC solid;
