@@ -14,7 +14,7 @@
   transform: rotate(20deg);
 
 
-  opacity: 30%;
+  opacity: 0.3;
   margin-top: 70%;
   transform-origin: right;
   filter: none;
@@ -27,7 +27,7 @@
   @include from(1450px) {
     transform-origin: center;
     transform: rotate(20deg);
-    opacity: 100%;
+    opacity: 1;
     margin-top: 40%;
     filter: drop-shadow(0 24px 24px rgba(0,0,0,0.16));
   }

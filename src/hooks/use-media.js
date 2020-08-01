@@ -2,8 +2,9 @@ import * as React from 'react';
 
 // Hook
 export function useMedia(queries, values, defaultValue) {
+  const globalWindow = typeof window !== `undefined` && window;
   // Array containing a media query list for each query
-  const mediaQueryLists = queries.map(q => window.matchMedia(q));
+  const mediaQueryLists = queries.map(q => globalWindow && globalWindow.matchMedia(q));
 
   // Function that gets value based on matching media query
   const getValue = () => {
