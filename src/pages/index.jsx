@@ -9,7 +9,7 @@ import { useWave } from "../components/wave"
 import { Link } from "gatsby"
 
 const IndexPage = () => {
-  const { wave, waveHeight, marginTopBelow } = useWave("var(--base)", 'bottom')
+  const { wave, waveHeight, marginTopBelow } = useWave("var(--base)", "bottom")
 
   return (
     <Layout title="Home" waveFooter={false}>
@@ -21,7 +21,7 @@ const IndexPage = () => {
               <p className={styles.headingTitle}>Surf through your repos, wherever you go</p>
               <p className={styles.headingBody}>Manage repositories, checkout branches, write and commit changes and
                 much more, right from your mobile device</p>
-              <ButtonBase>
+              <ButtonBase className={styles.buttonBase}>
                 <a className={`${styles.meetButton} ${styles.mainButton}`} href={"https://gitshark.dev"}>Meet
                   GitShark <ChevronIcon/></a>
               </ButtonBase>
@@ -31,14 +31,16 @@ const IndexPage = () => {
         </div>
         {wave}
       </div>
-      <div className={styles.mainContents} style={{ marginTop: marginTopBelow}}>
+      <div className={styles.mainContents} style={{ marginTop: marginTopBelow }}>
         <div className="mainContents">
           <div>
             <h3 className={styles.contributingHeader}>Contributing back</h3>
             <p className={styles.contributingBody}>At OceanBit we believe in open code, which is why we’re always happy
               to support open-source projects and share our own code as well</p>
-            <Link to={'/contributions'} className={`${styles.contributionsButton} ${styles.mainButton}`}>OceanBit’s
-              contributions <ChevronIcon/></Link>
+            <ButtonBase className={styles.buttonBase}>
+              <Link to={"/contributions"} className={`${styles.contributionsButton} ${styles.mainButton}`}>OceanBit’s
+                contributions <ChevronIcon/></Link>
+            </ButtonBase>
           </div>
         </div>
       </div>
