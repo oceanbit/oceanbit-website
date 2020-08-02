@@ -2,7 +2,6 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import SEO from "../../components/seo"
 import { Layout } from "../../components/layout"
-import { monthNames } from "../../constants/dates"
 import style from "./blog-post.module.scss"
 
 const BlogPostListTemplate = ({ data: { markdownRemark } }) => {
