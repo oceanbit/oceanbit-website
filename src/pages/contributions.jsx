@@ -23,12 +23,12 @@ const oss_libraries = [
     description: "Allows apps to access Android and iOS’ file pickers",
     github: "https://github.com/oceanbit-dev/react-native-directory-picker"
   },
-  {
-    type: "React Native, Web",
-    name: "Seaside",
-    description: "Our open-source design system",
-    github: "https://github.com/oceanbit-dev/seaside"
-  }
+  // {
+  //   type: "React Native, Web",
+  //   name: "Seaside",
+  //   description: "Our open-source design system",
+  //   github: "https://github.com/oceanbit-dev/seaside"
+  // }
 ]
 
 const weSponsor = [

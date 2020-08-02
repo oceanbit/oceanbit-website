@@ -86,6 +86,24 @@
     @include body_01();
     margin: 1rem 0;
   }
+
+  blockquote {
+    position: relative;
+    margin-left: 1em;
+    color: var(--mediumEmphasis);
+
+    &::before {
+      content: " ";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 3px;
+      background: var(--primary);
+      left: -1em;
+    }
+
+  }
 }
 
 .postContainer:not(:last-child) > .postContents {
