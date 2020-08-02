@@ -16,6 +16,7 @@ const BlogPostListTemplate = ({ pageContext }) => {
     <Layout title="Blog">
       <SEO
         title={SEOTitle}
+        description={"Blog posts from OceanBit. We publish announcements of our products and tools, code hints, and more!"}
         meta={[
           {
             property: `og:type`,
@@ -24,21 +25,25 @@ const BlogPostListTemplate = ({ pageContext }) => {
         ]}
       />
       <ul aria-label={"Blog posts"} className={style.postList}>
-        {posts.map(post => (
-          <li key={post.fields.slug}>
-            <Link to={`/blog${post.fields.slug}`} className={style.postLinkCont}>
-              <div className={style.postContents}>
-                <h2 className={style.postTitle}>{post.frontmatter.title}</h2>
-                <p className={style.date}>July <br/><span className={style.day}>31</span></p>
-                <p className={style.excerpt}>{post.excerpt}</p>
-                <div className={style.readMore}>
-                   Read more <ChevronIcon/>
-                   <Ink/>
+        {posts.map(post => {
+          const [monthName, dayNum] = post.frontmatter.date.split(' ');
+
+          return (
+            <li key={post.fields.slug}>
+              <Link to={`/blog${post.fields.slug}`} className={style.postLinkCont}>
+                <div className={style.postContents}>
+                  <h2 className={style.postTitle}>{post.frontmatter.title}</h2>
+                  <p className={style.date}>{monthName} <br/><span className={style.day}>{dayNum}</span></p>
+                  <p className={style.excerpt}>{post.excerpt}</p>
+                  <div className={style.readMore}>
+                    Read more <ChevronIcon/>
+                    <Ink/>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          </li>
-        ))}
+              </Link>
+            </li>
+          )
+        })}
       </ul>
 
       {pageCount > 1 && <Pagination

@@ -1,9 +1,13 @@
 import * as React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import SEO from "../../components/seo"
 import { Layout } from "../../components/layout"
+import { monthNames } from "../../constants/dates"
+import style from "./blog-post.module.scss"
 
 const BlogPostListTemplate = ({ data: { markdownRemark } }) => {
+	const [monthName, dayNum] = markdownRemark.frontmatter.date.split(' ');
+
 	return (
 		<Layout title="Blog">
 			<SEO
@@ -20,14 +24,13 @@ const BlogPostListTemplate = ({ data: { markdownRemark } }) => {
 					},
 				]}
 			/>
-			<header>
-				<h1>{markdownRemark.frontmatter.title}</h1>
-				<h2>{markdownRemark.frontmatter.date}</h2>
-			</header>
-			<main dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
-			<footer>
-				<Link to={'/blog'}>Back to Blog</Link>
-			</footer>
+			<div className={style.postContainer}>
+				<div className={style.postContents}>
+					<h2 className={style.postTitle}>{markdownRemark.frontmatter.title}</h2>
+					<p className={style.date}>{monthName} <br/><span className={style.day}>{dayNum}</span></p>
+					<div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
+				</div>
+			</div>
 		</Layout>
 	)
 }
@@ -45,7 +48,7 @@ export const pageQuery = graphql`
 			excerpt(pruneLength: 160)
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "MMMM DD")
       }
     }
   }

@@ -55,6 +55,7 @@ exports.createPages = ({ graphql, actions }) => {
               excerpt(pruneLength: 360)
               frontmatter {
                 title
+                date(formatString: "MMMM DD")
               }
             }
           }

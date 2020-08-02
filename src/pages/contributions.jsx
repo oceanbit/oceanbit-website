@@ -54,6 +54,7 @@ const ContributionsPage = () => {
     <Layout title="Contributions">
       <SEO
         title={"Contributions"}
+        description={"We at OceanBit do our best to give back to the community. Whether it be new open projects, code contributions, or community funding, we do our best to improve the development ecosystem."}
         meta={[
           {
             property: `og:type`,
