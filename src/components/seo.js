@@ -70,11 +70,11 @@ function SEO({ description, lang, meta, title: propTitle }) {
         },
         {
           property: "og:image",
-          content: "https://gitshark.dev/share_image.png"
+          content: "https://oceanbit.dev/share_image.png"
         },
         {
           name: "twitter:image",
-          content: "https://gitshark.dev/share_image.png"
+          content: "https://oceanbit.dev/share_image.png"
         }
       ].concat(meta)}
     />
