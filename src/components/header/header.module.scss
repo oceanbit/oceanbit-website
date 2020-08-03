@@ -150,6 +150,7 @@
     background-position: -576px 0px;
   }
 }
+
 @keyframes toMenu {
   0% {
     background-position: -576px 0px;
@@ -159,6 +160,7 @@
     background-position: 0px 0px;
   }
 }
+
 .menuClose {
   animation-duration: 400ms;
   animation-timing-function: steps(24);
@@ -170,16 +172,22 @@
   background-position: center center;
   padding: 0;
   margin: 0;
-  background-color: var(--base);
+  background-color: transparent;
   border: none;
+
+  @media (prefers-color-scheme: dark) {
+    filter: invert(100%);
+  }
 
   @media (prefers-reduced-motion) {
     animation-duration: 0ms;
   }
 }
+
 .menuClose.close {
   animation-name: toClose;
 }
+
 .menuClose.menu {
   animation-name: toMenu;
 }
