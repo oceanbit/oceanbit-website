@@ -6,14 +6,15 @@
 
 // You can delete this file if you're not using it
 
-const maxArticlesOnPage = 5;
+const maxArticlesOnPage = 5
 
-const getPostPages = (posts) => posts.reduce((pageArr, post, i) => {
-  const pageNum = Math.floor(i / maxArticlesOnPage);
-  pageArr[pageNum] = pageArr[pageNum] || [];
-  pageArr[pageNum].push(post);
-  return pageArr;
-}, []);
+const getPostPages = posts =>
+  posts.reduce((pageArr, post, i) => {
+    const pageNum = Math.floor(i / maxArticlesOnPage)
+    pageArr[pageNum] = pageArr[pageNum] || []
+    pageArr[pageNum].push(post)
+    return pageArr
+  }, [])
 
 const { createFilePath } = require(`gatsby-source-filesystem`)
 const path = require(`path`)
@@ -39,11 +40,15 @@ exports.createPages = ({ graphql, actions }) => {
 
   const postList = path.resolve(`./src/templates/post-list/post-list.jsx`)
   const blogPost = path.resolve(`./src/templates/blog-post/blog-post.jsx`)
+  const homePage = path.resolve(`./src/templates/home/home.jsx`)
+  const contributionsPage = path.resolve(
+    `./src/templates/contributions/contributions.jsx`
+  )
 
   return graphql(
     `
       {
-     allMarkdownRemark(
+        allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___date] }
           limit: 1000
         ) {
@@ -67,9 +72,18 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors
     }
 
+    createPage({
+      path: `/`,
+      component: homePage,
+    })
+
+    createPage({
+      path: `/contributions`,
+      component: contributionsPage,
+    })
+
     // Create blog posts pages.
     const posts = result.data.allMarkdownRemark.edges.map(post => post.node)
-
 
     posts.forEach(post => {
       createPage({
@@ -81,7 +95,7 @@ exports.createPages = ({ graphql, actions }) => {
       })
     })
 
-    const postPages = getPostPages(posts);
+    const postPages = getPostPages(posts)
 
     createPage({
       path: `/blog`,
@@ -89,7 +103,7 @@ exports.createPages = ({ graphql, actions }) => {
       context: {
         pageIndex: 1,
         posts: postPages[0],
-        pageCount: postPages.length
+        pageCount: postPages.length,
       },
     })
 
@@ -100,11 +114,11 @@ exports.createPages = ({ graphql, actions }) => {
         context: {
           pageIndex: i,
           posts: postPages[i],
-          pageCount: postPages.length
+          pageCount: postPages.length,
         },
       })
     }
 
-      return null
+    return null
   })
 }

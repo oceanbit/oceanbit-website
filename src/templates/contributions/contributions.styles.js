@@ -6,9 +6,9 @@ import {
   headline_04,
   headline_04_mobile,
   overline_01
-} from "../styles/font-styles"
-import { forDesktop } from "../styles/utils"
-import { desktopTop, mobileTop } from "../styles/vars"
+} from "../../styles/font-styles"
+import { forDesktop } from "../../styles/utils"
+import { desktopTop, mobileTop } from "../../styles/vars"
 
 export const Header = styled.h1`
   ${headline_02_mobile}

@@ -1,6 +1,6 @@
 import React from "react"
-import { Layout } from "../components/layout"
-import SEO from "../components/seo"
+import { Layout } from "../../components/layout"
+import SEO from "../../components/seo"
 import Ink from "react-ink"
 import { Card, CardDesc, CardLink, CardList, CardTitle, CardType, Header } from "./contributions.styles"
 
@@ -49,7 +49,7 @@ const weContribute = [
   }
 ]
 
-const ContributionsPage = () => {
+const ContributionsTemplate = () => {
   return (
     <Layout title="Contributions">
       <SEO
@@ -110,4 +110,4 @@ const ContributionsPage = () => {
   )
 }
 
-export default ContributionsPage
+export default ContributionsTemplate

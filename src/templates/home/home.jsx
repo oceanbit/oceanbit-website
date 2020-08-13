@@ -1,9 +1,9 @@
 import React from "react"
-import SEO from "../components/seo"
-import { Layout } from "../components/layout"
-import { Screens } from "../components/screens"
-import ChevronIcon from "../assets/chevron.svg"
-import { useWave } from "../components/wave"
+import SEO from "../../components/seo"
+import { Layout } from "../../components/layout"
+import { Screens } from "../../components/screens"
+import ChevronIcon from "../../assets/chevron.svg"
+import { useWave } from "../../components/wave"
 import Ink from "react-ink"
 
 import {
@@ -16,9 +16,9 @@ import {
   HeadingContents, HeadingTitle,
   MainContents, MeetButton,
   RelativeContainer
-} from "./index.styles"
+} from "./home.styles"
 
-const IndexPage = () => {
+const HomeTemplate = () => {
   const { wave, waveHeight, marginTopBelow } = useWave("var(--base)", "bottom")
 
   return (
@@ -63,4 +63,4 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
+export default HomeTemplate
