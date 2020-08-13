@@ -1,8 +1,7 @@
-@import "../../styles/utils";
-@import "../../styles/vars";
-@import "../../styles/font-styles";
+import styled from 'styled-components';
+import { forDesktop } from "../../styles/utils"
 
-.screenContainer {
+export const ScreenContainer = styled.div`
   max-height: 440px;
   max-width: 240px;
   position: relative;
@@ -15,19 +14,19 @@
   overflow: hidden;
   border: 8px #8AB0FC solid;
 
-  @include forDesktop() {
+  ${forDesktop(`
     border-radius: 40px;
-  }
+  `)}
 
   &:before {
     display: block;
     content: "";
     width: 100%;
-    padding-top: (11 / 6) * 100%;
+    padding-top: ${(11 / 6) * 100}%;
   }
-}
+`
 
-.screenImg {
+export const ScreenImg = styled.div`
   position: absolute;
   top: 0;
   right: 0;
@@ -35,4 +34,4 @@
   left: 0;
   background-size: cover;
   background-position: top center;
-}
+`
