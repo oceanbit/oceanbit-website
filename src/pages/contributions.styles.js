@@ -1,72 +1,79 @@
-@import "../styles/utils";
-@import "../styles/vars";
-@import "../styles/font-styles";
+import styled from "styled-components"
+import {
+  body_02, callout_01,
+  headline_02,
+  headline_02_mobile,
+  headline_04,
+  headline_04_mobile,
+  overline_01
+} from "../styles/font-styles"
+import { forDesktop } from "../styles/utils"
 
-.header {
-  @include headline_02_mobile();
+export const Header = styled.h1`
+  ${headline_02_mobile}
   margin-top: $mobileTop;
   margin-bottom: 24px;
   color: var(--highEmphasis);
 
-  @include forDesktop() {
-    @include headline_02();
+  ${forDesktop(`
+    ${headline_02}
     margin-top: $desktopTop;
     margin-bottom: 48px;
-  }
-}
+  `)}
+`
 
-.cardList {
+export const CardList = styled.ul`
   display: grid;
   grid-gap: 24px;
   list-style: none;
   margin: 0;
   padding: 0;
   grid-template-columns: 1fr;
-
-  @include forDesktop() {
+  
+  ${forDesktop(`
     grid-template-columns: 1fr 1fr;
-  }
-}
+  `)}
+`
 
-.card {
+export const Card = styled.li`
   padding: 32px 24px 24px;
   border-radius: 8px;
   border: 1px solid var(--on_surface_01);
   display: flex;
   flex-direction: column;
-}
+`
 
-.cardTitle {
-  @include headline_04_mobile();
+export const CardTitle = styled.h4`
+  ${headline_04_mobile}
   margin-top: 8px;
   color: var(--highEmphasis);
-
-  @include forDesktop() {
-    @include headline_04();
+  
+  ${forDesktop(`
+    ${headline_04}
     margin-top: 8px;
-  }
-}
+  `)}
+`
 
-.cardType {
-  @include overline_01();
+export const CardType = styled.p`
+  ${overline_01}
   order: -1;
   text-transform: uppercase;
   color: var(--mediumEmphasis);
-}
+`
 
-.cardDesc {
-  @include body_02();
+export const CardDesc = styled.p`
+  ${body_02}
   margin-top: 4px;
   margin-bottom: 16px;
   color: var(--mediumEmphasis);
-}
+`
 
-.cardLink {
-  @include callout_01();
+export const CardLink = styled.a`
+  ${callout_01}
   text-decoration: none;
   color: var(--primary);
   padding: 8px;
   margin-left: -8px;
   border-radius: 8px;
   position: relative;
-}
+`
