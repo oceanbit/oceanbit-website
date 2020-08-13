@@ -1,8 +1,8 @@
 import React from "react"
 import { Layout } from "../components/layout"
-import styles from "./contributions.module.scss"
 import SEO from "../components/seo"
 import Ink from "react-ink"
+import { Card, CardDesc, CardLink, CardList, CardTitle, CardType, Header } from "./contributions.styles"
 
 const oss_libraries = [
   {
@@ -22,7 +22,7 @@ const oss_libraries = [
     name: "Directory picker",
     description: "Allows apps to access Android and iOS’ file pickers",
     github: "https://github.com/oceanbit-dev/react-native-directory-picker"
-  },
+  }
   // {
   //   type: "React Native, Web",
   //   name: "Seaside",
@@ -63,48 +63,48 @@ const ContributionsPage = () => {
         ]}
       />
       <div className="mainContents">
-        <h1 className={styles.header} id="ossLibHead">Open-source libraries</h1>
-        <ul className={styles.cardList} aria-describedby="ossLibHead">
+        <Header id="ossLibHead">Open-source libraries</Header>
+        <CardList aria-describedby="ossLibHead">
           {
             oss_libraries.map(lib => (
-              <li className={styles.card} key={lib.name}>
-                <h4 className={styles.cardTitle}>{lib.name}</h4>
-                <p className={styles.cardType}>{lib.type}</p>
-                <p className={styles.cardDesc}>{lib.description}</p>
-                <a href={lib.github} className={styles.cardLink}>View on GitHub
-                  <Ink/></a>
-              </li>
+              <Card key={lib.name}>
+                <CardTitle>{lib.name}</CardTitle>
+                <CardType>{lib.type}</CardType>
+                <CardDesc>{lib.description}</CardDesc>
+                <CardLink href={lib.github}>View on GitHub
+                  <Ink/></CardLink>
+              </Card>
             ))
           }
-        </ul>
-        <h1 className={styles.header} id="weContribToHead">We contribute to</h1>
-        <ul className={styles.cardList} aria-describedby="weContribToHead">
+        </CardList>
+        <Header id="weContribToHead">We contribute to</Header>
+        <CardList aria-describedby="weContribToHead">
           {
             weContribute.map(lib => (
-              <li className={styles.card} key={lib.name}>
-                <h4 className={styles.cardTitle}>{lib.name}</h4>
-                <p className={styles.cardType}>{lib.type}</p>
-                <p className={styles.cardDesc}>{lib.description}</p>
-                <a href={lib.github} className={styles.cardLink}>View on GitHub
-                  <Ink/></a>
-              </li>
+              <Card key={lib.name}>
+                <CardTitle>{lib.name}</CardTitle>
+                <CardType>{lib.type}</CardType>
+                <CardDesc>{lib.description}</CardDesc>
+                <CardLink href={lib.github}>View on GitHub
+                  <Ink/></CardLink>
+              </Card>
             ))
           }
-        </ul>
-        <h1 className={styles.header} id="weSponsorHead">We sponsor</h1>
-        <ul className={styles.cardList} aria-describedby="weSponsorHead">
+        </CardList>
+        <Header id="weSponsorHead">We sponsor</Header>
+        <CardList aria-describedby="weSponsorHead">
           {
             weSponsor.map(lib => (
-              <li className={styles.card} key={lib.name}>
-                <h4 className={styles.cardTitle}>{lib.name}</h4>
-                <p className={styles.cardType}>{lib.type}</p>
-                <p className={styles.cardDesc}>{lib.description}</p>
-                <a href={lib.github} className={styles.cardLink}>View on GitHub
-                  <Ink/></a>
-              </li>
+              <Card key={lib.name}>
+                <CardTitle>{lib.name}</CardTitle>
+                <CardType>{lib.type}</CardType>
+                <CardDesc>{lib.description}</CardDesc>
+                <CardLink href={lib.github}>View on GitHub
+                  <Ink/></CardLink>
+              </Card>
             ))
           }
-        </ul>
+        </CardList>
       </div>
     </Layout>
   )

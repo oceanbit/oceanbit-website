@@ -1,53 +1,56 @@
-@import "../../styles/utils";
-@import "../../styles/vars";
-@import "../../styles/font-styles";
+import styled, { css, keyframes } from "styled-components"
+import { forDesktop, forMobile } from "../../styles/utils"
+import { desktopPadding, maxContentWidth, mobilePadding } from "../../styles/vars"
+import { callout_01, headline_06 } from "../../styles/font-styles"
+import { Link } from "gatsby"
 
-.bothHeader {
+export const BothHeader = styled.header`
   box-shadow: 0 1px var(--on_surface_01);
   position: relative;
-}
+`
 
-.desktopHeader {
+export const DesktopHeader = styled.div`
   align-items: center;
   margin: 0 auto;
-  max-width: $maxContentWidth;
-  padding: 20px $desktopPadding;
+  max-width: ${maxContentWidth};
+  padding: 20px ${desktopPadding};
   display: none;
-  @include from($mobileBreakpoint) {
+  
+  ${forDesktop(css`
     display: flex;
-  }
-}
+  `)}
+`
 
-.mobileHeader {
+export const MobileHeader = styled.div`
   display: flex;
-  padding: $mobilePadding;
+  padding: ${mobilePadding};
   align-items: center;
   background: var(--base);
   position: relative;
   z-index: 4;
 
-  @include from($mobileBreakpoint) {
+  ${forDesktop(css`
     display: none;
-  }
-}
+  `)}
+`
 
-.logoContainer {
+export const LogoContainer = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
   margin-right: 24px;
-}
+`
 
-.logoImg {
+export const LogoImg = styled.img`
   margin-right: 8px;
-}
+`
 
-.logoText {
-  @include headline_06;
+export const LogoText = styled.span`
+  ${headline_06}
   color: var(--highEmphasis);
-}
+`
 
-.hr {
+export const Hr = styled.hr`
   width: 1px;
   background: var(--lowEmphasis);
   height: 48px;
@@ -55,30 +58,30 @@
   margin: 0;
   border: none;
   outline: none;
-}
+`
 
-.linkContainer {
+export const LinkContainer = styled.nav`
   display: flex;
   flex-direction: column;
 
-  @include from($mobileBreakpoint) {
+  ${forDesktop(css`
     flex-direction: row;
-  }
-}
+  `)}
+`
 
-.pageTitle {
-  @include headline_06;
+export const PageTitle = styled.h1`
+  ${headline_06}
   color: var(--mediumEmphasis);
   margin-left: 24px;
   margin-right: auto;
-}
+`
 
-.linkBase {
+const activeClassName = "active"
 
-}
-
-.headerLink {
-  @include callout_01();
+export const HeaderLink = styled(Link).attrs({
+  activeClassName: activeClassName
+})`
+  ${callout_01}
   display: flex;
   padding-top: 8px;
   padding-bottom: 8px;
@@ -92,36 +95,36 @@
   border-radius: 8px;
   justify-content: flex-start;
 
-  @include forDesktop() {
+  ${forDesktop(css`
     margin-left: 24px;
     justify-content: center;
-  }
-
-  @include forMobile() {
+  `)}
+  
+  ${forMobile(css`
     width: calc(100% - 32px);
     text-align: left;
+  `)}
+  
+  &.${activeClassName} {
+    ${headline_06}
+    color: var(--primary);
   }
-}
+`
 
-.activeLink {
-  @include headline_06();
-  color: var(--primary);
-}
-
-.mobileExpandedContainer {
+export const MobileExpandedContainer = styled.div`
   z-index: 3;
   position: absolute;
   transition: top 300ms ease-in-out;
   background: var(--base);
-  width: calc(100% - #{$mobilePadding * 2});
-  padding: $mobilePadding;
-
-  @include from($mobileBreakpoint) {
+  width: calc(100% - ${mobilePadding} * 2);
+  padding: ${mobilePadding};
+  
+  ${forDesktop(css`
     display: none;
-  }
-}
+  `)}
+`
 
-.scrim {
+export const Scrim = styled.div`
   position: fixed;
   z-index: -1;
   background: var(--lowEmphasis);
@@ -132,26 +135,26 @@
   opacity: 0;
   transition: opacity 300ms ease-in-out;
 
-  @include from($mobileBreakpoint) {
+  ${props => props.activeScrim && css`
+    opacity: 1;
+    z-index: 2;
+  `}
+
+  ${forDesktop(css`
     display: none;
-  }
-}
+  `)}
+`
 
-.activeScrim {
-  opacity: 1;
-  z-index: 2;
-}
-
-@keyframes toClose {
+const toClose = keyframes`
   0% {
     background-position: 0px 0px;
   }
   100% {
     background-position: -576px 0px;
   }
-}
+`
 
-@keyframes toMenu {
+const toMenu = keyframes`
   0% {
     background-position: -576px 0px;
   }
@@ -159,9 +162,9 @@
   100% {
     background-position: 0px 0px;
   }
-}
+`
 
-.menuClose {
+export const MenuClose = styled.button`
   animation-duration: 400ms;
   animation-timing-function: steps(24);
   width: 24px;
@@ -182,12 +185,10 @@
   @media (prefers-reduced-motion) {
     animation-duration: 0ms;
   }
-}
-
-.menuClose.close {
-  animation-name: toClose;
-}
-
-.menuClose.menu {
-  animation-name: toMenu;
-}
+  
+  ${props => props.expanded ? css`
+    animation-name: ${toClose};
+  ` : css`
+    animation-name: ${toMenu};
+  `}
+`

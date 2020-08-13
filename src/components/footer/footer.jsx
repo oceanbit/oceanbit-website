@@ -1,42 +1,41 @@
 import * as React from "react"
-import TwitterIcon from "../../assets/twitter.svg"
-import GitHubIcon from "../../assets/github.svg"
-import EmailIcon from "../../assets/email.svg"
-import styles from "./footer.module.scss"
+
 import { useWave } from "../wave"
+
+import { Contents, EmailIcon, FindUs, GitHubIcon, LinkText, MainBG, TopContainer, TwitterIcon } from "./footer.styles"
 
 export const Footer = ({ waveFooter }) => {
   const { wave, waveHeight, marginTopBelow } = useWave("var(--primary)", "top")
 
   const contents = (
-    <div className={styles.contents}>
-      <h3 className={styles.findUs}>Find us</h3>
-      <a href="https://twitter.com/oceanbit_dev" className={styles.linkText}>
-        <TwitterIcon className={styles.icon}/>
+    <Contents>
+      <FindUs>Find us</FindUs>
+      <LinkText href="https://twitter.com/oceanbit_dev">
+        <TwitterIcon/>
         oceanbit_dev
-      </a>
-      <a href="mailto:contact@oceanbit.dev" className={styles.linkText}>
-        <EmailIcon className={styles.icon}/>
+      </LinkText>
+      <LinkText href="mailto:contact@oceanbit.dev">
+        <EmailIcon/>
         contact@oceanbit.dev
-      </a>
-      <a href="https://github.com/oceanbit-dev" className={styles.linkText}>
-        <GitHubIcon className={styles.icon}/>
+      </LinkText>
+      <LinkText href="https://github.com/oceanbit-dev">
+        <GitHubIcon/>
         oceanbit-dev
-      </a>
-    </div>
+      </LinkText>
+    </Contents>
   )
 
   return (
-    <div className={styles.topContainer}>
+    <TopContainer>
       {waveFooter && <>
         {wave}
         <div style={{ paddingTop: waveFooter ? waveHeight : 0 }}/>
       </>}
-      <div className={styles.mainBG}>
+      <MainBG>
         <div className="mainContents" style={{position: 'relative', marginTop: waveFooter ? marginTopBelow : 0}}>
           {contents}
         </div>
-      </div>
-    </div>
+      </MainBG>
+    </TopContainer>
   )
 }

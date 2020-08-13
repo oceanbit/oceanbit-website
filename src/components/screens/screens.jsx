@@ -1,7 +1,6 @@
 import * as React from "react"
-import styles from "./screens.module.scss"
-import { Screen } from "./screen"
 import { ThemeContext } from "../../constants/theme-context"
+import { MainContainer, Row, ScreenItem } from "./screens.styles"
 
 export const Screens = () => {
 
@@ -15,29 +14,29 @@ export const Screens = () => {
   const repo_list_dark = isDark ? '/screenshots/repo_list_dark.png' : '/screenshots/repo_list_light.png'
 
   return (
-    <div className={styles.mainContainer}>
-      <div className={styles.row}>
-        <Screen imageUrl={brach_dark} className={styles.item}/>
-        <Screen imageUrl={history_dark} className={styles.item}/>
-      </div>
-      <div className={styles.row}>
-        <Screen imageUrl={commit_dark} className={styles.item}/>
-        <Screen imageUrl={repo_list_dark} className={styles.item}/>
-        <Screen imageUrl={brach_dark} className={styles.item}/>
-      </div>
+    <MainContainer>
+      <Row>
+        <ScreenItem imageUrl={brach_dark}/>
+        <ScreenItem imageUrl={history_dark}/>
+      </Row>
+      <Row>
+        <ScreenItem imageUrl={commit_dark}/>
+        <ScreenItem imageUrl={repo_list_dark}/>
+        <ScreenItem imageUrl={brach_dark}/>
+      </Row>
 
-      <div className={styles.row}>
-        <Screen imageUrl={history_dark} className={styles.item}/>
-        <Screen imageUrl={brach_dark} className={styles.item}/>
-        <Screen imageUrl={commit_dark} className={styles.item}/>
-        <Screen imageUrl={repo_list_dark} className={styles.item}/>
-      </div>
+      <Row>
+        <ScreenItem imageUrl={history_dark}/>
+        <ScreenItem imageUrl={brach_dark}/>
+        <ScreenItem imageUrl={commit_dark}/>
+        <ScreenItem imageUrl={repo_list_dark}/>
+      </Row>
 
-      <div className={styles.row}>
-        <Screen imageUrl={repo_list_dark} className={styles.item}/>
-        <Screen imageUrl={commit_dark} className={styles.item}/>
-        <Screen imageUrl={history_dark} className={styles.item}/>
-      </div>
-    </div>
+      <Row>
+        <ScreenItem imageUrl={repo_list_dark}/>
+        <ScreenItem imageUrl={commit_dark}/>
+        <ScreenItem imageUrl={history_dark}/>
+      </Row>
+    </MainContainer>
   )
 }

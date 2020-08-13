@@ -1,8 +1,8 @@
-@import "../../styles/utils";
-@import "../../styles/vars";
-@import "../../styles/font-styles";
+import styled from 'styled-components';
+import { forDesktop, from } from "../../styles/utils"
+import { Screen } from "./screen"
 
-.mainContainer {
+export const MainContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -13,56 +13,57 @@
   right: 0;
   transform: rotate(20deg);
 
-
   opacity: 0.3;
   margin-top: 70%;
   transform-origin: right;
   filter: none;
 
-  @include from(650px) {
+  ${from('650px', `
     margin-top: 40%;
     transform: rotate(20deg) scale(0.6);
-  }
+  `)}
 
-  @include from(1450px) {
+  ${from('1450px', `
     transform-origin: center;
     transform: rotate(20deg);
     opacity: 1;
     margin-top: 40%;
     filter: drop-shadow(0 24px 24px rgba(0,0,0,0.16));
-  }
+  `)}
 
-  @include from(1800px) {
+  ${from('1800px', `
     margin-top: 20%;
-  }
+  `)}
 
-  @include from(2200px) {
+  ${from('2200px', `
     margin-top: 10%;
-  }
+  `)}
 
-  @include from(3400px) {
+  ${from('3400px', `
     margin-top: 0%;
-  }
-}
+  `)}
+`
 
-.row {
+export const Row = styled.div`
   width: 25%;
   max-width: 240px;
   height: fit-content;
-}
 
-.row:not(:first-child) {
-  margin-left: 10px;
-
-  @include forDesktop() {
-    margin-left: 20px;
+  &:not(:first-child) {
+    margin-left: 10px;
+  
+    ${forDesktop(`
+      margin-left: 20px;
+    `)}
   }
-}
+`
 
-.item:not(:first-child) {
-  margin-top: 10px;
+export const ScreenItem = styled(Screen)`
+  &:not(:first-child) {
+    margin-top: 10px;
 
-  @include forDesktop() {
-    margin-top: 20px;
+    ${forDesktop(`
+      margin-top: 20px;
+    `)}
   }
-}
+`
