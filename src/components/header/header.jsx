@@ -1,8 +1,17 @@
 import * as React from "react"
 import { useOutsideFocus } from "../../hooks/use-outside-focus"
 import { graphql, Link, useStaticQuery } from "gatsby"
-import styles from "./header.module.scss"
 import Ink from "react-ink"
+import {
+  BothHeader,
+  DesktopHeader, HeaderLink,
+  Hr,
+  LinkContainer,
+  LogoContainer,
+  LogoImg,
+  LogoText, MenuClose, MobileExpandedContainer,
+  MobileHeader, PageTitle, Scrim
+} from "./header.styles"
 
 export const Header = ({ title }) => {
   const data = useStaticQuery(graphql`
@@ -49,63 +58,55 @@ export const Header = ({ title }) => {
   }, [expanded])
 
   const links = (
-    <nav className={styles.linkContainer}>
-      <Link
+    <LinkContainer>
+      <HeaderLink
         to="/"
-        className={styles.headerLink}
-        activeClassName={styles.activeLink}
       >
         Home
         <Ink/>
-      </Link>
-      <Link
+      </HeaderLink>
+      <HeaderLink
         to="/contributions"
-        className={styles.headerLink}
-        activeClassName={styles.activeLink}
       >
         Contributions
         <Ink/>
-      </Link>
-      <Link
+      </HeaderLink>
+      <HeaderLink
         to="/blog"
         partiallyActive={true}
-        className={styles.headerLink}
-        activeClassName={styles.activeLink}
       >
         Blog
         <Ink/>
-      </Link>
-    </nav>
+      </HeaderLink>
+    </LinkContainer>
   )
 
   return (
-    <header
+    <BothHeader
       ref={headerRef}
-      className={styles.bothHeader}
     >
-      <div className={styles.desktopHeader}>
-        <Link to="/" className={styles.logoContainer}>
-          <img
+      <DesktopHeader>
+        <LogoContainer to="/">
+          <LogoImg
             height="48"
             width="48"
-            className={styles.logoImg}
             src={data.file.childImageSharp.fixed.src}
             alt=""
           />
-          <span className={styles.logoText}>OceanBit</span>
-        </Link>
-        <hr className={styles.hr}/>
+          <LogoText>OceanBit</LogoText>
+        </LogoContainer>
+        <Hr/>
         {links}
-      </div>
-      <div className={styles.mobileHeader}>
-        <button
+      </DesktopHeader>
+      <MobileHeader>
+        <MenuClose
           aria-label={expanded ? "Close the navigation menu" : "Open the navigation menu"}
           onClick={() => setExpanded(v => !v)}
           aria-controls="mobileDropdownContents" aria-expanded={expanded}
           ref={toggleRef}
-          className={`${styles.menuClose} ${expanded ? styles.close : styles.menu}`}
+          expanded={expanded}
         />
-        <h1 className={styles.pageTitle}>{title}</h1>
+        <PageTitle>{title}</PageTitle>
         <Link to={"/"} aria-label={"Home"}>
           <img
             height="36"
@@ -114,15 +115,14 @@ export const Header = ({ title }) => {
             alt=""
           />
         </Link>
-      </div>
-      <div
+      </MobileHeader>
+      <MobileExpandedContainer
         id="mobileDropdownContents"
-        className={styles.mobileExpandedContainer}
         style={{ top: expanded ? "100%" : "-100vh" }}
       >
         {links}
-      </div>
-      <div className={`${styles.scrim} ${expanded ? styles.activeScrim : ""}`} onClick={() => setExpanded(false)}/>
-    </header>
+      </MobileExpandedContainer>
+      <Scrim activeScrim={expanded} onClick={() => setExpanded(false)}/>
+    </BothHeader>
   )
 }
