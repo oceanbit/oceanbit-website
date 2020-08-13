@@ -1,6 +1,10 @@
 import styled, { css, keyframes } from "styled-components"
 import { forDesktop, forMobile } from "../../styles/utils"
-import { desktopPadding, maxContentWidth, mobilePadding } from "../../styles/vars"
+import {
+  desktopPadding,
+  maxContentWidth,
+  mobilePadding,
+} from "../../styles/vars"
 import { callout_01, headline_06 } from "../../styles/font-styles"
 import { Link } from "gatsby"
 
@@ -15,7 +19,7 @@ export const DesktopHeader = styled.div`
   max-width: ${maxContentWidth};
   padding: 20px ${desktopPadding};
   display: none;
-  
+
   ${forDesktop(css`
     display: flex;
   `)}
@@ -79,7 +83,7 @@ export const PageTitle = styled.h1`
 const activeClassName = "active"
 
 export const HeaderLink = styled(Link).attrs({
-  activeClassName: activeClassName
+  activeClassName: activeClassName,
 })`
   ${callout_01}
   display: flex;
@@ -118,7 +122,7 @@ export const MobileExpandedContainer = styled.div`
   background: var(--base);
   width: calc(100% - ${mobilePadding} * 2);
   padding: ${mobilePadding};
-  
+
   ${forDesktop(css`
     display: none;
   `)}
@@ -135,10 +139,12 @@ export const Scrim = styled.div`
   opacity: 0;
   transition: opacity 300ms ease-in-out;
 
-  ${props => props.activeScrim && css`
-    opacity: 1;
-    z-index: 2;
-  `}
+  ${props =>
+    props.activeScrim &&
+    css`
+      opacity: 1;
+      z-index: 2;
+    `}
 
   ${forDesktop(css`
     display: none;
@@ -185,10 +191,13 @@ export const MenuClose = styled.button`
   @media (prefers-reduced-motion) {
     animation-duration: 0ms;
   }
-  
-  ${props => props.expanded ? css`
-    animation-name: ${toClose};
-  ` : css`
-    animation-name: ${toMenu};
-  `}
+
+  ${props =>
+    props.expanded
+      ? css`
+          animation-name: ${toClose};
+        `
+      : css`
+          animation-name: ${toMenu};
+        `}
 `

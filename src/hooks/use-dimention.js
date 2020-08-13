@@ -1,7 +1,7 @@
-import { useState, useCallback, useLayoutEffect } from "react";
+import { useState, useCallback, useLayoutEffect } from "react"
 
 function getDimensionObject(node) {
-  const rect = node.getBoundingClientRect();
+  const rect = node.getBoundingClientRect()
 
   return {
     width: rect.width,
@@ -11,37 +11,35 @@ function getDimensionObject(node) {
     x: "x" in rect ? rect.x : rect.left,
     y: "y" in rect ? rect.y : rect.top,
     right: rect.right,
-    bottom: rect.bottom
-  };
+    bottom: rect.bottom,
+  }
 }
 
-export function useDimensions({
-                         liveMeasure = true
-                       } = {}) {
-  const [dimensions, setDimensions] = useState({});
-  const [node, setNode] = useState(null);
+export function useDimensions({ liveMeasure = true } = {}) {
+  const [dimensions, setDimensions] = useState({})
+  const [node, setNode] = useState(null)
 
   const ref = useCallback(node => {
-    setNode(node);
-  }, []);
+    setNode(node)
+  }, [])
 
   useLayoutEffect(() => {
     if (node) {
       const measure = () =>
         window.requestAnimationFrame(() =>
           setDimensions(getDimensionObject(node))
-        );
-      measure();
+        )
+      measure()
 
       if (liveMeasure) {
-        window.addEventListener("resize", measure);
+        window.addEventListener("resize", measure)
 
         return () => {
-          window.removeEventListener("resize", measure);
-        };
+          window.removeEventListener("resize", measure)
+        }
       }
     }
-  }, [node]);
+  }, [node])
 
-  return [ref, dimensions, node];
+  return [ref, dimensions, node]
 }

@@ -5,7 +5,7 @@ title: Hello, World! — Introducing OceanBit
 
 Hello, my name is Corbin. [I'm a software developer](https://github.com/crutchcorn), retro game nerd, and [technical writer](https://unicorn-utterances.com/unicorns/crutchcorn).
 
-Like all developers, I rely heavily on my tools; one tool that I often use is a Git GUI for managing my repos. 
+Like all developers, I rely heavily on my tools; one tool that I often use is a Git GUI for managing my repos.
 
 While working on my blog during a flight, I found myself yearning for good mobile developer tools. I couldn't find anything that suited my needs, so I started working on my first app: [GitShark](https://gitshark.dev).
 
@@ -21,7 +21,7 @@ We have some exciting projects in the name of community support in the pipeline 
 
 ## GitShark Alpha
 
-A company is cool and all, but we didn't want to announce empty-handed. That's why we're excited to say that **we're releasing GitShark as a closed alpha on the Google Play Store**. Because this is the very first release (and we're aware of features that are missing and bugs lurking in our system), **we're limiting the first batch of testers to 25 people**. 
+A company is cool and all, but we didn't want to announce empty-handed. That's why we're excited to say that **we're releasing GitShark as a closed alpha on the Google Play Store**. Because this is the very first release (and we're aware of features that are missing and bugs lurking in our system), **we're limiting the first batch of testers to 25 people**.
 
 Want to join the group of testers? Share [the announcement Tweet](https://twitter.com/GitShark/status/1290363559713468417) via Retweet, then leave a comment saying, "I'd like to test." After a week (8/10/20), we'll announce the testers and give them a free code for the app (valid even after public release!). We humbly request that **those requesting to alpha test are familiar with how to [file GitHub issues](https://github.com/oceanbit-dev/GitShark/issues) and are willing to report bugs and feature requests**. We want to make sure that by the time the app is in a public beta that we've resolved most of the bugs and added a primary amount of the features that are integral for usage.
 
@@ -32,4 +32,3 @@ Want to join the group of testers? Share [the announcement Tweet](https://twitte
 We're excited to finally proclaim our existence! We've been working hard to stabilize ourselves and get our app ready for prime-time. We'll have more to announce soon, and are excited for what's to come next.
 
 We look forward to making tools that other people will use and love.
-

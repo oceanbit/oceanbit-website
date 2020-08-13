@@ -1,7 +1,16 @@
 import styled, { css } from "styled-components"
 import { forDesktop } from "../../styles/utils"
-import { desktopPadding, maxContentWidth, mobilePadding } from "../../styles/vars"
-import { body_01, callout_01, headline_02, headline_02_mobile } from "../../styles/font-styles"
+import {
+  desktopPadding,
+  maxContentWidth,
+  mobilePadding,
+} from "../../styles/vars"
+import {
+  body_01,
+  callout_01,
+  headline_02,
+  headline_02_mobile,
+} from "../../styles/font-styles"
 import { Link } from "gatsby"
 
 export const RelativeContainer = styled.div`
@@ -79,7 +88,7 @@ const MainButton = css`
 `
 
 export const MeetButton = styled.a`
-  ${MainButton}  
+  ${MainButton}
   color: var(--primary);
   background: var(--base);
 `

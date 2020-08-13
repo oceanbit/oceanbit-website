@@ -10,12 +10,12 @@ import { ContentContain, ParentContainer } from "./layout.styles"
 export const Layout = ({ children, title, waveFooter = true }) => {
   return (
     <>
-      <GlobalStyle/>
+      <GlobalStyle />
       <ThemeProvider>
         <ParentContainer>
-          <Header title={title}/>
+          <Header title={title} />
           <ContentContain>{children}</ContentContain>
-          <Footer waveFooter={waveFooter}/>
+          <Footer waveFooter={waveFooter} />
         </ParentContainer>
       </ThemeProvider>
     </>

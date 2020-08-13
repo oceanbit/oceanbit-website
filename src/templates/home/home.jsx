@@ -13,9 +13,11 @@ import {
   HeadingBody,
   HeadingBodyContainer,
   HeadingContainer,
-  HeadingContents, HeadingTitle,
-  MainContents, MeetButton,
-  RelativeContainer
+  HeadingContents,
+  HeadingTitle,
+  MainContents,
+  MeetButton,
+  RelativeContainer,
 } from "./home.styles"
 
 const HomeTemplate = () => {
@@ -23,25 +25,31 @@ const HomeTemplate = () => {
 
   return (
     <Layout title="Home" waveFooter={false}>
-      <SEO meta={[
-        {
-          property: `og:type`,
-          content: `website`
-        }
-      ]}/>
+      <SEO
+        meta={[
+          {
+            property: `og:type`,
+            content: `website`,
+          },
+        ]}
+      />
       <RelativeContainer>
         <HeadingContainer style={{ paddingBottom: waveHeight }}>
           <HeadingContents>
             <HeadingBodyContainer>
-              <HeadingTitle>Surf through your repos, wherever you go</HeadingTitle>
-              <HeadingBody>Manage repositories, checkout branches, write and commit changes and
-                much more, right from your mobile device</HeadingBody>
-              <MeetButton href={"https://gitshark.dev"}>Meet
-                GitShark <ChevronIcon/>
-                <Ink/>
+              <HeadingTitle>
+                Surf through your repos, wherever you go
+              </HeadingTitle>
+              <HeadingBody>
+                Manage repositories, checkout branches, write and commit changes
+                and much more, right from your mobile device
+              </HeadingBody>
+              <MeetButton href={"https://gitshark.dev"}>
+                Meet GitShark <ChevronIcon />
+                <Ink />
               </MeetButton>
             </HeadingBodyContainer>
-            <Screens/>
+            <Screens />
           </HeadingContents>
         </HeadingContainer>
         {wave}
@@ -50,11 +58,14 @@ const HomeTemplate = () => {
         <div className="mainContents">
           <div>
             <ContributingHeader>Contributing back</ContributingHeader>
-            <ContributingBody>At OceanBit we believe in open code, which is why we’re always happy
-              to support open-source projects and share our own code as well</ContributingBody>
-            <ContributionsButton to={"/contributions"}>OceanBit’s
-              contributions <ChevronIcon/>
-              <Ink/>
+            <ContributingBody>
+              At OceanBit we believe in open code, which is why we’re always
+              happy to support open-source projects and share our own code as
+              well
+            </ContributingBody>
+            <ContributionsButton to={"/contributions"}>
+              OceanBit’s contributions <ChevronIcon />
+              <Ink />
             </ContributionsButton>
           </div>
         </div>

@@ -1,6 +1,12 @@
 import { createGlobalStyle } from "styled-components"
 
-import { desktopPadding, desktopTop, maxContentWidth, mobilePadding, mobileTop } from "../../styles/vars"
+import {
+  desktopPadding,
+  desktopTop,
+  maxContentWidth,
+  mobilePadding,
+  mobileTop,
+} from "../../styles/vars"
 import { forDesktop, from } from "../../styles/utils"
 
 import epilogue from "../../assets/fonts/epilogue.ttf"
@@ -62,17 +68,26 @@ export const GlobalStyle = createGlobalStyle`
     position: absolute;
     transition: transform 500ms ease-in-out;
   
-    ${from("1130px", `
+    ${from(
+      "1130px",
+      `
       transform: scaleY(0.7);
-    `)}
+    `
+    )}
   
-    ${from("1650px", `
+    ${from(
+      "1650px",
+      `
       transform: scaleY(0.5);
-    `)}
+    `
+    )}
   
   
-    ${from("2400px", `
+    ${from(
+      "2400px",
+      `
       transform: scaleY(0.3);
-    `)}
+    `
+    )}
   }
 `

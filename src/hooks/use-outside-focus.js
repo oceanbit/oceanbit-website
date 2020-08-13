@@ -1,4 +1,4 @@
-import { useOutsideEvent } from "./use-outside-event";
+import { useOutsideEvent } from "./use-outside-event"
 
 /**
  * @param {...*} params
@@ -7,5 +7,5 @@ import { useOutsideEvent } from "./use-outside-event";
  * @param {    Function   } params.$2 - A function to run if the user focuses outside the parent ref
  */
 export const useOutsideFocus = (...params) => {
-  return useOutsideEvent("focusin", params);
-};
+  return useOutsideEvent("focusin", params)
+}

@@ -39,4 +39,4 @@ export const PaginationStyle = createGlobalStyle`
     .pagination li.active a {
         color: white;
     }
-`;
+`

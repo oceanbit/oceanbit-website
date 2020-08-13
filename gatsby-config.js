@@ -2,19 +2,19 @@ module.exports = {
   siteMetadata: {
     title: `OceanBit`,
     siteUrl: `https://oceanbit.dev`,
-    description: `We build your favorite developer tools! Creators of GitShark, lovers of open source, and collective of quirky nerds!`
+    description: `We build your favorite developer tools! Creators of GitShark, lovers of open source, and collective of quirky nerds!`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-		{
-			resolve: `gatsby-source-filesystem`,
-			options: {
-				path: `${__dirname}/src/assets`,
-				name: `assets`
-			}
-		},
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/assets`,
+        name: `assets`,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
@@ -27,8 +27,8 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#002BFF`,
         display: `minimal-ui`,
-        icon: `src/assets/oceanbit_logo.png`
-      }
+        icon: `src/assets/oceanbit_logo.png`,
+      },
     },
     `gatsby-plugin-styled-components`,
     {
@@ -43,25 +43,25 @@ module.exports = {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /assets/ // See below to configure properly
-        }
-      }
+          include: /assets/, // See below to configure properly
+        },
+      },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-165366849-2",
         head: false,
-        respectDNT: true
-      }
+        respectDNT: true,
+      },
     },
     `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/posts`,
-        name: `blog`
-      }
+        name: `blog`,
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,

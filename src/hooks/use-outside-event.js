@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from "react"
 
 /**
  * @param eventName - The name of the event to be bound to
@@ -7,31 +7,28 @@ import * as React from "react";
  * @param {boolean} params.$1 - Boolean to enable
  * @param {Function} params.$2 - A function to run if the user clicks outside the parent ref
  */
-export const useOutsideEvent = (
-  eventName,
-  params
-) => {
-  const [parentRef, enable, onOutsideEvent] = params;
+export const useOutsideEvent = (eventName, params) => {
+  const [parentRef, enable, onOutsideEvent] = params
 
   const handleClickOutside = React.useCallback(
     e => {
       if (parentRef.current.contains(e.target)) {
         // inside click
-        return;
+        return
       }
       // outside click
-      onOutsideEvent();
+      onOutsideEvent()
     },
     [parentRef, parentRef.current, onOutsideEvent]
-  );
+  )
 
   React.useEffect(() => {
     if (enable) {
-      document.addEventListener(eventName, handleClickOutside);
+      document.addEventListener(eventName, handleClickOutside)
 
       return () => {
-        document.removeEventListener(eventName, handleClickOutside);
-      };
+        document.removeEventListener(eventName, handleClickOutside)
+      }
     }
-  }, [enable, handleClickOutside, onOutsideEvent, eventName]);
-};
+  }, [enable, handleClickOutside, onOutsideEvent, eventName])
+}

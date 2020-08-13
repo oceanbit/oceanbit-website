@@ -1,11 +1,12 @@
 import styled from "styled-components"
 import {
-  body_02, callout_01,
+  body_02,
+  callout_01,
   headline_02,
   headline_02_mobile,
   headline_04,
   headline_04_mobile,
-  overline_01
+  overline_01,
 } from "../../styles/font-styles"
 import { forDesktop } from "../../styles/utils"
 import { desktopTop, mobileTop } from "../../styles/vars"
@@ -30,7 +31,7 @@ export const CardList = styled.ul`
   margin: 0;
   padding: 0;
   grid-template-columns: 1fr;
-  
+
   ${forDesktop(`
     grid-template-columns: 1fr 1fr;
   `)}
@@ -48,7 +49,7 @@ export const CardTitle = styled.h4`
   ${headline_04_mobile}
   margin-top: 8px;
   color: var(--highEmphasis);
-  
+
   ${forDesktop(`
     ${headline_04}
     margin-top: 8px;

@@ -1,5 +1,5 @@
-import { css } from 'styled-components';
-import { classToCSS } from "./base/utils";
+import { css } from "styled-components"
+import { classToCSS } from "./base/utils"
 
 import {
   display_01 as display_01_base,
@@ -23,28 +23,72 @@ import {
   caption_02 as caption_02_base,
   overline_01 as overline_01_base,
   overline_02 as overline_02_base,
-  code as code_base
-} from "./base/font-styles";
+  code as code_base,
+} from "./base/font-styles"
 
-export const display_01 = css`${classToCSS(display_01_base)}`;
-export const display_02 = css`${classToCSS(display_02_base)}`;
-export const headline_01 = css`${classToCSS(headline_01_base)}`;
-export const headline_01_mobile = css`${classToCSS(headline_01_mobile_base)}`;
-export const headline_02 = css`${classToCSS(headline_02_base)}`;
-export const headline_02_mobile = css`${classToCSS(headline_02_mobile_base)}`;
-export const headline_03 = css`${classToCSS(headline_03_base)}`;
-export const headline_03_mobile = css`${classToCSS(headline_03_mobile_base)}`;
-export const headline_04 = css`${classToCSS(headline_04_base)}`;
-export const headline_04_mobile = css`${classToCSS(headline_04_mobile_base)}`;
-export const headline_05 = css`${classToCSS(headline_05_base)}`;
-export const headline_05_mobile = css`${classToCSS(headline_05_mobile_base)}`;
-export const headline_06 = css`${classToCSS(headline_06_base)}`;
-export const callout_01 = css`${classToCSS(callout_01_base)}`;
-export const callout_02 = css`${classToCSS(callout_02_base)}`;
-export const body_01 = css`${classToCSS(body_01_base)}`;
-export const body_02 = css`${classToCSS(body_02_base)}`;
-export const caption_01 = css`${classToCSS(caption_01_base)}`;
-export const caption_02 = css`${classToCSS(caption_02_base)}`;
-export const overline_01 = css`${classToCSS(overline_01_base)}`;
-export const overline_02 = css`${classToCSS(overline_02_base)}`;
-export const code = css`${classToCSS(code_base)}`;
+export const display_01 = css`
+  ${classToCSS(display_01_base)}
+`
+export const display_02 = css`
+  ${classToCSS(display_02_base)}
+`
+export const headline_01 = css`
+  ${classToCSS(headline_01_base)}
+`
+export const headline_01_mobile = css`
+  ${classToCSS(headline_01_mobile_base)}
+`
+export const headline_02 = css`
+  ${classToCSS(headline_02_base)}
+`
+export const headline_02_mobile = css`
+  ${classToCSS(headline_02_mobile_base)}
+`
+export const headline_03 = css`
+  ${classToCSS(headline_03_base)}
+`
+export const headline_03_mobile = css`
+  ${classToCSS(headline_03_mobile_base)}
+`
+export const headline_04 = css`
+  ${classToCSS(headline_04_base)}
+`
+export const headline_04_mobile = css`
+  ${classToCSS(headline_04_mobile_base)}
+`
+export const headline_05 = css`
+  ${classToCSS(headline_05_base)}
+`
+export const headline_05_mobile = css`
+  ${classToCSS(headline_05_mobile_base)}
+`
+export const headline_06 = css`
+  ${classToCSS(headline_06_base)}
+`
+export const callout_01 = css`
+  ${classToCSS(callout_01_base)}
+`
+export const callout_02 = css`
+  ${classToCSS(callout_02_base)}
+`
+export const body_01 = css`
+  ${classToCSS(body_01_base)}
+`
+export const body_02 = css`
+  ${classToCSS(body_02_base)}
+`
+export const caption_01 = css`
+  ${classToCSS(caption_01_base)}
+`
+export const caption_02 = css`
+  ${classToCSS(caption_02_base)}
+`
+export const overline_01 = css`
+  ${classToCSS(overline_01_base)}
+`
+export const overline_02 = css`
+  ${classToCSS(overline_02_base)}
+`
+export const code = css`
+  ${classToCSS(code_base)}
+`

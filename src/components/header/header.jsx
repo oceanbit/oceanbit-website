@@ -4,13 +4,18 @@ import { graphql, Link, useStaticQuery } from "gatsby"
 import Ink from "react-ink"
 import {
   BothHeader,
-  DesktopHeader, HeaderLink,
+  DesktopHeader,
+  HeaderLink,
   Hr,
   LinkContainer,
   LogoContainer,
   LogoImg,
-  LogoText, MenuClose, MobileExpandedContainer,
-  MobileHeader, PageTitle, Scrim
+  LogoText,
+  MenuClose,
+  MobileExpandedContainer,
+  MobileHeader,
+  PageTitle,
+  Scrim,
 } from "./header.styles"
 
 export const Header = ({ title }) => {
@@ -44,7 +49,7 @@ export const Header = ({ title }) => {
    */
   React.useEffect(() => {
     if (expanded) {
-      const escape = (e) => {
+      const escape = e => {
         if (e.keyCode === 27) {
           setExpanded(false)
         }
@@ -59,32 +64,23 @@ export const Header = ({ title }) => {
 
   const links = (
     <LinkContainer>
-      <HeaderLink
-        to="/"
-      >
+      <HeaderLink to="/">
         Home
-        <Ink/>
+        <Ink />
       </HeaderLink>
-      <HeaderLink
-        to="/contributions"
-      >
+      <HeaderLink to="/contributions">
         Contributions
-        <Ink/>
+        <Ink />
       </HeaderLink>
-      <HeaderLink
-        to="/blog"
-        partiallyActive={true}
-      >
+      <HeaderLink to="/blog" partiallyActive={true}>
         Blog
-        <Ink/>
+        <Ink />
       </HeaderLink>
     </LinkContainer>
   )
 
   return (
-    <BothHeader
-      ref={headerRef}
-    >
+    <BothHeader ref={headerRef}>
       <DesktopHeader>
         <LogoContainer to="/">
           <LogoImg
@@ -95,14 +91,17 @@ export const Header = ({ title }) => {
           />
           <LogoText>OceanBit</LogoText>
         </LogoContainer>
-        <Hr/>
+        <Hr />
         {links}
       </DesktopHeader>
       <MobileHeader>
         <MenuClose
-          aria-label={expanded ? "Close the navigation menu" : "Open the navigation menu"}
+          aria-label={
+            expanded ? "Close the navigation menu" : "Open the navigation menu"
+          }
           onClick={() => setExpanded(v => !v)}
-          aria-controls="mobileDropdownContents" aria-expanded={expanded}
+          aria-controls="mobileDropdownContents"
+          aria-expanded={expanded}
           ref={toggleRef}
           expanded={expanded}
         />
@@ -122,7 +121,7 @@ export const Header = ({ title }) => {
       >
         {links}
       </MobileExpandedContainer>
-      <Scrim activeScrim={expanded} onClick={() => setExpanded(false)}/>
+      <Scrim activeScrim={expanded} onClick={() => setExpanded(false)} />
     </BothHeader>
   )
 }

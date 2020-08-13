@@ -1,1 +1,1 @@
-export * from './wave';
+export * from "./wave"

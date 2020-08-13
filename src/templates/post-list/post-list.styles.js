@@ -1,15 +1,22 @@
 import styled from "styled-components"
 import {
-  body_01, callout_01,
+  body_01,
+  callout_01,
   caption_01,
   headline_02,
   headline_02_mobile,
   headline_05,
-  overline_01
+  overline_01,
 } from "../../styles/font-styles"
 import { forDesktop, from } from "../../styles/utils"
 import { Link } from "gatsby"
-import { desktopPadding, desktopTop, maxContentWidth, mobilePadding, mobileTop } from "../../styles/vars"
+import {
+  desktopPadding,
+  desktopTop,
+  maxContentWidth,
+  mobilePadding,
+  mobileTop,
+} from "../../styles/vars"
 
 export const PostList = styled.ul`
   list-style: none;
@@ -86,9 +93,12 @@ export const Date = styled.p`
 `
 
 export const Day = styled.span`
-  ${from('800px', `
+  ${from(
+    "800px",
+    `
     ${headline_05}
-  `)}
+  `
+  )}
 `
 
 export const Excerpt = styled.p`

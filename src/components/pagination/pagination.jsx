@@ -7,7 +7,7 @@ import { PaginationStyle } from "./pagination.styles"
 export const Pagination = ({ pageCount, pageIndex, rootPath, pagePath }) => {
   return (
     <>
-      <PaginationStyle/>
+      <PaginationStyle />
       <ReactPaginate
         previousLabel={"previous"}
         nextLabel={"next"}

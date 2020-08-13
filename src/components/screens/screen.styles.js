@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 import { forDesktop } from "../../styles/utils"
 
 export const ScreenContainer = styled.div`
@@ -12,7 +12,7 @@ export const ScreenContainer = styled.div`
   -webkit-transform: translateZ(0);
 
   overflow: hidden;
-  border: 8px #8AB0FC solid;
+  border: 8px #8ab0fc solid;
 
   ${forDesktop(`
     border-radius: 40px;

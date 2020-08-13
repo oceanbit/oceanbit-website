@@ -1,14 +1,27 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 import { forDesktop, from } from "../../styles/utils"
-import { desktopPadding, desktopTop, maxContentWidth, mobilePadding, mobileTop } from "../../styles/vars"
 import {
-  body_01, caption_01, headline_01, headline_01_mobile,
+  desktopPadding,
+  desktopTop,
+  maxContentWidth,
+  mobilePadding,
+  mobileTop,
+} from "../../styles/vars"
+import {
+  body_01,
+  caption_01,
+  headline_01,
+  headline_01_mobile,
   headline_02,
   headline_02_mobile,
   headline_03,
   headline_03_mobile,
   headline_04,
-  headline_04_mobile, headline_05, headline_05_mobile, headline_06, overline_01
+  headline_04_mobile,
+  headline_05,
+  headline_05_mobile,
+  headline_06,
+  overline_01,
 } from "../../styles/font-styles"
 
 export const PostContainer = styled.div`
@@ -17,13 +30,16 @@ export const PostContainer = styled.div`
   padding-right: ${mobilePadding};
   margin-top: ${mobileTop};
 
-  ${from('800px', `
+  ${from(
+    "800px",
+    `
     max-width: ${maxContentWidth};
     margin: 0 auto;
     margin-top: ${desktopTop};
     padding-left: ${desktopPadding};
     padding-right: ${desktopPadding};
-  `)}
+  `
+  )}
 
   position: relative;
   text-decoration: none;
@@ -36,12 +52,15 @@ export const PostContents = styled.div`
   padding-top: 32px;
   padding-bottom: 32px;
 
-  ${from('800px', `
+  ${from(
+    "800px",
+    `
     margin-left: 160px;
     margin-right: 160px;
     padding-top: 56px;
     padding-bottom: 56px;
-  `)}
+  `
+  )}
 
   color: var(--highEmpasis);
 
@@ -50,7 +69,7 @@ export const PostContents = styled.div`
   h2 {
     ${headline_02_mobile}
     margin: 1rem 0;
-  
+
     ${forDesktop(`
       ${headline_02}
       margin: 1rem 0;
@@ -71,7 +90,6 @@ export const PostContents = styled.div`
     ${headline_04_mobile}
     margin: 1rem 0;
 
-
     ${forDesktop(`
       ${headline_04}
       margin: 1rem 0;
@@ -81,7 +99,6 @@ export const PostContents = styled.div`
   h5 {
     ${headline_05_mobile}
     margin: 1rem 0;
-
 
     ${forDesktop(`
       ${headline_05}
@@ -113,16 +130,18 @@ export const PostContents = styled.div`
       background: var(--primary);
       left: -1em;
     }
-
   }
 `
 
 export const PostTitle = styled.h2`
   ${headline_01_mobile}
 
-  ${from('800px', `
+  ${from(
+    "800px",
+    `
     ${headline_01}
-  `)}
+  `
+  )}
 `
 
 export const Date = styled.p`
@@ -135,7 +154,9 @@ export const Date = styled.p`
     display: none;
   }
 
-  ${from('800px', `
+  ${from(
+    "800px",
+    `
     color: var(--highEmphasis);
     order: 0;
     margin-bottom: 0px;
@@ -149,11 +170,15 @@ export const Date = styled.p`
     }
     ${overline_01}
     text-transform: uppercase;
-  `)}
+  `
+  )}
 `
 
 export const Day = styled.span`
-  ${from('800px', `
+  ${from(
+    "800px",
+    `
     ${headline_05}
-  `)}
+  `
+  )}
 `

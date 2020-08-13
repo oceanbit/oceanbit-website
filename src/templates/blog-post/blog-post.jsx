@@ -2,7 +2,13 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import SEO from "../../components/seo"
 import { Layout } from "../../components/layout"
-import { Date, Day, PostContainer, PostContents, PostTitle } from "./blog-post.styles"
+import {
+  Date,
+  Day,
+  PostContainer,
+  PostContents,
+  PostTitle,
+} from "./blog-post.styles"
 
 const BlogPostListTemplate = ({ data: { markdownRemark } }) => {
   const [monthName, dayNum] = markdownRemark.frontmatter.date.split(" ")
@@ -15,19 +21,22 @@ const BlogPostListTemplate = ({ data: { markdownRemark } }) => {
         meta={[
           {
             property: `og:type`,
-            content: `article`
+            content: `article`,
           },
           {
             property: `article:published_time`,
-            content: markdownRemark.frontmatter.date
-          }
+            content: markdownRemark.frontmatter.date,
+          },
         ]}
       />
       <PostContainer>
         <PostContents>
           <PostTitle>{markdownRemark.frontmatter.title}</PostTitle>
-          <Date>{monthName} <br/><Day>{dayNum}</Day></Date>
-          <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }}/>
+          <Date>
+            {monthName} <br />
+            <Day>{dayNum}</Day>
+          </Date>
+          <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
         </PostContents>
       </PostContainer>
     </Layout>
@@ -44,7 +53,7 @@ export const pageQuery = graphql`
       }
       id
       html
-			excerpt(pruneLength: 160)
+      excerpt(pruneLength: 160)
       frontmatter {
         title
         date(formatString: "MMMM DD")

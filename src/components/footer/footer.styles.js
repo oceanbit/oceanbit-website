@@ -1,5 +1,9 @@
 import styled, { css } from "styled-components"
-import { callout_01, headline_02, headline_02_mobile } from "../../styles/font-styles"
+import {
+  callout_01,
+  headline_02,
+  headline_02_mobile,
+} from "../../styles/font-styles"
 import { forDesktop } from "../../styles/utils"
 
 import TwitterIconBase from "../../assets/twitter.svg"
@@ -41,15 +45,15 @@ const Icon = css`
 
 export const TwitterIcon = styled(TwitterIconBase)`
   ${Icon}
-`;
+`
 
 export const EmailIcon = styled(EmailIconBase)`
   ${Icon}
-`;
+`
 
 export const GitHubIcon = styled(GitHubIconBase)`
   ${Icon}
-`;
+`
 
 export const LinkText = styled.a`
   color: var(--base);
@@ -57,7 +61,7 @@ export const LinkText = styled.a`
   ${callout_01}
   display: flex;
   align-items: center;
-  
+
   &:not(:last-of-type) {
     margin-bottom: 24px;
   }

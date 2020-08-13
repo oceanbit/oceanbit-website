@@ -46,11 +46,11 @@ export const ThemeProvider = ({ children }) => {
     function setVal(e) {
       contextValue.setColorMode(e.matches ? "dark" : "light")
     }
-    const matches = window.matchMedia('(prefers-color-scheme: dark)');
+    const matches = window.matchMedia("(prefers-color-scheme: dark)")
     // Has to use addListener for iOS and Safari
-    matches.addListener(setVal);
+    matches.addListener(setVal)
 
-    return () => matches.removeListener(setVal);
+    return () => matches.removeListener(setVal)
   }, [contextValue])
 
   return (

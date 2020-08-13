@@ -3,7 +3,7 @@ export const display_01 = {
   fontSize: 48,
   lineHeight: 64,
   fontFamily: `"Epilogue", sans-serif`,
-  margin: 0
+  margin: 0,
 }
 
 export const display_02 = {
@@ -11,7 +11,7 @@ export const display_02 = {
   fontSize: 96,
   lineHeight: 128,
   fontFamily: `"Epilogue", sans-serif`,
-  margin: 0
+  margin: 0,
 }
 
 export const headline_01 = {
@@ -19,7 +19,7 @@ export const headline_01 = {
   fontSize: 64,
   lineHeight: 80,
   fontFamily: `"Epilogue", sans-serif`,
-  margin: 0
+  margin: 0,
 }
 
 export const headline_01_mobile = {
@@ -27,7 +27,7 @@ export const headline_01_mobile = {
   fontSize: 32,
   lineHeight: 40,
   fontFamily: `"Epilogue", sans-serif`,
-  margin: 0
+  margin: 0,
 }
 
 export const headline_02 = {
@@ -35,7 +35,7 @@ export const headline_02 = {
   fontSize: 48,
   lineHeight: 56,
   fontFamily: `"Epilogue", sans-serif`,
-  margin: 0
+  margin: 0,
 }
 
 export const headline_02_mobile = {
@@ -43,7 +43,7 @@ export const headline_02_mobile = {
   fontSize: 28,
   lineHeight: 40,
   fontFamily: `"Epilogue", sans-serif`,
-  margin: 0
+  margin: 0,
 }
 
 export const headline_03 = {
@@ -51,7 +51,7 @@ export const headline_03 = {
   fontSize: 40,
   lineHeight: 48,
   fontFamily: `"Epilogue", sans-serif`,
-  margin: 0
+  margin: 0,
 }
 
 export const headline_03_mobile = {
@@ -59,7 +59,7 @@ export const headline_03_mobile = {
   fontSize: 26,
   lineHeight: 36,
   fontFamily: `"Epilogue", sans-serif`,
-  margin: 0
+  margin: 0,
 }
 
 export const headline_04 = {
@@ -67,7 +67,7 @@ export const headline_04 = {
   fontSize: 32,
   lineHeight: 40,
   fontFamily: `"Epilogue", sans-serif`,
-  margin: 0
+  margin: 0,
 }
 
 export const headline_04_mobile = {
@@ -75,7 +75,7 @@ export const headline_04_mobile = {
   fontSize: 24,
   lineHeight: 32,
   fontFamily: `"Epilogue", sans-serif`,
-  margin: 0
+  margin: 0,
 }
 
 export const headline_05 = {
@@ -83,7 +83,7 @@ export const headline_05 = {
   fontSize: 24,
   lineHeight: 32,
   fontFamily: `"Epilogue", sans-serif`,
-  margin: 0
+  margin: 0,
 }
 
 export const headline_05_mobile = {
@@ -91,7 +91,7 @@ export const headline_05_mobile = {
   fontSize: 22,
   lineHeight: 28,
   fontFamily: `"Epilogue", sans-serif`,
-  margin: 0
+  margin: 0,
 }
 
 export const headline_06 = {
@@ -99,7 +99,7 @@ export const headline_06 = {
   fontSize: 20,
   lineHeight: 28,
   fontFamily: `"Epilogue", sans-serif`,
-  margin: 0
+  margin: 0,
 }
 
 export const callout_01 = {
@@ -107,7 +107,7 @@ export const callout_01 = {
   fontSize: 16,
   lineHeight: 24,
   fontFamily: `"Epilogue", sans-serif`,
-  margin: 0
+  margin: 0,
 }
 
 export const callout_02 = {
@@ -115,7 +115,7 @@ export const callout_02 = {
   fontSize: 14,
   lineHeight: 20,
   fontFamily: `"Epilogue", sans-serif`,
-  margin: 0
+  margin: 0,
 }
 
 export const body_01 = {
@@ -123,7 +123,7 @@ export const body_01 = {
   fontSize: 16,
   lineHeight: 24,
   fontFamily: `"Epilogue", sans-serif`,
-  margin: 0
+  margin: 0,
 }
 
 export const body_02 = {
@@ -131,7 +131,7 @@ export const body_02 = {
   fontSize: 14,
   lineHeight: 20,
   fontFamily: `"Epilogue", sans-serif`,
-  margin: 0
+  margin: 0,
 }
 
 export const caption_01 = {
@@ -139,7 +139,7 @@ export const caption_01 = {
   fontSize: 12,
   lineHeight: 16,
   fontFamily: `"Epilogue", sans-serif`,
-  margin: 0
+  margin: 0,
 }
 
 export const caption_02 = {
@@ -147,7 +147,7 @@ export const caption_02 = {
   fontSize: 12,
   lineHeight: 16,
   fontFamily: `"Epilogue", sans-serif`,
-  margin: 0
+  margin: 0,
 }
 
 export const overline_01 = {
@@ -156,7 +156,7 @@ export const overline_01 = {
   lineHeight: 16,
   fontFamily: `"Epilogue", sans-serif`,
   margin: 0,
-  textTransform: `lowercase`
+  textTransform: `lowercase`,
 }
 
 export const overline_02 = {
@@ -165,7 +165,7 @@ export const overline_02 = {
   lineHeight: 16,
   fontFamily: `"Epilogue", sans-serif`,
   margin: 0,
-  textTransform: `lowercase`
+  textTransform: `lowercase`,
 }
 
 export const code = {
@@ -173,5 +173,5 @@ export const code = {
   fontFamily: `"Roboto Mono", monospace`,
   fontSize: 12,
   lineHeight: 20,
-  margin: 0
+  margin: 0,
 }

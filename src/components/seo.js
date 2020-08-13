@@ -24,7 +24,7 @@ function SEO({ description, lang, meta, title: propTitle }) {
     `
   )
 
-  const title = propTitle || site.siteMetadata.title;
+  const title = propTitle || site.siteMetadata.title
 
   const metaDescription = description || site.siteMetadata.description
 
@@ -34,7 +34,7 @@ function SEO({ description, lang, meta, title: propTitle }) {
         lang,
       }}
       title={title}
-      titleTemplate={!propTitle ? '' : `%s | ${site.siteMetadata.title}`}
+      titleTemplate={!propTitle ? "" : `%s | ${site.siteMetadata.title}`}
       meta={[
         {
           property: `og:title`,
@@ -62,20 +62,20 @@ function SEO({ description, lang, meta, title: propTitle }) {
         },
         {
           name: `twitter:card`,
-          content: `summary_large_image`
+          content: `summary_large_image`,
         },
         {
           name: `twitter:site`,
-          content: `@oceanbit_dev`
+          content: `@oceanbit_dev`,
         },
         {
           property: "og:image",
-          content: "https://oceanbit.dev/share_image.png"
+          content: "https://oceanbit.dev/share_image.png",
         },
         {
           name: "twitter:image",
-          content: "https://oceanbit.dev/share_image.png"
-        }
+          content: "https://oceanbit.dev/share_image.png",
+        },
       ].concat(meta)}
     />
   )
