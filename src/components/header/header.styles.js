@@ -70,7 +70,7 @@ export const LinkContainer = styled.nav`
 `
 
 export const PageTitle = styled.h1`
-  @include headline_06;
+  ${headline_06}
   color: var(--mediumEmphasis);
   margin-left: 24px;
   margin-right: auto;
@@ -116,7 +116,7 @@ export const MobileExpandedContainer = styled.div`
   position: absolute;
   transition: top 300ms ease-in-out;
   background: var(--base);
-  width: calc(100% - ${mobilePadding * 2});
+  width: calc(100% - ${mobilePadding} * 2);
   padding: ${mobilePadding};
   
   ${forDesktop(css`

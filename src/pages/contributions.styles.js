@@ -8,16 +8,17 @@ import {
   overline_01
 } from "../styles/font-styles"
 import { forDesktop } from "../styles/utils"
+import { desktopTop, mobileTop } from "../styles/vars"
 
 export const Header = styled.h1`
   ${headline_02_mobile}
-  margin-top: $mobileTop;
+  margin-top: ${mobileTop};
   margin-bottom: 24px;
   color: var(--highEmphasis);
 
   ${forDesktop(`
     ${headline_02}
-    margin-top: $desktopTop;
+    margin-top: ${desktopTop};
     margin-bottom: 48px;
   `)}
 `

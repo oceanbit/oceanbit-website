@@ -9,13 +9,13 @@ import {
 } from "../../styles/font-styles"
 import { forDesktop, from } from "../../styles/utils"
 import { Link } from "gatsby"
-import { desktopPadding, desktopTop, maxContentWidth } from "../../styles/vars"
+import { desktopPadding, desktopTop, maxContentWidth, mobilePadding, mobileTop } from "../../styles/vars"
 
 export const PostList = styled.ul`
   list-style: none;
-  padding-left: $mobilePadding;
-  padding-right: $mobilePadding;
-  margin-top: $mobileTop;
+  padding-left: ${mobilePadding};
+  padding-right: ${mobilePadding};
+  margin-top: ${mobileTop};
 
   ${forDesktop(`
     max-width: ${maxContentWidth};

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { forDesktop, from } from "../../styles/utils"
-import { mobilePadding, mobileTop } from "../../styles/vars"
+import { desktopPadding, desktopTop, maxContentWidth, mobilePadding, mobileTop } from "../../styles/vars"
 import {
   body_01, caption_01, headline_01, headline_01_mobile,
   headline_02,
@@ -18,11 +18,11 @@ export const PostContainer = styled.div`
   margin-top: ${mobileTop};
 
   ${from('800px', `
-    max-width: $maxContentWidth;
+    max-width: ${maxContentWidth};
     margin: 0 auto;
-    margin-top: $desktopTop;
-    padding-left: $desktopPadding;
-    padding-right: $desktopPadding;
+    margin-top: ${desktopTop};
+    padding-left: ${desktopPadding};
+    padding-right: ${desktopPadding};
   `)}
 
   position: relative;
