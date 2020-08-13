@@ -1,89 +1,100 @@
-@import "../../styles/utils";
-@import "../../styles/vars";
-@import "../../styles/font-styles";
+import styled from 'styled-components';
+import { forDesktop, from } from "../../styles/utils"
+import { mobilePadding, mobileTop } from "../../styles/vars"
+import {
+  body_01, caption_01, headline_01, headline_01_mobile,
+  headline_02,
+  headline_02_mobile,
+  headline_03,
+  headline_03_mobile,
+  headline_04,
+  headline_04_mobile, headline_05, headline_05_mobile, headline_06, overline_01
+} from "../../styles/font-styles"
 
-.postContainer {
+export const PostContainer = styled.div`
   list-style: none;
-  padding-left: $mobilePadding;
-  padding-right: $mobilePadding;
-  margin-top: $mobileTop;
+  padding-left: ${mobilePadding};
+  padding-right: ${mobilePadding};
+  margin-top: ${mobileTop};
 
-  @include from(800px) {
+  ${from('800px', `
     max-width: $maxContentWidth;
     margin: 0 auto;
     margin-top: $desktopTop;
     padding-left: $desktopPadding;
     padding-right: $desktopPadding;
-  }
+  `)}
 
   position: relative;
   text-decoration: none;
   color: var(--highEmphasis);
-}
+`
 
-.postContents {
+export const PostContents = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 32px;
   padding-bottom: 32px;
 
-  @include from(800px) {
+  ${from('800px', `
     margin-left: 160px;
     margin-right: 160px;
     padding-top: 56px;
     padding-bottom: 56px;
-  }
+  `)}
 
   color: var(--highEmpasis);
 
   // We should not have H1 in blog posts
 
   h2 {
-    @include headline_02_mobile();
+    ${headline_02_mobile}
     margin: 1rem 0;
-
-    @include forDesktop() {
-      @include headline_02();
+  
+    ${forDesktop(`
+      ${headline_02}
       margin: 1rem 0;
-    }
+    `)}
   }
 
   h3 {
-    @include headline_03_mobile();
+    ${headline_03_mobile}
     margin: 1rem 0;
 
-    @include forDesktop() {
-      @include headline_03();
+    ${forDesktop(`
+      ${headline_03}
       margin: 1rem 0;
-    }
+    `)}
   }
 
   h4 {
-    @include headline_04_mobile();
+    ${headline_04_mobile}
     margin: 1rem 0;
 
-    @include forDesktop() {
-      @include headline_04();
+
+    ${forDesktop(`
+      ${headline_04}
       margin: 1rem 0;
-    }
+    `)}
   }
 
   h5 {
-    @include headline_05_mobile();
+    ${headline_05_mobile}
     margin: 1rem 0;
 
-    @include forDesktop() {
-      @include headline_05();
+
+    ${forDesktop(`
+      ${headline_05}
       margin: 1rem 0;
-    }
+    `)}
   }
 
   h6 {
-    @include headline_06();
+    ${headline_06}
   }
 
   p {
-    @include body_01();
+    ${body_01}
     margin: 1rem 0;
   }
 
@@ -104,22 +115,18 @@
     }
 
   }
-}
+`
 
-.postContainer:not(:last-child) > .postContents {
-  border-bottom: 1px solid var(--on_surface_01);
-}
+export const PostTitle = styled.h2`
+  ${headline_01_mobile}
 
-.postTitle {
-  @include headline_01_mobile();
+  ${from('800px', `
+    ${headline_01}
+  `)}
+`
 
-  @include from(800px) {
-    @include headline_01();
-  }
-}
-
-.date {
-  @include caption_01();
+export const Date = styled.p`
+  ${caption_01}
   order: -1;
   color: var(--mediumEmphasis);
   margin-bottom: 8px;
@@ -128,7 +135,7 @@
     display: none;
   }
 
-  @include from(800px) {
+  ${from('800px', `
     color: var(--highEmphasis);
     order: 0;
     margin-bottom: 0px;
@@ -140,13 +147,13 @@
     > br {
       display: initial;
     }
-    @include overline_01();
+    ${overline_01}
     text-transform: uppercase;
-  }
+  `)}
+`
 
-  .day {
-    @include from(800px) {
-      @include headline_05();
-    }
-  }
-}
+export const Day = styled.span`
+  ${from('800px', `
+    ${headline_05}
+  `)}
+`
