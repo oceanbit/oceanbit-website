@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components"
+import styled, { css, keyframes } from "styled-components"
 import { forDesktop, forMobile } from "../../styles/utils"
 import { desktopPadding, maxContentWidth, mobilePadding } from "../../styles/vars"
 import { callout_01, headline_06 } from "../../styles/font-styles"
@@ -16,20 +16,20 @@ export const DesktopHeader = styled.div`
   padding: 20px ${desktopPadding};
   display: none;
   
-  ${forDesktop(`
+  ${forDesktop(css`
     display: flex;
   `)}
 `
 
 export const MobileHeader = styled.div`
   display: flex;
-  padding: $mobilePadding;
+  padding: ${mobilePadding};
   align-items: center;
   background: var(--base);
   position: relative;
   z-index: 4;
 
-  ${forDesktop(`
+  ${forDesktop(css`
     display: none;
   `)}
 `
@@ -64,7 +64,7 @@ export const LinkContainer = styled.nav`
   display: flex;
   flex-direction: column;
 
-  ${forDesktop(`
+  ${forDesktop(css`
     flex-direction: row;
   `)}
 `
@@ -95,12 +95,12 @@ export const HeaderLink = styled(Link).attrs({
   border-radius: 8px;
   justify-content: flex-start;
 
-  ${forDesktop(`
+  ${forDesktop(css`
     margin-left: 24px;
     justify-content: center;
   `)}
   
-  ${forMobile(`
+  ${forMobile(css`
     width: calc(100% - 32px);
     text-align: left;
   `)}
@@ -119,7 +119,7 @@ export const MobileExpandedContainer = styled.div`
   width: calc(100% - ${mobilePadding * 2});
   padding: ${mobilePadding};
   
-  ${forDesktop(`
+  ${forDesktop(css`
     display: none;
   `)}
 `
@@ -135,12 +135,12 @@ export const Scrim = styled.div`
   opacity: 0;
   transition: opacity 300ms ease-in-out;
 
-  ${props => props.activeScrim && `
+  ${props => props.activeScrim && css`
     opacity: 1;
     z-index: 2;
   `}
 
-  ${forDesktop(`
+  ${forDesktop(css`
     display: none;
   `)}
 `
@@ -186,9 +186,9 @@ export const MenuClose = styled.button`
     animation-duration: 0ms;
   }
   
-  ${props => props.expanded ? `
+  ${props => props.expanded ? css`
     animation-name: ${toClose};
-  ` : `
+  ` : css`
     animation-name: ${toMenu};
   `}
 `

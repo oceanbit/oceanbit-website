@@ -19,9 +19,9 @@ export function from(breakpoint, contents) {
 }
 
 export function forMobile(contents) {
-  return until(mobileBreakpoint);
+  return until(mobileBreakpoint, contents);
 }
 
 export function forDesktop(contents) {
-  return from(mobileBreakpoint);
+  return from(mobileBreakpoint, contents);
 }

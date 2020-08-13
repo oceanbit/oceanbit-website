@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components"
 
-import { desktopPadding, maxContentWidth, mobilePadding } from "../../styles/vars"
-import { from } from "../../styles/utils"
+import { desktopPadding, desktopTop, maxContentWidth, mobilePadding, mobileTop } from "../../styles/vars"
+import { forDesktop, from } from "../../styles/utils"
 
 import epilogue from "../../assets/fonts/epilogue.ttf"
 import epilogueItalics from "../../assets/fonts/epilogue_italic.ttf"
@@ -41,20 +41,20 @@ export const GlobalStyle = createGlobalStyle`
     padding-left: ${mobilePadding};
     padding-right: ${mobilePadding};
   
-    @include forDesktop() {
+    ${forDesktop(`
       max-width: ${maxContentWidth};
       margin: 0 auto;
       padding-left: ${desktopPadding};
       padding-right: ${desktopPadding};
-    }
+    `)}
   }
   
   .topContents {
-    margin-top: $mobileTop;
+    margin-top: ${mobileTop};
   
-    @include forDesktop() {
-      margin-top: $desktopTop;
-    }
+    ${forDesktop(`
+      margin-top: ${desktopTop};
+    `)}
   }
   
   .waveSvg {
