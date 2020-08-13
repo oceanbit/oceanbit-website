@@ -4,8 +4,6 @@ import SEO from "../components/seo"
 import Ink from "react-ink"
 import { Card, CardDesc, CardLink, CardList, CardTitle, CardType, Header } from "./contributions.styles"
 
-import styles from "./contributions.module.scss"
-
 const oss_libraries = [
   {
     type: "React Native",
