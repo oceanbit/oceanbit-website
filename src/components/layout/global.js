@@ -32,7 +32,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background: var(--base);
+    background: var(--surface);
   }
   
   a {

@@ -1454,10 +1454,10 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
-"@oceanbit/styles@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@oceanbit/styles/-/styles-0.1.0.tgz#fe566bfd001a03abb25a8a1ebe5c87080b6a5a09"
-  integrity sha512-f+v/q6TH3gKt3k5GPp2t37663LQlg8VAAbjxlLqYTamABl7xXKKVZnYLSVg/lq6Kqb47dPXwJdMkIw6+wcc7Pw==
+"@oceanbit/styles@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@oceanbit/styles/-/styles-0.1.1.tgz#2350e32dfe85192f0ea680f9856b2c839054b125"
+  integrity sha512-gbn6LoryMHiNRMlq3xvr4YYenfk6a+RK5B8Pi/PQNRJCWFB6+LMY3WbFxDc5cfFMr+8x2wQQka/SlXn0XamqEQ==
 
 "@pieh/friendly-errors-webpack-plugin@1.7.0-chalk-2":
   version "1.7.0-chalk-2"

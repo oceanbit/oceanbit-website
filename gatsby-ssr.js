@@ -8,7 +8,6 @@ import React from "react"
 import Terser from "terser"
 
 import {
-  COLOR_MODE_KEY,
   theme,
   INITIAL_COLOR_MODE_CSS_PROP,
 } from "./src/constants"
@@ -25,7 +24,7 @@ import {
  * into that string. This way, we're able to avoid duplicating
  */
 function setColorsByTheme() {
-  const colors = "🌈"
+  const theme = "🌈"
   const colorModeCssProp = "⚡️"
 
   const mql = window.matchMedia("(prefers-color-scheme: dark)")
@@ -39,16 +38,17 @@ function setColorsByTheme() {
 
   root.style.setProperty(colorModeCssProp, colorMode)
 
-  Object.entries(colors).forEach(([name, colorByTheme]) => {
+  const colors = theme[colorMode];
+  Object.entries(colors).forEach(([name, color]) => {
     const cssVarName = `--${name}`
 
-    root.style.setProperty(cssVarName, colorByTheme[colorMode])
+    root.style.setProperty(cssVarName, color)
   })
 }
 
 const MagicScriptTag = () => {
   const boundFn = String(setColorsByTheme)
-    .replace('"🌈"', JSON.stringify(theme.colors))
+    .replace('"🌈"', JSON.stringify(theme))
     .replace("⚡️", INITIAL_COLOR_MODE_CSS_PROP)
 
   let calledFunction = `(${boundFn})()`

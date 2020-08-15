@@ -9,7 +9,7 @@ import { callout_01, headline_06 } from "../../styles/font-styles"
 import { Link } from "gatsby"
 
 export const BothHeader = styled.header`
-  box-shadow: 0 1px var(--on_surface_01);
+  box-shadow: 0 1px var(--tint_on_surface_01);
   position: relative;
 `
 
@@ -29,7 +29,7 @@ export const MobileHeader = styled.div`
   display: flex;
   padding: ${mobilePadding};
   align-items: center;
-  background: var(--base);
+  background: var(--surface);
   position: relative;
   z-index: 4;
 
@@ -51,12 +51,12 @@ export const LogoImg = styled.img`
 
 export const LogoText = styled.span`
   ${headline_06}
-  color: var(--highEmphasis);
+  color: var(--label_high_emphasis);
 `
 
 export const Hr = styled.hr`
   width: 1px;
-  background: var(--lowEmphasis);
+  background: var(--label_low_emphasis);
   height: 48px;
   display: block;
   margin: 0;
@@ -75,7 +75,7 @@ export const LinkContainer = styled.nav`
 
 export const PageTitle = styled.h1`
   ${headline_06}
-  color: var(--mediumEmphasis);
+  color: var(--label_medium_emphasis);
   margin-left: 24px;
   margin-right: auto;
 `
@@ -91,7 +91,7 @@ export const HeaderLink = styled(Link).attrs({
   padding-bottom: 8px;
   padding-left: 16px;
   padding-right: 16px;
-  color: var(--highEmphasis);
+  color: var(--label_high_emphasis);
   text-decoration: none;
   align-items: center;
 
@@ -119,7 +119,7 @@ export const MobileExpandedContainer = styled.div`
   z-index: 3;
   position: absolute;
   transition: top 300ms ease-in-out;
-  background: var(--base);
+  background: var(--surface);
   width: calc(100% - ${mobilePadding} * 2);
   padding: ${mobilePadding};
 
@@ -131,7 +131,7 @@ export const MobileExpandedContainer = styled.div`
 export const Scrim = styled.div`
   position: fixed;
   z-index: -1;
-  background: var(--lowEmphasis);
+  background: var(--label_low_emphasis);
   top: 0;
   left: 0;
   height: 100vh;

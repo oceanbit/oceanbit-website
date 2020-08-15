@@ -43,7 +43,7 @@ export const PostContainer = styled.div`
 
   position: relative;
   text-decoration: none;
-  color: var(--highEmphasis);
+  color: var(--label_high_emphasis);
 `
 
 export const PostContents = styled.div`
@@ -62,7 +62,7 @@ export const PostContents = styled.div`
   `
   )}
 
-  color: var(--highEmpasis);
+  color: var(--label_high_emphasis);
 
   // We should not have H1 in blog posts
 
@@ -118,7 +118,7 @@ export const PostContents = styled.div`
   blockquote {
     position: relative;
     margin-left: 1em;
-    color: var(--mediumEmphasis);
+    color: var(--label_medium_emphasis);
 
     &::before {
       content: " ";
@@ -147,7 +147,7 @@ export const PostTitle = styled.h2`
 export const Date = styled.p`
   ${caption_01}
   order: -1;
-  color: var(--mediumEmphasis);
+  color: var(--label_medium_emphasis);
   margin-bottom: 8px;
 
   > br {
@@ -157,7 +157,7 @@ export const Date = styled.p`
   ${from(
     "800px",
     `
-    color: var(--highEmphasis);
+    color: var(--label_high_emphasis);
     order: 0;
     margin-bottom: 0px;
     position: absolute;

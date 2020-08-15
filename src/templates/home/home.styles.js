@@ -51,7 +51,7 @@ export const HeadingBodyContainer = styled.div`
 
 export const HeadingTitle = styled.p`
   ${headline_02_mobile}
-  color: var(--base);
+  color: var(--surface);
 
   ${forDesktop(`
     ${headline_02}
@@ -60,7 +60,7 @@ export const HeadingTitle = styled.p`
 
 export const HeadingBody = styled.p`
   ${body_01}
-  color: var(--base);
+  color: var(--surface);
   margin-top: 8px;
   margin-bottom: 24px;
 `
@@ -90,12 +90,12 @@ const MainButton = css`
 export const MeetButton = styled.a`
   ${MainButton}
   color: var(--primary);
-  background: var(--base);
+  background: var(--surface);
 `
 
 export const ContributionsButton = styled(Link)`
   ${MainButton}
-  color: var(--base);
+  color: var(--surface);
   background: var(--primary);
 `
 
@@ -107,7 +107,7 @@ export const MainContents = styled.div`
 
 export const ContributingHeader = styled.h3`
   ${headline_02_mobile}
-  color: var(--highEmphasis);
+  color: var(--label_high_emphasis);
 
   ${forDesktop(`
     ${headline_02}
@@ -116,7 +116,7 @@ export const ContributingHeader = styled.h3`
 
 export const ContributingBody = styled.p`
   ${body_01}
-  color: var(--mediumEmphasis);
+  color: var(--label_medium_emphasis);
   margin-top: 8px;
   margin-bottom: 24px;
   max-width: 465px;

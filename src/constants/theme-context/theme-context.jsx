@@ -27,10 +27,12 @@ export const ThemeProvider = ({ children }) => {
     const setColorMode = newValue => {
       const root = window.document.documentElement
 
-      Object.entries(theme.colors).forEach(([name, colorByTheme]) => {
+      const colors = theme[newValue];
+
+      Object.entries(colors).forEach(([name, color]) => {
         const cssVarName = `--${name}`
 
-        root.style.setProperty(cssVarName, colorByTheme[newValue])
+        root.style.setProperty(cssVarName, color)
       })
 
       rawSetColorMode(newValue)

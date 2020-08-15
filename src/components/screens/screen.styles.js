@@ -6,7 +6,7 @@ export const ScreenContainer = styled.div`
   max-width: 240px;
   position: relative;
   border-radius: 20px;
-  background: var(--base);
+  background: var(--surface);
   // This fixed Safari's out-of-bounds
   // https://stackoverflow.com/questions/44948735/overflow-hidden-is-not-working-with-absolute-element-in-safari
   -webkit-transform: translateZ(0);

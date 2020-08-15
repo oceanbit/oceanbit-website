@@ -21,7 +21,7 @@ import {
 } from "./home.styles"
 
 const HomeTemplate = () => {
-  const { wave, waveHeight, marginTopBelow } = useWave("var(--base)", "bottom")
+  const { wave, waveHeight, marginTopBelow } = useWave("var(--surface)", "bottom")
 
   return (
     <Layout title="Home" waveFooter={false}>

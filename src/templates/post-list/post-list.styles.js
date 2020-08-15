@@ -50,10 +50,10 @@ export const PostContents = styled.div`
 export const PostLinkCont = styled(Link)`
   position: relative;
   text-decoration: none;
-  color: var(--highEmphasis);
+  color: var(--label_high_emphasis);
 
   &:not(:last-child) > ${PostContents} {
-    border-bottom: 1px solid var(--on_surface_01);
+    border-bottom: 1px solid var(--tint_on_surface_01);
   }
 `
 
@@ -68,7 +68,7 @@ export const PostTitle = styled.h2`
 export const Date = styled.p`
   ${caption_01}
   order: -1;
-  color: var(--mediumEmphasis);
+  color: var(--label_medium_emphasis);
   margin-bottom: 8px;
 
   > br {
@@ -76,7 +76,7 @@ export const Date = styled.p`
   }
 
   ${forDesktop(`
-    color: var(--highEmphasis);
+    color: var(--label_high_emphasis);
     order: 0;
     margin-bottom: 0px;
     position: absolute;
@@ -103,7 +103,7 @@ export const Day = styled.span`
 
 export const Excerpt = styled.p`
   ${body_01}
-  color: var(--mediumEmphasis);
+  color: var(--label_medium_emphasis);
   margin-bottom: 8px;
   margin-top: 8px;
 

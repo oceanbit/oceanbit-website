@@ -22,7 +22,7 @@ export const MainBG = styled.div`
 `
 
 export const Contents = styled.div`
-  color: var(--base);
+  color: var(--surface);
   display: flex;
   flex-direction: column;
 `
@@ -56,7 +56,7 @@ export const GitHubIcon = styled(GitHubIconBase)`
 `
 
 export const LinkText = styled.a`
-  color: var(--base);
+  color: var(--surface);
   text-decoration: none;
   ${callout_01}
   display: flex;
