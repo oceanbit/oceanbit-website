@@ -114,6 +114,16 @@ export const PostContents = styled.div`
     ${body_01}
     margin: 1rem 0;
   }
+  
+  .imgcontainer > p {
+    margin: 0;
+  }
+  
+  .imgborder {
+    overflow: hidden;
+    border-radius: 8px;
+    border: 2px solid #00000038;
+  }
 
   blockquote {
     position: relative;
