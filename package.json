@@ -29,6 +29,8 @@
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
+    "gatsby-plugin-robots-txt": "^1.5.5",
     "prettier": "2.0.4"
   },
   "keywords": [
@@ -37,6 +39,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "build-beta": "cross-env BUILD_ENV=development npm run build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",

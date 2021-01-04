@@ -1,7 +1,16 @@
+const buildMode = process.env.BUILD_ENV || "production";
+const siteUrl =
+  process.env.SITE_URL ||
+  (buildMode === "production"
+    ? "https://oceanbit.dev"
+    : "https://beta.oceanbit.dev");
+
+console.log(`Building for ${buildMode} at ${siteUrl}`);
+
 module.exports = {
   siteMetadata: {
     title: `OceanBit`,
-    siteUrl: `https://oceanbit.dev`,
+    siteUrl,
     description: `We build your favorite developer tools! Creators of GitShark, lovers of open source, and collective of quirky nerds!`,
   },
   plugins: [
@@ -70,5 +79,31 @@ module.exports = {
         plugins: [],
       },
     },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: siteUrl,
+        sitemap: `${siteUrl}/sitemap.xml`,
+        resolveEnv: () => buildMode,
+        env: {
+          development: {
+            policy: [
+              {
+                userAgent: "*",
+                disallow: "/",
+              },
+            ],
+          },
+          production: {
+            policy: [
+              {
+                userAgent: "*",
+                allow: "/",
+              },
+            ],
+          },
+        },
+      },
+    },
   ],
-}
+};
