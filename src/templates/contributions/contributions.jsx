@@ -32,6 +32,12 @@ const oss_libraries = [
     description: "Allows apps to access Android and iOS’ file pickers",
     github: "https://github.com/oceanbit-dev/react-native-directory-picker",
   },
+  {
+    type: "Angular",
+    name: "ngx-vue",
+    description: "Use Vue Composition API in Angular components",
+    github: "https://github.com/oceanbit-dev/ngx-vue"
+  }
   // {
   //   type: "React Native, Web",
   //   name: "Seaside",
@@ -41,6 +47,12 @@ const oss_libraries = [
 ]
 
 const weSponsor = [
+  {
+    type: "Education",
+    name: "Unicorn Utterances",
+    description: "A place to learn about all sorts of programming topics from entry-level concepts to advanced abstractions",
+    website: "https://unicorn-utterances.com"
+  },
   {
     type: "JavaScript",
     name: "Isomorphic Git",
@@ -58,6 +70,19 @@ const weContribute = [
       "A pure JavaScript implementation of git for node and browsers!",
     github: "https://github.com/isomorphic-git/isomorphic-git",
   },
+  {
+    type: "React/React Native",
+    name: "gitgraph.js",
+    description:
+      "A JavaScript library to draw pretty git graphs in the browser",
+    github: "https://github.com/nicoespeon/gitgraph.js/",
+  },
+  {
+    type: "React",
+    name: "reactivue",
+    description: "Use Vue Composition API in React components",
+    github: "https://github.com/antfu/reactivue"
+  }
 ]
 
 const ContributionsTemplate = () => {
@@ -111,10 +136,14 @@ const ContributionsTemplate = () => {
               <CardTitle>{lib.name}</CardTitle>
               <CardType>{lib.type}</CardType>
               <CardDesc>{lib.description}</CardDesc>
-              <CardLink href={lib.github}>
+              {lib.github && <CardLink href={lib.github}>
                 View on GitHub
                 <Ink />
-              </CardLink>
+              </CardLink>}
+              {lib.website && <CardLink href={lib.website}>
+                View Website
+                <Ink />
+              </CardLink>}
             </Card>
           ))}
         </CardList>
