@@ -19,9 +19,9 @@ export const Footer = ({ waveFooter }) => {
   const contents = (
     <Contents>
       <FindUs>Find us</FindUs>
-      <LinkText href="https://twitter.com/oceanbit_dev">
+      <LinkText href="https://twitter.com/oceanbit">
         <TwitterIcon />
-        oceanbit_dev
+        oceanbit
       </LinkText>
       <LinkText href="mailto:contact@oceanbit.dev">
         <EmailIcon />
