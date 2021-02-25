@@ -7,7 +7,7 @@ on:
 
 jobs:
   destroy:
-    if: github.repository_owner === 'oceanbit-dev'
+    if: github.repository_owner === 'oceanbit'
     runs-on: ubuntu-latest
     env:
       CI: true

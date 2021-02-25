@@ -27,9 +27,9 @@ export const Footer = ({ waveFooter }) => {
         <EmailIcon />
         contact@oceanbit.dev
       </LinkText>
-      <LinkText href="https://github.com/oceanbit-dev">
+      <LinkText href="https://github.com/oceanbit">
         <GitHubIcon />
-        oceanbit-dev
+        oceanbit
       </LinkText>
     </Contents>
   )

@@ -18,31 +18,31 @@ const oss_libraries = [
     name: "Immersive bars",
     description:
       "Allows apps to draw their content behind transparent system bars on Android",
-    github: "https://github.com/oceanbit-dev/react-native-immersive-bars",
+    github: "https://github.com/oceanbit/react-native-immersive-bars",
   },
   {
     type: "React Native",
     name: "Button Toggle Group",
     description: "An animated button toggle group for React Native",
-    github: "https://github.com/oceanbit-dev/react-native-button-toggle-group",
+    github: "https://github.com/oceanbit/react-native-button-toggle-group",
   },
   {
     type: "React Native",
     name: "Directory picker",
     description: "Allows apps to access Android and iOS’ file pickers",
-    github: "https://github.com/oceanbit-dev/react-native-directory-picker",
+    github: "https://github.com/oceanbit/react-native-directory-picker",
   },
   {
     type: "Angular",
     name: "ngx-vue",
     description: "Use Vue Composition API in Angular components",
-    github: "https://github.com/oceanbit-dev/ngx-vue"
+    github: "https://github.com/oceanbit/ngx-vue"
   }
   // {
   //   type: "React Native, Web",
   //   name: "Seaside",
   //   description: "Our open-source design system",
-  //   github: "https://github.com/oceanbit-dev/seaside"
+  //   github: "https://github.com/oceanbit/seaside"
   // }
 ]
 
