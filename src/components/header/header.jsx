@@ -15,20 +15,29 @@ import {
   MobileExpandedContainer,
   MobileHeader,
   PageTitle,
-  Scrim,
+  Scrim
 } from "./header.styles"
+import ChevronIcon from "../../assets/chevron.svg"
+import { AnnouncementBanner } from "./announcement-banner"
 
 export const Header = ({ title }) => {
   const data = useStaticQuery(graphql`
-    query BlogListPageQuery {
-      file(relativePath: { eq: "oceanbit_logo.png" }) {
-        childImageSharp {
-          fixed(width: 48, quality: 100) {
-            ...GatsbyImageSharpFixed
+      query BlogListPageQuery {
+          logo: file(relativePath: { eq: "oceanbit_logo.png" }) {
+              childImageSharp {
+                  fixed(width: 48, quality: 100) {
+                      ...GatsbyImageSharpFixed
+                  }
+              }
           }
-        }
+          bg: file(relativePath: { eq: "gitshark_bg.png" }) {
+              childImageSharp {
+                  fixed(quality: 100, height: 80) {
+                      ...GatsbyImageSharpFixed
+                  }
+              }
+          }
       }
-    }
   `)
 
   const [expanded, setExpanded] = React.useState(false)
@@ -66,62 +75,65 @@ export const Header = ({ title }) => {
     <LinkContainer>
       <HeaderLink to="/">
         Home
-        <Ink />
+        <Ink/>
       </HeaderLink>
       <HeaderLink to="/contributions">
         Contributions
-        <Ink />
+        <Ink/>
       </HeaderLink>
       <HeaderLink to="/blog" partiallyActive={true}>
         Blog
-        <Ink />
+        <Ink/>
       </HeaderLink>
     </LinkContainer>
   )
 
   return (
-    <BothHeader ref={headerRef}>
-      <DesktopHeader>
-        <LogoContainer to="/">
-          <LogoImg
-            height="48"
-            width="48"
-            src={data.file.childImageSharp.fixed.src}
-            alt=""
+    <>
+      <BothHeader ref={headerRef}>
+        <DesktopHeader>
+          <LogoContainer to="/">
+            <LogoImg
+              height="48"
+              width="48"
+              src={data.logo.childImageSharp.fixed.src}
+              alt=""
+            />
+            <LogoText>OceanBit</LogoText>
+          </LogoContainer>
+          <Hr/>
+          {links}
+        </DesktopHeader>
+        <MobileHeader>
+          <MenuClose
+            aria-label={
+              expanded ? "Close the navigation menu" : "Open the navigation menu"
+            }
+            onClick={() => setExpanded(v => !v)}
+            aria-controls="mobileDropdownContents"
+            aria-expanded={expanded}
+            ref={toggleRef}
+            expanded={expanded}
           />
-          <LogoText>OceanBit</LogoText>
-        </LogoContainer>
-        <Hr />
-        {links}
-      </DesktopHeader>
-      <MobileHeader>
-        <MenuClose
-          aria-label={
-            expanded ? "Close the navigation menu" : "Open the navigation menu"
-          }
-          onClick={() => setExpanded(v => !v)}
-          aria-controls="mobileDropdownContents"
-          aria-expanded={expanded}
-          ref={toggleRef}
-          expanded={expanded}
-        />
-        <PageTitle>{title}</PageTitle>
-        <Link to={"/"} aria-label={"Home"}>
-          <img
-            height="36"
-            width="36"
-            src={data.file.childImageSharp.fixed.src}
-            alt=""
-          />
-        </Link>
-      </MobileHeader>
-      <MobileExpandedContainer
-        id="mobileDropdownContents"
-        style={{ top: expanded ? "100%" : "-100vh" }}
-      >
-        {links}
-      </MobileExpandedContainer>
-      <Scrim activeScrim={expanded} onClick={() => setExpanded(false)} />
-    </BothHeader>
+          <PageTitle>{title}</PageTitle>
+          <Link to={"/"} aria-label={"Home"}>
+            <img
+              height="36"
+              width="36"
+              src={data.logo.childImageSharp.fixed.src}
+              alt=""
+            />
+          </Link>
+        </MobileHeader>
+        <MobileExpandedContainer
+          id="mobileDropdownContents"
+          style={{ top: expanded ? "100%" : "-100vh" }}
+        >
+          {links}
+        </MobileExpandedContainer>
+        <Scrim activeScrim={expanded} onClick={() => setExpanded(false)}/>
+      </BothHeader>
+      <AnnouncementBanner text={"GitShark’s Android beta is out!"} bgUrl={data.bg.childImageSharp.fixed.src} href={'/blog/gitshark-android-beta'}/>
+    </>
   )
 }
