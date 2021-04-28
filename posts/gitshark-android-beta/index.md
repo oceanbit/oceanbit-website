@@ -60,6 +60,9 @@ Before we take a look at what's upcoming that we have planned for the future, le
 - Checking out remote branches
 - Viewing commit details
 - Seeing a Git log for current branch
+- Full accessibility support
+- Translations in 4 languages
+- Strong custom error handling with an easy-to-report interface
 
 While we feel that this is a solid enough base to cover some initial usecases, we acknowledge that there's more to add to our app, such as:
 
@@ -131,8 +134,50 @@ Further, while working on our iOS alpha, we found that `libgit2` simply doesn't 
 
 ### Why Android First?
 
-70% of people who signed up for our mailing list chose "Android" as the platform they were interested in.
+While we've already touched on some of the difficulties we'll expect to run into with our iOS release compared to our Android release in the previous section, this isn't why we chose to go with Android first.
 
-iOS tied with Windows at 38%. 
+Let's first start by looking at the ecosystems for Android, iOS, and desktop:
 
-> Some of you may be thinking "70 + 38 > 100", which is correct. Keep in mind that our mailing list allowed you to pick multiple platforms
+- Android has only two alternatives as far as we can tell: one paid, one free and open-source
+  - Paid one has not been updated in over 4 years, has confusing UX in our experience
+  - Open-source one has been maintained significantly better, has a fantastic community and is stable
+    - However, it lacks a tablet UI and many of the more advanced features (like a tree view or interactive rebase) are not yet present
+- iOS has at least one major alternative
+  - Widely used
+  - Contains multiple more features than we do
+- Desktop has easily dozens of alternatives
+  - Most contain significantly more features
+  - Have multiple years of head start
+
+Looking at things this way, it seems clear which platform is in the most immediate need of a tool like GitShark. However, we're not going off of intuition alone - we have data to back up our decisions.
+
+When we announced GitShark, we launched a [public-facing marketing site](https://gitshark.dev) alongside of it. Towards the top of the page was a sign-up list for when we released the product.
+
+- 70% of people who signed up for our mailing list chose "Android" as the platform they were interested in.
+
+- iOS tied with Windows at 38%. 
+
+- macOS came in last at 27%
+
+> Some of you may be thinking "that's more than 100%", which is correct. Keep in mind that our mailing list allowed you to pick multiple platforms
+
+
+
+## A Word From Us
+
+This experience has been quite the journey for us. For me, it's been my first startup, my first mobile app, and the biggest coding project I've worked on in my own time. While this journey is just getting started, it's fun to reflect on what we've accomplished so far and everyone that's been there along the way.
+
+I'd personally like to offer a special thanks to:
+
+- [Ed Pratti](https://twitter.com/edpratti), our lead design for OceanBit - we wouldn't've made it 1/10th as far as we did without him
+- [Sean Miller](https://twitter.com/BeastoSean), who was by far the most helpful tester of our app
+- [William Hilton](https://twitter.com/wmhilton), who practically created our MVP for us in our first few months
+- [Evelyn Hathaway](https://twitter.com/eeveedev), who helped us deploy our web infrastructure and endured our annoying requests therein
+- [Jahir Fiquitiva](https://twitter.com/jahirfiquitiva), who provided the Spanish translation of our app
+- [Jacob Schneider](https://github.com/J-Cake), who, unprompted, dropped an initial translation of German for us
+- Everyone who participated in [my livestreams](https://twitch.tv/crutchcorn) while I was building the app and encouraged us to keep going
+- You, for taking the time and reading through this
+
+We're excited (and nervous) for the beta to launch today, and we hope you'll see the love and effort we've poured into this project.
+
+\- Corbin Crutchley, CEO & Developer
