@@ -110,7 +110,7 @@ export const PostContents = styled.div`
     ${headline_06}
   }
 
-  p {
+  p, li {
     ${body_01}
     margin: 1rem 0;
   }

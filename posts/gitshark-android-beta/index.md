@@ -27,7 +27,7 @@ With this release you can clone repos, make changes to files, make a commit righ
 
 That said, with every release there's nuance to the journey it's taken thus far, what's available and what's still to come. Let's take a look at some of that.
 
-
+<br>
 
 ## Initial Use Case
 
@@ -45,7 +45,7 @@ It was apparent at the time that what was needed was the full Git support they h
 
 Unsatisfied with the available alternatives, Corbin took out to make their own. With mobile computing getting faster and faster every year, and with more and more people migrating to tablets as a major part of their workflow - it seemed to only make sense. We broke ground on GitShark on February 2020.
 
-
+<br>
 
 ## Features
 
@@ -82,13 +82,13 @@ We're not ones to rest on our laurels, however. As this blog post is being launc
 
 However, there's bound to be features that aren't listed here that you may want to see in the app. We're extremely open-minded and want to hear from you! Please [open a GitHub issue](https://github.com/oceanbit/GitShark/issues/new?assignees=&labels=&template=feature_request.md&title=%5BFEAT%5D+Feature+request) and tell us what you'd like to see!
 
-
+<br>
 
 ## Other Platforms
 
 While GitShark Android has seen a closed alpha come and go, and we're announcing an open beta of it today, we have not yet published an iOS closed alpha, nor have we started much development on our desktop versions. Let's walk through the technical reasons for the disjointed development and evaluate how we made the decision to prioritize Android as our first major platform.
 
-
+<br>
 
 ### Technical Outline
 
@@ -96,7 +96,7 @@ If you've ever stopped by one of [Corbin's livestreams, where they build GitShar
 
 The biggest reason behind this is our dependency on native code. In GitShark Android, we nearly have 2K lines of code, and we anticipate that number to triple when rewriting to iOS. Why do we have that much native code in our React Native app? Why do we expect our iOS app to contain even more native code? Great questions. Let's start with the first one.
 
-
+<br>
 
 #### Why Native Code in a React Native App?
 
@@ -120,6 +120,8 @@ Because of this, we had to quickly rewrite anything that touched Git and replace
 
 Now that we understand _why_ we had to do this migration, let's look closer at why we chose JGit and how the story of writing native code will differ for our iOS release.
 
+<br>
+
 #### Native Git iOS vs. Native Git Android
 
 As mentioned in the previous section all of our logic that touches the filesystem is written in native code. Anyone familiar with interfacing between Git in with other language bindings would likely encourage us to take a look at [`libgit2`](https://libgit2.org): a portable C implementation of Git core methods that's used in production by GitHub, GitLab, BitBucket, Microsoft, and many many more.
@@ -130,7 +132,7 @@ While `libgit2` may be the play to make in the long-term, and we'll be using it 
 
 Further, while working on our iOS alpha, we found that `libgit2` simply doesn't provide the same level of high level and "porcelain" level APIs that JGit does. What this means is that, while `libgit2` may handle some of the foundation, it doesn't provide commonly-used commands such as [status](https://libgit2.org/libgit2/ex/HEAD/status.html), [log](https://libgit2.org/libgit2/ex/HEAD/log.html), [merge](https://libgit2.org/libgit2/ex/HEAD/merge.html) and others that JGit does. Because of this, functionality that we get out-of-the-box with JGit we'll need to write by hand in Objective-C for our iOS release.
 
-
+<br>
 
 ### Why Android First?
 
@@ -161,7 +163,7 @@ When we announced GitShark, we launched a [public-facing marketing site](https:/
 
 > Some of you may be thinking "that's more than 100%", which is correct. Keep in mind that our mailing list allowed you to pick multiple platforms
 
-
+<br>
 
 ## A Word From Us
 
