@@ -23,9 +23,9 @@ GitShark, our Git GUI that allows you to clone and commit from your mobile devic
 
 </div>
 
-With this release you can clone repos, make changes to files, make a commit right from your phone or tablet and push them back to your repos!
+With this release, you can clone repos, make changes to files, make a commit right from your phone or tablet, and push them back to your repos!
 
-That said, with every release there's nuance to the journey it's taken thus far, what's available and what's still to come. Let's take a look at some of that.
+That said, with every release, there's nuance to the journey it's taken thus far, what's available and what's still to come. Let's take a look at some of that.
 
 <br>
 
@@ -37,13 +37,13 @@ A lot of people don't understand why someone would want to use a Git client on t
 
 In May 2019, Corbin started the programming blog [Unicorn Utterances](https://unicorn-utterances.com). Wanting to encourage others to write, they decided to [open-source the project](https://github.com/unicorn-utterances/unicorn-utterances/), including the markdown files that are used to render the blog post contents. 
 
-Around that same time, they were traveling a lot for work. While 16" laptops are great for screen real-estate, they're difficult to justify taking out during a plane. The sheer size doesn't conduce a good compact writing environment when seats are close and plane-neighbors are closer. Eventually, Corbin realized that they could use a smaller tablet with a keyboard attachment to make space lesser an issue while writing on the plane.
+Around that same time, they were traveling a lot for work. While 16" laptops are great for screen real-estate, they're difficult to justify taking out during a plane. The sheer size doesn't conduce a good compact writing environment when seats are close and plane neighbors are closer. Eventually, Corbin realized that they could use a smaller tablet with a keyboard attachment to make space lesser an issue while writing on the plane.
 
 However, once they got off the plane, they realized they had to manually transfer the relevant files over to a laptop to push them to the Git repo that the blog was hosted on. Further, their iterative writing process was made more difficult without the ability to keep short-term temporary backups that could be rolled-back and managed respectively ala commits.
 
 It was apparent at the time that what was needed was the full Git support they had on their desktop.
 
-Unsatisfied with the available alternatives, Corbin took out to make their own. With mobile computing getting faster and faster every year, and with more and more people migrating to tablets as a major part of their workflow - it seemed to only make sense. We broke ground on GitShark on February 2020.
+Unsatisfied with the available alternatives, Corbin took out to make their own. With mobile computing getting faster and faster every year, and with more and more people migrating to tablets as a major part of their workflow - it seemed to only make sense. We broke ground on GitShark in February 2020.
 
 <br>
 
@@ -59,12 +59,12 @@ Before we take a look at what's upcoming that we have planned for the future, le
 - Switching branches
 - Checking out remote branches
 - Viewing commit details
-- Seeing a Git log for current branch
+- Seeing a Git log for the current branch
 - Full accessibility support
 - Translations in 4 languages
 - Strong custom error handling with an easy-to-report interface
 
-While we feel that this is a solid enough base to cover some initial usecases, we acknowledge that there's more to add to our app, such as:
+While we feel that this is a solid enough base to cover some initial use-cases, we acknowledge that there's more to add to our app, such as:
 
 - SAF support (support cloning to SD card)
 
@@ -78,15 +78,15 @@ While we feel that this is a solid enough base to cover some initial usecases, w
 These are all things that we're planning to add before a full non-beta release.
 
 
-We're not ones to rest on our laurels, however. As this blog post is being launched, our designers are working on revamping our design system to be more prepared for new features and design improvements and our developers are working on adding the branch merging feature we're hoping to include with the next release.
+We're not ones to rest on our laurels, however. As this blog post is being launched, our designers are working on revamping our design system to be more prepared for new features and design improvements, and our developers are working on adding the branch merging feature we're hoping to include with the next release.
 
-However, there's bound to be features that aren't listed here that you may want to see in the app. We're extremely open-minded and want to hear from you! Please [open a GitHub issue](https://github.com/oceanbit/GitShark/issues/new?assignees=&labels=&template=feature_request.md&title=%5BFEAT%5D+Feature+request) and tell us what you'd like to see!
+However, there are bound to be features that aren't listed here that you may want to see in the app. We're extremely open-minded and want to hear from you! Please [open a GitHub issue](https://github.com/oceanbit/GitShark/issues/new?assignees=&labels=&template=feature_request.md&title=%5BFEAT%5D+Feature+request) and tell us what you'd like to see!
 
 <br>
 
 ## Other Platforms
 
-While GitShark Android has seen a closed alpha come and go, and we're announcing an open beta of it today, we have not yet published an iOS closed alpha, nor have we started much development on our desktop versions. Let's walk through the technical reasons for the disjointed development and evaluate how we made the decision to prioritize Android as our first major platform.
+While GitShark Android has seen a closed alpha come and go, and we're announcing an open beta of it today, we have not yet published an iOS closed alpha, nor have we started much development on our desktop versions. Let's walk through the technical reasons for the disjointed development and evaluate how we decided to prioritize Android as our first major platform.
 
 <br>
 
@@ -100,11 +100,11 @@ The biggest reason behind this is our dependency on native code. In GitShark And
 
 #### Why Native Code in a React Native App?
 
-When building our MVP of GitShark back in last year, we started with a pure JavaScript implementation of Git called [`isomorphic-git`](http://isomorphic-git.org/). At first glance, this was perfect for us - `isomorphic-git` is well maintained, has an _**extremely**_ helpful creator (Sincerely, thank you so much for all of your help [William](https://twitter.com/wmhilton), GitShark wouldn't've made it without you), and the ability to use [a custom filesystem](https://isomorphic-git.org/docs/en/fs#implementing-your-own-fs). 
+When building our MVP of GitShark back last year, we started with a pure JavaScript implementation of Git called [`isomorphic-git`](http://isomorphic-git.org/). At first glance, this was perfect for us - `isomorphic-git` is well maintained, has an _**extremely**_ helpful creator (Sincerely, thank you so much for all of your help [William](https://twitter.com/wmhilton), GitShark wouldn't've made it without you), and the ability to use [a custom filesystem](https://isomorphic-git.org/docs/en/fs#implementing-your-own-fs). 
 
-This last point is important, because we needed to plug [`react-native-fs`](https://github.com/itinance/react-native-fs) into our app to write the files that `isomorphic-git` told us to. With William's help, we were able to get a POC working relatively quickly, which we iterated upon in order to achieve our first few alphas.
+This last point is important because we needed to plug [`react-native-fs`](https://github.com/itinance/react-native-fs) into our app to write the files that `isomorphic-git` told us to. With William's help, we were able to get a POC working relatively quickly, which we iterated upon in order to achieve our first few alphas.
 
-The idea was that when `isomorphic-git` ran a command, when it wanted to write something to the filesystem, it would pass to `react-native-fs`, which would in turn be passed to Java. If `isomorphic-git` needed to read a file, it would request from `react-native-fs`, the Java FS would read the file, then pass it back to `isomorphic-git`.
+The idea was that when `isomorphic-git` ran a command — when it wanted to write something to the filesystem — it would pass to `react-native-fs`, which would in turn be passed to Java. If `isomorphic-git` needed to read a file, it would request from `react-native-fs`, the Java FS would read the file, then pass it back to `isomorphic-git`.
 
 ![Visualizing the data going between JS and Android](./android_fs.png)
 
@@ -118,36 +118,36 @@ It turns out that the React Native code bridge solution (from JavaScript to Java
 
 Because of this, we had to quickly rewrite anything that touched Git and replace `isomorphic-git` for [`JGit`](https://www.eclipse.org/jgit/) (a pure Java implementation of Git) and native code. 
 
-Now that we understand _why_ we had to do this migration, let's look closer at why we chose JGit and how the story of writing native code will differ for our iOS release.
+Now that we understand _why_ we had to do this migration let's look closer at why we chose JGit and how the story of writing native code will differ for our iOS release.
 
 <br>
 
 #### Native Git iOS vs. Native Git Android
 
-As mentioned in the previous section all of our logic that touches the filesystem is written in native code. Anyone familiar with interfacing between Git in with other language bindings would likely encourage us to take a look at [`libgit2`](https://libgit2.org): a portable C implementation of Git core methods that's used in production by GitHub, GitLab, BitBucket, Microsoft, and many many more.
+As mentioned in the previous section, all of our logic that touches the filesystem is written in native code. Anyone familiar with interfacing between Git in with other language bindings would likely encourage us to take a look at [`libgit2`](https://libgit2.org): a portable C implementation of Git core methods that's used in production by GitHub, GitLab, BitBucket, Microsoft, and many many more.
 
 We actually looked into `libgit2` when comparing options for Android. On top of having difficulties getting it to compile under the [NDK](https://developer.android.com/ndk) (Android's C compiler/bindings), we also found that even the most popular Java bindings to `libgit2` [seemed immature](https://github.com/ethomson/jagged) compared to [other language bindings](https://github.com/libgit2/objective-git).
 
 While `libgit2` may be the play to make in the long-term, and we'll be using it for our iOS release (using the much more mature and official [`objective-git`](https://github.com/libgit2/objective-git) language bindings), it doesn't seem like the right move for now.
 
-Further, while working on our iOS alpha, we found that `libgit2` simply doesn't provide the same level of high level and "porcelain" level APIs that JGit does. What this means is that, while `libgit2` may handle some of the foundation, it doesn't provide commonly-used commands such as [status](https://libgit2.org/libgit2/ex/HEAD/status.html), [log](https://libgit2.org/libgit2/ex/HEAD/log.html), [merge](https://libgit2.org/libgit2/ex/HEAD/merge.html) and others that JGit does. Because of this, functionality that we get out-of-the-box with JGit we'll need to write by hand in Objective-C for our iOS release.
+Further, while working on our iOS alpha, we found that `libgit2` simply doesn't provide the same level of high-level and "porcelain" level APIs that JGit does. What this means is that, while `libgit2` may handle some of the foundation, it doesn't provide commonly-used commands such as [status](https://libgit2.org/libgit2/ex/HEAD/status.html), [log](https://libgit2.org/libgit2/ex/HEAD/log.html), [merge](https://libgit2.org/libgit2/ex/HEAD/merge.html) and others that JGit does. Because of this, functionality that we get out-of-the-box with JGit, we'll need to write by hand in Objective-C for our iOS release.
 
 <br>
 
 ### Why Android First?
 
-While we've already touched on some of the difficulties we'll expect to run into with our iOS release compared to our Android release in the previous section, this isn't why we chose to go with Android first.
+While we've already touched on some of the difficulties we expect to run into with our iOS release compared to our Android release in the previous section, this isn't why we chose to go with Android first.
 
 Let's first start by looking at the ecosystems for Android, iOS, and desktop:
 
 - Android has only two alternatives as far as we can tell: one paid, one free and open-source
   - Paid one has not been updated in over 4 years, has confusing UX in our experience
-  - Open-source one has been maintained significantly better, has a fantastic community and is stable
-    - However, it lacks a tablet UI and many of the more advanced features (like a tree view or interactive rebase) are not yet present
+  - Open-source one has been maintained significantly better, has a fantastic community, and is stable
+    - However, it lacks a tablet UI, and many of the more advanced features (like a tree view or interactive rebase) are not yet present
 - iOS has at least one major alternative
   - Widely used
   - Contains multiple more features than we do
-- Desktop has easily dozens of alternatives
+- Desktop has dozens of alternatives
   - Most contain significantly more features
   - Have multiple years of head start
 
@@ -161,7 +161,7 @@ When we announced GitShark, we launched a [public-facing marketing site](https:/
 
 - macOS came in last at 27%
 
-> Some of you may be thinking "that's more than 100%", which is correct. Keep in mind that our mailing list allowed you to pick multiple platforms
+> Some of you may be thinking, "that's more than 100%", which is correct. Keep in mind that our mailing list allowed you to pick multiple platforms.
 
 <br>
 
