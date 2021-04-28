@@ -91,25 +91,45 @@ While GitShark Android has seen a closed alpha come and go, and we're announcing
 
 If you've ever stopped by one of [Corbin's livestreams, where they build GitShark live on Twitch](https://twitch.tv/crutchcorn), you may already know that GitShark's UI is written in React Native. Because of this, many assume that we're able to build our app for iOS and Android at the same time. While this has some merit, GitShark has some reliance on native code that prevents us from being feature-complete between the two platforms day 1.
 
-The biggest reason behind this is our dependency on native code. In GitShark Android, we nearly have 2K lines of code, and we anticipate that number to triple when rewriting to iOS. Why do we have that much native code in our React Native app? Why do we expect our iOS app to contain even more native code? Great questions. Let's start with the first one
+The biggest reason behind this is our dependency on native code. In GitShark Android, we nearly have 2K lines of code, and we anticipate that number to triple when rewriting to iOS. Why do we have that much native code in our React Native app? Why do we expect our iOS app to contain even more native code? Great questions. Let's start with the first one.
 
 
 
-#### Why Native in React Native?
+#### Why Native Code in a React Native App?
 
 When building our MVP of GitShark back in last year, we started with a pure JavaScript implementation of Git called [`isomorphic-git`](http://isomorphic-git.org/). At first glance, this was perfect for us - `isomorphic-git` is well maintained, has an _**extremely**_ helpful creator (Sincerely, thank you so much for all of your help [William](https://twitter.com/wmhilton), GitShark wouldn't've made it without you), and the ability to use [a custom filesystem](https://isomorphic-git.org/docs/en/fs#implementing-your-own-fs). 
 
-This last point is important, because we needed to plug [`react-native-fs`](https://github.com/itinance/react-native-fs)
+This last point is important, because we needed to plug [`react-native-fs`](https://github.com/itinance/react-native-fs) into our app to write the files that `isomorphic-git` told us to. With William's help, we were able to get a POC working relatively quickly, which we iterated upon in order to achieve our first few alphas.
 
+The idea was that when `isomorphic-git` ran a command, when it wanted to write something to the filesystem, it would pass to `react-native-fs`, which would in turn be passed to Java. If `isomorphic-git` needed to read a file, it would request from `react-native-fs`, the Java FS would read the file, then pass it back to `isomorphic-git`.
 
+![Visualizing the data going between JS and Android](./android_fs.png)
 
+However, once the app got in the hands of our testers, it was disastrous - the app crashed for some users with nearly every operation. Why was that?
 
+When Git downloads data from the server, what it downloads is something called a ["packfile"](https://git-scm.com/book/en/v2/Git-Internals-Packfiles). This packfile is then used as a source-of-truth for various operations that might be done on a regular basis, specifically checking out a new branch. These packfiles that're retrieved during the initial clone are at least the size of the collective files in a branch (if shallow cloned).
+
+It turns out that the React Native code bridge solution (from JavaScript to Java) did not support streaming. This meant that any time we wanted to read or write a file, the entire file's contents had to be read into memory. Even the [Unicorn Utterances](https://unicorn-utterances.com) repo that we wanted to do testing against had an initial packfile of ~300MB. The memory we're allowed to use on our testing device is 30MB before we hit an OOM error... We hit a lot of OOM errors.
+
+**To be clear, the issues caused by our implementations had _nothing_ to do with `isomorphic-git`, `react-native-fs`, or any other libraries we used in our MVP** and instead were the fault of a lack of understanding around the limitations surrounding React Native's native code bindings on our end.
+
+Because of this, we had to quickly rewrite anything that touched Git and replace `isomorphic-git` for [`JGit`](https://www.eclipse.org/jgit/) (a pure Java implementation of Git) and native code. 
+
+Now that we understand _why_ we had to do this migration, let's look closer at why we chose JGit and how the story of writing native code will differ for our iOS release.
 
 #### Native Git iOS vs. Native Git Android
 
+As mentioned in the previous section all of our logic that touches the filesystem is written in native code. Anyone familiar with interfacing between Git in with other language bindings would likely encourage us to take a look at [`libgit2`](https://libgit2.org): a portable C implementation of Git core methods that's used in production by GitHub, GitLab, BitBucket, Microsoft, and many many more.
+
+We actually looked into `libgit2` when comparing options for Android. On top of having difficulties getting it to compile under the [NDK](https://developer.android.com/ndk) (Android's C compiler/bindings), we also found that even the most popular Java bindings to `libgit2` [seemed immature](https://github.com/ethomson/jagged) compared to [other language bindings](https://github.com/libgit2/objective-git).
+
+While `libgit2` may be the play to make in the long-term, and we'll be using it for our iOS release (using the much more mature and official [`objective-git`](https://github.com/libgit2/objective-git) language bindings), it doesn't seem like the right move for now.
+
+Further, while working on our iOS alpha, we found that `libgit2` simply doesn't provide the same level of high level and "porcelain" level APIs that JGit does. What this means is that, while `libgit2` may handle some of the foundation, it doesn't provide commonly-used commands such as [status](https://libgit2.org/libgit2/ex/HEAD/status.html), [log](https://libgit2.org/libgit2/ex/HEAD/log.html), [merge](https://libgit2.org/libgit2/ex/HEAD/merge.html) and others that JGit does. Because of this, functionality that we get out-of-the-box with JGit we'll need to write by hand in Objective-C for our iOS release.
+
+
+
 ### Why Android First?
-
-
 
 70% of people who signed up for our mailing list chose "Android" as the platform they were interested in.
 
