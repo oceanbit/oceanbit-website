@@ -1,14 +1,18 @@
 import * as React from "react"
-import { AnnouncementContainer, LearnMoreButton, LearnMoreIcon } from "./announcement-banner.styles"
+import ChevronIcon from "../../assets/chevron.svg"
 import { navigate } from "gatsby"
+import styles from './announcement-banner.module.scss';
 
-export const AnnouncementBanner = ({text, bgUrl, href}) => {
-  return <AnnouncementContainer onClick={() => {
+export const AnnouncementBanner = ({ text, bgUrl, href }) => {
+  return <aside onClick={() => {
     navigate(href)
-  }} bgUrl={bgUrl}>
+  }}
+   className={styles.announcementContainer}
+   style={{backgroundImage: bgUrl}}
+   >
     {text}
-    <LearnMoreButton>
-      Learn more <LearnMoreIcon/>
-    </LearnMoreButton>
-  </AnnouncementContainer>
+    <button className={styles.learnMoreButton}>
+      Learn more <ChevronIcon className={styles.learnMoreIcon} />
+    </button>
+  </aside>
 }

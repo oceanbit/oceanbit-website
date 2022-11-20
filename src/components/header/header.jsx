@@ -3,16 +3,23 @@ import { useOutsideFocus } from "../../hooks/use-outside-focus"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import styles from "./header.module.scss"
 import Ink from "react-ink"
+import AnnouncementBanner from './announcement-banner';
 
 export const Header = ({ title }) => {
   const data = useStaticQuery(graphql`
     query BlogListPageQuery {
-      file(relativePath: { eq: "oceanbit_logo.png" }) {
-        childImageSharp {
-          fixed(width: 48, quality: 100) {
-            ...GatsbyImageSharpFixed
+      logo: file(relativePath: { eq: "oceanbit_logo.png" }) {
+          childImageSharp {
+              fixed(width: 48, quality: 100) {
+                  ...GatsbyImageSharpFixed
+              }
           }
-        }
+      }
+      bg: file(relativePath: { eq: "gitshark_bg.png" }) {
+          childImageSharp {
+              fixed(quality: 100, height: 80) {
+                  ...GatsbyImageSharpFixed
+              }
       }
     }
   `)
@@ -56,7 +63,7 @@ export const Header = ({ title }) => {
         activeClassName={styles.activeLink}
       >
         Home
-        <Ink/>
+        <Ink />
       </Link>
       <Link
         to="/contributions"
@@ -64,7 +71,7 @@ export const Header = ({ title }) => {
         activeClassName={styles.activeLink}
       >
         Contributions
-        <Ink/>
+        <Ink />
       </Link>
       <Link
         to="/blog"
@@ -73,56 +80,59 @@ export const Header = ({ title }) => {
         activeClassName={styles.activeLink}
       >
         Blog
-        <Ink/>
+        <Ink />
       </Link>
     </nav>
   )
 
   return (
-    <header
-      ref={headerRef}
-      className={styles.bothHeader}
-    >
-      <div className={styles.desktopHeader}>
-        <Link to="/" className={styles.logoContainer}>
-          <img
-            height="48"
-            width="48"
-            className={styles.logoImg}
-            src={data.file.childImageSharp.fixed.src}
-            alt=""
-          />
-          <span className={styles.logoText}>OceanBit</span>
-        </Link>
-        <hr className={styles.hr}/>
-        {links}
-      </div>
-      <div className={styles.mobileHeader}>
-        <button
-          aria-label={expanded ? "Close the navigation menu" : "Open the navigation menu"}
-          onClick={() => setExpanded(v => !v)}
-          aria-controls="mobileDropdownContents" aria-expanded={expanded}
-          ref={toggleRef}
-          className={`${styles.menuClose} ${expanded ? styles.close : styles.menu}`}
-        />
-        <h1 className={styles.pageTitle}>{title}</h1>
-        <Link to={"/"} aria-label={"Home"}>
-          <img
-            height="36"
-            width="36"
-            src={data.file.childImageSharp.fixed.src}
-            alt=""
-          />
-        </Link>
-      </div>
-      <div
-        id="mobileDropdownContents"
-        className={styles.mobileExpandedContainer}
-        style={{ top: expanded ? "100%" : "-100vh" }}
+    <>
+      <header
+        ref={headerRef}
+        className={styles.bothHeader}
       >
-        {links}
-      </div>
-      <div className={`${styles.scrim} ${expanded ? styles.activeScrim : ""}`} onClick={() => setExpanded(false)}/>
-    </header>
+        <div className={styles.desktopHeader}>
+          <Link to="/" className={styles.logoContainer}>
+            <img
+              height="48"
+              width="48"
+              className={styles.logoImg}
+              src={data.file.childImageSharp.fixed.src}
+              alt=""
+            />
+            <span className={styles.logoText}>OceanBit</span>
+          </Link>
+          <hr className={styles.hr} />
+          {links}
+        </div>
+        <div className={styles.mobileHeader}>
+          <button
+            aria-label={expanded ? "Close the navigation menu" : "Open the navigation menu"}
+            onClick={() => setExpanded(v => !v)}
+            aria-controls="mobileDropdownContents" aria-expanded={expanded}
+            ref={toggleRef}
+            className={`${styles.menuClose} ${expanded ? styles.close : styles.menu}`}
+          />
+          <h1 className={styles.pageTitle}>{title}</h1>
+          <Link to={"/"} aria-label={"Home"}>
+            <img
+              height="36"
+              width="36"
+              src={data.file.childImageSharp.fixed.src}
+              alt=""
+            />
+          </Link>
+        </div>
+        <div
+          id="mobileDropdownContents"
+          className={styles.mobileExpandedContainer}
+          style={{ top: expanded ? "100%" : "-100vh" }}
+        >
+          {links}
+        </div>
+        <div className={`${styles.scrim} ${expanded ? styles.activeScrim : ""}`} onClick={() => setExpanded(false)} />
+      </header>
+      <AnnouncementBanner text={"GitShark’s Android beta is out!"} bgUrl={data.bg.childImageSharp.fixed.src} href={'/blog/gitshark-android-beta'} />
+    </>
   )
 }

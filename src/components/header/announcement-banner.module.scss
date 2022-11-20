@@ -1,24 +1,23 @@
-import styled from "styled-components"
-import { caption_02, body_02 } from "../../styles/font-styles"
-import ChevronIcon from "../../assets/chevron.svg"
+@import "../../styles/font-styles";
+@import "../../styles/utils";
+@import "../../styles/vars";
 
-export const AnnouncementContainer = styled.aside`
-  ${body_02}
+.announcementContainer {
+  @include body_02();
   display: flex;
   filter: drop-shadow(0px 1px 1px #1A42E6);
   color: white;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-image: url("${p => p.bgUrl}");
   justify-content: center;
   align-items: center;
   padding: 12px;
   cursor: pointer;
-`
+}
 
-export const LearnMoreButton = styled.button`
-  ${caption_02}
+.learnMoreButton {
+  @include caption_02();
   display: flex;
   background: none;
   border: none;
@@ -27,9 +26,9 @@ export const LearnMoreButton = styled.button`
   color: inherit;
   margin-left: 8px;
   cursor: pointer;
-`
+}
 
-export const LearnMoreIcon = styled(ChevronIcon)`
+.learnMoreIcon {
   height: 1rem;
   width: 1rem;
-`
+}
