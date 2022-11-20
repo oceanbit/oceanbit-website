@@ -44,9 +44,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/oceanbit-dev/oceanbit-dev.github.io"
+    "url": "https://github.com/oceanbit/oceanbit-website"
   },
   "bugs": {
-    "url": "https://github.com/oceanbit-dev/oceanbit-dev.github.io/issues"
+    "url": "https://github.com/oceanbit/oceanbit-website/issues"
   }
 }

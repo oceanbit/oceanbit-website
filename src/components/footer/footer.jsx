@@ -11,17 +11,17 @@ export const Footer = ({ waveFooter }) => {
   const contents = (
     <div className={styles.contents}>
       <h3 className={styles.findUs}>Find us</h3>
-      <a href="https://twitter.com/oceanbit_dev" className={styles.linkText}>
+      <a href="https://twitter.com/oceanbit" className={styles.linkText}>
         <TwitterIcon className={styles.icon}/>
-        oceanbit_dev
+        oceanbit
       </a>
       <a href="mailto:contact@oceanbit.dev" className={styles.linkText}>
         <EmailIcon className={styles.icon}/>
         contact@oceanbit.dev
       </a>
-      <a href="https://github.com/oceanbit-dev" className={styles.linkText}>
+      <a href="https://github.com/oceanbit" className={styles.linkText}>
         <GitHubIcon className={styles.icon}/>
-        oceanbit-dev
+        oceanbit
       </a>
     </div>
   )

@@ -66,7 +66,7 @@ function SEO({ description, lang, meta, title: propTitle }) {
         },
         {
           name: `twitter:site`,
-          content: `@oceanbit_dev`,
+          content: `@oceanbit`,
         },
         {
           property: "og:image",
