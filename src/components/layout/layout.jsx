@@ -2,22 +2,18 @@ import * as React from "react"
 import { ThemeProvider } from "../../constants/theme-context"
 import { Footer } from "../footer"
 import { Header } from "../header"
-
-import { GlobalStyle } from "./global"
-
-import { ContentContain, ParentContainer } from "./layout.styles"
+import layoutStyles from "./layout.module.scss"
+import "../../global.scss"
 
 export const Layout = ({ children, title, waveFooter = true }) => {
+
   return (
-    <>
-      <GlobalStyle />
-      <ThemeProvider>
-        <ParentContainer>
-          <Header title={title} />
-          <ContentContain>{children}</ContentContain>
-          <Footer waveFooter={waveFooter} />
-        </ParentContainer>
-      </ThemeProvider>
-    </>
+    <ThemeProvider>
+      <div className={layoutStyles.parentContainer}>
+        <Header title={title}/>
+        <main className={layoutStyles.contentContain}>{children}</main>
+        <Footer waveFooter={waveFooter}/>
+      </div>
+    </ThemeProvider>
   )
 }

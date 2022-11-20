@@ -1,0 +1,74 @@
+@import "./styles/font-styles";
+@import "./styles/utils";
+@import "./styles/vars";
+
+@font-face {
+  font-family: "Epilogue";
+  src: url("../static/fonts/epilogue.ttf") format('truetype');
+}
+
+@font-face {
+ font-family: 'Epilogue';
+ src: url("../static/fonts/epilogue_italic.ttf") format('truetype');
+ font-style: italic;
+}
+
+:root {
+  --roundness: 8px;
+  --disabledOpacity: 0.4;
+  --lessRoundness: 4px;
+  font-size: 1rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: var(--base);
+}
+
+a {
+  color: var(--primary);
+}
+
+i {
+  font-style: italic;
+}
+
+.mainContents {
+  padding-left: $mobilePadding;
+  padding-right: $mobilePadding;
+
+  @include forDesktop() {
+    max-width: $maxContentWidth;
+    margin: 0 auto;
+    padding-left: $desktopPadding;
+    padding-right: $desktopPadding;
+  }
+}
+
+.topContents {
+  margin-top: $mobileTop;
+
+  @include forDesktop() {
+    margin-top: $desktopTop;
+  }
+}
+
+.waveSvg {
+  width: 100%;
+  position: absolute;
+  transition: transform 500ms ease-in-out;
+
+  @include from(1130px) {
+    transform: scaleY(0.7);
+  }
+
+  @include from(1650px) {
+    transform: scaleY(0.5);
+  }
+
+  @include from(2400px) {
+    transform: scaleY(0.3);
+  }
+}

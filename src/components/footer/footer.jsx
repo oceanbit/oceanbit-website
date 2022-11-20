@@ -1,58 +1,42 @@
 import * as React from "react"
-
+import TwitterIcon from "../../assets/twitter.svg"
+import GitHubIcon from "../../assets/github.svg"
+import EmailIcon from "../../assets/email.svg"
+import styles from "./footer.module.scss"
 import { useWave } from "../wave"
-
-import {
-  Contents,
-  EmailIcon,
-  FindUs,
-  GitHubIcon,
-  LinkText,
-  MainBG,
-  TopContainer,
-  TwitterIcon,
-} from "./footer.styles"
 
 export const Footer = ({ waveFooter }) => {
   const { wave, waveHeight, marginTopBelow } = useWave("var(--primary)", "top")
 
   const contents = (
-    <Contents>
-      <FindUs>Find us</FindUs>
-      <LinkText href="https://twitter.com/oceanbit">
-        <TwitterIcon />
-        oceanbit
-      </LinkText>
-      <LinkText href="mailto:contact@oceanbit.dev">
-        <EmailIcon />
+    <div className={styles.contents}>
+      <h3 className={styles.findUs}>Find us</h3>
+      <a href="https://twitter.com/oceanbit_dev" className={styles.linkText}>
+        <TwitterIcon className={styles.icon}/>
+        oceanbit_dev
+      </a>
+      <a href="mailto:contact@oceanbit.dev" className={styles.linkText}>
+        <EmailIcon className={styles.icon}/>
         contact@oceanbit.dev
-      </LinkText>
-      <LinkText href="https://github.com/oceanbit">
-        <GitHubIcon />
-        oceanbit
-      </LinkText>
-    </Contents>
+      </a>
+      <a href="https://github.com/oceanbit-dev" className={styles.linkText}>
+        <GitHubIcon className={styles.icon}/>
+        oceanbit-dev
+      </a>
+    </div>
   )
 
   return (
-    <TopContainer>
-      {waveFooter && (
-        <>
-          {wave}
-          <div style={{ paddingTop: waveFooter ? waveHeight : 0 }} />
-        </>
-      )}
-      <MainBG>
-        <div
-          className="mainContents"
-          style={{
-            position: "relative",
-            marginTop: waveFooter ? marginTopBelow : 0,
-          }}
-        >
+    <div className={styles.topContainer}>
+      {waveFooter && <>
+        {wave}
+        <div style={{ paddingTop: waveFooter ? waveHeight : 0 }}/>
+      </>}
+      <div className={styles.mainBG}>
+        <div className="mainContents" style={{position: 'relative', marginTop: waveFooter ? marginTopBelow : 0}}>
           {contents}
         </div>
-      </MainBG>
-    </TopContainer>
+      </div>
+    </div>
   )
 }

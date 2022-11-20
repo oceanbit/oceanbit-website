@@ -1,0 +1,48 @@
+@import "../../styles/utils";
+@import "../../styles/vars";
+@import "../../styles/font-styles";
+
+.topContainer {
+  margin-top: 4rem;
+  position: relative;
+}
+
+.mainBG {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background: var(--primary);
+}
+
+.contents {
+  color: var(--base);
+  display: flex;
+  flex-direction: column;
+}
+
+.findUs {
+  @include headline_02_mobile();
+  margin-bottom: 24px;
+
+  @include forDesktop() {
+    @include headline_02();
+    margin-bottom: 24px;
+  }
+}
+
+.icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-right: 16px;
+}
+
+.linkText {
+  color: var(--base);
+  text-decoration: none;
+  @include callout_01();
+  display: flex;
+  align-items: center;
+}
+
+.linkText:not(:last-of-type) {
+  margin-bottom: 24px;
+}

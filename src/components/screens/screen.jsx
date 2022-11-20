@@ -1,15 +1,13 @@
 import * as React from "react"
-import { ScreenContainer, ScreenImg } from "./screen.styles"
+import styles from './screen.module.scss';
 
 /**
  * @param {string} imageUrl
  */
-export const Screen = ({ imageUrl, className = "" }) => {
+export const Screen = ({imageUrl, className = ''}) => {
   return (
-    <ScreenContainer className={className}>
-      {!!imageUrl && (
-        <ScreenImg style={{ backgroundImage: `url('${imageUrl}')` }} />
-      )}
-    </ScreenContainer>
+    <div className={`${styles.screenContainer} ${className}`}>
+      {!!imageUrl && <div className={styles.screenImg} style={{backgroundImage: `url('${imageUrl}')`}}/>}
+    </div>
   )
 }

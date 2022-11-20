@@ -1,0 +1,115 @@
+@import "../../styles/utils";
+@import "../../styles/vars";
+@import "../../styles/font-styles";
+
+.postList {
+  list-style: none;
+  padding-left: $mobilePadding;
+  padding-right: $mobilePadding;
+  margin-top: $mobileTop;
+
+  @include forDesktop() {
+    max-width: $maxContentWidth;
+    margin: 0 auto;
+    margin-top: $desktopTop;
+    padding-left: $desktopPadding;
+    padding-right: $desktopPadding;
+  }
+}
+
+.postLinkCont {
+  position: relative;
+  text-decoration: none;
+  color: var(--highEmphasis);
+}
+
+.postContents {
+  display: flex;
+  flex-direction: column;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  @include forDesktop() {
+    margin-left: 160px;
+    margin-right: 160px;
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+}
+
+.postLinkCont:not(:last-child) > .postContents {
+  border-bottom: 1px solid var(--on_surface_01);
+}
+
+.postTitle {
+  @include headline_02_mobile();
+
+  @include forDesktop() {
+    @include headline_02();
+  }
+}
+
+.date {
+  @include caption_01();
+  order: -1;
+  color: var(--mediumEmphasis);
+  margin-bottom: 8px;
+
+  > br {
+    display: none;
+  }
+
+  @include forDesktop() {
+    color: var(--highEmphasis);
+    order: 0;
+    margin-bottom: 0px;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    min-width: 120px;
+    text-align: center;
+    > br {
+      display: initial;
+    }
+    @include overline_01();
+    text-transform: uppercase;
+  }
+
+  .day {
+    @include forDesktop() {
+      @include headline_05();
+    }
+  }
+}
+
+.excerpt {
+  @include body_01();
+  color: var(--mediumEmphasis);
+  margin-bottom: 8px;
+  margin-top: 8px;
+
+  @include forDesktop() {
+    margin-bottom: 16px;
+    margin-top: 16px;
+  }
+}
+
+
+.readMore {
+  @include callout_01();
+  padding: 8px !important;
+  border-radius: 8px !important;
+  margin-left: -8px !important;
+  border: none;
+  display: flex;
+  align-items: center;
+  color: var(--primary) !important;
+  width: fit-content !important;
+  position: relative;
+
+  > svg {
+    margin-left: 4px;
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}

@@ -1,43 +1,20 @@
 import * as React from "react"
 import { useOutsideFocus } from "../../hooks/use-outside-focus"
 import { graphql, Link, useStaticQuery } from "gatsby"
+import styles from "./header.module.scss"
 import Ink from "react-ink"
-import {
-  BothHeader,
-  DesktopHeader,
-  HeaderLink,
-  Hr,
-  LinkContainer,
-  LogoContainer,
-  LogoImg,
-  LogoText,
-  MenuClose,
-  MobileExpandedContainer,
-  MobileHeader,
-  PageTitle,
-  Scrim
-} from "./header.styles"
-import ChevronIcon from "../../assets/chevron.svg"
-import { AnnouncementBanner } from "./announcement-banner"
 
 export const Header = ({ title }) => {
   const data = useStaticQuery(graphql`
-      query BlogListPageQuery {
-          logo: file(relativePath: { eq: "oceanbit_logo.png" }) {
-              childImageSharp {
-                  fixed(width: 48, quality: 100) {
-                      ...GatsbyImageSharpFixed
-                  }
-              }
+    query BlogListPageQuery {
+      file(relativePath: { eq: "oceanbit_logo.png" }) {
+        childImageSharp {
+          fixed(width: 48, quality: 100) {
+            ...GatsbyImageSharpFixed
           }
-          bg: file(relativePath: { eq: "gitshark_bg.png" }) {
-              childImageSharp {
-                  fixed(quality: 100, height: 80) {
-                      ...GatsbyImageSharpFixed
-                  }
-              }
-          }
+        }
       }
+    }
   `)
 
   const [expanded, setExpanded] = React.useState(false)
@@ -58,7 +35,7 @@ export const Header = ({ title }) => {
    */
   React.useEffect(() => {
     if (expanded) {
-      const escape = e => {
+      const escape = (e) => {
         if (e.keyCode === 27) {
           setExpanded(false)
         }
@@ -72,68 +49,80 @@ export const Header = ({ title }) => {
   }, [expanded])
 
   const links = (
-    <LinkContainer>
-      <HeaderLink to="/">
+    <nav className={styles.linkContainer}>
+      <Link
+        to="/"
+        className={styles.headerLink}
+        activeClassName={styles.activeLink}
+      >
         Home
         <Ink/>
-      </HeaderLink>
-      <HeaderLink to="/contributions">
+      </Link>
+      <Link
+        to="/contributions"
+        className={styles.headerLink}
+        activeClassName={styles.activeLink}
+      >
         Contributions
         <Ink/>
-      </HeaderLink>
-      <HeaderLink to="/blog" partiallyActive={true}>
+      </Link>
+      <Link
+        to="/blog"
+        partiallyActive={true}
+        className={styles.headerLink}
+        activeClassName={styles.activeLink}
+      >
         Blog
         <Ink/>
-      </HeaderLink>
-    </LinkContainer>
+      </Link>
+    </nav>
   )
 
   return (
-    <>
-      <BothHeader ref={headerRef}>
-        <DesktopHeader>
-          <LogoContainer to="/">
-            <LogoImg
-              height="48"
-              width="48"
-              src={data.logo.childImageSharp.fixed.src}
-              alt=""
-            />
-            <LogoText>OceanBit</LogoText>
-          </LogoContainer>
-          <Hr/>
-          {links}
-        </DesktopHeader>
-        <MobileHeader>
-          <MenuClose
-            aria-label={
-              expanded ? "Close the navigation menu" : "Open the navigation menu"
-            }
-            onClick={() => setExpanded(v => !v)}
-            aria-controls="mobileDropdownContents"
-            aria-expanded={expanded}
-            ref={toggleRef}
-            expanded={expanded}
+    <header
+      ref={headerRef}
+      className={styles.bothHeader}
+    >
+      <div className={styles.desktopHeader}>
+        <Link to="/" className={styles.logoContainer}>
+          <img
+            height="48"
+            width="48"
+            className={styles.logoImg}
+            src={data.file.childImageSharp.fixed.src}
+            alt=""
           />
-          <PageTitle>{title}</PageTitle>
-          <Link to={"/"} aria-label={"Home"}>
-            <img
-              height="36"
-              width="36"
-              src={data.logo.childImageSharp.fixed.src}
-              alt=""
-            />
-          </Link>
-        </MobileHeader>
-        <MobileExpandedContainer
-          id="mobileDropdownContents"
-          style={{ top: expanded ? "100%" : "-100vh" }}
-        >
-          {links}
-        </MobileExpandedContainer>
-        <Scrim activeScrim={expanded} onClick={() => setExpanded(false)}/>
-      </BothHeader>
-      <AnnouncementBanner text={"GitShark’s Android beta is out!"} bgUrl={data.bg.childImageSharp.fixed.src} href={'/blog/gitshark-android-beta'}/>
-    </>
+          <span className={styles.logoText}>OceanBit</span>
+        </Link>
+        <hr className={styles.hr}/>
+        {links}
+      </div>
+      <div className={styles.mobileHeader}>
+        <button
+          aria-label={expanded ? "Close the navigation menu" : "Open the navigation menu"}
+          onClick={() => setExpanded(v => !v)}
+          aria-controls="mobileDropdownContents" aria-expanded={expanded}
+          ref={toggleRef}
+          className={`${styles.menuClose} ${expanded ? styles.close : styles.menu}`}
+        />
+        <h1 className={styles.pageTitle}>{title}</h1>
+        <Link to={"/"} aria-label={"Home"}>
+          <img
+            height="36"
+            width="36"
+            src={data.file.childImageSharp.fixed.src}
+            alt=""
+          />
+        </Link>
+      </div>
+      <div
+        id="mobileDropdownContents"
+        className={styles.mobileExpandedContainer}
+        style={{ top: expanded ? "100%" : "-100vh" }}
+      >
+        {links}
+      </div>
+      <div className={`${styles.scrim} ${expanded ? styles.activeScrim : ""}`} onClick={() => setExpanded(false)}/>
+    </header>
   )
 }

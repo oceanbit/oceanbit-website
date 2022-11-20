@@ -39,7 +39,7 @@ module.exports = {
         icon: `src/assets/oceanbit_logo.png`,
       },
     },
-    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-sass`,
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
