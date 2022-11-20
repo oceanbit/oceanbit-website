@@ -82,7 +82,7 @@
     @include headline_06();
   }
 
-  p {
+  p, li {
     @include body_01();
     margin: 1rem 0;
   }
