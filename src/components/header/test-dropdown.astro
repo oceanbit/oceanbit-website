@@ -49,6 +49,7 @@
       "svg",
     ) as SVGElement;
     svgEl.style.position = "absolute";
+    svgEl.style.zIndex = "9";
     const pathEl = document.createElementNS(
       "http://www.w3.org/2000/svg",
       "path",
@@ -110,7 +111,7 @@
     });
   });
 
-  dropdownMenu.addEventListener("click", () => {
+  function openDropdown() {
     const portal = getNewDropdownContentEl(fragmentId);
     const { svgEl, pathEl } = createSvgSafeArea();
     portalSite.appendChild(portal);
@@ -128,19 +129,27 @@
     });
     portalSite.appendChild(elementReferences.portal);
     setTimeout(() => {
-      function removeOnOutsideClick(e) {
-        if (
-          elementReferences.portal &&
-          !elementReferences.portal.contains(e.target as Node)
-        ) {
+      function removeOnOutsideHover(e) {
+        const hoveredElement = e.target as HTMLElement;
+        const inPortal = elementReferences.portal.contains(hoveredElement);
+        const inSVG = elementReferences.svg.contains(hoveredElement);
+        if (elementReferences.portal && !inPortal && !inSVG) {
           elementReferences.portal.remove();
           elementReferences.svg.remove();
           elementReferences = null;
-          document.removeEventListener("click", removeOnOutsideClick);
+          document.removeEventListener("mouseover", removeOnOutsideHover);
         }
       }
 
-      document.addEventListener("click", removeOnOutsideClick);
+      document.addEventListener("mouseover", removeOnOutsideHover);
     }, 0);
+  }
+
+  dropdownMenu.addEventListener("click", () => {
+    openDropdown();
+  });
+
+  dropdownMenu.addEventListener("mouseover", () => {
+    openDropdown();
   });
 </script>
