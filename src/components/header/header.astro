@@ -1,5 +1,8 @@
 <header class="container">
-  <div>OceanBit Logo</div>
+  <div class="logoContainer">
+    <img src="/logo.svg" alt="An ocean wave contained in an invisible box" />
+    <span class="logoText">OceanBit</span>
+  </div>
   <div></div>
   <div style="display: flex; justify-content: end">
     <button>Contact us</button>
@@ -12,5 +15,23 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .logoContainer {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .logoText {
+    font-family: Epilogue, sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    margin: 0px 0px 0px 8px;
   }
 </style>

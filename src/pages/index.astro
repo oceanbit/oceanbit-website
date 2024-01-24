@@ -1,23 +1,14 @@
 ---
 import OceanbitBgLogo from "../components/oceanbit-bg-logo.astro";
 import Header from "../components/header/header.astro";
+import Layout from "../components/layout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <Header />
-    <div
-      style="position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 72vw; max-width: 1172px"
-    >
-      <OceanbitBgLogo strokeWidth={2} />
-    </div>
-    <div></div>
-  </body>
-</html>
+<Layout>
+  <Header />
+  <div
+    style="position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 72vw; max-width: 1172px; z-index: -1"
+  >
+    <OceanbitBgLogo strokeWidth={2} />
+  </div>
+</Layout>
