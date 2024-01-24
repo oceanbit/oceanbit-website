@@ -8,6 +8,7 @@
 
 <style>
   .dropdown {
+    margin-top: 100px;
     position: absolute;
     transform: translateX(-50%);
     z-index: 1;
@@ -62,26 +63,29 @@
   }
 
   function positionPathAndSvg(e: Pick<MouseEvent, "clientX" | "clientY">) {
-    if (!elementReferences?.path) return;
-    if (!elementReferences?.svg) return;
+    if (!elementReferences) return;
+    const triggerRect = dropdownMenu.getBoundingClientRect();
+    const portalRect = elementReferences.portal.getBoundingClientRect();
+
+    const leftMostX = Math.min(triggerRect.left, portalRect.left);
+    const rightMostX = Math.max(
+      triggerRect.left + triggerRect.width,
+      portalRect.left + portalRect.width,
+    );
+    const topMostY = Math.min(triggerRect.top, portalRect.top);
+    const bottomMostY = Math.max(triggerRect.top, portalRect.top);
+
     const mouseX = e.clientX;
     const mouseY = e.clientY;
-    // TODO: Fix
-    const bottomLeftX = 0;
-    const bottomLeftY = 100;
-    const bottomRightX = 100;
-    const bottomRightY = 100;
-    const height = 100;
-    const width = 100;
-    const top = 0;
-    const left = 0;
+    const width = rightMostX - leftMostX;
+    const height = bottomMostY - topMostY;
     elementReferences.svg.style.height = `${height}px`;
     elementReferences.svg.style.width = `${width}px`;
-    elementReferences.svg.style.top = `${top}px`;
-    elementReferences.svg.style.left = `${left}px`;
+    elementReferences.svg.style.top = `${topMostY}px`;
+    elementReferences.svg.style.left = `${leftMostX}px`;
     elementReferences.path.setAttribute(
       "d",
-      `M ${bottomLeftX} ${bottomLeftY} L ${mouseX} ${mouseY} L ${bottomRightX} ${bottomRightY} z`,
+      `M 0 ${height} L ${mouseX - leftMostX} ${mouseY - topMostY} L ${width} ${height} z`,
     );
   }
 
@@ -92,7 +96,7 @@
   });
 
   function positionDropdown() {
-    if (!elementReferences?.portal) return;
+    if (!elementReferences) return;
     const { top, left } = dropdownMenu.getBoundingClientRect();
     elementReferences.portal.style.top = `${top}px`;
     elementReferences.portal.style.left = `${left}px`;
@@ -100,6 +104,10 @@
 
   document.addEventListener("resize", () => {
     positionDropdown();
+    positionPathAndSvg({
+      clientX: lastMouseCoords.x,
+      clientY: lastMouseCoords.y,
+    });
   });
 
   dropdownMenu.addEventListener("click", () => {
