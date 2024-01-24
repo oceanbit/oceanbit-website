@@ -1,10 +1,21 @@
+---
+import TestDropdown from "./test-dropdown.astro";
+---
+
 <header class="container">
   <div class="logoContainer">
     <img src="/logo.svg" alt="An ocean wave contained in an invisible box" />
     <span class="logoText">OceanBit</span>
   </div>
-  <div></div>
-  <div style="display: flex; justify-content: end">
+  <div class="centerArea">
+    <nav class="navContainer">
+      <button class="">Home</button>
+      <button class="">Solutions</button>
+      <TestDropdown />
+      <button class="">About us</button>
+    </nav>
+  </div>
+  <div class="rightArea">
     <button>Contact us</button>
   </div>
 </header>
@@ -22,6 +33,16 @@
     box-sizing: border-box;
   }
 
+  .centerArea {
+    display: flex;
+    justify-content: center;
+  }
+
+  .rightArea {
+    display: flex;
+    justify-content: end;
+  }
+
   .logoContainer {
     display: inline-flex;
     align-items: center;
@@ -33,5 +54,17 @@
     font-size: 1.25rem;
     line-height: 1.75rem;
     margin: 0px 0px 0px 8px;
+  }
+
+  .navContainer {
+    display: inline-flex;
+    padding: 4px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 9999px;
+    border: 1px solid #d0d5dd;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
   }
 </style>

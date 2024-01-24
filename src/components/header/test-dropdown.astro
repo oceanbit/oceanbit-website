@@ -1,0 +1,138 @@
+<button data-open="showcaseContents">Showcase</button>
+
+<template id="showcaseContents">
+  <div class="dropdown">
+    <p>This is a test to see how things go</p>
+  </div>
+</template>
+
+<style>
+  .dropdown {
+    position: absolute;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+</style>
+
+<script>
+  const portalSite = document.querySelector(
+    "#portal-injection-site",
+  ) as HTMLDivElement;
+
+  interface ElementReferences {
+    portal: HTMLDivElement;
+    svg: SVGElement;
+    path: SVGPathElement;
+  }
+
+  let elementReferences: null | ElementReferences = null;
+
+  function getNewDropdownContentEl(id: string) {
+    const contentsTemplate = document.querySelector(
+      `#${id}`,
+    ) as HTMLTemplateElement;
+    const newTemplate = contentsTemplate.content.cloneNode(
+      true,
+    ) as DocumentFragment;
+    const dropdownDiv = newTemplate.firstElementChild as HTMLDivElement;
+    return dropdownDiv;
+  }
+
+  // TODO: replace with querySelectorAll
+  const dropdownMenu = document.querySelector("[data-open]") as HTMLElement;
+  const fragmentId = dropdownMenu.dataset.open;
+
+  function createSvgSafeArea() {
+    const svgEl = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "svg",
+    ) as SVGElement;
+    svgEl.style.position = "absolute";
+    const pathEl = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "path",
+    ) as SVGPathElement;
+    pathEl.setAttribute("pointer-events", "auto");
+    pathEl.setAttribute("stroke", "red");
+    pathEl.setAttribute("stroke-width", "0.4");
+    pathEl.setAttribute("fill", "rgb(114 140 89 / 0.3)");
+    svgEl.append(pathEl);
+
+    return { svgEl, pathEl };
+  }
+
+  function positionPathAndSvg(e: Pick<MouseEvent, "clientX" | "clientY">) {
+    if (!elementReferences?.path) return;
+    if (!elementReferences?.svg) return;
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+    // TODO: Fix
+    const bottomLeftX = 0;
+    const bottomLeftY = 100;
+    const bottomRightX = 100;
+    const bottomRightY = 100;
+    const height = 100;
+    const width = 100;
+    const top = 0;
+    const left = 0;
+    elementReferences.svg.style.height = `${height}px`;
+    elementReferences.svg.style.width = `${width}px`;
+    elementReferences.svg.style.top = `${top}px`;
+    elementReferences.svg.style.left = `${left}px`;
+    elementReferences.path.setAttribute(
+      "d",
+      `M ${bottomLeftX} ${bottomLeftY} L ${mouseX} ${mouseY} L ${bottomRightX} ${bottomRightY} z`,
+    );
+  }
+
+  let lastMouseCoords = { x: 0, y: 0 };
+  document.addEventListener("mousemove", (e) => {
+    lastMouseCoords = { x: e.clientX, y: e.clientY };
+    positionPathAndSvg(e);
+  });
+
+  function positionDropdown() {
+    if (!elementReferences?.portal) return;
+    const { top, left } = dropdownMenu.getBoundingClientRect();
+    elementReferences.portal.style.top = `${top}px`;
+    elementReferences.portal.style.left = `${left}px`;
+  }
+
+  document.addEventListener("resize", () => {
+    positionDropdown();
+  });
+
+  dropdownMenu.addEventListener("click", () => {
+    const portal = getNewDropdownContentEl(fragmentId);
+    const { svgEl, pathEl } = createSvgSafeArea();
+    portalSite.appendChild(portal);
+    portalSite.appendChild(svgEl);
+
+    elementReferences = {
+      portal,
+      svg: svgEl,
+      path: pathEl,
+    };
+    positionDropdown();
+    positionPathAndSvg({
+      clientX: lastMouseCoords.x,
+      clientY: lastMouseCoords.y,
+    });
+    portalSite.appendChild(elementReferences.portal);
+    setTimeout(() => {
+      function removeOnOutsideClick(e) {
+        if (
+          elementReferences.portal &&
+          !elementReferences.portal.contains(e.target as Node)
+        ) {
+          elementReferences.portal.remove();
+          elementReferences.svg.remove();
+          elementReferences = null;
+          document.removeEventListener("click", removeOnOutsideClick);
+        }
+      }
+
+      document.addEventListener("click", removeOnOutsideClick);
+    }, 0);
+  });
+</script>
