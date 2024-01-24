@@ -1,5 +1,6 @@
 ---
 import OceanbitBgLogo from "../components/oceanbit-bg-logo.astro";
+import Header from "../components/header/header.astro";
 ---
 
 <html lang="en">
@@ -11,9 +12,10 @@ import OceanbitBgLogo from "../components/oceanbit-bg-logo.astro";
     <title>Astro</title>
 </head>
 <body>
-<h1>Astro</h1>
-<div style="width: 60vw">
+<Header/>
+<div style="position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 72vw; max-width: 1172px">
     <OceanbitBgLogo strokeWidth={2}/>
 </div>
+<div></div>
 </body>
 </html>
