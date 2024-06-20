@@ -2,13 +2,52 @@
 import styles from "./performance.module.css";
 ---
 
-<div class={styles.container}>
+<div class={styles.container} id="perf-container">
   <div class={styles.outerSpeedometer}></div>
   <div class={styles.middleSpeedometer}></div>
   <div class={styles.innerSpeedometer}>
     <div class={styles.innerSpeedometerTextContainer}>
-      <span class={styles.percentage}>96%</span>
+      <span id="perf-number" class={styles.percentage}>96%</span>
       <span class={styles.fasterTimes}>Faster times</span>
     </div>
   </div>
 </div>
+
+<script>
+  const container = document.getElementById("perf-container");
+  const number = document.getElementById("perf-number");
+  const minPercentage = 96;
+  const maxPercentage = 100;
+  const time = 300; // ms
+
+  let interval = null;
+  container.addEventListener("mouseover", () => {
+    clearInterval(interval);
+    let percentage = minPercentage;
+    interval = setInterval(
+      () => {
+        percentage++;
+        number.textContent = `${percentage}%`;
+        if (percentage >= maxPercentage) {
+          clearInterval(interval);
+        }
+      },
+      time / (maxPercentage - minPercentage),
+    );
+  });
+
+  container.addEventListener("mouseout", () => {
+    clearInterval(interval);
+    let percentage = maxPercentage;
+    interval = setInterval(
+      () => {
+        percentage--;
+        number.textContent = `${percentage}%`;
+        if (percentage <= minPercentage) {
+          clearInterval(interval);
+        }
+      },
+      time / (maxPercentage - minPercentage),
+    );
+  });
+</script>
