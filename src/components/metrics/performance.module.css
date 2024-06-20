@@ -1,0 +1,115 @@
+.container {
+  width: 100%;
+  max-width: 230px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 2 / 1;
+}
+
+.outerSpeedometer {
+  background: linear-gradient(
+    90deg,
+    #fbfeff -0.29%,
+    #f2f6ff 25.21%,
+    #f0f3ff 64.71%,
+    #e7f4ff 82.71%
+  );
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 1;
+  padding: 6%;
+  box-sizing: border-box;
+  border-radius: 50%;
+  transform: rotate(269deg);
+  mask:
+    linear-gradient(#0000 0 0) content-box intersect,
+    conic-gradient(#000 160deg, #0000 0);
+  transform-origin: center center;
+  z-index: -1;
+}
+
+.middleSpeedometer {
+  --offest: 10%;
+  left: 0;
+  top: var(--offest);
+  position: absolute;
+  width: calc(100% - var(--offest));
+  aspect-ratio: 1;
+  padding: 30%;
+  box-sizing: border-box;
+  border-radius: 50%;
+  transform: translateX(calc(var(--offest) / 2)) rotate(270deg);
+  mask:
+    linear-gradient(#0000 0 0) content-box intersect,
+    conic-gradient(#000 160deg, #0000 0);
+  background: linear-gradient(
+    90deg,
+    #0098ff -0.29%,
+    #6586fb 25.21%,
+    #6586fb 64.71%,
+    #48d8ff 82.71%
+  );
+  transform-origin: center center;
+  z-index: -2;
+}
+
+.innerSpeedometer {
+  background: white;
+  z-index: 0;
+  position: absolute;
+  border-radius: 50%;
+  left: 50%;
+  width: 75%;
+  aspect-ratio: 1 / 1;
+  top: -50%;
+  transform: translateY(50%) translateX(-50%);
+  transform-origin: bottom center;
+  z-index: 0;
+  filter: drop-shadow(0px -4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.innerSpeedometerTextContainer {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+  container-name: innerSpeedometerTextContainer;
+}
+
+.percentage {
+  color: var(--colors-label-label-primary-900, #121926);
+  text-align: center;
+
+  /* Text xl/Semibold */
+  font-family: var(--Family-Body, "Geist variable");
+  font-size: var(--Size-Text-xl, 20px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px; /* 150% */
+}
+
+.fasterTimes {
+  color: var(--colors-label-label-secondary-500, #697586);
+  text-align: center;
+
+  /* Text xs/Normal */
+  font-family: var(--Family-Body, "Geist variable");
+  font-size: var(--Size-Text-xs, 12px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 150% */
+}
+
+@container innerSpeedometerTextContainer(min-width: 700px) {
+  .percentage {
+    font-size: 20rem !important;
+  }
+}
