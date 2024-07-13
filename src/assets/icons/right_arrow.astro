@@ -3,7 +3,7 @@ interface Props {
   stroke?: string;
 }
 
-const { stroke = "#0091F3" } = Astro.props;
+const { stroke = "white" } = Astro.props;
 ---
 
 <svg
@@ -16,9 +16,9 @@ const { stroke = "#0091F3" } = Astro.props;
   <g id="Group">
     <path
       id="Vector"
-      d="M13.3333 8.33335L9.99996 11.6667L6.66663 8.33335"
+      d="M8.33337 13.3333L11.6667 9.99996L8.33337 6.66663"
       stroke={stroke}
-      stroke-width="1.25"
+      stroke-width="1.5"
       stroke-linecap="round"
       stroke-linejoin="round"></path>
   </g>

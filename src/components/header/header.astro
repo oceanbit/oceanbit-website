@@ -3,6 +3,7 @@ import HeaderDropdown from "./header-dropdown.astro";
 import ObButton from "../ob-button-v1/ob-button.astro";
 import HeaderButton from "./header-button.astro";
 import HeaderSolutionsList from "./header-solutions-list.astro";
+import RightArrow from "../../assets/icons/right_arrow.astro";
 ---
 
 <header class="container">
@@ -30,75 +31,78 @@ import HeaderSolutionsList from "./header-solutions-list.astro";
     </nav>
   </div>
   <div class="rightArea">
-    <ObButton>Book a call ></ObButton>
+    <ObButton
+      ><span style="padding-left: 6px">Book a call</span>
+      <RightArrow />
+    </ObButton>
   </div>
+
+  <script src="./dropdown-script.ts"></script>
+
+  <style lang="scss">
+    @import "../../styles/variables/raw-breakpoints.scss";
+
+    .container {
+      max-width: $desktopMin;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .centerArea {
+      display: flex;
+      justify-content: center;
+    }
+
+    .rightArea {
+      display: flex;
+      justify-content: end;
+    }
+
+    .logoContainer {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .logo {
+      height: 30px;
+      width: 30px;
+    }
+
+    .logoText {
+      font-family: Epilogue, sans-serif;
+      font-weight: 600;
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      margin-left: 6px;
+    }
+
+    .navContainer {
+      display: inline-flex;
+      padding: 4px;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      border-radius: 9999px;
+      border: 2px solid var(--colors-border-border-secondary, #eaecf0);
+      background: var(
+        --component-colors-alpha-alpha-white-80,
+        rgba(255, 255, 255, 0.8)
+      );
+
+      /* Backdrop blurs/backdrop-blur-xl */
+      backdrop-filter: blur(20px);
+    }
+
+    :global(.solutions-class) {
+      max-width: 318px;
+    }
+  </style>
 </header>
-
-<script src="./dropdown-script.ts"></script>
-
-<style lang="scss">
-  @import "../../styles/variables/raw-breakpoints.scss";
-
-  .container {
-    max-width: $desktopMin;
-    margin: 0 auto;
-    padding: 12px 24px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .centerArea {
-    display: flex;
-    justify-content: center;
-  }
-
-  .rightArea {
-    display: flex;
-    justify-content: end;
-  }
-
-  .logoContainer {
-    display: inline-flex;
-    align-items: center;
-  }
-
-  .logo {
-    height: 30px;
-    width: 30px;
-  }
-
-  .logoText {
-    font-family: Epilogue, sans-serif;
-    font-weight: 600;
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-    margin-left: 6px;
-  }
-
-  .navContainer {
-    display: inline-flex;
-    padding: 4px;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    border-radius: 9999px;
-    border: 2px solid var(--colors-border-border-secondary, #eaecf0);
-    background: var(
-      --component-colors-alpha-alpha-white-80,
-      rgba(255, 255, 255, 0.8)
-    );
-
-    /* Backdrop blurs/backdrop-blur-xl */
-    backdrop-filter: blur(20px);
-  }
-
-  :global(.solutions-class) {
-    max-width: 318px;
-  }
-</style>
