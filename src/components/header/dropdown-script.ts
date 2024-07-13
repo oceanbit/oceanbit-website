@@ -1,5 +1,3 @@
-import { debounce } from "./utils";
-
 const portalSite = document.querySelector(
   "#portal-injection-site",
 ) as HTMLDivElement;
@@ -144,32 +142,28 @@ dropdownMenus.forEach((dropdownMenu) => {
     dropdownMenu.setAttribute("aria-expanded", "true");
 
     setTimeout(() => {
-      const removeOnOutsideHover = debounce(
-        (e: MouseEvent) => {
-          if (!elementReferences) return;
-          const hoveredElement = e.target as HTMLElement;
-          const inPortal = elementReferences.portal.contains(hoveredElement);
-          // We can't use `contains` for the trigger because the SVG is in the way, but we don't want to check
-          // if the mouse is in the SVG because it's not part of the safe area triangle path (it's just the container)
-          const inTrigger = (() => {
-            const triggerRect = dropdownMenu.getBoundingClientRect();
-            if (e.clientX < triggerRect.left) return false;
-            if (e.clientX > triggerRect.left + triggerRect.width) return false;
-            if (e.clientY < triggerRect.top) return false;
-            if (e.clientY > triggerRect.top + triggerRect.height) return false;
-            return true;
-          })();
-          const inSVG = elementReferences.path.contains(hoveredElement);
-          if (elementReferences.portal && !inPortal && !inSVG && !inTrigger) {
-            cleanupDropdown();
-            document.removeEventListener("mouseover", removeOnOutsideHover);
-          }
-        },
-        10,
-        true,
-      );
+      const removeOnOutsideHover = (e: MouseEvent) => {
+        if (!elementReferences) return;
+        const hoveredElement = e.target as HTMLElement;
+        const inPortal = elementReferences.portal.contains(hoveredElement);
+        // We can't use `contains` for the trigger because the SVG is in the way, but we don't want to check
+        // if the mouse is in the SVG because it's not part of the safe area triangle path (it's just the container)
+        const inTrigger = (() => {
+          const triggerRect = dropdownMenu.getBoundingClientRect();
+          if (e.clientX < triggerRect.left) return false;
+          if (e.clientX > triggerRect.left + triggerRect.width) return false;
+          if (e.clientY < triggerRect.top) return false;
+          if (e.clientY > triggerRect.top + triggerRect.height) return false;
+          return true;
+        })();
+        const inSVG = elementReferences.path.contains(hoveredElement);
+        if (elementReferences.portal && !inPortal && !inSVG && !inTrigger) {
+          cleanupDropdown();
+          document.removeEventListener("mousemove", removeOnOutsideHover);
+        }
+      };
 
-      document.addEventListener("mouseover", removeOnOutsideHover);
+      document.addEventListener("mousemove", removeOnOutsideHover);
     }, 0);
   }
 
