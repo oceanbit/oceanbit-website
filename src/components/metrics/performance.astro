@@ -14,13 +14,13 @@ import styles from "./performance.module.css";
 </div>
 
 <script>
-  const container = document.getElementById("perf-container");
-  const number = document.getElementById("perf-number");
+  const container = document.getElementById("perf-container")!;
+  const number = document.getElementById("perf-number")!;
   const minPercentage = 96;
   const maxPercentage = 100;
   const time = 300; // ms
 
-  let interval = null;
+  let interval: any = null;
   container.addEventListener("mouseover", () => {
     clearInterval(interval);
     let percentage = minPercentage;

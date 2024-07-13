@@ -12,8 +12,10 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@astrojs/check": "^0.8.1",
     "astro": "^4.10.3",
-    "sass": "^1.77.6"
+    "sass": "^1.77.6",
+    "typescript": "^5.5.3"
   },
   "devDependencies": {
     "husky": "^9.0.11",
