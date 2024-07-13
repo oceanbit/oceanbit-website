@@ -1,13 +1,43 @@
 ---
-import OceanbitBgLogo from "../components/oceanbit-bg-logo.astro";
 import Header from "../components/header/header.astro";
 import Layout from "../components/layout.astro";
 import Performance from "../components/metrics/performance.astro";
+import WaveLeft from "../components/wave-left.astro";
+import WaveRight from "../components/wave-right.astro";
 ---
 
 <Layout>
   <Header />
   <main style="padding: 2rem">
-    <Performance />
+    <div style="position: absolute; left: 0">
+      <div><WaveLeft /></div>
+      <div style="position: absolute; left: 0; top: 200px">
+        <WaveLeft pathClass="pathClass2" />
+      </div>
+      <div style="position: absolute; left: 0; top: 400px">
+        <WaveLeft pathClass="pathClass3" />
+      </div>
+    </div>
+
+    <div style="position: absolute; right: 0">
+      <div><WaveRight /></div>
+      <div style="position: absolute; left: 0; top: 200px">
+        <WaveRight pathClass="pathClass2" />
+      </div>
+      <div style="position: absolute; left: 0; top: 400px">
+        <WaveRight pathClass="pathClass3" />
+      </div>
+    </div>
   </main>
 </Layout>
+
+<style>
+  :global(.pathClass2) {
+    stroke-dasharray: 80 70% !important;
+    animation-delay: -1s;
+  }
+  :global(.pathClass3) {
+    stroke-dasharray: 80 90% !important;
+    animation-delay: -1.5s;
+  }
+</style>
