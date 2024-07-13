@@ -1,0 +1,78 @@
+@import "../variables/raw-breakpoints";
+
+:root {
+  --line-height-display-2xl: 5.625rem;
+  --line-height-display-xl: 2.75rem;
+  --line-height-display-lg: 3.75rem;
+  --line-height-display-md: 2.25rem;
+  --line-height-display-sm: 2.375rem;
+  --line-height-display-xs: 2rem;
+  --line-height-text-xl: 1.875rem;
+  --line-height-text-lg: 1.75rem;
+  --line-height-text-base: 1.5rem;
+  --line-height-text-sm: 1.25rem;
+  --line-height-text-xs: 1.125rem;
+
+  --size-display-2xl: 4.5rem;
+  --size-display-xl: 2rem;
+  --size-display-lg: 3rem;
+  --size-display-md: 1.75rem;
+  --size-display-sm: 1.875rem;
+  --size-display-xs: 1.5rem;
+  --size-text-xl: 1.25rem;
+  --size-text-lg: 1.125rem;
+  --size-text-base: 1rem;
+  --size-text-sm: 0.875rem;
+  --size-text-xs: 0.75rem;
+
+  @include from($tabletMin) {
+    --line-height-display-2xl: 5.625rem;
+    --line-height-display-xl: 4.5rem;
+    --line-height-display-lg: 3.75rem;
+    --line-height-display-md: 2.75rem;
+    --line-height-display-sm: 2.375rem;
+    --line-height-display-xs: 2rem;
+    --line-height-text-xl: 1.875rem;
+    --line-height-text-lg: 1.75rem;
+    --line-height-text-base: 1.5rem;
+    --line-height-text-sm: 1.25rem;
+    --line-height-text-xs: 1.125rem;
+
+    --size-display-2xl: 4.5rem;
+    --size-display-xl: 3.25rem;
+    --size-display-lg: 3rem;
+    --size-display-md: 2rem;
+    --size-display-sm: 1.875rem;
+    --size-display-xs: 1.5rem;
+    --size-text-xl: 1.25rem;
+    --size-text-lg: 1.125rem;
+    --size-text-base: 1rem;
+    --size-text-sm: 0.875rem;
+    --size-text-xs: 0.75rem;
+  }
+
+  @include from($desktopMin) {
+    --line-height-display-2xl: 5.625rem;
+    --line-height-display-xl: 4.5rem;
+    --line-height-display-lg: 3.75rem;
+    --line-height-display-md: 2.75rem;
+    --line-height-display-sm: 2.375rem;
+    --line-height-display-xs: 2rem;
+    --line-height-text-xl: 1.875rem;
+    --line-height-text-lg: 1.75rem;
+    --line-height-text-base: 1.5rem;
+    --line-height-text-sm: 1.25rem;
+    --line-height-text-xs: 1.125rem;
+    --size-display-2xl: 4.5rem;
+    --size-display-xl: 3.75rem;
+    --size-display-lg: 3rem;
+    --size-display-md: 2.25rem;
+    --size-display-sm: 1.875rem;
+    --size-display-xs: 1.5rem;
+    --size-text-xl: 1.25rem;
+    --size-text-lg: 1.125rem;
+    --size-text-base: 1rem;
+    --size-text-sm: 0.875rem;
+    --size-text-xs: 0.75rem;
+  }
+}
