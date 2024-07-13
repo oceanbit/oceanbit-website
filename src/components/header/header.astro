@@ -1,6 +1,7 @@
 ---
 import HeaderDropdown from "./header-dropdown.astro";
 import ObButton from "../ob-button-v1/ob-button.astro";
+import HeaderButton from "./header-button.astro";
 ---
 
 <header class="container">
@@ -15,12 +16,13 @@ import ObButton from "../ob-button-v1/ob-button.astro";
   <div class="centerArea">
     <nav class="navContainer">
       <HeaderDropdown title="Solutions" dataOpen="solutions-templ">
-        <p style="width: 100px">Test</p>
+        <p style="width: 50px">Test</p>
+        <button>Testing</button>
       </HeaderDropdown>
       <HeaderDropdown title="Projects" dataOpen="projects-templ">
-        <p style="width: 900px">Test</p>
+        <p style="width: 150px">Test</p>
       </HeaderDropdown>
-      <button class="">About us</button>
+      <HeaderButton>About us</HeaderButton>
     </nav>
   </div>
   <div class="rightArea">
@@ -30,8 +32,12 @@ import ObButton from "../ob-button-v1/ob-button.astro";
 
 <script src="./dropdown-script.ts"></script>
 
-<style>
+<style lang="scss">
+  @import "../../styles/variables/raw-breakpoints.scss";
+
   .container {
+    max-width: $desktopMin;
+    margin: 0 auto;
     padding: 12px 24px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -78,8 +84,13 @@ import ObButton from "../ob-button-v1/ob-button.astro";
     align-items: center;
     gap: 8px;
     border-radius: 9999px;
-    border: 1px solid #d0d5dd;
-    background: rgba(255, 255, 255, 0.5);
+    border: 2px solid var(--colors-border-border-secondary, #eaecf0);
+    background: var(
+      --component-colors-alpha-alpha-white-80,
+      rgba(255, 255, 255, 0.8)
+    );
+
+    /* Backdrop blurs/backdrop-blur-xl */
     backdrop-filter: blur(20px);
   }
 </style>

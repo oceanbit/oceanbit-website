@@ -11,6 +11,9 @@ import "../styles/global.scss";
     <title>OceanBit</title>
   </head>
   <body>
-    <slot />
+    <div id="portal-injection-site"></div>
+    <div id="rest-of-site">
+      <slot />
+    </div>
   </body>
 </html>

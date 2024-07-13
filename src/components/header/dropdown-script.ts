@@ -4,6 +4,8 @@ const portalSite = document.querySelector(
   "#portal-injection-site",
 ) as HTMLDivElement;
 
+const restOfSite = document.querySelector("#rest-of-site") as HTMLDivElement;
+
 interface ElementReferences {
   portal: HTMLDivElement;
   svg: SVGElement;
@@ -44,6 +46,14 @@ dropdownMenus.forEach((dropdownMenu) => {
     }
     portalSite.appendChild(portal);
     portalSite.appendChild(svg);
+    restOfSite.setAttribute("inert", "true");
+    portal.querySelector("#close-dropdown-menu")?.addEventListener(
+      "click",
+      () => {
+        cleanupDropdown();
+      },
+      { once: true },
+    );
     elementReferences = {
       portal,
       svg,
@@ -106,6 +116,13 @@ dropdownMenus.forEach((dropdownMenu) => {
     });
   });
 
+  function cleanupDropdown() {
+    elementReferences?.portal?.remove();
+    elementReferences?.svg?.remove();
+    elementReferences = null;
+    restOfSite.removeAttribute("inert");
+  }
+
   function openDropdown() {
     const portal = getNewDropdownContentEl(fragmentId!);
     const { svgEl, pathEl } = createSvgSafeArea();
@@ -138,9 +155,7 @@ dropdownMenus.forEach((dropdownMenu) => {
           })();
           const inSVG = elementReferences.path.contains(hoveredElement);
           if (elementReferences.portal && !inPortal && !inSVG && !inTrigger) {
-            elementReferences.portal.remove();
-            elementReferences.svg.remove();
-            elementReferences = null;
+            cleanupDropdown();
             document.removeEventListener("mouseover", removeOnOutsideHover);
           }
         },
@@ -152,8 +167,23 @@ dropdownMenus.forEach((dropdownMenu) => {
     }, 0);
   }
 
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      cleanupDropdown();
+    }
+  });
+
   dropdownMenu.addEventListener("click", () => {
     openDropdown();
+  });
+
+  dropdownMenu.addEventListener("focusout", (e) => {
+    if (!elementReferences) return;
+    const relatedTarget = e.relatedTarget as HTMLElement;
+    if (!relatedTarget) return;
+    if (elementReferences.portal.contains(relatedTarget)) return;
+    if (portalSite.contains(relatedTarget)) return;
+    cleanupDropdown();
   });
 
   dropdownMenu.addEventListener("mouseover", () => {

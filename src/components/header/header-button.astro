@@ -1,0 +1,36 @@
+---
+interface Props {
+  ["data-open"]?: string;
+}
+
+const { ["data-open"]: dataOpen } = Astro.props;
+---
+
+<button data-open={dataOpen}><slot /></button>
+
+<style>
+  button {
+    all: unset;
+    display: flex;
+    padding: 8px 12px;
+    justify-content: center;
+    align-items: center;
+    color: var(--colors-label-label-primary-900, #121926);
+    border-radius: var(--radius-full, 9999px);
+
+    /* Text sm/Medium */
+    font-family: "Geist variable";
+    font-size: var(--size-text-sm, 14px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: var(--line-height-text-sm, 20px); /* 142.857% */
+  }
+
+  button:focus {
+    outline: 2px solid
+      var(
+        --component-colors-components-buttons-primary-button-primary-bg,
+        #0098ff
+      );
+  }
+</style>

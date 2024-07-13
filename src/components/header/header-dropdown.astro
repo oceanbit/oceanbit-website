@@ -1,4 +1,6 @@
 ---
+import HeaderButton from "./header-button.astro";
+
 interface Props {
   title: string;
   dataOpen: string;
@@ -7,19 +9,45 @@ interface Props {
 const { title, dataOpen } = Astro.props;
 ---
 
-<button data-open={dataOpen}>{title}</button>
+<HeaderButton data-open={dataOpen}>{title}</HeaderButton>
 
 <template id={dataOpen}>
   <div class="dropdown">
+    <button id="close-dropdown-menu">Close the dropdown menu</button>
     <slot />
   </div>
 </template>
 
 <style>
   .dropdown {
+    background: red;
     margin-top: 100px;
     position: absolute;
     transform: translateX(-50%);
     z-index: 1;
+  }
+
+  #close-dropdown-menu {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  #close-dropdown-menu:focus-visible {
+    position: unset;
+    width: unset;
+    height: unset;
+    padding: unset;
+    margin: unset;
+    overflow: unset;
+    clip: unset;
+    white-space: unset;
+    border-width: unset;
   }
 </style>
