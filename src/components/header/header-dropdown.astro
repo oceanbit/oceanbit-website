@@ -11,7 +11,7 @@ interface Props {
 const { title, dataOpen, dropdownClass = "" } = Astro.props;
 ---
 
-<HeaderButton data-open={dataOpen}
+<HeaderButton data-open={dataOpen} buttonClass="headerButton"
   >{title} <DownArrow stroke="currentColor" /></HeaderButton
 >
 
@@ -61,5 +61,10 @@ const { title, dataOpen, dropdownClass = "" } = Astro.props;
     clip: unset;
     white-space: unset;
     border-width: unset;
+  }
+
+  :global(.headerButton) {
+    padding-left: 10px !important;
+    padding-right: 6px !important;
   }
 </style>

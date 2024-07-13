@@ -3,19 +3,25 @@ interface Props {
   ["data-open"]?: string;
   as?: string;
   href?: string;
+  buttonClass?: string;
 }
 
-const { ["data-open"]: dataOpen, as: As = "button", href } = Astro.props;
+const {
+  ["data-open"]: dataOpen,
+  as: As = "button",
+  href,
+  buttonClass = "",
+} = Astro.props;
 ---
 
-<As class="btn" data-open={dataOpen} href={href}><slot /></As>
+<As class={`btn ${buttonClass}`} data-open={dataOpen} href={href}><slot /></As>
 
 <style>
   .btn {
     all: unset;
     text-decoration: none;
     display: flex;
-    padding: 6px 12px;
+    padding: 6px 10px;
     justify-content: center;
     align-items: center;
     color: var(--colors-label-label-primary-900, #121926);
