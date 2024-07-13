@@ -41,21 +41,6 @@ $colors-blue-800: rgba(0, 112, 188, 1);
 $colors-blue-900: rgba(0, 92, 154, 1);
 $colors-blue-950: rgba(0, 65, 109, 1);
 
-/* Aliases  */
-
-$colors-brand-25: var($colors-blue-25);
-$colors-brand-50: var($colors-blue-50);
-$colors-brand-100: var($colors-blue-100);
-$colors-brand-200: var($colors-blue-200);
-$colors-brand-300: var($colors-blue-300);
-$colors-brand-400: var($colors-blue-400);
-$colors-brand-500: var($colors-blue-500);
-$colors-brand-600: var($colors-blue-600);
-$colors-brand-700: var($colors-blue-700);
-$colors-brand-800: var($colors-blue-800);
-$colors-brand-900: var($colors-blue-900);
-$colors-brand-950: var($colors-blue-950);
-
 $colors-cyan-50: rgba(236, 253, 255, 1);
 $colors-cyan-100: rgba(207, 249, 254, 1);
 $colors-cyan-200: rgba(165, 240, 252, 1);
@@ -134,20 +119,6 @@ $colors-gray__dark-mode-900: rgba(22, 27, 38, 1);
 $colors-gray__dark-mode-950: rgba(12, 17, 29, 1);
 
 /* Aliases  */
-
-$colors-gray__light-mode-25: var($colors-gray-modern-25);
-$colors-gray__light-mode-50: var($colors-gray-modern-50);
-$colors-gray__light-mode-100: var($colors-gray-modern-100);
-$colors-gray__light-mode-200: var($colors-gray-modern-200);
-$colors-gray__light-mode-300: var($colors-gray-modern-300);
-$colors-gray__light-mode-400: var($colors-gray-modern-400);
-$colors-gray__light-mode-500: var($colors-gray-modern-500);
-$colors-gray__light-mode-600: var($colors-gray-modern-600);
-$colors-gray__light-mode-700: var($colors-gray-modern-700);
-$colors-gray__light-mode-800: var($colors-gray-modern-800);
-$colors-gray__light-mode-900: var($colors-gray-modern-900);
-$colors-gray__light-mode-950: var($colors-gray-modern-950);
-
 $colors-gray-blue-25: rgba(252, 252, 253, 1);
 $colors-gray-blue-50: rgba(248, 249, 252, 1);
 $colors-gray-blue-100: rgba(234, 236, 245, 1);
@@ -445,3 +416,31 @@ $colors-yellow-900: rgba(113, 59, 18, 1);
 $colors-yellow-950: rgba(84, 44, 13, 1);
 $colors-yellow-200: rgba(254, 238, 149, 1);
 $colors-yellow-300: rgba(253, 226, 114, 1);
+
+/* Aliases  */
+
+$colors-brand-25: var($colors-blue-25);
+$colors-brand-50: var($colors-blue-50);
+$colors-brand-100: var($colors-blue-100);
+$colors-brand-200: var($colors-blue-200);
+$colors-brand-300: var($colors-blue-300);
+$colors-brand-400: var($colors-blue-400);
+$colors-brand-500: var($colors-blue-500);
+$colors-brand-600: var($colors-blue-600);
+$colors-brand-700: var($colors-blue-700);
+$colors-brand-800: var($colors-blue-800);
+$colors-brand-900: var($colors-blue-900);
+$colors-brand-950: var($colors-blue-950);
+
+$colors-gray__light-mode-25: var($colors-gray-modern-25);
+$colors-gray__light-mode-50: var($colors-gray-modern-50);
+$colors-gray__light-mode-100: var($colors-gray-modern-100);
+$colors-gray__light-mode-200: var($colors-gray-modern-200);
+$colors-gray__light-mode-300: var($colors-gray-modern-300);
+$colors-gray__light-mode-400: var($colors-gray-modern-400);
+$colors-gray__light-mode-500: var($colors-gray-modern-500);
+$colors-gray__light-mode-600: var($colors-gray-modern-600);
+$colors-gray__light-mode-700: var($colors-gray-modern-700);
+$colors-gray__light-mode-800: var($colors-gray-modern-800);
+$colors-gray__light-mode-900: var($colors-gray-modern-900);
+$colors-gray__light-mode-950: var($colors-gray-modern-950);

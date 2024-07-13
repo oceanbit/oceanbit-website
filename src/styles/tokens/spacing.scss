@@ -1,21 +1,21 @@
 @import "../variables/raw-spacing";
 
 :root {
-  --spacing-none: $spacing-0;
-  --spacing-xxs: $spacing-0․5;
-  --spacing-xs: $spacing-1;
-  --spacing-md: $spacing-2;
-  --spacing-lg: $spacing-3;
-  --spacing-xl: $spacing-4;
-  --spacing-2xl: $spacing-5;
-  --spacing-3xl: $spacing-6;
-  --spacing-4xl: $spacing-8;
-  --spacing-6xl: $spacing-12;
-  --spacing-7xl: $spacing-16;
-  --spacing-8xl: $spacing-20;
-  --spacing-9xl: $spacing-24;
-  --spacing-10xl: $spacing-32;
-  --spacing-11xl: $spacing-40;
-  --spacing-sm: $spacing-1․5;
-  --spacing-5xl: $spacing-10;
+  --spacing-none: #{$spacing-0};
+  --spacing-xxs: #{$spacing-0․5};
+  --spacing-xs: #{$spacing-1};
+  --spacing-md: #{$spacing-2};
+  --spacing-lg: #{$spacing-3};
+  --spacing-xl: #{$spacing-4};
+  --spacing-2xl: #{$spacing-5};
+  --spacing-3xl: #{$spacing-6};
+  --spacing-4xl: #{$spacing-8};
+  --spacing-6xl: #{$spacing-12};
+  --spacing-7xl: #{$spacing-16};
+  --spacing-8xl: #{$spacing-20};
+  --spacing-9xl: #{$spacing-24};
+  --spacing-10xl: #{$spacing-32};
+  --spacing-11xl: #{$spacing-40};
+  --spacing-sm: #{$spacing-1․5};
+  --spacing-5xl: #{$spacing-10};
 }

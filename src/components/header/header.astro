@@ -1,10 +1,15 @@
 ---
 import TestDropdown from "./test-dropdown.astro";
+import ObButton from "../ob-button-v1/ob-button.astro";
 ---
 
 <header class="container">
   <div class="logoContainer">
-    <img src="/logo.svg" alt="An ocean wave contained in an invisible box" />
+    <img
+      class="logo"
+      src="/logo.svg"
+      alt="An ocean wave contained in an invisible box"
+    />
     <span class="logoText">OceanBit</span>
   </div>
   <div class="centerArea">
@@ -16,13 +21,13 @@ import TestDropdown from "./test-dropdown.astro";
     </nav>
   </div>
   <div class="rightArea">
-    <button>Contact us</button>
+    <ObButton>Book a call ></ObButton>
   </div>
 </header>
 
 <style>
   .container {
-    padding: 12px 32px;
+    padding: 12px 24px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
@@ -48,12 +53,17 @@ import TestDropdown from "./test-dropdown.astro";
     align-items: center;
   }
 
+  .logo {
+    height: 30px;
+    width: 30px;
+  }
+
   .logoText {
     font-family: Epilogue, sans-serif;
     font-weight: 600;
     font-size: 1.25rem;
     line-height: 1.75rem;
-    margin: 0px 0px 0px 8px;
+    margin-left: 6px;
   }
 
   .navContainer {

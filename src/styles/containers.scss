@@ -2,8 +2,8 @@
 
 /* Aliases  */
 :root {
-  --container-max-width-desktop: $spacing-320;
-  --container-padding-desktop: $spacing-8;
-  --container-padding-mobile: $spacing-4;
-  --container-large-desktop: $spacing-300;
+  --container-max-width-desktop: #{$spacing-320};
+  --container-padding-desktop: #{$spacing-8};
+  --container-padding-mobile: #{$spacing-4};
+  --container-large-desktop: #{$spacing-300};
 }
