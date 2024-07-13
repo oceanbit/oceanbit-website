@@ -1,16 +1,19 @@
 ---
 interface Props {
   ["data-open"]?: string;
+  as?: string;
+  href?: string;
 }
 
-const { ["data-open"]: dataOpen } = Astro.props;
+const { ["data-open"]: dataOpen, as: As = "button", href } = Astro.props;
 ---
 
-<button data-open={dataOpen}><slot /></button>
+<As class="btn" data-open={dataOpen} href={href}><slot /></As>
 
 <style>
-  button {
+  .btn {
     all: unset;
+    text-decoration: none;
     display: flex;
     padding: 8px 12px;
     justify-content: center;
@@ -28,15 +31,13 @@ const { ["data-open"]: dataOpen } = Astro.props;
     line-height: var(--line-height-text-sm, 20px); /* 142.857% */
   }
 
-  button:focus {
+  .btn:focus {
     outline: 2px solid
-      var(
-        --component-colors-components-buttons-primary-button-primary-bg,
-        #0098ff
-      );
+      var(--component-colors-components-.btns-primary-.btn-primary-bg, #0098ff);
   }
 
-  button[aria-expanded="true"] {
+  .btn[aria-expanded="true"],
+  .btn:hover {
     border-radius: var(--radius-full, 9999px);
     border: 1px solid
       var(--component-colors-utility-brand-utility-brand-100, #d1e9ff);
@@ -45,7 +46,7 @@ const { ["data-open"]: dataOpen } = Astro.props;
     color: var(--colors-label-label-brand-primary-600, #0091f3);
   }
 
-  button[aria-expanded="true"]::after {
+  .btn[aria-expanded="true"]::after {
     content: " ";
     position: absolute;
     width: 28px;
