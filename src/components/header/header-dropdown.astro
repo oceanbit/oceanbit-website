@@ -1,5 +1,6 @@
 ---
 import HeaderButton from "./header-button.astro";
+import DownArrow from "../../assets/icons/down_arrow.astro";
 
 interface Props {
   title: string;
@@ -10,7 +11,9 @@ interface Props {
 const { title, dataOpen, dropdownClass = "" } = Astro.props;
 ---
 
-<HeaderButton data-open={dataOpen}>{title}</HeaderButton>
+<HeaderButton data-open={dataOpen}
+  >{title} <DownArrow stroke="currentColor" /></HeaderButton
+>
 
 <template id={dataOpen}>
   <div class={`dropdown ${dropdownClass}`}>
