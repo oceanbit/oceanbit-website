@@ -4,12 +4,37 @@ import Layout from "../components/layout.astro";
 import Performance from "../components/metrics/performance.astro";
 import WaveLeft from "../components/wave-left.astro";
 import WaveRight from "../components/wave-right.astro";
+import ObButton from "../components/ob-button-v1/ob-button.astro";
+import RightArrow from "../assets/icons/right_arrow.astro";
 ---
 
 <Layout>
   <Header />
-  <main style="padding: 2rem">
-    <div style="position: absolute; left: 0">
+  <main
+    style="padding: 2rem; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center"
+  >
+    <h1 style="margin-top: 172px">
+      Empowering growth,<br /><span class="engineering">Engineering</span> excellence.
+    </h1>
+
+    <p style="max-width: 512px" class="subtitle">
+      Meet your consulting partners — leverage our expertise to guarantee a
+      positive impact on your company and efficient team growth.
+    </p>
+
+    <div style="display: flex; gap: 24px; justify-content: center">
+      <ObButton disabled>
+        <span style="margin-left: 6px">Contact us</span>
+        <RightArrow stroke="currentColor" />
+      </ObButton>
+
+      <ObButton>
+        <span style="margin-left: 6px">Book a call</span>
+        <RightArrow stroke="currentColor" />
+      </ObButton>
+    </div>
+
+    <div style="position: absolute; top: 0; left: 0">
       <div><WaveLeft /></div>
       <div style="position: absolute; left: 0; top: 200px">
         <WaveLeft pathClass="pathClass2" />
@@ -19,7 +44,7 @@ import WaveRight from "../components/wave-right.astro";
       </div>
     </div>
 
-    <div style="position: absolute; right: 0">
+    <div style="position: absolute; top: 0; right: 0">
       <div><WaveRight /></div>
       <div style="position: absolute; left: 0; top: 200px">
         <WaveRight pathClass="pathClass2" />
@@ -39,5 +64,53 @@ import WaveRight from "../components/wave-right.astro";
   :global(.pathClass3) {
     stroke-dasharray: 80 90% !important;
     animation-delay: -1.5s;
+  }
+
+  h1 {
+    color: var(--colors-label-label-primary-900, #121926);
+    text-align: center;
+
+    /* Display xl/Semibold */
+    font-family: var(--family-display, "Geist variable");
+    font-size: var(--size-display-xl, 60px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: var(--line-height-display-xl, 72px); /* 120% */
+    letter-spacing: -1.2px;
+  }
+
+  .engineering {
+    background: linear-gradient(
+      90deg,
+      #38bdf8 17.69%,
+      #0098ff 33.29%,
+      #6586fb 54.66%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Display xl/Semibold */
+    font-family: var(--family-display, "Geist variable");
+    font-size: var(--size-display-xl, 60px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: var(--line-height-display-xl, 72px);
+    letter-spacing: -1.2px;
+  }
+
+  .subtitle {
+    margin: 0;
+    margin-top: 24px;
+    margin-bottom: 40px;
+    color: var(--colors-label-label-secondary-500, #697586);
+    text-align: center;
+
+    /* Text base/Normal */
+    font-family: var(--family-body, "Geist variable");
+    font-size: var(--size-text-base, 16px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--line-height-text-base, 24px); /* 150% */
   }
 </style>

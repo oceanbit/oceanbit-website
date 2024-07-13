@@ -1,4 +1,11 @@
-<button>
+---
+interface Props {
+  disabled?: boolean;
+}
+const { disabled } = Astro.props;
+---
+
+<button disabled={disabled}>
   <slot />
 </button>
 
