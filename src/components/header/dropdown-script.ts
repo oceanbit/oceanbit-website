@@ -211,7 +211,8 @@ function createSvgSafeArea() {
   pathEl.setAttribute("pointer-events", "auto");
   // pathEl.setAttribute("stroke", "red");
   // pathEl.setAttribute("stroke-width", "0.4");
-  pathEl.setAttribute("fill", "rgb(114 140 89 / 0.3)");
+  // pathEl.setAttribute("fill", "rgb(114 140 89 / 0.3)");
+  pathEl.setAttribute("fill", "rgb(114 140 89 / 0.0)");
   svgEl.append(pathEl);
 
   return { svgEl, pathEl };

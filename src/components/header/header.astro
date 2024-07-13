@@ -2,6 +2,7 @@
 import HeaderDropdown from "./header-dropdown.astro";
 import ObButton from "../ob-button-v1/ob-button.astro";
 import HeaderButton from "./header-button.astro";
+import HeaderSolutionsList from "./header-solutions-list.astro";
 ---
 
 <header class="container">
@@ -15,9 +16,12 @@ import HeaderButton from "./header-button.astro";
   </div>
   <div class="centerArea">
     <nav class="navContainer">
-      <HeaderDropdown title="Solutions" dataOpen="solutions-templ">
-        <p style="width: 50px">Test</p>
-        <button>Testing</button>
+      <HeaderDropdown
+        title="Solutions"
+        dataOpen="solutions-templ"
+        dropdownClass="solutions-class"
+      >
+        <HeaderSolutionsList />
       </HeaderDropdown>
       <HeaderDropdown title="Projects" dataOpen="projects-templ">
         <p style="width: 150px">Test</p>
@@ -92,5 +96,9 @@ import HeaderButton from "./header-button.astro";
 
     /* Backdrop blurs/backdrop-blur-xl */
     backdrop-filter: blur(20px);
+  }
+
+  :global(.solutions-class) {
+    max-width: 318px;
   }
 </style>
