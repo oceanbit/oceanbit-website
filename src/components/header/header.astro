@@ -1,5 +1,5 @@
 ---
-import TestDropdown from "./test-dropdown.astro";
+import HeaderDropdown from "./header-dropdown.astro";
 import ObButton from "../ob-button-v1/ob-button.astro";
 ---
 
@@ -14,9 +14,12 @@ import ObButton from "../ob-button-v1/ob-button.astro";
   </div>
   <div class="centerArea">
     <nav class="navContainer">
-      <button class="">Home</button>
-      <button class="">Solutions</button>
-      <TestDropdown />
+      <HeaderDropdown title="Solutions" dataOpen="solutions-templ">
+        <p style="width: 100px">Test</p>
+      </HeaderDropdown>
+      <HeaderDropdown title="Projects" dataOpen="projects-templ">
+        <p style="width: 900px">Test</p>
+      </HeaderDropdown>
       <button class="">About us</button>
     </nav>
   </div>
@@ -24,6 +27,8 @@ import ObButton from "../ob-button-v1/ob-button.astro";
     <ObButton>Book a call ></ObButton>
   </div>
 </header>
+
+<script src="./dropdown-script.ts"></script>
 
 <style>
   .container {

@@ -1,68 +1,54 @@
-<button data-open="showcaseContents">Showcase</button>
+import { debounce } from "./utils";
 
-<template id="showcaseContents">
-  <div class="dropdown">
-    <p>This is a test to see how things go</p>
-  </div>
-</template>
+const portalSite = document.querySelector(
+  "#portal-injection-site",
+) as HTMLDivElement;
 
-<style>
-  .dropdown {
-    margin-top: 100px;
-    position: absolute;
-    transform: translateX(-50%);
-    z-index: 1;
-  }
-</style>
+interface ElementReferences {
+  portal: HTMLDivElement;
+  svg: SVGElement;
+  path: SVGPathElement;
+}
 
-<script>
-  import { debounce } from "./utils";
+function getNewDropdownContentEl(id: string) {
+  const contentsTemplate = document.querySelector(
+    `#${id}`,
+  ) as HTMLTemplateElement;
+  const newTemplate = contentsTemplate.content.cloneNode(
+    true,
+  ) as DocumentFragment;
+  const dropdownDiv = newTemplate.firstElementChild as HTMLDivElement;
+  return dropdownDiv;
+}
 
-  const portalSite = document.querySelector(
-    "#portal-injection-site",
-  ) as HTMLDivElement;
+const dropdownMenus = document.querySelectorAll(
+  "[data-open]",
+) as NodeListOf<HTMLElement>;
 
-  interface ElementReferences {
+dropdownMenus.forEach((dropdownMenu) => {
+  let elementReferences: null | ElementReferences = null;
+  const fragmentId = dropdownMenu.dataset.open;
+
+  function assignElementReferences({
+    portal,
+    svg,
+    path,
+  }: {
     portal: HTMLDivElement;
     svg: SVGElement;
     path: SVGPathElement;
-  }
-
-  let elementReferences: null | ElementReferences = null;
-
-  function getNewDropdownContentEl(id: string) {
-    const contentsTemplate = document.querySelector(
-      `#${id}`,
-    ) as HTMLTemplateElement;
-    const newTemplate = contentsTemplate.content.cloneNode(
-      true,
-    ) as DocumentFragment;
-    const dropdownDiv = newTemplate.firstElementChild as HTMLDivElement;
-    return dropdownDiv;
-  }
-
-  // TODO: replace with querySelectorAll
-  const dropdownMenu = document.querySelector("[data-open]") as HTMLElement;
-  const fragmentId = dropdownMenu.dataset.open;
-
-  function createSvgSafeArea() {
-    const svgEl = document.createElementNS(
-      "http://www.w3.org/2000/svg",
-      "svg",
-    ) as SVGElement;
-    svgEl.style.position = "absolute";
-    svgEl.style.zIndex = "9";
-    const pathEl = document.createElementNS(
-      "http://www.w3.org/2000/svg",
-      "path",
-    ) as SVGPathElement;
-    pathEl.setAttribute("pointer-events", "auto");
-    // pathEl.setAttribute("stroke", "red");
-    // pathEl.setAttribute("stroke-width", "0.4");
-    pathEl.setAttribute("fill", "rgb(114 140 89 / 0.3)");
-    svgEl.append(pathEl);
-
-    return { svgEl, pathEl };
+  }) {
+    if (elementReferences) {
+      elementReferences.portal.remove();
+      elementReferences.svg.remove();
+    }
+    portalSite.appendChild(portal);
+    portalSite.appendChild(svg);
+    elementReferences = {
+      portal,
+      svg,
+      path,
+    };
   }
 
   function positionPathAndSvg(e: Pick<MouseEvent, "clientX" | "clientY">) {
@@ -120,22 +106,8 @@
     });
   });
 
-  function assignElementReferences({ portal, svg, path }) {
-    if (elementReferences) {
-      elementReferences.portal.remove();
-      elementReferences.svg.remove();
-    }
-    portalSite.appendChild(portal);
-    portalSite.appendChild(svg);
-    elementReferences = {
-      portal,
-      svg,
-      path,
-    };
-  }
-
   function openDropdown() {
-    const portal = getNewDropdownContentEl(fragmentId);
+    const portal = getNewDropdownContentEl(fragmentId!);
     const { svgEl, pathEl } = createSvgSafeArea();
     assignElementReferences({
       portal,
@@ -147,10 +119,10 @@
       clientX: lastMouseCoords.x,
       clientY: lastMouseCoords.y,
     });
-    portalSite.appendChild(elementReferences.portal);
+    portalSite.appendChild(elementReferences!.portal);
     setTimeout(() => {
       const removeOnOutsideHover = debounce(
-        (e) => {
+        (e: MouseEvent) => {
           if (!elementReferences) return;
           const hoveredElement = e.target as HTMLElement;
           const inPortal = elementReferences.portal.contains(hoveredElement);
@@ -187,4 +159,24 @@
   dropdownMenu.addEventListener("mouseover", () => {
     openDropdown();
   });
-</script>
+});
+
+function createSvgSafeArea() {
+  const svgEl = document.createElementNS(
+    "http://www.w3.org/2000/svg",
+    "svg",
+  ) as SVGElement;
+  svgEl.style.position = "absolute";
+  svgEl.style.zIndex = "9";
+  const pathEl = document.createElementNS(
+    "http://www.w3.org/2000/svg",
+    "path",
+  ) as SVGPathElement;
+  pathEl.setAttribute("pointer-events", "auto");
+  // pathEl.setAttribute("stroke", "red");
+  // pathEl.setAttribute("stroke-width", "0.4");
+  pathEl.setAttribute("fill", "rgb(114 140 89 / 0.3)");
+  svgEl.append(pathEl);
+
+  return { svgEl, pathEl };
+}

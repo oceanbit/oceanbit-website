@@ -1,0 +1,25 @@
+---
+interface Props {
+  title: string;
+  dataOpen: string;
+}
+
+const { title, dataOpen } = Astro.props;
+---
+
+<button data-open={dataOpen}>{title}</button>
+
+<template id={dataOpen}>
+  <div class="dropdown">
+    <slot />
+  </div>
+</template>
+
+<style>
+  .dropdown {
+    margin-top: 100px;
+    position: absolute;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+</style>
