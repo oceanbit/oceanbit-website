@@ -1,33 +1,33 @@
 <ul role="list">
   <li>
-    <button>
+    <a href="#">
       <img src="/service-icons/consultancy.svg" alt="" />
       <div>
         <h2>Consultancy</h2>
         <p>Boost digital accessibility and team expertise.</p>
       </div>
-    </button>
+    </a>
   </li>
   <li>
-    <button>
+    <a href="#">
       <img src="/service-icons/docs.svg" alt="" />
       <div>
         <h2>Documentation</h2>
         <p>Enhance user experience for smoother journeys.</p>
       </div>
-    </button>
+    </a>
   </li>
   <li>
-    <button>
+    <a href="#">
       <img src="/service-icons/dev.svg" alt="" />
       <div>
         <h2>Development</h2>
         <p>Build user interfaces and optimize backend systems.</p>
       </div>
-    </button>
+    </a>
   </li>
   <li>
-    <button>
+    <a href="#">
       <img src="/service-icons/design.svg" alt="" />
       <div>
         <h2>Product Design</h2>
@@ -35,7 +35,7 @@
           Blend aesthetics and functionality to create product masterpieces.
         </p>
       </div>
-    </button>
+    </a>
   </li>
 </ul>
 
@@ -46,7 +46,7 @@
     margin: 0;
   }
 
-  li > button {
+  li > a {
     display: flex;
     padding: 8px;
     margin: 0;
@@ -56,23 +56,24 @@
     text-align: left;
     background: none;
     border: none;
+    text-decoration: none;
     border-radius: var(--radius-md, 8px);
     transition: background 0.2s;
   }
 
-  li > button:hover {
+  li > a:hover {
     background: var(--colors-background-bg-secondary, #f1f1f1);
   }
 
-  li > button:hover h2 {
+  li > a:hover h2 {
     color: var(--colors-label-label-brand-primary-600, #0091f3);
   }
 
-  li:first-child > button {
+  li:first-child > a {
     padding-top: 8px;
   }
 
-  li:last-child > button {
+  li:last-child > a {
     padding-bottom: 8px;
   }
 
