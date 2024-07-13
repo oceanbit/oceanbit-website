@@ -31,6 +31,9 @@ dropdownMenus.forEach((dropdownMenu) => {
   let elementReferences: null | ElementReferences = null;
   const fragmentId = dropdownMenu.dataset.open;
 
+  dropdownMenu.setAttribute("aria-haspopup", "dialog");
+  dropdownMenu.setAttribute("aria-expanded", "false");
+
   function assignElementReferences({
     portal,
     svg,
@@ -121,6 +124,7 @@ dropdownMenus.forEach((dropdownMenu) => {
     elementReferences?.svg?.remove();
     elementReferences = null;
     restOfSite.removeAttribute("inert");
+    dropdownMenu.setAttribute("aria-expanded", "false");
   }
 
   function openDropdown() {
@@ -137,6 +141,8 @@ dropdownMenus.forEach((dropdownMenu) => {
       clientY: lastMouseCoords.y,
     });
     portalSite.appendChild(elementReferences!.portal);
+    dropdownMenu.setAttribute("aria-expanded", "true");
+
     setTimeout(() => {
       const removeOnOutsideHover = debounce(
         (e: MouseEvent) => {
