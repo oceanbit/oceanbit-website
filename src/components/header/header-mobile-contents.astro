@@ -1,0 +1,43 @@
+---
+import Menu from "../../assets/icons/menu.astro";
+import X from "../../assets/icons/x.astro";
+
+interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<button aria-expanded="false" class={`${className}`}>
+  <Menu className="hideOnClosed" />
+  <X className="hideOnExpanded" />
+</button>
+
+<style>
+  button {
+    padding: 8px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+  }
+
+  button:hover {
+    background: var(--colors-background-bg-secondary, #f1f1f1);
+  }
+
+  button:active {
+    background: var(--colors-background-bg-secondary, #dedede);
+  }
+
+  button[aria-expanded="false"] :global(.hideOnExpanded) {
+    display: none;
+  }
+
+  button[aria-expanded="true"] :global(.hideOnClosed) {
+    display: none;
+  }
+</style>
