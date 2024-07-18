@@ -22,12 +22,12 @@ function getNewDropdownContentEl(id: string) {
 }
 
 const dropdownMenus = document.querySelectorAll(
-  "[data-open]",
+  "[data-open-desktop]",
 ) as NodeListOf<HTMLElement>;
 
 dropdownMenus.forEach((dropdownMenu) => {
   let elementReferences: null | ElementReferences = null;
-  const fragmentId = dropdownMenu.dataset.open;
+  const fragmentId = dropdownMenu.dataset.openDesktop;
 
   dropdownMenu.setAttribute("aria-haspopup", "dialog");
   dropdownMenu.setAttribute("aria-expanded", "false");

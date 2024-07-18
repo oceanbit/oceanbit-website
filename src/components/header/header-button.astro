@@ -1,21 +1,23 @@
 ---
 // @ts-ignore
 interface Props {
-  ["data-open"]?: string;
+  ["data-open-desktop"]?: string;
   as?: string;
   href?: string;
   buttonClass?: string;
 }
 
 const {
-  ["data-open"]: dataOpen,
+  ["data-open-desktop"]: dataOpen,
   as: As = "button",
   href,
   buttonClass = "",
 } = Astro.props;
 ---
 
-<As class={`btn ${buttonClass}`} data-open={dataOpen} href={href}><slot /></As>
+<As class={`btn ${buttonClass}`} data-open-desktop={dataOpen} href={href}
+  ><slot /></As
+>
 
 <style>
   .btn {
