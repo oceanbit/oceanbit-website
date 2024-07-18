@@ -1,0 +1,43 @@
+---
+interface Props {
+  size: "sm" | "md" | "lg";
+}
+
+const { size } = Astro.props;
+---
+
+<div class={`${size} pill-container`}>
+  <slot />
+</div>
+
+<style>
+  .pill-container {
+    display: inline-block;
+    text-decoration: none;
+
+    /* Text xs/Medium */
+    font-family: var(--family-body, "Geist variable");
+    font-size: var(--size-text-xs, 12px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: var(--line-height-text-xs, 18px); /* 150% */
+
+    border-radius: var(--radius-full, 9999px);
+    border: 1px solid
+      var(--component-colors-utility-gray-utility-gray-200, #e3e8ef);
+    background: var(--component-colors-utility-gray-utility-gray-50, #f8fafc);
+    color: var(--component-colors-utility-gray-utility-gray-700, #364152);
+  }
+
+  .pill-container.lg {
+    padding: var(--spacing-xs, 4px) var(--spacing-lg, 12px);
+  }
+
+  .pill-container.md {
+    padding: var(--spacing-xxs, 2px) 10px;
+  }
+
+  .pill-container.sm {
+    padding: var(--spacing-xxs, 2px) var(--spacing-md, 8px);
+  }
+</style>
