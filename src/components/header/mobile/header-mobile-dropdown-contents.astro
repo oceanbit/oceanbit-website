@@ -1,9 +1,65 @@
+---
+import ObButton from "../../ob-button-v1/ob-button.astro";
+import DownArrow from "../../../assets/icons/down_arrow.astro";
+---
+
 <div class="container">
-  <p>Test</p>
+  <details>
+    <summary>Solutions <DownArrow className="summary-details-arrow" /></summary>
+
+    SOLUTIONS!!
+  </details>
+  <details>
+    <summary>Showcase <DownArrow className="summary-details-arrow" /></summary>
+
+    DA SHOWCASE!!
+  </details>
+
+  <a>About us</a>
+
+  <div class="button-container">
+    <ObButton className="dropdown-mobile-contents-button" disabled
+      >Contact us</ObButton
+    >
+    <ObButton className="dropdown-mobile-contents-button">Book a call</ObButton>
+  </div>
 </div>
 
 <style>
   .container {
     padding: var(--spacing-xs, 4px) 0px 16px 0px;
+  }
+
+  .button-container {
+    width: 100%;
+    display: flex;
+    padding: var(--spacing-xl, 16px) var(--spacing-xl, 16px) 0px
+      var(--spacing-xl, 16px);
+    align-items: center;
+    gap: var(--spacing-3xl, 24px);
+    box-sizing: border-box;
+    border-top: 1px solid rgba(122, 90, 248, 0);
+  }
+
+  :global(.dropdown-mobile-contents-button) {
+    flex-grow: 1;
+  }
+
+  details > summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+
+  details > summary :global(.summary-details-arrow) {
+    transition: transform 250ms ease-in-out;
+  }
+
+  details[open] > summary :global(.summary-details-arrow) {
+    transform: rotate(-180deg);
+  }
+
+  details > summary::-webkit-details-marker {
+    display: none;
   }
 </style>

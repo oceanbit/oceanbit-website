@@ -1,11 +1,12 @@
 ---
 interface Props {
   disabled?: boolean;
+  className?: string;
 }
-const { disabled } = Astro.props;
+const { disabled, className } = Astro.props;
 ---
 
-<button disabled={disabled}>
+<button disabled={disabled} class={className}>
   <slot />
 </button>
 

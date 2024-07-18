@@ -1,12 +1,14 @@
 ---
 interface Props {
   stroke?: string;
+  className?: string;
 }
 
-const { stroke = "#0091F3" } = Astro.props;
+const { stroke = "#0091F3", className } = Astro.props;
 ---
 
 <svg
+  class={className}
   width="20"
   height="20"
   viewBox="0 0 20 20"
