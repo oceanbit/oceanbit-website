@@ -1,0 +1,146 @@
+---
+import PillBadge from "../../badge/pill-badge.astro";
+
+import tanstack from "../../../assets/project_cards/tanstack.png";
+import astro from "../../../assets/project_cards/astro.png";
+import unicorn from "../../../assets/project_cards/unicorn.png";
+import clerk from "../../../assets/project_cards/clerk.png";
+---
+
+<ul class="container">
+  <li>
+    <a href="#">
+      <img src={tanstack.src} alt="" />
+      <div>
+        <h2>TanStack</h2>
+        <p>Owning engineering and docs work for various TanStack projects...</p>
+        <div class="pill-container">
+          <PillBadge size="sm">Engineering</PillBadge>
+        </div>
+      </div>
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <img src={astro.src} alt="" />
+      <div>
+        <h2>Astro.build</h2>
+        <p>Consulting Astro on two key documentation pages...</p>
+        <div class="pill-container">
+          <PillBadge size="sm">Documentation</PillBadge>
+        </div>
+      </div>
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <img src={unicorn.src} alt="" />
+      <div>
+        <h2>Unicorn Utterances</h2>
+        <p>Leading development, community growth, and content strategy...</p>
+        <div class="pill-container">
+          <PillBadge size="sm">Engineering</PillBadge>
+        </div>
+      </div>
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <img src={clerk.src} alt="" />
+      <div>
+        <h2>Clerk, Inc.</h2>
+        <p>
+          Migrated their docs from Sanity to MDX and rewrote most of their docs pages...
+        </p>
+        <div class="pill-container">
+          <PillBadge size="sm">Documentation</PillBadge>
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>
+
+<style>
+  .container {
+    display: flex;
+    padding: var(--spacing-md, 8px) var(--spacing-xl, 16px)
+      var(--spacing-xl, 16px) var(--spacing-xl, 16px);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+  }
+
+  .container li a {
+    display: flex;
+    padding: 8px;
+    gap: 16px;
+    margin: 0;
+    text-align: left;
+    background: none;
+    border: none;
+    text-decoration: none;
+    border-radius: var(--radius-md, 8px);
+    transition: background 0.2s;
+  }
+
+  .container li > a:hover,
+  .right-list a:hover {
+    background: var(--colors-background-bg-secondary, #f1f1f1);
+  }
+
+  .container li > a:hover h2,
+  .right-list a:hover h3 {
+    color: var(--colors-label-label-brand-primary-600, #0091f3);
+  }
+
+  .container li:first-child > a {
+    padding-top: 8px;
+  }
+
+  .container li:last-child > a {
+    padding-bottom: 8px;
+  }
+
+  .container li img {
+    height: 5.75rem;
+    width: 10rem;
+    filter: drop-shadow(0px 15.086px 4.114px rgba(24, 34, 48, 0))
+      drop-shadow(0px 9.6px 4.114px rgba(24, 34, 48, 0.01))
+      drop-shadow(0px 5.486px 3.429px rgba(24, 34, 48, 0.04))
+      drop-shadow(0px 2.057px 2.057px rgba(24, 34, 48, 0.07))
+      drop-shadow(0px 0.686px 1.371px rgba(24, 34, 48, 0.08));
+  }
+
+  .container li h2 {
+    margin: 0;
+    margin-bottom: 2px;
+    color: var(--colors-labels-label-primary, #000);
+    /* Text sm/Medium */
+    font-family: var(--paragraph, "Geist variable");
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 142.857% */
+  }
+
+  .container li p {
+    margin: 0;
+
+    color: var(--colors-label-label-secondary-500, #697586);
+
+    /* Text sm/Normal */
+    font-family: var(--paragraph, "Geist variable");
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+  }
+
+  .pill-container {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+  }
+</style>
