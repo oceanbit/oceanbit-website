@@ -9,53 +9,97 @@ import RightArrow from "../assets/icons/right_arrow.astro";
 
 <Layout>
   <Header />
-  <main
-    style="padding: 2rem; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center"
-  >
-    <h1 style="margin-top: 172px">
-      Empowering growth,<br /><span class="engineering">Engineering</span> excellence.
-    </h1>
+  <main>
+    <div class="top-most-conatiner">
+      <div class="top-container">
+        <h1 style="margin-top: 172px">
+          Empowering growth,<br /><span class="engineering">Engineering</span> excellence.
+        </h1>
 
-    <p style="max-width: 512px" class="subtitle">
-      Meet your consulting partners — leverage our expertise to guarantee a
-      positive impact on your company and efficient team growth.
-    </p>
+        <p style="max-width: 512px" class="subtitle">
+          Meet your consulting partners — leverage our expertise to guarantee a
+          positive impact on your company and efficient team growth.
+        </p>
 
-    <div style="display: flex; gap: 24px; justify-content: center">
-      <ObButton disabled>
-        <span style="margin-left: 6px">Contact us</span>
-        <RightArrow stroke="currentColor" />
-      </ObButton>
+        <div style="display: flex; gap: 24px; justify-content: center">
+          <ObButton disabled>
+            <span style="margin-left: 6px">Contact us</span>
+            <RightArrow stroke="currentColor" />
+          </ObButton>
 
-      <ObButton>
-        <span style="margin-left: 6px">Book a call</span>
-        <RightArrow stroke="currentColor" />
-      </ObButton>
-    </div>
+          <ObButton>
+            <span style="margin-left: 6px">Book a call</span>
+            <RightArrow stroke="currentColor" />
+          </ObButton>
+        </div>
 
-    <div style="position: absolute; top: 0; left: 0">
-      <div><WaveLeft /></div>
-      <div style="position: absolute; left: 0; top: 200px">
-        <WaveLeft pathClass="pathClass2" />
-      </div>
-      <div style="position: absolute; left: 0; top: 400px">
-        <WaveLeft pathClass="pathClass3" />
-      </div>
-    </div>
+        <div class="leftWaveContainer">
+          <div><WaveLeft /></div>
+          <div style="position: absolute; top: 200px">
+            <WaveLeft pathClass="pathClass2" />
+          </div>
+          <div style="position: absolute; top: 400px">
+            <WaveLeft pathClass="pathClass3" />
+          </div>
+        </div>
 
-    <div style="position: absolute; top: 0; right: 0">
-      <div><WaveRight /></div>
-      <div style="position: absolute; left: 0; top: 200px">
-        <WaveRight pathClass="pathClass2" />
-      </div>
-      <div style="position: absolute; left: 0; top: 400px">
-        <WaveRight pathClass="pathClass3" />
+        <div class="rightWaveContainer">
+          <div><WaveRight /></div>
+          <div style="position: absolute; left: 0; top: 200px">
+            <WaveRight pathClass="pathClass2" />
+          </div>
+          <div style="position: absolute; left: 0; top: 400px">
+            <WaveRight pathClass="pathClass3" />
+          </div>
+        </div>
       </div>
     </div>
   </main>
 </Layout>
 
-<style>
+<style lang="scss">
+  @import "../styles/variables/raw-breakpoints";
+
+  .top-most-conatiner {
+    overflow-x: hidden;
+  }
+
+  .top-container {
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: var(--width-3lg, 1200px);
+    margin: 0 auto;
+  }
+
+  .leftWaveContainer {
+    position: absolute;
+    top: 0;
+    left: -256px;
+    transform: translateX(-50%);
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .rightWaveContainer {
+    position: absolute;
+    top: 0;
+    right: -256px;
+    transform: translateX(50%);
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  @include until($tabletMin) {
+    .leftWaveContainer,
+    .rightWaveContainer {
+      opacity: 0;
+    }
+  }
+
   :global(.pathClass2) {
     stroke-dasharray: 80 70% !important;
     animation-delay: -1s;
