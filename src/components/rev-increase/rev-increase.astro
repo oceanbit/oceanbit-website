@@ -1,0 +1,66 @@
+<div class="cardContainer">
+  <div class="barContainer">
+    <div class="bar dark"></div>
+    <div class="bar light"></div>
+    <div class="bar pinstripes"></div>
+  </div>
+</div>
+
+<style>
+  .cardContainer {
+    display: flex;
+    min-width: 230px;
+    padding: var(--spacing-3xl, 24px);
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-3xl, 24px);
+    align-self: stretch;
+
+    border-radius: var(--radius-xl, 12px);
+    border: 1px solid var(--Colors-Border-border-tertiary, #eef2f6);
+    background: var(--Colors-Foreground-fg-white, #fff);
+
+    /* Shadows/shadow-md */
+    box-shadow:
+      0px 1px 1px -0.5px rgba(24, 34, 48, 0.04),
+      0px 3px 3px -1.5px rgba(24, 34, 48, 0.04),
+      0px 6px 6px -3px rgba(24, 34, 48, 0.04),
+      0px 12px 12px -6px rgba(25, 65, 133, 0.06),
+      0px 24px 24px -12px rgba(25, 65, 133, 0.06);
+  }
+
+  .barContainer {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-lg, 12px);
+    align-self: stretch;
+  }
+
+  .bar {
+    border-radius: var(--radius-xs, 4px);
+    box-shadow:
+      0px 15px 6px 0px rgba(245, 250, 255, 0.02),
+      0px 8px 5px 0px rgba(245, 250, 255, 0.08),
+      0px 4px 4px 0px rgba(245, 250, 255, 0.14),
+      0px 1px 2px 0px rgba(245, 250, 255, 0.16),
+      0px 2px 5px 0px rgba(148, 209, 255, 0.4);
+    height: 24px;
+  }
+
+  .dark {
+    background: var(--colors-brand-500, #0098ff);
+    width: 147px;
+  }
+
+  .light {
+    background: #48d8ff;
+    width: 47px;
+  }
+
+  .pinstripes {
+    width: 81px;
+    background-image: url("/pinstripe_horiz_repeat.svg");
+    background-size: cover;
+    background-repeat: repeat-x;
+  }
+</style>
