@@ -14,6 +14,7 @@ import Lightning from "../assets/icons/lightning.astro";
 import Performance from "../components/metrics/performance.astro";
 import Health from "../assets/icons/health.astro";
 import User from "../assets/icons/user.astro";
+import Mobo from "../components/mobo/mobo.astro";
 ---
 
 <Layout>
@@ -94,6 +95,7 @@ import User from "../assets/icons/user.astro";
         </div>
       </div>
     </div>
+    <Mobo />
     <div style="margin-bottom: 5rem"></div>
   </main>
 </Layout>
@@ -200,6 +202,8 @@ import User from "../assets/icons/user.astro";
 
   .cards-container {
     padding: var(--spacing-xl);
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   .cards-outline {
