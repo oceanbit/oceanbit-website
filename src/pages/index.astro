@@ -213,7 +213,7 @@ import Mobo from "../components/mobo/mobo.astro";
   .cards-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto auto;
     gap: var(--spacing-md, 0.5rem);
   }
 
@@ -224,14 +224,14 @@ import Mobo from "../components/mobo/mobo.astro";
   @include until($desktopMin) {
     .cards-grid {
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-rows: auto auto auto;
     }
   }
 
   @include until($tabletMin) {
     .cards-grid {
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-rows: auto auto auto;
     }
   }
 
