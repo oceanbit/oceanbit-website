@@ -1,12 +1,39 @@
-<div class="barContainer">
-  <div class="bar dark"></div>
-  <div class="bar light"></div>
-  <div class="bar pinstripes"></div>
+<div class="outerBarContainer">
+  <div class="barTopText">
+    <p>Cut costs</p>
+    <p>from $130k to <strong>$80k</strong></p>
+  </div>
+  <div class="barContainer">
+    <div class="bar dark"></div>
+    <div class="bar light"></div>
+    <div class="bar pinstripes"></div>
+  </div>
 </div>
 
 <style>
-  .barContainer {
+  .outerBarContainer {
     flex-grow: 1;
+  }
+
+  .barTopText {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-sm);
+    color: var(--colors-label-label-secondary-500, #697586);
+
+    /* Text xs/Normal */
+    font-family: var(--Family-Body, "Geist variable");
+    font-size: var(--Size-Text-xs, 0.75rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--Line-height-Text-xs, 1.125rem); /* 150% */
+  }
+
+  .barTopText {
+    margin: 0;
+  }
+
+  .barContainer {
     height: fit-content;
     display: flex;
     align-items: flex-start;
