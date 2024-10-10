@@ -10,6 +10,10 @@ import RevIncrease from "../components/rev-increase/rev-increase.astro";
 import HeroCard from "../components/hero-card/hero-card.astro";
 import Code from "../assets/icons/code.astro";
 import Money from "../assets/icons/money.astro";
+import Lightning from "../assets/icons/lightning.astro";
+import Performance from "../components/metrics/performance.astro";
+import Health from "../assets/icons/health.astro";
+import User from "../assets/icons/user.astro";
 ---
 
 <Layout>
@@ -62,12 +66,29 @@ import Money from "../assets/icons/money.astro";
     <div class="cards-container">
       <HeroCard className="eng-training" title="Engineering training">
         <Code slot="icon" />
-        <CodeBlock /></HeroCard
-      >
+        <CodeBlock />
+      </HeroCard>
+      <HeroCard title="Performance">
+        <Lightning slot="icon" />
+        <div style="aspect-ratio: 2 / 1; height: 100%; margin: 0 auto;">
+          <Performance />
+        </div>
+      </HeroCard>
+      <HeroCard title="System Health">
+        <Health slot="icon" />
+      </HeroCard>
       <HeroCard title="Revenue increase">
         <Money slot="icon" />
-        <RevIncrease /></HeroCard
-      >
+        <div
+          style="height: 100%; width: 100%; display: flex;flex-wrap: wrap;align-content: center;"
+        >
+          <RevIncrease />
+        </div>
+      </HeroCard>
+
+      <HeroCard title="User satisfaction">
+        <User slot="icon" />
+      </HeroCard>
     </div>
     <div style="margin-bottom: 5rem"></div>
   </main>

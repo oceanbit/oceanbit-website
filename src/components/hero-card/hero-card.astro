@@ -9,7 +9,7 @@ const { title, className = "" } = Astro.props;
 
 <div class={`container ${className}`}>
   <h1 class="title">
-    <span aria-hidden="true"><slot name="icon" /></span>
+    <span aria-hidden="true" class="icon"><slot name="icon" /></span>
     {title}
   </h1>
   <slot />
@@ -40,5 +40,28 @@ const { title, className = "" } = Astro.props;
 
   .title {
     margin: 0;
+    color: var(--colors-label-label-primary-900, #121926);
+    font-family: var(--family-display, "Geist variable");
+    font-size: var(--size-text-xl, 1.25rem);
+    font-style: normal;
+    font-weight: 600;
+    line-height: var(--line-height-text-xl, 1.875rem);
+    letter-spacing: -1.2px;
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+  }
+
+  .icon {
+    display: inline-flex;
+    width: 1rem;
+    height: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icon > :global(svg) {
+    width: 1rem;
+    height: 1rem;
   }
 </style>
