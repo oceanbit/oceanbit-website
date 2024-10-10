@@ -1,17 +1,57 @@
 <div class="container">
-  <img class="core" src="/illustrations/core.svg" alt="" />
+  <div class="img-container">
+    <img class="core" src="/illustrations/core.svg" alt="" />
+    <img
+      class="left-components"
+      src="/illustrations/mobo-components.svg"
+      alt=""
+    />
+    <img
+      class="right-components"
+      src="/illustrations/mobo-components.svg"
+      alt=""
+    />
+  </div>
 </div>
 
-<style>
+<style lang="scss">
+  @import "../../styles/variables/raw-breakpoints";
+
   .container {
     display: flex;
     margin-top: calc(0px - var(--spacing-xl) - var(--radius-4xl));
     justify-content: center;
   }
 
+  .img-container {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+  }
+
   .core {
     background: linear-gradient(90deg, transparent, white, transparent);
     // 54px is the padding on the SVG itself to add the shadow
     width: calc(144px + 54px);
+  }
+
+  .right-components,
+  .left-components {
+    position: absolute;
+    @include until($tabletMin) {
+      display: none !important;
+    }
+  }
+
+  .left-components {
+    bottom: 54px;
+    left: 0;
+    transform: translateX(-100%);
+  }
+
+  .right-components {
+    bottom: 54px;
+    right: 0;
+    transform: translateX(100%) rotateY(180deg);
   }
 </style>
