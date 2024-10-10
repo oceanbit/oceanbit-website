@@ -1,9 +1,52 @@
 .container {
   width: 100%;
+  margin: 0 auto;
   max-width: 230px;
   overflow: hidden;
   position: relative;
   aspect-ratio: 2 / 1;
+}
+
+.textContainer {
+  margin-top: var(--spacing-4xl);
+  display: flex;
+  justify-content: space-around;
+}
+
+.textContainer > * {
+  display: flex;
+  align-items: center;
+  color: var(--colors-label-label-secondary-500, #697586);
+  margin: 0;
+
+  /* Text xs/Normal */
+  font-family: var(--family-body, "Geist variable");
+  font-size: var(--size-text-xs, 0.75rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--line-height-text-xs, 1.125rem); /* 150% */
+}
+
+.color1,
+.color2,
+.color3 {
+  display: block;
+  width: 4px;
+  height: 8px;
+  border-radius: 2px;
+  margin-right: 6px;
+}
+
+.color1 {
+  background: #48d8ff;
+}
+
+.color2 {
+  background: var(--colors-brand-500, #0098ff);
+}
+
+.color3 {
+  background: #6586fb;
 }
 
 .container:hover .outerSpeedometer {
