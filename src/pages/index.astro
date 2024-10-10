@@ -64,31 +64,35 @@ import User from "../assets/icons/user.astro";
       </div>
     </div>
     <div class="cards-container">
-      <HeroCard className="eng-training" title="Engineering training">
-        <Code slot="icon" />
-        <CodeBlock />
-      </HeroCard>
-      <HeroCard title="Performance">
-        <Lightning slot="icon" />
-        <div style="aspect-ratio: 2 / 1; height: 100%; margin: 0 auto;">
-          <Performance />
-        </div>
-      </HeroCard>
-      <HeroCard title="System Health">
-        <Health slot="icon" />
-      </HeroCard>
-      <HeroCard title="Revenue increase">
-        <Money slot="icon" />
-        <div
-          style="height: 100%; width: 100%; display: flex;flex-wrap: wrap;align-content: center;"
-        >
-          <RevIncrease />
-        </div>
-      </HeroCard>
+      <div class="cards-outline">
+        <div class="cards-grid">
+          <HeroCard className="eng-training" title="Engineering training">
+            <Code slot="icon" />
+            <CodeBlock />
+          </HeroCard>
+          <HeroCard title="Performance">
+            <Lightning slot="icon" />
+            <div style="aspect-ratio: 2 / 1; height: 100%; margin: 0 auto;">
+              <Performance />
+            </div>
+          </HeroCard>
+          <HeroCard className="hide-card-on-mobile" title="System Health">
+            <Health slot="icon" />
+          </HeroCard>
+          <HeroCard title="Revenue increase">
+            <Money slot="icon" />
+            <div
+              style="height: 100%; width: 100%; display: flex;flex-wrap: wrap;align-content: center;"
+            >
+              <RevIncrease />
+            </div>
+          </HeroCard>
 
-      <HeroCard title="User satisfaction">
-        <User slot="icon" />
-      </HeroCard>
+          <HeroCard className="hide-card-on-mobile" title="User satisfaction">
+            <User slot="icon" />
+          </HeroCard>
+        </div>
+      </div>
     </div>
     <div style="margin-bottom: 5rem"></div>
   </main>
@@ -195,11 +199,20 @@ import User from "../assets/icons/user.astro";
   }
 
   .cards-container {
+    padding: var(--spacing-xl);
+  }
+
+  .cards-outline {
+    padding: var(--spacing-lg, 0.75rem);
+    border-radius: var(--radius-4xl, 1.5rem);
+    border: 1px solid #f2f4f7;
+  }
+
+  .cards-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: var(--spacing-md, 0.5rem);
-    padding: var(--spacing-xl);
   }
 
   :global(.eng-training) {
@@ -207,16 +220,22 @@ import User from "../assets/icons/user.astro";
   }
 
   @include until($desktopMin) {
-    .cards-container {
+    .cards-grid {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr;
     }
   }
 
   @include until($tabletMin) {
-    .cards-container {
+    .cards-grid {
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr 1fr;
+    }
+  }
+
+  :global(.hide-card-on-mobile) {
+    @include until($tabletMin) {
+      display: none !important;
     }
   }
 </style>
