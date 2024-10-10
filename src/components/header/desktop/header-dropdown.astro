@@ -25,9 +25,9 @@ const { title, dataOpen, dropdownClass = "" } = Astro.props;
 <style>
   .dropdown {
     margin-top: 3rem;
-    position: absolute;
+    position: fixed;
     transform: translateX(-50%);
-    z-index: 1;
+    z-index: 99;
 
     border-radius: 16px;
     border: 2px solid var(--colors-border-border-secondary, #eaecf0);

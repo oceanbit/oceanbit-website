@@ -5,8 +5,8 @@ import ShowcaseContents from "./showcase-contents.astro";
 import SolutionsContents from "./solutions-contents.astro";
 ---
 
-<div class="container">
-  <div class="link-container">
+<div class="outer-container">
+  <div class="header-mobile-dropdown-contents-link-container">
     <details>
       <summary
         ><span>Solutions</span>
@@ -37,9 +37,35 @@ import SolutionsContents from "./solutions-contents.astro";
   </div>
 </div>
 
-<style>
-  .container {
-    padding: var(--spacing-xs, 4px) 0px 16px 0px;
+<style lang="scss">
+  .outer-container {
+    padding: 16px;
+  }
+
+  .header-mobile-dropdown-contents-link-container {
+    max-height: calc(100vh - 14rem);
+    overflow-y: scroll;
+    overflow-x: clip;
+    margin-right: -0.5rem;
+  }
+
+  //Style scrollbar
+  :global(.header-mobile-dropdown-contents-link-container) {
+    &::-webkit-scrollbar {
+      height: 0.5rem;
+      width: 0.5rem;
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #bcc1c7;
+      -webkit-border-radius: 90px;
+      -webkit-box-shadow: none;
+    }
+
+    ::-webkit-scrollbar-corner {
+      background: #000;
+    }
   }
 
   .button-divider {
@@ -138,7 +164,7 @@ import SolutionsContents from "./solutions-contents.astro";
 
   .hr {
     display: flex;
-    width: 100%;
+    width: calc(100% - 32px);
     margin: 2px 16px;
     box-sizing: border-box;
     flex-direction: column;
