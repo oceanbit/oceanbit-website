@@ -11,6 +11,10 @@ const circle = document.getElementById(
   "user-satisfaction-circle",
 ) as never as SVGElement;
 
+const innerCircle = document.getElementById(
+  "user-satisfaction-inner-circle",
+) as never as SVGGeometryElement;
+
 let x = min;
 let animationFrameId: number | null = null;
 let isAnimating = false;
@@ -33,14 +37,14 @@ function animate(targetX: number, duration: number) {
     const currentTime = performance.now();
     const elapsedTime = currentTime - startTime;
     const progress = Math.min(elapsedTime / duration, 1);
-
-    // Apply easing function to the progress
     const easedProgress = easeInOutCubic(progress);
 
     x = startX + (targetX - startX) * easedProgress;
     const { x: newX, y: newY } = linePath.getPointAtLength(x);
-    circle.setAttribute("x", `${newX - 83}`);
-    circle.setAttribute("y", `${newY - 83 - 7 - 2}`);
+    // We can't just use `7` despite the circle being 14x14 because the circle is not scaled 1:1
+    const circleHeight = innerCircle.getBoundingClientRect().height;
+    circle.setAttribute("x", `${newX - 83 - circleHeight / 2}`);
+    circle.setAttribute("y", `${newY - 83 - circleHeight / 2}`);
 
     if (progress < 1) {
       animationFrameId = requestAnimationFrame(step);

@@ -38,8 +38,8 @@ const { className } = Astro.props;
   </g>
   <g filter="url(#filter0_dddd_14226_6993)">
     <path
-      id="user-satisfaction-line-path"
       d="M7.5 112L53.5019 60.3514C61.2918 51.6052 72.2474 46.3258 83.9421 45.6825L154.838 41.7826C162.555 41.3581 170.023 38.9088 176.492 34.6811L226.5 2"
+      id="user-satisfaction-line-path"
       stroke="#0098FF"
       stroke-width="2"
       stroke-linecap="round"
@@ -152,18 +152,10 @@ const { className } = Astro.props;
       <stop offset="1" stop-color="#48D8FF"></stop>
     </linearGradient>
   </defs>
-
-  <!-- The X/Y of the dot is 83 -->
-  <!--  The midway width point of the upper SVG is 117 -->
-  <!--  getPointAtLength(117)-->
-  <!--  {x: 97.07637023925781, y: 44.959999084472656}-->
-  <!--  Therefore, -83 + 97 = 14 || -83 + 45 = -38 -->
-  <!--  However, `y` needs to be -7 because of radius at point 7 -->
-  <!--  And then we -1 for visual centering -->
   <svg
     id="user-satisfaction-circle"
-    x="14.076370239257812"
-    y="-46.040000915527344"
+    x="5.256024360656738"
+    y="-46.86035442352295"
     width="180"
     height="180"
     viewBox="0 0 180 180"
@@ -187,7 +179,14 @@ const { className } = Astro.props;
       stroke-dasharray="4 4"
       stroke-width="1"></line>
     <g filter="url(#user-satis-circle)">
-      <rect x="84" y="84" width="14" height="14" rx="7" fill="white"></rect>
+      <rect
+        id="user-satisfaction-inner-circle"
+        x="84"
+        y="84"
+        width="14"
+        height="14"
+        rx="7"
+        fill="white"></rect>
     </g>
     <defs>
       <filter
