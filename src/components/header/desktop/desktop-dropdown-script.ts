@@ -196,8 +196,8 @@ function createSvgSafeArea() {
     "http://www.w3.org/2000/svg",
     "svg",
   ) as SVGElement;
-  svgEl.style.position = "absolute";
-  svgEl.style.zIndex = "9";
+  svgEl.style.position = "fixed";
+  svgEl.style.zIndex = "100";
   const pathEl = document.createElementNS(
     "http://www.w3.org/2000/svg",
     "path",
