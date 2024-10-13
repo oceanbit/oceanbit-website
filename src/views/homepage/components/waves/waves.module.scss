@@ -1,7 +1,6 @@
 .container {
   /* Fade out the left-hand side to 0% opacity */
   mask-image: linear-gradient(to left, transparent 30%, black 100%);
-  will-change: transform, opacity;
 }
 
 .flip {
@@ -17,7 +16,7 @@
   animation-duration: 4s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  will-change: transform, opacity;
+  will-change: stroke-dashoffset, stroke-opacity;
 }
 
 .waveBlur {
