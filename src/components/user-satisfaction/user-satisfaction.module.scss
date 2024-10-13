@@ -1,0 +1,30 @@
+.percentAndSvgContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.svg {
+  flex-grow: 1;
+  width: 1px;
+  height: fit-content;
+}
+
+.gridPercentages {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: var(--spacing-3xl);
+}
+
+.gridPercent {
+  margin: 0;
+  color: var(--colors-label-label-secondary-500, #697586);
+  text-align: right;
+
+  /* Text xs/Normal */
+  font-family: var(--family-body, "Geist variable");
+  font-size: var(--size-text-xs, 0.75rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--line-height-text-xs, 1.125rem); /* 150% */
+}
