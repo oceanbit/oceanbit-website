@@ -13,7 +13,7 @@
   <div class="metrics-list">
     <div>
       <p class="metric-name">Operational</p>
-      <p class="metric-cost" id="rev-metric-operational">$60k</p>
+      <p class="metric-cost" id="rev-metric-operational"></p>
     </div>
 
     <div>
@@ -24,7 +24,6 @@
           style="position: absolute; top: 0; left: 0;"
           id="rev-metric-server"
         >
-          $20k
         </p>
         <p aria-hidden="true" class="metric-cost" style="opacity: 0">$20k</p>
       </div>
@@ -32,7 +31,7 @@
 
     <div>
       <p class="metric-name">Saved</p>
-      <p class="metric-cost" id="rev-metric-saved">$50k</p>
+      <p class="metric-cost" id="rev-metric-saved"></p>
     </div>
   </div>
 </div>
@@ -79,6 +78,60 @@
     height: 24px;
   }
 
+  @property --rev-operational-num {
+    syntax: "<integer>";
+    initial-value: 60;
+    inherits: false;
+  }
+
+  @property --rev-server-num {
+    syntax: "<integer>";
+    initial-value: 20;
+    inherits: false;
+  }
+
+  @property --rev-saved-num {
+    syntax: "<integer>";
+    initial-value: 50;
+    inherits: false;
+  }
+
+  #rev-metric-server {
+    counter-reset: rev-server-num var(--rev-server-num);
+    transition: --rev-server-num 300ms;
+  }
+
+  #rev-metric-server::after {
+    content: "$" counter(rev-server-num) "k";
+  }
+
+  #rev-metric-operational {
+    counter-reset: rev-operational-num var(--rev-operational-num);
+    transition: --rev-operational-num 300ms;
+  }
+
+  #rev-metric-operational::after {
+    content: "$" counter(rev-operational-num) "k";
+  }
+
+  #rev-metric-saved {
+    counter-reset: rev-saved-num var(--rev-saved-num);
+    transition: --rev-saved-num 300ms;
+  }
+
+  #rev-metric-saved::after {
+    content: "$" counter(rev-saved-num) "k";
+  }
+
+  #rev-metric-server {
+    counter-reset: rev-server-num var(--rev-server-num);
+    transition: --rev-server-num 300ms;
+  }
+
+  #rev-metric-server::after {
+    content: "$" counter(rev-server-num) "k";
+  }
+
   .container:hover {
     .light {
       width: 20px;
@@ -86,6 +139,18 @@
 
     .pinstripes {
       width: 200px;
+    }
+
+    #rev-metric-server {
+      --rev-server-num: 8;
+    }
+
+    #rev-metric-saved {
+      --rev-saved-num: 82;
+    }
+
+    #rev-metric-operational {
+      --rev-operational-num: 30;
     }
   }
 
@@ -145,103 +210,3 @@
     line-height: var(--line-height-text-xl, 1.875rem); /* 150% */
   }
 </style>
-
-<script>
-  const container = document.getElementById(
-    "rev-increase-container",
-  ) as HTMLElement;
-  const operational = document.getElementById(
-    `rev-metric-operational`,
-  ) as HTMLElement;
-  const server = document.getElementById(`rev-metric-server`) as HTMLElement;
-  const saved = document.getElementById(`rev-metric-saved`) as HTMLElement;
-  const time = 300; // ms
-
-  const minOperational = 30; // $#k
-  const maxOperational = 60; // $#k
-  const minServer = 8; // $#k
-  const maxServer = 20; // $#k
-  const minSaved = 50; // $#k
-  const maxSaved = 82; // $#k
-
-  let operationalInterval: any = null;
-  let serverInterval: any = null;
-  let savedInterval: any = null;
-
-  container.addEventListener("mouseover", () => {
-    clearInterval(operationalInterval);
-    clearInterval(serverInterval);
-    clearInterval(savedInterval);
-    let operationalPercentage = maxOperational;
-    let serverPercentage = maxServer;
-    let savedPercentage = minSaved;
-    operationalInterval = setInterval(
-      () => {
-        operationalPercentage--;
-        operational.textContent = `$${operationalPercentage}k`;
-        if (operationalPercentage <= minOperational) {
-          clearInterval(operationalInterval);
-        }
-      },
-      time / (maxOperational - minOperational),
-    );
-    serverInterval = setInterval(
-      () => {
-        serverPercentage--;
-        server.textContent = `$${serverPercentage}k`;
-        if (serverPercentage <= minServer) {
-          clearInterval(serverInterval);
-        }
-      },
-      time / (maxServer - minServer),
-    );
-    savedInterval = setInterval(
-      () => {
-        savedPercentage++;
-        saved.textContent = `$${savedPercentage}k`;
-        if (savedPercentage >= maxSaved) {
-          clearInterval(savedInterval);
-        }
-      },
-      time / (maxSaved - minSaved),
-    );
-  });
-  container.addEventListener("mouseout", () => {
-    clearInterval(operationalInterval);
-    clearInterval(serverInterval);
-    clearInterval(savedInterval);
-    let operationalPercentage = minOperational;
-    let serverPercentage = minServer;
-    let savedPercentage = maxSaved;
-    operationalInterval = setInterval(
-      () => {
-        operationalPercentage++;
-        operational.textContent = `$${operationalPercentage}k`;
-        if (operationalPercentage >= maxOperational) {
-          clearInterval(operationalInterval);
-        }
-      },
-      time / (maxOperational - minOperational),
-    );
-    serverInterval = setInterval(
-      () => {
-        serverPercentage++;
-        server.textContent = `$${serverPercentage}k`;
-        if (serverPercentage >= maxServer) {
-          clearInterval(serverInterval);
-        }
-      },
-      time / (maxServer - minServer),
-    );
-    savedInterval = setInterval(
-      () => {
-        savedPercentage--;
-        saved.textContent = `$${savedPercentage}k`;
-        if (savedPercentage <= minSaved) {
-          clearInterval(savedInterval);
-        }
-      },
-      time / (maxSaved - minSaved),
-    );
-  });
-</script>
