@@ -1,65 +1,65 @@
-const svgWidth = 234;
-const min = svgWidth / 2;
-const max = svgWidth + 1;
-const container = document.getElementById(
+const userSatisSvgWidth = 234;
+const userSatisMin = userSatisSvgWidth / 2;
+const userSatisMax = userSatisSvgWidth + 1;
+const userSatisContainer = document.getElementById(
   "user-satisfaction-container",
 ) as HTMLDivElement;
-const linePath = document.getElementById(
+const userSatisLinePath = document.getElementById(
   "user-satisfaction-line-path",
 ) as never as SVGGeometryElement;
-const circle = document.getElementById(
+const userSatisCircle = document.getElementById(
   "user-satisfaction-circle",
 ) as never as SVGElement;
 
-const innerCircle = document.getElementById(
+const userSatisInnerCircle = document.getElementById(
   "user-satisfaction-inner-circle",
 ) as never as SVGGeometryElement;
 
-let x = min;
-let animationFrameId: number | null = null;
-let isAnimating = false;
+let userSatisX = userSatisMin;
+let userSatisAnimationFrameId: number | null = null;
+let userSatisIsAnimating = false;
 
 // Easing function for smooth animation
-function easeInOutCubic(t: number): number {
+function userSatisEaseInOutCubic(t: number): number {
   return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 }
 
-function animate(targetX: number, duration: number) {
-  if (isAnimating) {
-    cancelAnimationFrame(animationFrameId!);
+function userSatisAnimate(targetX: number, duration: number) {
+  if (userSatisIsAnimating) {
+    cancelAnimationFrame(userSatisAnimationFrameId!);
   }
 
-  isAnimating = true;
-  const startX = x;
+  userSatisIsAnimating = true;
+  const startX = userSatisX;
   const startTime = performance.now();
 
   function step() {
     const currentTime = performance.now();
     const elapsedTime = currentTime - startTime;
     const progress = Math.min(elapsedTime / duration, 1);
-    const easedProgress = easeInOutCubic(progress);
+    const easedProgress = userSatisEaseInOutCubic(progress);
 
-    x = startX + (targetX - startX) * easedProgress;
-    const { x: newX, y: newY } = linePath.getPointAtLength(x);
+    userSatisX = startX + (targetX - startX) * easedProgress;
+    const { x: newX, y: newY } = userSatisLinePath.getPointAtLength(userSatisX);
     // We can't just use `7` despite the circle being 14x14 because the circle is not scaled 1:1
-    const circleHeight = innerCircle.getBoundingClientRect().height;
-    circle.setAttribute("x", `${newX - 83 - circleHeight / 2}`);
-    circle.setAttribute("y", `${newY - 83 - circleHeight / 2}`);
+    const circleHeight = userSatisInnerCircle.getBoundingClientRect().height;
+    userSatisCircle.setAttribute("x", `${newX - 83 - circleHeight / 2}`);
+    userSatisCircle.setAttribute("y", `${newY - 83 - circleHeight / 2}`);
 
     if (progress < 1) {
-      animationFrameId = requestAnimationFrame(step);
+      userSatisAnimationFrameId = requestAnimationFrame(step);
     } else {
-      isAnimating = false;
+      userSatisIsAnimating = false;
     }
   }
 
-  animationFrameId = requestAnimationFrame(step);
+  userSatisAnimationFrameId = requestAnimationFrame(step);
 }
 
-container.addEventListener("mouseover", () => {
-  animate(max, 300);
+userSatisContainer.addEventListener("mouseover", () => {
+  userSatisAnimate(userSatisMax, 300);
 });
 
-container.addEventListener("mouseout", () => {
-  animate(min, 300);
+userSatisContainer.addEventListener("mouseout", () => {
+  userSatisAnimate(userSatisMin, 300);
 });
