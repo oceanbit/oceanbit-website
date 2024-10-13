@@ -1,0 +1,95 @@
+---
+import WaveLeft from "../../components/wave-left.astro";
+import WaveRight from "../../components/wave-right.astro";
+import ObButton from "../../components/ob-button-v1/ob-button.astro";
+import RightArrow from "../../assets/icons/right_arrow.astro";
+import CodeBlock from "../../components/code-block/code-block.astro";
+import RevIncrease from "../../components/rev-increase/rev-increase.astro";
+import HeroCard from "../../components/hero-card/hero-card.astro";
+import Code from "../../assets/icons/code.astro";
+import Money from "../../assets/icons/money.astro";
+import Lightning from "../../assets/icons/lightning.astro";
+import Performance from "../../components/performance/performance.astro";
+import Health from "../../assets/icons/health.astro";
+import User from "../../assets/icons/user.astro";
+import Mobo from "../../components/mobo/mobo.astro";
+import UserSatisfaction from "../../components/user-satisfaction/user-satisfaction.astro";
+import styles from "./hero.module.scss";
+---
+
+<div class={styles.topMostContainer}>
+  <div class={styles.topContainer}>
+    <h1>
+      Empowering growth,<br /><span class={styles.engineering}>Engineering</span
+      > excellence.
+    </h1>
+
+    <p style="max-width: 512px" class={styles.subtitle}>
+      Meet your consulting partners — leverage our expertise to guarantee a
+      positive impact on your company and efficient team growth.
+    </p>
+
+    <div style="display: flex; gap: 24px; justify-content: center">
+      <ObButton disabled>
+        <span style="margin-left: 6px">Contact us</span>
+        <RightArrow stroke="currentColor" />
+      </ObButton>
+
+      <ObButton>
+        <span style="margin-left: 6px">Book a call</span>
+        <RightArrow stroke="currentColor" />
+      </ObButton>
+    </div>
+
+    <div class={styles.leftWaveContainer}>
+      <div><WaveLeft /></div>
+      <div style="position: absolute; top: 200px">
+        <WaveLeft pathClass={styles.pathClass2} />
+      </div>
+      <div style="position: absolute; top: 400px">
+        <WaveLeft pathClass={styles.pathClass3} />
+      </div>
+    </div>
+
+    <div class={styles.rightWaveContainer}>
+      <div><WaveRight /></div>
+      <div style="position: absolute; left: 0; top: 200px">
+        <WaveRight pathClass={styles.pathClass2} />
+      </div>
+      <div style="position: absolute; left: 0; top: 400px">
+        <WaveRight pathClass={styles.pathClass3} />
+      </div>
+    </div>
+  </div>
+</div>
+<div class={styles.cardsContainer}>
+  <div class={styles.cardsOutline}>
+    <div class={styles.cardsGrid}>
+      <HeroCard className={styles.engTraining} title="Engineering training">
+        <Code slot="icon" />
+        <CodeBlock />
+      </HeroCard>
+      <HeroCard title="Performance">
+        <Lightning slot="icon" />
+        <Performance />
+      </HeroCard>
+      <HeroCard className={styles.hideCardOnMobile} title="System Health">
+        <Health slot="icon" />
+      </HeroCard>
+      <HeroCard title="Revenue increase">
+        <Money slot="icon" />
+        <div
+          style="height: 100%; width: 100%; display: flex;flex-wrap: wrap;align-content: center;"
+        >
+          <RevIncrease />
+        </div>
+      </HeroCard>
+
+      <HeroCard className={styles.hideCardOnMobile} title="User satisfaction">
+        <User slot="icon" />
+        <UserSatisfaction />
+      </HeroCard>
+    </div>
+  </div>
+</div>
+<Mobo />
