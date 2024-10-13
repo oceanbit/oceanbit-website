@@ -160,3 +160,22 @@
   font-weight: 400;
   line-height: 18px; /* 150% */
 }
+
+@property --perf-num {
+  syntax: "<integer>";
+  initial-value: 96;
+  inherits: false;
+}
+
+.percentage {
+  counter-reset: perf-num var(--perf-num);
+  transition: --perf-num 300ms;
+}
+
+.percentage::after {
+  content: counter(perf-num) "%";
+}
+
+.container:hover .percentage {
+  --perf-num: 100;
+}
