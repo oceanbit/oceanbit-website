@@ -342,49 +342,53 @@
   const circle = document.getElementById(
     "user-satisfaction-circle",
   ) as never as SVGElement;
-  // linePath.getPointAtLength(num) gets the x/y of the path at a certain length
-  // On mouseover, animate the circle to getPointAtLength(max) using rAF
-  // On mouseout, animate the circle to getPointAtLength(min)
-  // Animate the movement by 300ms
-  container.addEventListener("mouseover", () => {
-    let x = min;
+
+  let x = min;
+  let animationFrameId: number | null = null;
+  let isAnimating = false;
+
+  // Easing function for smooth animation
+  function easeInOutCubic(t: number): number {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
+  function animate(targetX: number, duration: number) {
+    if (isAnimating) {
+      cancelAnimationFrame(animationFrameId!);
+    }
+
+    isAnimating = true;
+    const startX = x;
     const startTime = performance.now();
-    const animate = () => {
+
+    function step() {
       const currentTime = performance.now();
       const elapsedTime = currentTime - startTime;
-      const progress = elapsedTime / 300;
-      x = min + (max - min) * progress;
+      const progress = Math.min(elapsedTime / duration, 1);
+
+      // Apply easing function to the progress
+      const easedProgress = easeInOutCubic(progress);
+
+      x = startX + (targetX - startX) * easedProgress;
       const { x: newX, y: newY } = linePath.getPointAtLength(x);
       circle.setAttribute("x", `${newX - 83}`);
       circle.setAttribute("y", `${newY - 83 - 7 - 1}`);
+
       if (progress < 1) {
-        requestAnimationFrame(animate);
+        animationFrameId = requestAnimationFrame(step);
+      } else {
+        isAnimating = false;
       }
-    };
-    animate();
+    }
+
+    animationFrameId = requestAnimationFrame(step);
+  }
+
+  container.addEventListener("mouseover", () => {
+    animate(max, 300);
   });
 
   container.addEventListener("mouseout", () => {
-    let x = max;
-    const startTime = performance.now();
-    const animate = () => {
-      const currentTime = performance.now();
-      const elapsedTime = currentTime - startTime;
-      const progress = elapsedTime / 300;
-      x = max - (max - min) * progress;
-      const { x: newX, y: newY } = linePath.getPointAtLength(x);
-      circle.setAttribute("x", `${newX - 83}`);
-      circle.setAttribute("y", `${newY - 83 - 7 - 1}`);
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      }
-    };
-    animate();
+    animate(min, 300);
   });
 </script>
-
-<style is:global>
-  #user-satisfaction-circle {
-    transition: all;
-  }
-</style>
