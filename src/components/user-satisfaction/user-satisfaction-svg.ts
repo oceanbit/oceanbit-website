@@ -40,7 +40,7 @@ function animate(targetX: number, duration: number) {
     x = startX + (targetX - startX) * easedProgress;
     const { x: newX, y: newY } = linePath.getPointAtLength(x);
     circle.setAttribute("x", `${newX - 83}`);
-    circle.setAttribute("y", `${newY - 83 - 7 - 1}`);
+    circle.setAttribute("y", `${newY - 83 - 7 - 2}`);
 
     if (progress < 1) {
       animationFrameId = requestAnimationFrame(step);

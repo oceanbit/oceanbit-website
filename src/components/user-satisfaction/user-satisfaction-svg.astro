@@ -162,30 +162,30 @@ const { className } = Astro.props;
   <!--  And then we -1 for visual centering -->
   <svg
     id="user-satisfaction-circle"
-    x="14"
-    y="-46"
+    x="14.076370239257812"
+    y="-46.040000915527344"
     width="180"
     height="180"
     viewBox="0 0 180 180"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect
-      x="91"
-      y="0"
-      width="0.5"
-      height="180"
+    <line
+      x1="0"
+      x2="180"
+      y1="91"
+      y2="91"
       stroke="url(#linear-gradient-vert)"
-      stroke-width="0.5"
-      stroke-dasharray="4 4"></rect>
-    <rect
-      x="0"
-      y="91"
-      width="180"
+      stroke-width="1"
+      stroke-dasharray="4 4"></line>
+    <line
+      x1="91"
+      x2="91"
+      y1="0"
+      y2="180"
       stroke="url(#linear-gradient-horiz)"
       stroke-dasharray="4 4"
-      height="0.5"
-      stroke-width="0.5"></rect>
+      stroke-width="1"></line>
     <g filter="url(#user-satis-circle)">
       <rect x="84" y="84" width="14" height="14" rx="7" fill="white"></rect>
     </g>
@@ -304,9 +304,9 @@ const { className } = Astro.props;
       <linearGradient
         id="linear-gradient-vert"
         x1="0"
-        y1="0"
-        x2="0"
-        y2="180"
+        x2="180"
+        y1="91"
+        y2="91"
         gradientUnits="userSpaceOnUse"
       >
         <stop stop-color="#E3E8EF" stop-opacity="0"></stop>
@@ -317,10 +317,10 @@ const { className } = Astro.props;
       </linearGradient>
       <linearGradient
         id="linear-gradient-horiz"
-        x1="0"
+        x1="91"
+        x2="91"
         y1="0"
-        x2="180"
-        y2="0"
+        y2="180"
         gradientUnits="userSpaceOnUse"
       >
         <stop offset="0" stop-color="#E3E8EF" stop-opacity="0"></stop>
