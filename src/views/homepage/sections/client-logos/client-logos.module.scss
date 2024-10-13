@@ -2,6 +2,7 @@
   max-width: 902px;
   margin: 0 auto;
   margin-top: var(--spacing-9xl);
+  padding: 0 var(--spacing-4xl);
 }
 
 .heading {
@@ -24,4 +25,5 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  gap: var(--spacing-4xl);
 }
