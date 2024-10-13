@@ -1,14 +1,16 @@
-const portalSite = document.querySelector(
+const mobilePortalSite = document.querySelector(
   "#portal-injection-site",
 ) as HTMLDivElement;
 
-const restOfSite = document.querySelector("#rest-of-site") as HTMLDivElement;
+const mobileRestOfSite = document.querySelector(
+  "#rest-of-site",
+) as HTMLDivElement;
 
-interface ElementReferences {
+interface MobileElementReferences {
   portal: HTMLDivElement;
 }
 
-function getNewDropdownContentEl(id: string) {
+function getNewMobileDropdownContentEl(id: string) {
   const contentsTemplate = document.querySelector(
     `#${id}`,
   ) as HTMLTemplateElement;
@@ -19,12 +21,12 @@ function getNewDropdownContentEl(id: string) {
   return dropdownDiv;
 }
 
-const dropdownMenus = document.querySelectorAll(
+const mobileDropdownMenus = document.querySelectorAll(
   "[data-open-mobile]",
 ) as NodeListOf<HTMLElement>;
 
-dropdownMenus.forEach((dropdownMenu) => {
-  let elementReferences: null | ElementReferences = null;
+mobileDropdownMenus.forEach((dropdownMenu) => {
+  let elementReferences: null | MobileElementReferences = null;
   const fragmentId = dropdownMenu.dataset.openMobile;
 
   dropdownMenu.setAttribute("aria-haspopup", "dialog");
@@ -34,8 +36,8 @@ dropdownMenus.forEach((dropdownMenu) => {
     if (elementReferences) {
       elementReferences.portal.remove();
     }
-    portalSite.appendChild(portal);
-    restOfSite.setAttribute("inert", "true");
+    mobilePortalSite.appendChild(portal);
+    mobileRestOfSite.setAttribute("inert", "true");
     portal.querySelector("#close-dropdown-menu")?.addEventListener(
       "click",
       () => {
@@ -62,17 +64,17 @@ dropdownMenus.forEach((dropdownMenu) => {
   function cleanupDropdown() {
     elementReferences?.portal?.remove();
     elementReferences = null;
-    restOfSite.removeAttribute("inert");
+    mobileRestOfSite.removeAttribute("inert");
     dropdownMenu.setAttribute("aria-expanded", "false");
   }
 
   function openDropdown() {
-    const portal = getNewDropdownContentEl(fragmentId!);
+    const portal = getNewMobileDropdownContentEl(fragmentId!);
     assignElementReferences({
       portal,
     });
     positionDropdown();
-    portalSite.appendChild(elementReferences!.portal);
+    mobilePortalSite.appendChild(elementReferences!.portal);
     dropdownMenu.setAttribute("aria-expanded", "true");
 
     setTimeout(() => {

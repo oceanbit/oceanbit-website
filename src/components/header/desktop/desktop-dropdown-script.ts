@@ -1,16 +1,18 @@
-const portalSite = document.querySelector(
+const desktopPortalSite = document.querySelector(
   "#portal-injection-site",
 ) as HTMLDivElement;
 
-const restOfSite = document.querySelector("#rest-of-site") as HTMLDivElement;
+const desktopRestOfSite = document.querySelector(
+  "#rest-of-site",
+) as HTMLDivElement;
 
-interface ElementReferences {
+interface DesktopElementReferences {
   portal: HTMLDivElement;
   svg: SVGElement;
   path: SVGPathElement;
 }
 
-function getNewDropdownContentEl(id: string) {
+function getNewDesktopDropdownContentEl(id: string) {
   const contentsTemplate = document.querySelector(
     `#${id}`,
   ) as HTMLTemplateElement;
@@ -21,12 +23,12 @@ function getNewDropdownContentEl(id: string) {
   return dropdownDiv;
 }
 
-const dropdownMenus = document.querySelectorAll(
+const desktopDropdownMenus = document.querySelectorAll(
   "[data-open-desktop]",
 ) as NodeListOf<HTMLElement>;
 
-dropdownMenus.forEach((dropdownMenu) => {
-  let elementReferences: null | ElementReferences = null;
+desktopDropdownMenus.forEach((dropdownMenu) => {
+  let elementReferences: null | DesktopElementReferences = null;
   const fragmentId = dropdownMenu.dataset.openDesktop;
 
   dropdownMenu.setAttribute("aria-haspopup", "dialog");
@@ -45,9 +47,9 @@ dropdownMenus.forEach((dropdownMenu) => {
       elementReferences.portal.remove();
       elementReferences.svg.remove();
     }
-    portalSite.appendChild(portal);
-    portalSite.appendChild(svg);
-    restOfSite.setAttribute("inert", "true");
+    desktopPortalSite.appendChild(portal);
+    desktopPortalSite.appendChild(svg);
+    desktopRestOfSite.setAttribute("inert", "true");
     portal.querySelector("#close-dropdown-menu")?.addEventListener(
       "click",
       () => {
@@ -121,12 +123,12 @@ dropdownMenus.forEach((dropdownMenu) => {
     elementReferences?.portal?.remove();
     elementReferences?.svg?.remove();
     elementReferences = null;
-    restOfSite.removeAttribute("inert");
+    desktopRestOfSite.removeAttribute("inert");
     dropdownMenu.setAttribute("aria-expanded", "false");
   }
 
   function openDropdown() {
-    const portal = getNewDropdownContentEl(fragmentId!);
+    const portal = getNewDesktopDropdownContentEl(fragmentId!);
     const { svgEl, pathEl } = createSvgSafeArea();
     assignElementReferences({
       portal,
@@ -138,7 +140,7 @@ dropdownMenus.forEach((dropdownMenu) => {
       clientX: lastMouseCoords.x,
       clientY: lastMouseCoords.y,
     });
-    portalSite.appendChild(elementReferences!.portal);
+    desktopPortalSite.appendChild(elementReferences!.portal);
     dropdownMenu.setAttribute("aria-expanded", "true");
 
     setTimeout(() => {
@@ -182,7 +184,7 @@ dropdownMenus.forEach((dropdownMenu) => {
     const relatedTarget = e.relatedTarget as HTMLElement;
     if (!relatedTarget) return;
     if (elementReferences.portal.contains(relatedTarget)) return;
-    if (portalSite.contains(relatedTarget)) return;
+    if (desktopPortalSite.contains(relatedTarget)) return;
     cleanupDropdown();
   });
 
