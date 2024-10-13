@@ -1,0 +1,42 @@
+.container {
+  /* Fade out the left-hand side to 0% opacity */
+  mask-image: linear-gradient(to left, transparent 30%, black 100%);
+  will-change: transform, opacity;
+}
+
+.flip {
+  transform: scaleX(-1);
+}
+
+.wave,
+.waveBlur {
+  stroke-dasharray: 80 60%;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  animation-name: draw_line;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  will-change: transform, opacity;
+}
+
+.waveBlur {
+  filter: blur(2px);
+}
+
+@keyframes draw_line {
+  0% {
+    stroke-opacity: 0;
+    stroke-dashoffset: 0;
+  }
+  20% {
+    stroke-opacity: 1;
+  }
+  80% {
+    stroke-opacity: 1;
+  }
+  100% {
+    stroke-opacity: 0;
+    stroke-dashoffset: 100;
+  }
+}

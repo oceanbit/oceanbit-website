@@ -1,88 +1,13 @@
 ---
+import styles from "./waves.module.scss";
+import WaveRight from "./wave-right.astro";
+
 interface Props {
+  className?: string | undefined;
   pathClass?: string | undefined;
 }
 
-const { pathClass } = Astro.props;
+const { pathClass = "", className = "" } = Astro.props;
 ---
 
-<svg
-  width="900"
-  height="734"
-  viewBox="0 0 900 734"
-  fill="none"
-  class="container"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <g clip-path="url(#clip0_2_3)" fill="rgba(103, 218, 255, 0.2%)">
-    <path
-      d="M408.208 91.5817C474.957 -7.58485 656.652 -38.6994 760.785 66.6297C813.129 119.575 843.905 133.763 880.581 127.006C892.634 124.786 903.619 138.868 896.373 148.753L668.36 459.801L519.418 677.014C459.802 763.958 337.047 731.036 283.121 703.707C232.633 677.481 124.292 642.796 26.9119 669.922C13.3539 673.698 -5.27808 651.699 3.08092 640.376L408.208 91.5817Z"
-      stroke="url(#paint0_radial_2_3)"
-      stroke-opacity="0.24"></path>
-    <path
-      d="M408.208 91.5817C474.957 -7.58485 656.652 -38.6994 760.785 66.6297C813.129 119.575 843.905 133.763 880.581 127.006C892.634 124.786 903.619 138.868 896.373 148.753L668.36 459.801L519.418 677.014C459.802 763.958 337.047 731.036 283.121 703.707C232.633 677.481 124.292 642.796 26.9119 669.922C13.3539 673.698 -5.27808 651.699 3.08092 640.376L408.208 91.5817Z"
-      stroke="#3aafff"
-      class={`wave-left ${pathClass}`}></path>
-    <path
-      d="M408.208 91.5817C474.957 -7.58485 656.652 -38.6994 760.785 66.6297C813.129 119.575 843.905 133.763 880.581 127.006C892.634 124.786 903.619 138.868 896.373 148.753L668.36 459.801L519.418 677.014C459.802 763.958 337.047 731.036 283.121 703.707C232.633 677.481 124.292 642.796 26.9119 669.922C13.3539 673.698 -5.27808 651.699 3.08092 640.376L408.208 91.5817Z"
-      stroke="#3aafff"
-      class={`wave-left-blur ${pathClass}`}></path>
-  </g>
-  <defs>
-    <radialGradient
-      id="paint0_radial_2_3"
-      cx="0"
-      cy="0"
-      r="1"
-      gradientUnits="userSpaceOnUse"
-      gradientTransform="translate(345.232 143.183) rotate(54.9741) scale(436.999 1390.49)"
-    >
-      <stop stop-color="#0062FF" stop-opacity="0"></stop>
-      <stop offset="1" stop-color="#0062FF"></stop>
-    </radialGradient>
-    <clipPath id="clip0_2_3">
-      <rect width="900" height="734" fill="white"></rect>
-    </clipPath>
-  </defs>
-</svg>
-
-<style>
-  .container {
-    /* Fade out the left-hand side to 0% opacity */
-    mask-image: linear-gradient(to right, transparent 30%, black 100%);
-    will-change: transform, opacity;
-  }
-
-  .wave-left,
-  .wave-left-blur {
-    stroke-dasharray: 80 60%;
-    stroke-linejoin: round;
-    stroke-linecap: round;
-    animation-name: draw_line;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    will-change: transform, opacity;
-  }
-
-  .wave-left-blur {
-    filter: blur(2px);
-  }
-
-  @keyframes draw_line {
-    0% {
-      stroke-opacity: 0;
-      stroke-dashoffset: 0;
-    }
-    20% {
-      stroke-opacity: 1;
-    }
-    80% {
-      stroke-opacity: 1;
-    }
-    100% {
-      stroke-opacity: 0;
-      stroke-dashoffset: 100;
-    }
-  }
-</style>
+<WaveRight className={`${styles.flip} ${className}`} pathClass={pathClass} />

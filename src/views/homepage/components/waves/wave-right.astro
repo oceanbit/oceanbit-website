@@ -1,9 +1,12 @@
 ---
+import styles from "./waves.module.scss";
+
 interface Props {
+  className?: string | undefined;
   pathClass?: string | undefined;
 }
 
-const { pathClass } = Astro.props;
+const { pathClass = "", className = "" } = Astro.props;
 ---
 
 <svg
@@ -11,7 +14,7 @@ const { pathClass } = Astro.props;
   height="734"
   viewBox="0 0 900 734"
   fill="none"
-  class="container"
+  class={`${className} ${styles.container}`}
   xmlns="http://www.w3.org/2000/svg"
 >
   <g clip-path="url(#clip0_2_3)" fill="rgba(103, 218, 255, 0.2%)">
@@ -22,11 +25,11 @@ const { pathClass } = Astro.props;
     <path
       d="M491.792 91.5817C425.043 -7.58485 243.348 -38.6994 139.215 66.6297C86.8711 119.575 56.0951 133.763 19.4191 127.006C7.36613 124.786 -3.61892 138.868 3.62708 148.753L231.64 459.801L380.582 677.014C440.198 763.958 562.953 731.036 616.879 703.707C667.367 677.481 775.708 642.796 873.088 669.922C886.646 673.698 905.278 651.699 896.919 640.376L491.792 91.5817Z"
       stroke="#3aafff"
-      class={`wave-left ${pathClass}`}></path>
+      class={`${styles.wave} ${pathClass}`}></path>
     <path
       d="M491.792 91.5817C425.043 -7.58485 243.348 -38.6994 139.215 66.6297C86.8711 119.575 56.0951 133.763 19.4191 127.006C7.36613 124.786 -3.61892 138.868 3.62708 148.753L231.64 459.801L380.582 677.014C440.198 763.958 562.953 731.036 616.879 703.707C667.367 677.481 775.708 642.796 873.088 669.922C886.646 673.698 905.278 651.699 896.919 640.376L491.792 91.5817Z"
       stroke="#3aafff"
-      class={`wave-left-blur ${pathClass}`}></path>
+      class={`${styles.waveBlur} ${pathClass}`}></path>
   </g>
   <defs>
     <radialGradient
@@ -45,44 +48,3 @@ const { pathClass } = Astro.props;
     </clipPath>
   </defs>
 </svg>
-
-<style>
-  .container {
-    /* Fade out the left-hand side to 0% opacity */
-    mask-image: linear-gradient(to left, transparent 30%, black 100%);
-    will-change: transform, opacity;
-  }
-
-  .wave-left,
-  .wave-left-blur {
-    stroke-dasharray: 80 60%;
-    stroke-linejoin: round;
-    stroke-linecap: round;
-    animation-name: draw_line;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    will-change: transform, opacity;
-  }
-
-  .wave-left-blur {
-    filter: blur(2px);
-  }
-
-  @keyframes draw_line {
-    0% {
-      stroke-opacity: 0;
-      stroke-dashoffset: 0;
-    }
-    20% {
-      stroke-opacity: 1;
-    }
-    80% {
-      stroke-opacity: 1;
-    }
-    100% {
-      stroke-opacity: 0;
-      stroke-dashoffset: 100;
-    }
-  }
-</style>
