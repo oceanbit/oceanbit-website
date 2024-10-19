@@ -49,7 +49,7 @@
   background: #6586fb;
 }
 
-.container:hover .outerSpeedometer {
+.outerContainer:hover .outerSpeedometer {
   transform: rotate(130deg);
 }
 
@@ -78,7 +78,7 @@
   z-index: -1;
 }
 
-.container:hover .middleSpeedometer {
+.outerContainer:hover .middleSpeedometer {
   transform: translateX(calc(var(--offest) / 2)) rotate(130deg);
 }
 
@@ -176,6 +176,6 @@
   content: counter(perf-num) "%";
 }
 
-.container:hover .percentage {
+.outerContainer:hover .percentage {
   --perf-num: 100;
 }
