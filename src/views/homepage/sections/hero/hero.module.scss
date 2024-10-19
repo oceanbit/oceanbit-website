@@ -2,6 +2,13 @@
 
 .topMostContainer {
   overflow-x: clip;
+  margin: var(--spacing-9xl) auto;
+}
+
+@include until($tabletMin) {
+  .topMostContainer {
+    margin: var(--spacing-4xl) auto;
+  }
 }
 
 .topContainer {

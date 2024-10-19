@@ -1,0 +1,58 @@
+---
+import Subheading from "../../components/headings/subheading.astro";
+import Heading from "../../components/headings/heading.astro";
+import SupportingText from "../../components/headings/supporting-text.astro";
+import styles from "./what-we-offer.module.scss";
+import SolutionsCard from "../../components/solutions-card/solutions-card.astro";
+---
+
+<section>
+  <div class={styles.topContainer}>
+    <Subheading as="h2">What we offer</Subheading>
+    <Heading>Build faster, together.</Heading>
+    <SupportingText
+      >Join the league of tech leaders and elevate your<br />digital presence
+      with our empowering solutions.</SupportingText
+    >
+  </div>
+  <ul class={styles.cardsContainer} role="list">
+    <li class={styles.cardListItem}>
+      <SolutionsCard
+        index={0}
+        iconSrc="/service-icons/consultancy.svg"
+        title="Consultancy"
+        description="From pinpointing and resolving system issues to accelerating your engineering team's skills, we provide guidance for growth and success."
+        href="#"
+      />
+      <hr class={styles.twoWideBorderLine} />
+    </li>
+    <li class={styles.cardListItem}>
+      <SolutionsCard
+        index={1}
+        iconSrc="/service-icons/docs.svg"
+        title="Documentation"
+        description="Provide your users with clear and comprehensive guides tailored to your product and aligned with industry best practices."
+        href="#"
+      />
+    </li>
+    <li class={styles.cardListItem}>
+      <SolutionsCard
+        index={2}
+        iconSrc="/service-icons/dev.svg"
+        title="Development"
+        description="Build your ideas with front-end magic and ensure functionality with back-end expertise, that meets your specific project requirements."
+        href="#"
+      />
+      <hr class={styles.twoWideBorderLine} />
+    </li>
+    <li class={styles.cardListItem}>
+      <SolutionsCard
+        index={3}
+        iconSrc="/service-icons/design.svg"
+        title="Product Design"
+        description="Shape your product's future through user-centric, visually stunning product design that aligns with your brand identity."
+        href="#"
+      />
+    </li>
+  </ul>
+</section>
