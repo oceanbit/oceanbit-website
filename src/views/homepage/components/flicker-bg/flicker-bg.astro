@@ -13,7 +13,7 @@
   const gridGap = 6;
   const flickerChance = 0.3;
   const color = "rgb(46,144,250)";
-  const maxOpacity = 0.95;
+  let maxOpacity = { current: 0.6 };
   let isInView = false;
 
   const toRGBA = (color: string) => {
@@ -46,7 +46,7 @@
 
     const squares = new Float32Array(cols * rows);
     for (let i = 0; i < squares.length; i++) {
-      squares[i] = Math.random() * maxOpacity;
+      squares[i] = Math.random() * maxOpacity.current;
     }
 
     return {
@@ -62,7 +62,7 @@
   const updateSquares = (squares: Float32Array, deltaTime: number) => {
     for (let i = 0; i < squares.length; i++) {
       if (Math.random() < flickerChance * deltaTime) {
-        squares[i] = Math.random() * maxOpacity;
+        squares[i] = Math.random() * maxOpacity.current;
       }
     }
   };
@@ -123,6 +123,8 @@
       isInView = entry!.isIntersecting;
       if (!isInView) return;
       paused = false;
+      maxOpacity.current = 0.8;
+      handleResize();
       pausedObserver.unobserve(canvas);
       if (!animationFrameId) {
         animationFrameId = requestAnimationFrame(animate);
@@ -145,7 +147,10 @@
 
   observer.observe(canvas);
   pausedObserver.observe(canvas);
-  animate(0);
+  const deltaTime = (performance.now() - lastTime) / 1000;
+
+  updateSquares(squares, deltaTime);
+  drawGrid(ctx, width * dpr, height * dpr, cols, rows, squares, dpr);
 
   window.addEventListener("resize", handleResize);
 </script>
