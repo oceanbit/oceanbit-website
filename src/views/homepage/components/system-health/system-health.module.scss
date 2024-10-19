@@ -163,3 +163,22 @@
   font-weight: 400;
   line-height: var(--line-height-text-xs, 1.125rem); /* 150% */
 }
+
+@property --sys-health {
+  syntax: "<integer>";
+  initial-value: 85;
+  inherits: false;
+}
+
+.percentage {
+  counter-reset: sys-health var(--sys-health);
+  transition: --sys-health 300ms;
+}
+
+.percentage::after {
+  content: counter(sys-health) "%";
+}
+
+.container:hover .percentage {
+  --sys-health: 93;
+}
