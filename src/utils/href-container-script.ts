@@ -104,6 +104,7 @@ globalThis.handleHrefContainerClick = (e: MouseEvent) => {
     return;
 
   window.location.href = String(href);
+  return;
 };
 
 export function getHrefContainerProps(href: string) {
