@@ -2,31 +2,10 @@
 import styles from "./cpu.module.scss";
 ---
 
-<script>
-  let isBlue = false;
-  const blueEls = [
-    document.querySelector("#blueOuterShadow"),
-    document.querySelector("#blueShadows"),
-    document.querySelector("#blueInnerShadows"),
-    document.querySelector("#blueOceanBitIcon"),
-  ];
-  const greyEls = [document.querySelector("#greyOceanBitIcon")];
-
-  toggle.addEventListener("click", () => {
-    isBlue = !isBlue;
-    if (isBlue) {
-      blueEls.forEach((el) => (el.style.opacity = 1));
-      greyEls.forEach((el) => (el.style.opacity = 0));
-    } else {
-      blueEls.forEach((el) => (el.style.opacity = 0));
-      greyEls.forEach((el) => (el.style.opacity = 1));
-    }
-  });
-</script>
-
 <button id="toggle">Click me</button>
 
 <svg
+  class={styles.svgCpuContainer}
   width="199"
   height="197"
   viewBox="0 0 199 197"
@@ -178,6 +157,7 @@ import styles from "./cpu.module.scss";
       <g
         id="greyOceanBitIcon"
         class={styles.greyItem}
+        style="opacity: 1"
         filter="url(#filter10_i_14269_8999)"
       >
         <path
@@ -792,3 +772,17 @@ import styles from "./cpu.module.scss";
     />
   </defs>
 </svg>
+
+<script define:vars={{ styles }}>
+  let isBlue = false;
+  const container = document.querySelector(`.${styles.svgCpuContainer}`);
+  const toggle = document.getElementById("toggle");
+  toggle.addEventListener("click", () => {
+    isBlue = !isBlue;
+    if (isBlue) {
+      container.classList.add(styles.active);
+    } else {
+      container.classList.remove(styles.active);
+    }
+  });
+</script>
