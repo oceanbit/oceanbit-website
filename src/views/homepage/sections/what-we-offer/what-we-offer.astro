@@ -17,6 +17,7 @@ import SolutionsCard from "../../components/solutions-card/solutions-card.astro"
   </div>
   <ul class={styles.cardsContainer} role="list">
     <li class={styles.cardListItem}>
+      <hr class={`${styles.topLine} ${styles.twoWideBorderLine}`} />
       <SolutionsCard
         index={0}
         iconSrc="/service-icons/consultancy.svg"
@@ -34,6 +35,7 @@ import SolutionsCard from "../../components/solutions-card/solutions-card.astro"
         description="Provide your users with clear and comprehensive guides tailored to your product and aligned with industry best practices."
         href="#"
       />
+      <hr class={styles.oneWideBorderLine} />
     </li>
     <li class={styles.cardListItem}>
       <SolutionsCard
@@ -53,6 +55,7 @@ import SolutionsCard from "../../components/solutions-card/solutions-card.astro"
         description="Shape your product's future through user-centric, visually stunning product design that aligns with your brand identity."
         href="#"
       />
+      <hr class={styles.oneWideBorderLine} />
     </li>
   </ul>
 </section>
