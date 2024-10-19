@@ -1,11 +1,15 @@
 ---
 import styles from "./cpu.module.scss";
+
+interface Props {
+  className?: string | undefined;
+}
+
+const { className = "" } = Astro.props;
 ---
 
-<button id="toggle">Click me</button>
-
 <svg
-  class={styles.svgCpuContainer}
+  class={`${className} ${styles.svgCpuContainer}`}
   width="199"
   height="197"
   viewBox="0 0 199 197"
@@ -772,17 +776,3 @@ import styles from "./cpu.module.scss";
     />
   </defs>
 </svg>
-
-<script define:vars={{ styles }}>
-  let isBlue = false;
-  const container = document.querySelector(`.${styles.svgCpuContainer}`);
-  const toggle = document.getElementById("toggle");
-  toggle.addEventListener("click", () => {
-    isBlue = !isBlue;
-    if (isBlue) {
-      container.classList.add(styles.active);
-    } else {
-      container.classList.remove(styles.active);
-    }
-  });
-</script>
