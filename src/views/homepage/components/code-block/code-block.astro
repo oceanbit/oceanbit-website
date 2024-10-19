@@ -38,7 +38,10 @@ import styles from "./code-block.module.scss";
         <span class={styles.pink}>    this</span>
         <span>.data </span>
         <span class={styles.lightGrey}>= </span>
-        <span class={styles.fetchDataError}><Error /><span>fetchData<span class={styles.lighter}>{"({"}</span> apiURL <span class={styles.lighter}>{"})"}</span></span></span>
+        <span class={styles.fetchDataError}><Error /><span>fetchData<span class={styles.lighter}>{"({"}</span> apiURL <span class={styles.lighter}>{"})"}</span><div class={styles.oceanBitCursor}>
+              <Cursor />
+            <div class={styles.oceanBitCursorTag}>OceanBit</div>
+        </div></span></span>
         <span class={styles.lightGrey}>;</span>
       </span>
       <span class={styles.line}>
@@ -67,9 +70,9 @@ import styles from "./code-block.module.scss";
       </span>
       <span class={styles.line}>
         <span class={styles.pink}>    if </span>
-        <span class={styles.nullWarningCheck}><Warning /><span><span class={styles.lighter}>(</span>data === null<span class={styles.lighter}>)</span><div class={styles.cursorOne}>
+        <span class={styles.nullWarningCheck}><Warning /><span><span class={styles.lighter}>(</span>data === null<span class={styles.lighter}>)</span><div class={styles.yourTeamCursor}>
               <Cursor />
-            <div class={styles.cursorOneTag}>Your dev team</div>
+            <div class={styles.yourTeamCursorTag}>Your dev team</div>
         </div></span></span>
         <span class={styles.lightGrey}> {"{"}</span>
       </span>
