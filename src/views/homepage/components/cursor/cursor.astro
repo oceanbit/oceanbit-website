@@ -1,0 +1,57 @@
+---
+interface Props {
+  fill?: string | undefined;
+  className?: string | undefined;
+}
+const { fill = "#121926", className } = Astro.props;
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="23"
+  height="24"
+  viewBox="0 0 23 24"
+  fill="none"
+  class={className}
+>
+  <g filter="url(#filter0_d_14244_6295)">
+    <path
+      d="M16.8882 10.0449L6.90625 4.12963C6.16546 3.69064 5.25315 4.33086 5.41406 5.17679L7.5619 16.4683C7.73248 17.365 8.91667 17.5832 9.3956 16.8061L11.4801 13.4239C11.6182 13.1998 11.8391 13.0392 12.0949 12.9769L16.6149 11.8768C17.486 11.6648 17.6595 10.5019 16.8882 10.0449Z"
+      fill={fill}></path>
+    <path
+      d="M17.1431 9.61472L7.16115 3.69948C6.04997 3.041 4.68151 4.00133 4.92287 5.27022L7.07071 16.5617C7.32657 17.9068 9.10286 18.2341 9.82125 17.0684L11.9057 13.6862C11.9748 13.5742 12.0852 13.4938 12.2131 13.4627L16.7331 12.3626C18.0398 12.0446 18.3001 10.3003 17.1431 9.61472Z"
+      stroke="white"></path>
+  </g>
+  <defs>
+    <filter
+      id="filter0_d_14244_6295"
+      x="0.672409"
+      y="0.50296"
+      width="21.4286"
+      height="22.7421"
+      filterUnits="userSpaceOnUse"
+      color-interpolation-filters="sRGB"
+    >
+      <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+      <feColorMatrix
+        in="SourceAlpha"
+        type="matrix"
+        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+        result="hardAlpha"></feColorMatrix>
+      <feOffset dy="1.24071"></feOffset>
+      <feGaussianBlur stdDeviation="1.86106"></feGaussianBlur>
+      <feColorMatrix
+        type="matrix"
+        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0"></feColorMatrix>
+      <feBlend
+        mode="normal"
+        in2="BackgroundImageFix"
+        result="effect1_dropShadow_14244_6295"></feBlend>
+      <feBlend
+        mode="normal"
+        in="SourceGraphic"
+        in2="effect1_dropShadow_14244_6295"
+        result="shape"></feBlend>
+    </filter>
+  </defs>
+</svg>
