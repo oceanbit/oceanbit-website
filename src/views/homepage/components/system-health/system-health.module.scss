@@ -1,18 +1,27 @@
-.container {
+.containerCircle {
   filter: drop-shadow(0px 1px 1px rgba(24, 34, 48, 0.04))
     drop-shadow(0px 3px 3px rgba(24, 34, 48, 0.04))
     drop-shadow(0px 6px 6px rgba(24, 34, 48, 0.04))
     drop-shadow(0px 12px 12px rgba(25, 65, 133, 0.06))
     drop-shadow(0px 24px 24px rgba(25, 65, 133, 0.06));
+  width: fit-content;
+  height: fit-content;
+  aspect-ratio: 1;
+  justify-content: center;
+  align-items: center;
+  padding: var(--circle-outer-padding);
+  --circle-outer-padding: 1.35rem;
+  display: flex;
 }
 
 .circle {
-  height: 300px;
   aspect-ratio: 1 / 1;
-  position: relative;
   display: inline-block;
-  overflow: hidden;
   filter: url("#goo");
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
 }
 
 .circlePart {
@@ -21,7 +30,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  border: 50px solid var(--c, red);
+  border: var(--circle-outer-padding) solid var(--c, red);
   border-radius: 50%;
   --circle-spacing: 20px;
   --angleOne: 10%;
@@ -75,4 +84,35 @@
     50% 50%,
     0% calc(var(--angleTwo) - var(--circle-spacing))
   );
+}
+
+.innerText {
+  text-align: center;
+  margin: 0;
+  padding: 1rem;
+}
+
+.percentage {
+  color: var(--colors-label-label-primary-900, #121926);
+  margin: 0;
+  margin-bottom: var(--spacing-xs);
+
+  /* Text xl/Semibold */
+  font-family: var(--family-body, "Geist variable");
+  font-size: var(--size-text-xl, 1.25rem);
+  font-style: normal;
+  font-weight: 600;
+  line-height: var(--line-height-text-xl, 1.875rem); /* 150% */
+}
+
+.innerTextLower {
+  color: var(--colors-label-label-secondary-500, #697586);
+  text-align: center;
+
+  /* Text xs/Normal */
+  font-family: var(--family-body, "Geist variable");
+  font-size: var(--size-text-xs, 0.75rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--line-height-text-xs, 1.125rem); /* 150% */
 }
