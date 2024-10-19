@@ -1,0 +1,151 @@
+<canvas id="flickeringGrid" class="full"></canvas>
+<style>
+  .full {
+    width: 100%;
+    height: 100%;
+  }
+</style>
+<script>
+  // Ported from React (https://magicui.design/docs/components/flickering-grid) to JS
+  // Types also added
+  const canvas = document.getElementById("flickeringGrid") as HTMLCanvasElement;
+  const squareSize = 4;
+  const gridGap = 6;
+  const flickerChance = 0.3;
+  const color = "rgb(46,144,250)";
+  const maxOpacity = 0.95;
+  let isInView = false;
+
+  const toRGBA = (color: string) => {
+    const canvas = document.createElement("canvas");
+    canvas.width = canvas.height = 1;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return "rgba(255, 0, 0,";
+    ctx.fillStyle = color;
+    ctx.fillRect(0, 0, 1, 1);
+    const [r, g, b] = ctx.getImageData(0, 0, 1, 1).data;
+    return `rgba(${r}, ${g}, ${b},`;
+  };
+
+  const memoizedColor = toRGBA(color);
+
+  const setupCanvas = (canvas: HTMLCanvasElement) => {
+    canvas.style.width = "";
+    canvas.style.height = "";
+    canvas.removeAttribute("height");
+    canvas.removeAttribute("width");
+    const canvasWidth = canvas.clientWidth;
+    const canvasHeight = canvas.clientHeight;
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = canvasWidth * dpr;
+    canvas.height = canvasHeight * dpr;
+    canvas.style.width = `${canvasWidth}px`;
+    canvas.style.height = `${canvasHeight}px`;
+    const cols = Math.floor(canvasWidth / (squareSize + gridGap));
+    const rows = Math.floor(canvasHeight / (squareSize + gridGap));
+
+    const squares = new Float32Array(cols * rows);
+    for (let i = 0; i < squares.length; i++) {
+      squares[i] = Math.random() * maxOpacity;
+    }
+
+    return {
+      width: canvasWidth,
+      height: canvasHeight,
+      cols,
+      rows,
+      squares,
+      dpr,
+    };
+  };
+
+  const updateSquares = (squares: Float32Array, deltaTime: number) => {
+    for (let i = 0; i < squares.length; i++) {
+      if (Math.random() < flickerChance * deltaTime) {
+        squares[i] = Math.random() * maxOpacity;
+      }
+    }
+  };
+
+  const drawGrid = (
+    ctx: CanvasRenderingContext2D,
+    width: number,
+    height: number,
+    cols: number,
+    rows: number,
+    squares: Float32Array,
+    dpr: number,
+  ) => {
+    ctx.clearRect(0, 0, width, height);
+    ctx.fillStyle = "transparent";
+    ctx.fillRect(0, 0, width, height);
+
+    for (let i = 0; i < cols; i++) {
+      for (let j = 0; j < rows; j++) {
+        const opacity = squares[i * rows + j];
+        ctx.fillStyle = `${memoizedColor}${opacity})`;
+        ctx.fillRect(
+          i * (squareSize + gridGap) * dpr,
+          j * (squareSize + gridGap) * dpr,
+          squareSize * dpr,
+          squareSize * dpr,
+        );
+      }
+    }
+  };
+
+  const ctx = canvas.getContext("2d")!;
+  // if (!ctx) return;
+
+  let animationFrameId: number | undefined;
+  let { width, height, cols, rows, squares, dpr } = setupCanvas(canvas);
+
+  let lastTime = 0;
+  const animate = (time: number) => {
+    if (!isInView) return;
+
+    const deltaTime = (time - lastTime) / 1000;
+    lastTime = time;
+
+    updateSquares(squares, deltaTime);
+    drawGrid(ctx, width * dpr, height * dpr, cols, rows, squares, dpr);
+    animationFrameId = requestAnimationFrame(animate);
+  };
+
+  const handleResize = () => {
+    ({ width, height, cols, rows, squares, dpr } = setupCanvas(canvas));
+  };
+
+  let paused = true;
+
+  const pausedObserver = new IntersectionObserver(
+    ([entry]) => {
+      isInView = entry!.isIntersecting;
+      if (!isInView) return;
+      paused = false;
+      pausedObserver.unobserve(canvas);
+      if (!animationFrameId) {
+        animationFrameId = requestAnimationFrame(animate);
+      }
+    },
+    { rootMargin: "0px 0px -50% 0px" },
+  );
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      isInView = entry!.isIntersecting;
+      if (isInView && !paused) {
+        animationFrameId = requestAnimationFrame(animate);
+      } else {
+        cancelAnimationFrame(animationFrameId!);
+      }
+    },
+    { threshold: 0 },
+  );
+
+  observer.observe(canvas);
+  pausedObserver.observe(canvas);
+  animate(0);
+
+  window.addEventListener("resize", handleResize);
+</script>
