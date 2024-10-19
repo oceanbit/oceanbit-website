@@ -1,9 +1,9 @@
-@import "./variables/raw-spacing";
+@use "variables/raw-spacing";
 
 /* Aliases  */
 :root {
-  --container-max-width-desktop: #{$spacing-320};
-  --container-padding-desktop: #{$spacing-8};
-  --container-padding-mobile: #{$spacing-4};
-  --container-large-desktop: #{$spacing-300};
+  --container-max-width-desktop: #{raw-spacing.$spacing-320};
+  --container-padding-desktop: #{raw-spacing.$spacing-8};
+  --container-padding-mobile: #{raw-spacing.$spacing-4};
+  --container-large-desktop: #{raw-spacing.$spacing-300};
 }

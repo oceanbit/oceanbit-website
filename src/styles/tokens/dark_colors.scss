@@ -1,4 +1,4 @@
-@import "../variables/raw-colors";
+@use "../variables/raw-colors";
 
 html.dark,
 body.dark,
@@ -25,42 +25,42 @@ body.dark,
     --component-colors-alpha-alpha-black-90: rgba(255, 255, 255, 0.9);
     --component-colors-alpha-alpha-black-100: rgba(255, 255, 255, 1);
 
-    --component-colors-alpha-alpha-white-100: #{$colors-gray__dark-mode-950};
+    --component-colors-alpha-alpha-white-100: #{raw-colors.$colors-gray__dark-mode-950};
 
-    --component-colors-utility-blue-dark-utility-blue-dark-600: #{$colors-blue-dark-400};
-    --component-colors-utility-blue-dark-utility-blue-dark-700: #{$colors-blue-dark-300};
-    --component-colors-utility-blue-dark-utility-blue-dark-500: #{$colors-blue-dark-500};
-    --component-colors-utility-blue-dark-utility-blue-dark-200: #{$colors-blue-dark-800};
-    --component-colors-utility-blue-dark-utility-blue-dark-50: #{$colors-blue-dark-950};
-    --component-colors-utility-blue-dark-utility-blue-dark-100: #{$colors-blue-dark-900};
-    --component-colors-utility-blue-dark-utility-blue-dark-400: #{$colors-blue-dark-600};
-    --component-colors-utility-blue-dark-utility-blue-dark-300: #{$colors-blue-dark-700};
+    --component-colors-utility-blue-dark-utility-blue-dark-600: #{raw-colors.$colors-blue-dark-400};
+    --component-colors-utility-blue-dark-utility-blue-dark-700: #{raw-colors.$colors-blue-dark-300};
+    --component-colors-utility-blue-dark-utility-blue-dark-500: #{raw-colors.$colors-blue-dark-500};
+    --component-colors-utility-blue-dark-utility-blue-dark-200: #{raw-colors.$colors-blue-dark-800};
+    --component-colors-utility-blue-dark-utility-blue-dark-50: #{raw-colors.$colors-blue-dark-950};
+    --component-colors-utility-blue-dark-utility-blue-dark-100: #{raw-colors.$colors-blue-dark-900};
+    --component-colors-utility-blue-dark-utility-blue-dark-400: #{raw-colors.$colors-blue-dark-600};
+    --component-colors-utility-blue-dark-utility-blue-dark-300: #{raw-colors.$colors-blue-dark-700};
 
-    --component-colors-utility-blue-light-utility-blue-light-600: #{$colors-blue-light-400};
-    --component-colors-utility-blue-light-utility-blue-light-700: #{$colors-blue-light-300};
-    --component-colors-utility-blue-light-utility-blue-light-500: #{$colors-blue-light-500};
-    --component-colors-utility-blue-light-utility-blue-light-200: #{$colors-blue-light-800};
-    --component-colors-utility-blue-light-utility-blue-light-50: #{$colors-blue-light-950};
-    --component-colors-utility-blue-light-utility-blue-light-100: #{$colors-blue-light-900};
-    --component-colors-utility-blue-light-utility-blue-light-400: #{$colors-blue-light-600};
-    --component-colors-utility-blue-light-utility-blue-light-300: #{$colors-blue-light-700};
+    --component-colors-utility-blue-light-utility-blue-light-600: #{raw-colors.$colors-blue-light-400};
+    --component-colors-utility-blue-light-utility-blue-light-700: #{raw-colors.$colors-blue-light-300};
+    --component-colors-utility-blue-light-utility-blue-light-500: #{raw-colors.$colors-blue-light-500};
+    --component-colors-utility-blue-light-utility-blue-light-200: #{raw-colors.$colors-blue-light-800};
+    --component-colors-utility-blue-light-utility-blue-light-50: #{raw-colors.$colors-blue-light-950};
+    --component-colors-utility-blue-light-utility-blue-light-100: #{raw-colors.$colors-blue-light-900};
+    --component-colors-utility-blue-light-utility-blue-light-400: #{raw-colors.$colors-blue-light-600};
+    --component-colors-utility-blue-light-utility-blue-light-300: #{raw-colors.$colors-blue-light-700};
 
-    --component-colors-utility-blue-utility-blue-600: #{$colors-blue-400};
-    --component-colors-utility-blue-utility-blue-700: #{$colors-blue-300};
-    --component-colors-utility-blue-utility-blue-500: #{$colors-blue-500};
-    --component-colors-utility-blue-utility-blue-200: #{$colors-blue-800};
-    --component-colors-utility-blue-utility-blue-50: #{$colors-blue-950};
-    --component-colors-utility-blue-utility-blue-100: #{$colors-blue-900};
-    --component-colors-utility-blue-utility-blue-400: #{$colors-blue-600};
-    --component-colors-utility-blue-utility-blue-300: #{$colors-blue-700};
+    --component-colors-utility-blue-utility-blue-600: #{raw-colors.$colors-blue-400};
+    --component-colors-utility-blue-utility-blue-700: #{raw-colors.$colors-blue-300};
+    --component-colors-utility-blue-utility-blue-500: #{raw-colors.$colors-blue-500};
+    --component-colors-utility-blue-utility-blue-200: #{raw-colors.$colors-blue-800};
+    --component-colors-utility-blue-utility-blue-50: #{raw-colors.$colors-blue-950};
+    --component-colors-utility-blue-utility-blue-100: #{raw-colors.$colors-blue-900};
+    --component-colors-utility-blue-utility-blue-400: #{raw-colors.$colors-blue-600};
+    --component-colors-utility-blue-utility-blue-300: #{raw-colors.$colors-blue-700};
 
-    --component-colors-utility-brand-utility-brand-600: #{$colors-brand-400};
-    --component-colors-utility-brand-utility-brand-700: #{$colors-brand-300};
-    --component-colors-utility-brand-utility-brand-500: #{$colors-brand-500};
-    --component-colors-utility-brand-utility-brand-200: #{$colors-brand-800};
-    --component-colors-utility-brand-utility-brand-50: #{$colors-brand-950};
-    --component-colors-utility-brand-utility-brand-100: #{$colors-brand-900};
-    --component-colors-utility-brand-utility-brand-400: #{$colors-brand-600};
+    --component-colors-utility-brand-utility-brand-600: #{raw-colors.$colors-brand-400};
+    --component-colors-utility-brand-utility-brand-700: #{raw-colors.$colors-brand-300};
+    --component-colors-utility-brand-utility-brand-500: #{raw-colors.$colors-brand-500};
+    --component-colors-utility-brand-utility-brand-200: #{raw-colors.$colors-brand-800};
+    --component-colors-utility-brand-utility-brand-50: #{raw-colors.$colors-brand-950};
+    --component-colors-utility-brand-utility-brand-100: #{raw-colors.$colors-brand-900};
+    --component-colors-utility-brand-utility-brand-400: #{raw-colors.$colors-brand-600};
     --component-colors-utility-brand-utility-brand-50_alt: var(
       --component-colors-utility-gray-utility-gray-50
     );
@@ -82,9 +82,9 @@ body.dark,
     --component-colors-utility-brand-utility-brand-700_alt: var(
       --component-colors-utility-gray-utility-gray-700
     );
-    --component-colors-utility-brand-utility-brand-300: #{$colors-brand-700};
-    --component-colors-utility-brand-utility-brand-900: #{$colors-brand-100};
-    --component-colors-utility-brand-utility-brand-800: #{$colors-brand-200};
+    --component-colors-utility-brand-utility-brand-300: #{raw-colors.$colors-brand-700};
+    --component-colors-utility-brand-utility-brand-900: #{raw-colors.$colors-brand-100};
+    --component-colors-utility-brand-utility-brand-800: #{raw-colors.$colors-brand-200};
     --component-colors-utility-brand-utility-brand-300_alt: var(
       --component-colors-utility-gray-utility-gray-300
     );
@@ -95,140 +95,140 @@ body.dark,
       --component-colors-utility-gray-utility-gray-900
     );
 
-    --component-colors-utility-cyan-utility-cyan-50: #{$colors-cyan-950};
-    --component-colors-utility-cyan-utility-cyan-100: #{$colors-cyan-900};
-    --component-colors-utility-cyan-utility-cyan-200: #{$colors-cyan-800};
-    --component-colors-utility-cyan-utility-cyan-300: #{$colors-cyan-700};
-    --component-colors-utility-cyan-utility-cyan-400: #{$colors-cyan-600};
-    --component-colors-utility-cyan-utility-cyan-500: #{$colors-cyan-500};
-    --component-colors-utility-cyan-utility-cyan-600: #{$colors-cyan-400};
-    --component-colors-utility-cyan-utility-cyan-700: #{$colors-cyan-300};
+    --component-colors-utility-cyan-utility-cyan-50: #{raw-colors.$colors-cyan-950};
+    --component-colors-utility-cyan-utility-cyan-100: #{raw-colors.$colors-cyan-900};
+    --component-colors-utility-cyan-utility-cyan-200: #{raw-colors.$colors-cyan-800};
+    --component-colors-utility-cyan-utility-cyan-300: #{raw-colors.$colors-cyan-700};
+    --component-colors-utility-cyan-utility-cyan-400: #{raw-colors.$colors-cyan-600};
+    --component-colors-utility-cyan-utility-cyan-500: #{raw-colors.$colors-cyan-500};
+    --component-colors-utility-cyan-utility-cyan-600: #{raw-colors.$colors-cyan-400};
+    --component-colors-utility-cyan-utility-cyan-700: #{raw-colors.$colors-cyan-300};
 
-    --component-colors-utility-error-utility-error-600: #{$colors-error-400};
-    --component-colors-utility-error-utility-error-700: #{$colors-error-300};
-    --component-colors-utility-error-utility-error-500: #{$colors-error-500};
-    --component-colors-utility-error-utility-error-200: #{$colors-error-800};
-    --component-colors-utility-error-utility-error-50: #{$colors-error-950};
-    --component-colors-utility-error-utility-error-100: #{$colors-error-900};
-    --component-colors-utility-error-utility-error-400: #{$colors-error-600};
-    --component-colors-utility-error-utility-error-300: #{$colors-error-700};
+    --component-colors-utility-error-utility-error-600: #{raw-colors.$colors-error-400};
+    --component-colors-utility-error-utility-error-700: #{raw-colors.$colors-error-300};
+    --component-colors-utility-error-utility-error-500: #{raw-colors.$colors-error-500};
+    --component-colors-utility-error-utility-error-200: #{raw-colors.$colors-error-800};
+    --component-colors-utility-error-utility-error-50: #{raw-colors.$colors-error-950};
+    --component-colors-utility-error-utility-error-100: #{raw-colors.$colors-error-900};
+    --component-colors-utility-error-utility-error-400: #{raw-colors.$colors-error-600};
+    --component-colors-utility-error-utility-error-300: #{raw-colors.$colors-error-700};
 
-    --component-colors-utility-fuchsia-utility-fuchsia-600: #{$colors-fuchsia-400};
-    --component-colors-utility-fuchsia-utility-fuchsia-700: #{$colors-fuchsia-300};
-    --component-colors-utility-fuchsia-utility-fuchsia-500: #{$colors-fuchsia-500};
-    --component-colors-utility-fuchsia-utility-fuchsia-200: #{$colors-fuchsia-800};
-    --component-colors-utility-fuchsia-utility-fuchsia-50: #{$colors-fuchsia-950};
-    --component-colors-utility-fuchsia-utility-fuchsia-100: #{$colors-fuchsia-900};
-    --component-colors-utility-fuchsia-utility-fuchsia-400: #{$colors-fuchsia-600};
-    --component-colors-utility-fuchsia-utility-fuchsia-300: #{$colors-fuchsia-700};
+    --component-colors-utility-fuchsia-utility-fuchsia-600: #{raw-colors.$colors-fuchsia-400};
+    --component-colors-utility-fuchsia-utility-fuchsia-700: #{raw-colors.$colors-fuchsia-300};
+    --component-colors-utility-fuchsia-utility-fuchsia-500: #{raw-colors.$colors-fuchsia-500};
+    --component-colors-utility-fuchsia-utility-fuchsia-200: #{raw-colors.$colors-fuchsia-800};
+    --component-colors-utility-fuchsia-utility-fuchsia-50: #{raw-colors.$colors-fuchsia-950};
+    --component-colors-utility-fuchsia-utility-fuchsia-100: #{raw-colors.$colors-fuchsia-900};
+    --component-colors-utility-fuchsia-utility-fuchsia-400: #{raw-colors.$colors-fuchsia-600};
+    --component-colors-utility-fuchsia-utility-fuchsia-300: #{raw-colors.$colors-fuchsia-700};
 
-    --component-colors-utility-gray-blue-utility-gray-blue-600: #{$colors-gray-blue-400};
-    --component-colors-utility-gray-blue-utility-gray-blue-700: #{$colors-gray-blue-300};
-    --component-colors-utility-gray-blue-utility-gray-blue-500: #{$colors-gray-blue-500};
-    --component-colors-utility-gray-blue-utility-gray-blue-200: #{$colors-gray-blue-800};
-    --component-colors-utility-gray-blue-utility-gray-blue-50: #{$colors-gray-blue-900};
-    --component-colors-utility-gray-blue-utility-gray-blue-100: #{$colors-gray-blue-900};
-    --component-colors-utility-gray-blue-utility-gray-blue-400: #{$colors-gray-blue-600};
-    --component-colors-utility-gray-blue-utility-gray-blue-300: #{$colors-gray-blue-700};
+    --component-colors-utility-gray-blue-utility-gray-blue-600: #{raw-colors.$colors-gray-blue-400};
+    --component-colors-utility-gray-blue-utility-gray-blue-700: #{raw-colors.$colors-gray-blue-300};
+    --component-colors-utility-gray-blue-utility-gray-blue-500: #{raw-colors.$colors-gray-blue-500};
+    --component-colors-utility-gray-blue-utility-gray-blue-200: #{raw-colors.$colors-gray-blue-800};
+    --component-colors-utility-gray-blue-utility-gray-blue-50: #{raw-colors.$colors-gray-blue-900};
+    --component-colors-utility-gray-blue-utility-gray-blue-100: #{raw-colors.$colors-gray-blue-900};
+    --component-colors-utility-gray-blue-utility-gray-blue-400: #{raw-colors.$colors-gray-blue-600};
+    --component-colors-utility-gray-blue-utility-gray-blue-300: #{raw-colors.$colors-gray-blue-700};
 
-    --component-colors-utility-gray-utility-gray-700: #{$colors-gray__dark-mode-300};
-    --component-colors-utility-gray-utility-gray-600: #{$colors-gray__dark-mode-400};
-    --component-colors-utility-gray-utility-gray-500: #{$colors-gray__dark-mode-500};
-    --component-colors-utility-gray-utility-gray-200: #{$colors-gray__dark-mode-700};
-    --component-colors-utility-gray-utility-gray-50: #{$colors-gray__dark-mode-900};
-    --component-colors-utility-gray-utility-gray-100: #{$colors-gray__dark-mode-800};
-    --component-colors-utility-gray-utility-gray-400: #{$colors-gray__dark-mode-600};
-    --component-colors-utility-gray-utility-gray-300: #{$colors-gray__dark-mode-700};
-    --component-colors-utility-gray-utility-gray-900: #{$colors-gray__dark-mode-100};
-    --component-colors-utility-gray-utility-gray-800: #{$colors-gray__dark-mode-200};
+    --component-colors-utility-gray-utility-gray-700: #{raw-colors.$colors-gray__dark-mode-300};
+    --component-colors-utility-gray-utility-gray-600: #{raw-colors.$colors-gray__dark-mode-400};
+    --component-colors-utility-gray-utility-gray-500: #{raw-colors.$colors-gray__dark-mode-500};
+    --component-colors-utility-gray-utility-gray-200: #{raw-colors.$colors-gray__dark-mode-700};
+    --component-colors-utility-gray-utility-gray-50: #{raw-colors.$colors-gray__dark-mode-900};
+    --component-colors-utility-gray-utility-gray-100: #{raw-colors.$colors-gray__dark-mode-800};
+    --component-colors-utility-gray-utility-gray-400: #{raw-colors.$colors-gray__dark-mode-600};
+    --component-colors-utility-gray-utility-gray-300: #{raw-colors.$colors-gray__dark-mode-700};
+    --component-colors-utility-gray-utility-gray-900: #{raw-colors.$colors-gray__dark-mode-100};
+    --component-colors-utility-gray-utility-gray-800: #{raw-colors.$colors-gray__dark-mode-200};
 
-    --component-colors-utility-indigo-utility-indigo-600: #{$colors-indigo-400};
-    --component-colors-utility-indigo-utility-indigo-700: #{$colors-indigo-300};
-    --component-colors-utility-indigo-utility-indigo-500: #{$colors-indigo-500};
-    --component-colors-utility-indigo-utility-indigo-200: #{$colors-indigo-800};
-    --component-colors-utility-indigo-utility-indigo-50: #{$colors-indigo-950};
-    --component-colors-utility-indigo-utility-indigo-100: #{$colors-indigo-900};
-    --component-colors-utility-indigo-utility-indigo-400: #{$colors-indigo-600};
-    --component-colors-utility-indigo-utility-indigo-300: #{$colors-indigo-700};
+    --component-colors-utility-indigo-utility-indigo-600: #{raw-colors.$colors-indigo-400};
+    --component-colors-utility-indigo-utility-indigo-700: #{raw-colors.$colors-indigo-300};
+    --component-colors-utility-indigo-utility-indigo-500: #{raw-colors.$colors-indigo-500};
+    --component-colors-utility-indigo-utility-indigo-200: #{raw-colors.$colors-indigo-800};
+    --component-colors-utility-indigo-utility-indigo-50: #{raw-colors.$colors-indigo-950};
+    --component-colors-utility-indigo-utility-indigo-100: #{raw-colors.$colors-indigo-900};
+    --component-colors-utility-indigo-utility-indigo-400: #{raw-colors.$colors-indigo-600};
+    --component-colors-utility-indigo-utility-indigo-300: #{raw-colors.$colors-indigo-700};
 
-    --component-colors-utility-orange-dark-utility-orange-dark-600: #{$colors-orange-dark-400};
-    --component-colors-utility-orange-dark-utility-orange-dark-700: #{$colors-orange-dark-300};
-    --component-colors-utility-orange-dark-utility-orange-dark-500: #{$colors-orange-dark-500};
-    --component-colors-utility-orange-dark-utility-orange-dark-200: #{$colors-orange-dark-800};
-    --component-colors-utility-orange-dark-utility-orange-dark-50: #{$colors-orange-dark-950};
-    --component-colors-utility-orange-dark-utility-orange-dark-100: #{$colors-orange-dark-900};
-    --component-colors-utility-orange-dark-utility-orange-dark-400: #{$colors-orange-dark-600};
-    --component-colors-utility-orange-dark-utility-orange-dark-300: #{$colors-orange-dark-700};
+    --component-colors-utility-orange-dark-utility-orange-dark-600: #{raw-colors.$colors-orange-dark-400};
+    --component-colors-utility-orange-dark-utility-orange-dark-700: #{raw-colors.$colors-orange-dark-300};
+    --component-colors-utility-orange-dark-utility-orange-dark-500: #{raw-colors.$colors-orange-dark-500};
+    --component-colors-utility-orange-dark-utility-orange-dark-200: #{raw-colors.$colors-orange-dark-800};
+    --component-colors-utility-orange-dark-utility-orange-dark-50: #{raw-colors.$colors-orange-dark-950};
+    --component-colors-utility-orange-dark-utility-orange-dark-100: #{raw-colors.$colors-orange-dark-900};
+    --component-colors-utility-orange-dark-utility-orange-dark-400: #{raw-colors.$colors-orange-dark-600};
+    --component-colors-utility-orange-dark-utility-orange-dark-300: #{raw-colors.$colors-orange-dark-700};
 
-    --component-colors-utility-orange-utility-orange-600: #{$colors-orange-400};
-    --component-colors-utility-orange-utility-orange-700: #{$colors-orange-300};
-    --component-colors-utility-orange-utility-orange-500: #{$colors-orange-500};
-    --component-colors-utility-orange-utility-orange-200: #{$colors-orange-800};
-    --component-colors-utility-orange-utility-orange-50: #{$colors-orange-950};
-    --component-colors-utility-orange-utility-orange-100: #{$colors-orange-900};
-    --component-colors-utility-orange-utility-orange-400: #{$colors-orange-600};
-    --component-colors-utility-orange-utility-orange-300: #{$colors-orange-700};
+    --component-colors-utility-orange-utility-orange-600: #{raw-colors.$colors-orange-400};
+    --component-colors-utility-orange-utility-orange-700: #{raw-colors.$colors-orange-300};
+    --component-colors-utility-orange-utility-orange-500: #{raw-colors.$colors-orange-500};
+    --component-colors-utility-orange-utility-orange-200: #{raw-colors.$colors-orange-800};
+    --component-colors-utility-orange-utility-orange-50: #{raw-colors.$colors-orange-950};
+    --component-colors-utility-orange-utility-orange-100: #{raw-colors.$colors-orange-900};
+    --component-colors-utility-orange-utility-orange-400: #{raw-colors.$colors-orange-600};
+    --component-colors-utility-orange-utility-orange-300: #{raw-colors.$colors-orange-700};
 
-    --component-colors-utility-pink-utility-pink-600: #{$colors-pink-400};
-    --component-colors-utility-pink-utility-pink-700: #{$colors-pink-300};
-    --component-colors-utility-pink-utility-pink-500: #{$colors-pink-500};
-    --component-colors-utility-pink-utility-pink-200: #{$colors-pink-800};
-    --component-colors-utility-pink-utility-pink-50: #{$colors-pink-950};
-    --component-colors-utility-pink-utility-pink-100: #{$colors-pink-900};
-    --component-colors-utility-pink-utility-pink-400: #{$colors-pink-600};
-    --component-colors-utility-pink-utility-pink-300: #{$colors-pink-700};
+    --component-colors-utility-pink-utility-pink-600: #{raw-colors.$colors-pink-400};
+    --component-colors-utility-pink-utility-pink-700: #{raw-colors.$colors-pink-300};
+    --component-colors-utility-pink-utility-pink-500: #{raw-colors.$colors-pink-500};
+    --component-colors-utility-pink-utility-pink-200: #{raw-colors.$colors-pink-800};
+    --component-colors-utility-pink-utility-pink-50: #{raw-colors.$colors-pink-950};
+    --component-colors-utility-pink-utility-pink-100: #{raw-colors.$colors-pink-900};
+    --component-colors-utility-pink-utility-pink-400: #{raw-colors.$colors-pink-600};
+    --component-colors-utility-pink-utility-pink-300: #{raw-colors.$colors-pink-700};
 
-    --component-colors-utility-purple-utility-purple-600: #{$colors-purple-400};
-    --component-colors-utility-purple-utility-purple-700: #{$colors-purple-300};
-    --component-colors-utility-purple-utility-purple-500: #{$colors-purple-500};
-    --component-colors-utility-purple-utility-purple-200: #{$colors-purple-800};
-    --component-colors-utility-purple-utility-purple-50: #{$colors-purple-950};
-    --component-colors-utility-purple-utility-purple-100: #{$colors-purple-900};
-    --component-colors-utility-purple-utility-purple-400: #{$colors-purple-600};
-    --component-colors-utility-purple-utility-purple-300: #{$colors-purple-700};
+    --component-colors-utility-purple-utility-purple-600: #{raw-colors.$colors-purple-400};
+    --component-colors-utility-purple-utility-purple-700: #{raw-colors.$colors-purple-300};
+    --component-colors-utility-purple-utility-purple-500: #{raw-colors.$colors-purple-500};
+    --component-colors-utility-purple-utility-purple-200: #{raw-colors.$colors-purple-800};
+    --component-colors-utility-purple-utility-purple-50: #{raw-colors.$colors-purple-950};
+    --component-colors-utility-purple-utility-purple-100: #{raw-colors.$colors-purple-900};
+    --component-colors-utility-purple-utility-purple-400: #{raw-colors.$colors-purple-600};
+    --component-colors-utility-purple-utility-purple-300: #{raw-colors.$colors-purple-700};
 
-    --component-colors-utility-sky-utility-sky-50: #{$colors-sky-950};
-    --component-colors-utility-sky-utility-sky-100: #{$colors-sky-900};
-    --component-colors-utility-sky-utility-sky-200: #{$colors-sky-800};
-    --component-colors-utility-sky-utility-sky-300: #{$colors-sky-700};
-    --component-colors-utility-sky-utility-sky-400: #{$colors-sky-600};
-    --component-colors-utility-sky-utility-sky-500: #{$colors-sky-500};
-    --component-colors-utility-sky-utility-sky-600: #{$colors-sky-400};
-    --component-colors-utility-sky-utility-sky-700: #{$colors-sky-300};
+    --component-colors-utility-sky-utility-sky-50: #{raw-colors.$colors-sky-950};
+    --component-colors-utility-sky-utility-sky-100: #{raw-colors.$colors-sky-900};
+    --component-colors-utility-sky-utility-sky-200: #{raw-colors.$colors-sky-800};
+    --component-colors-utility-sky-utility-sky-300: #{raw-colors.$colors-sky-700};
+    --component-colors-utility-sky-utility-sky-400: #{raw-colors.$colors-sky-600};
+    --component-colors-utility-sky-utility-sky-500: #{raw-colors.$colors-sky-500};
+    --component-colors-utility-sky-utility-sky-600: #{raw-colors.$colors-sky-400};
+    --component-colors-utility-sky-utility-sky-700: #{raw-colors.$colors-sky-300};
 
-    --component-colors-utility-success-utility-success-600: #{$colors-success-400};
-    --component-colors-utility-success-utility-success-700: #{$colors-success-300};
-    --component-colors-utility-success-utility-success-500: #{$colors-success-500};
-    --component-colors-utility-success-utility-success-200: #{$colors-success-800};
-    --component-colors-utility-success-utility-success-50: #{$colors-success-950};
-    --component-colors-utility-success-utility-success-100: #{$colors-success-900};
-    --component-colors-utility-success-utility-success-400: #{$colors-success-600};
-    --component-colors-utility-success-utility-success-300: #{$colors-success-700};
+    --component-colors-utility-success-utility-success-600: #{raw-colors.$colors-success-400};
+    --component-colors-utility-success-utility-success-700: #{raw-colors.$colors-success-300};
+    --component-colors-utility-success-utility-success-500: #{raw-colors.$colors-success-500};
+    --component-colors-utility-success-utility-success-200: #{raw-colors.$colors-success-800};
+    --component-colors-utility-success-utility-success-50: #{raw-colors.$colors-success-950};
+    --component-colors-utility-success-utility-success-100: #{raw-colors.$colors-success-900};
+    --component-colors-utility-success-utility-success-400: #{raw-colors.$colors-success-600};
+    --component-colors-utility-success-utility-success-300: #{raw-colors.$colors-success-700};
 
-    --component-colors-utility-teal-utility-teal-50: #{$colors-teal-950};
-    --component-colors-utility-teal-utility-teal-100: #{$colors-teal-900};
-    --component-colors-utility-teal-utility-teal-200: #{$colors-teal-800};
-    --component-colors-utility-teal-utility-teal-300: #{$colors-teal-700};
-    --component-colors-utility-teal-utility-teal-400: #{$colors-teal-600};
-    --component-colors-utility-teal-utility-teal-500: #{$colors-teal-500};
-    --component-colors-utility-teal-utility-teal-600: #{$colors-teal-400};
-    --component-colors-utility-teal-utility-teal-700: #{$colors-teal-300};
+    --component-colors-utility-teal-utility-teal-50: #{raw-colors.$colors-teal-950};
+    --component-colors-utility-teal-utility-teal-100: #{raw-colors.$colors-teal-900};
+    --component-colors-utility-teal-utility-teal-200: #{raw-colors.$colors-teal-800};
+    --component-colors-utility-teal-utility-teal-300: #{raw-colors.$colors-teal-700};
+    --component-colors-utility-teal-utility-teal-400: #{raw-colors.$colors-teal-600};
+    --component-colors-utility-teal-utility-teal-500: #{raw-colors.$colors-teal-500};
+    --component-colors-utility-teal-utility-teal-600: #{raw-colors.$colors-teal-400};
+    --component-colors-utility-teal-utility-teal-700: #{raw-colors.$colors-teal-300};
 
-    --component-colors-utility-warning-utility-warning-600: #{$colors-warning-400};
-    --component-colors-utility-warning-utility-warning-700: #{$colors-warning-300};
-    --component-colors-utility-warning-utility-warning-500: #{$colors-warning-500};
-    --component-colors-utility-warning-utility-warning-200: #{$colors-warning-800};
-    --component-colors-utility-warning-utility-warning-50: #{$colors-warning-950};
-    --component-colors-utility-warning-utility-warning-100: #{$colors-warning-900};
-    --component-colors-utility-warning-utility-warning-400: #{$colors-warning-600};
-    --component-colors-utility-warning-utility-warning-300: #{$colors-warning-700};
+    --component-colors-utility-warning-utility-warning-600: #{raw-colors.$colors-warning-400};
+    --component-colors-utility-warning-utility-warning-700: #{raw-colors.$colors-warning-300};
+    --component-colors-utility-warning-utility-warning-500: #{raw-colors.$colors-warning-500};
+    --component-colors-utility-warning-utility-warning-200: #{raw-colors.$colors-warning-800};
+    --component-colors-utility-warning-utility-warning-50: #{raw-colors.$colors-warning-950};
+    --component-colors-utility-warning-utility-warning-100: #{raw-colors.$colors-warning-900};
+    --component-colors-utility-warning-utility-warning-400: #{raw-colors.$colors-warning-600};
+    --component-colors-utility-warning-utility-warning-300: #{raw-colors.$colors-warning-700};
 
-    --component-colors-components-app-store-badges-app-store-badge-border: #{$colors-base-white};
+    --component-colors-components-app-store-badges-app-store-badge-border: #{raw-colors.$colors-base-white};
 
-    --component-colors-components-application-navigation-nav-item-icon-fg: #{$colors-gray__dark-mode-400};
-    --component-colors-components-application-navigation-nav-item-icon-fg_active: #{$colors-gray__dark-mode-200};
-    --component-colors-components-application-navigation-nav-item-button-icon-fg: #{$colors-gray__dark-mode-400};
-    --component-colors-components-application-navigation-nav-item-button-icon-fg_active: #{$colors-gray__dark-mode-200};
+    --component-colors-components-application-navigation-nav-item-icon-fg: #{raw-colors.$colors-gray__dark-mode-400};
+    --component-colors-components-application-navigation-nav-item-icon-fg_active: #{raw-colors.$colors-gray__dark-mode-200};
+    --component-colors-components-application-navigation-nav-item-button-icon-fg: #{raw-colors.$colors-gray__dark-mode-400};
+    --component-colors-components-application-navigation-nav-item-button-icon-fg_active: #{raw-colors.$colors-gray__dark-mode-200};
 
     --component-colors-components-avatars-avatar-contrast-border: rgba(
       255,
@@ -243,17 +243,17 @@ body.dark,
       0.14
     );
 
-    --component-colors-components-avatars-avatar-profile-photo-border: #{$colors-gray__dark-mode-950};
-    --component-colors-components-avatars-avatar-bg: #{$colors-gray__dark-mode-800};
+    --component-colors-components-avatars-avatar-profile-photo-border: #{raw-colors.$colors-gray__dark-mode-950};
+    --component-colors-components-avatars-avatar-bg: #{raw-colors.$colors-gray__dark-mode-800};
 
-    --component-colors-components-breadcrumbs-breadcrumb-fg: #{$colors-gray__dark-mode-300};
-    --component-colors-components-breadcrumbs-breadcrumb-fg_hover: #{$colors-base-white};
-    --component-colors-components-breadcrumbs-breadcrumb-bg_hover: #{$colors-gray__dark-mode-800};
-    --component-colors-components-breadcrumbs-breadcrumb-brand-bg_hover: #{$colors-gray__dark-mode-800};
-    --component-colors-components-breadcrumbs-breadcrumb-brand-fg_hover: #{$colors-base-white};
-    --component-colors-components-breadcrumbs-breadcrumb-icon-fg: #{$colors-gray__dark-mode-400};
-    --component-colors-components-breadcrumbs-breadcrumb-icon-fg_hover: #{$colors-base-white};
-    --component-colors-components-breadcrumbs-breadcrumb-brand-icon-fg_hover: #{$colors-base-white};
+    --component-colors-components-breadcrumbs-breadcrumb-fg: #{raw-colors.$colors-gray__dark-mode-300};
+    --component-colors-components-breadcrumbs-breadcrumb-fg_hover: #{raw-colors.$colors-base-white};
+    --component-colors-components-breadcrumbs-breadcrumb-bg_hover: #{raw-colors.$colors-gray__dark-mode-800};
+    --component-colors-components-breadcrumbs-breadcrumb-brand-bg_hover: #{raw-colors.$colors-gray__dark-mode-800};
+    --component-colors-components-breadcrumbs-breadcrumb-brand-fg_hover: #{raw-colors.$colors-base-white};
+    --component-colors-components-breadcrumbs-breadcrumb-icon-fg: #{raw-colors.$colors-gray__dark-mode-400};
+    --component-colors-components-breadcrumbs-breadcrumb-icon-fg_hover: #{raw-colors.$colors-base-white};
+    --component-colors-components-breadcrumbs-breadcrumb-brand-icon-fg_hover: #{raw-colors.$colors-base-white};
 
     --component-colors-components-footers-footer-badge-border: rgba(
       255,
@@ -268,16 +268,16 @@ body.dark,
       0.1
     );
 
-    --component-colors-components-footers-footer-button-fg: #{$colors-gray__dark-mode-300};
-    --component-colors-components-footers-footer-button-fg_hover: #{$colors-gray__dark-mode-100};
-    --component-colors-components-footers-footer-badge-fg: #{$colors-base-white};
+    --component-colors-components-footers-footer-button-fg: #{raw-colors.$colors-gray__dark-mode-300};
+    --component-colors-components-footers-footer-button-fg_hover: #{raw-colors.$colors-gray__dark-mode-100};
+    --component-colors-components-footers-footer-badge-fg: #{raw-colors.$colors-base-white};
 
-    --component-colors-components-header-sections-header-abstract-50-bg: #{$colors-gray__buck-900};
-    --component-colors-components-header-sections-header-abstract-100-bg: #{$colors-gray__buck-800};
-    --component-colors-components-header-sections-header-abstract-200-bg: #{$colors-gray__buck-700};
-    --component-colors-components-header-sections-header-abstract-300-bg: #{$colors-gray__buck-600};
+    --component-colors-components-header-sections-header-abstract-50-bg: #{raw-colors.$colors-gray__buck-900};
+    --component-colors-components-header-sections-header-abstract-100-bg: #{raw-colors.$colors-gray__buck-800};
+    --component-colors-components-header-sections-header-abstract-200-bg: #{raw-colors.$colors-gray__buck-700};
+    --component-colors-components-header-sections-header-abstract-300-bg: #{raw-colors.$colors-gray__buck-600};
 
-    --component-colors-components-mockups-screen-mockup-border: #{$colors-gray__dark-mode-700};
+    --component-colors-components-mockups-screen-mockup-border: #{raw-colors.$colors-gray__dark-mode-700};
 
     --component-colors-components-sliders-slider-handle-border: var(
       --colors-background-bg-primary
@@ -286,177 +286,177 @@ body.dark,
       --colors-foreground-fg-brand-primary__600
     );
 
-    --component-colors-components-thumbnail-thumbnail-badge-brand-fg: #{$colors-gray__dark-mode-300};
-    --component-colors-components-thumbnail-thumbnail-badge-success-fg: #{$colors-gray__dark-mode-300};
+    --component-colors-components-thumbnail-thumbnail-badge-brand-fg: #{raw-colors.$colors-gray__dark-mode-300};
+    --component-colors-components-thumbnail-thumbnail-badge-success-fg: #{raw-colors.$colors-gray__dark-mode-300};
 
-    --component-colors-components-toggles-toggle-button-fg_disabled: #{$colors-gray__buck-600};
+    --component-colors-components-toggles-toggle-button-fg_disabled: #{raw-colors.$colors-gray__buck-600};
 
-    --component-colors-components-tooltips-tooltip-supporting-text: #{$colors-gray__dark-mode-300};
+    --component-colors-components-tooltips-tooltip-supporting-text: #{raw-colors.$colors-gray__dark-mode-300};
 
-    --component-colors-components-wysiwyg-editor-wysiwyg-editor-icon-fg: #{$colors-gray__dark-mode-400};
-    --component-colors-components-wysiwyg-editor-wysiwyg-editor-icon-fg_active: #{$colors-base-white};
+    --component-colors-components-wysiwyg-editor-wysiwyg-editor-icon-fg: #{raw-colors.$colors-gray__dark-mode-400};
+    --component-colors-components-wysiwyg-editor-wysiwyg-editor-icon-fg_active: #{raw-colors.$colors-base-white};
 
-    --component-colors-components-icons-icons-icon-fg-brand: #{$colors-gray__dark-mode-400};
-    --component-colors-components-icons-icons-icon-fg-brand_on-brand: #{$colors-gray__dark-mode-400};
+    --component-colors-components-icons-icons-icon-fg-brand: #{raw-colors.$colors-gray__dark-mode-400};
+    --component-colors-components-icons-icons-icon-fg-brand_on-brand: #{raw-colors.$colors-gray__dark-mode-400};
 
-    --component-colors-components-icons-social-icons-social-icon-fg-x: #{$colors-base-white};
-    --component-colors-components-icons-social-icons-social-icon-fg-apple: #{$colors-base-white};
-    --component-colors-components-icons-social-icons-social-icon-fg-github: #{$colors-base-white};
-    --component-colors-components-icons-social-icons-social-icon-fg-angellist: #{$colors-base-white};
-    --component-colors-components-icons-social-icons-social-icon-fg-tumblr: #{$colors-base-white};
-    --component-colors-components-icons-social-icons-social-icon-fg-instagram: #{$colors-base-white};
+    --component-colors-components-icons-social-icons-social-icon-fg-x: #{raw-colors.$colors-base-white};
+    --component-colors-components-icons-social-icons-social-icon-fg-apple: #{raw-colors.$colors-base-white};
+    --component-colors-components-icons-social-icons-social-icon-fg-github: #{raw-colors.$colors-base-white};
+    --component-colors-components-icons-social-icons-social-icon-fg-angellist: #{raw-colors.$colors-base-white};
+    --component-colors-components-icons-social-icons-social-icon-fg-tumblr: #{raw-colors.$colors-base-white};
+    --component-colors-components-icons-social-icons-social-icon-fg-instagram: #{raw-colors.$colors-base-white};
 
-    --component-colors-components-icons-featured-icons-dark-featured-icon-dark-fg-brand: #{$colors-brand-200};
-    --component-colors-components-icons-featured-icons-dark-featured-icon-dark-fg-gray: #{$colors-gray__dark-mode-200};
-    --component-colors-components-icons-featured-icons-dark-featured-icon-dark-fg-error: #{$colors-error-200};
-    --component-colors-components-icons-featured-icons-dark-featured-icon-dark-fg-warning: #{$colors-warning-200};
-    --component-colors-components-icons-featured-icons-dark-featured-icon-dark-fg-success: #{$colors-success-200};
+    --component-colors-components-icons-featured-icons-dark-featured-icon-dark-fg-brand: #{raw-colors.$colors-brand-200};
+    --component-colors-components-icons-featured-icons-dark-featured-icon-dark-fg-gray: #{raw-colors.$colors-gray__dark-mode-200};
+    --component-colors-components-icons-featured-icons-dark-featured-icon-dark-fg-error: #{raw-colors.$colors-error-200};
+    --component-colors-components-icons-featured-icons-dark-featured-icon-dark-fg-warning: #{raw-colors.$colors-warning-200};
+    --component-colors-components-icons-featured-icons-dark-featured-icon-dark-fg-success: #{raw-colors.$colors-success-200};
 
-    --component-colors-components-icons-featured-icons-light-featured-icon-light-fg-brand: #{$colors-brand-200};
-    --component-colors-components-icons-featured-icons-light-featured-icon-light-fg-gray: #{$colors-gray__dark-mode-200};
-    --component-colors-components-icons-featured-icons-light-featured-icon-light-fg-error: #{$colors-error-200};
-    --component-colors-components-icons-featured-icons-light-featured-icon-light-fg-warning: #{$colors-warning-200};
-    --component-colors-components-icons-featured-icons-light-featured-icon-light-fg-success: #{$colors-success-200};
+    --component-colors-components-icons-featured-icons-light-featured-icon-light-fg-brand: #{raw-colors.$colors-brand-200};
+    --component-colors-components-icons-featured-icons-light-featured-icon-light-fg-gray: #{raw-colors.$colors-gray__dark-mode-200};
+    --component-colors-components-icons-featured-icons-light-featured-icon-light-fg-error: #{raw-colors.$colors-error-200};
+    --component-colors-components-icons-featured-icons-light-featured-icon-light-fg-warning: #{raw-colors.$colors-warning-200};
+    --component-colors-components-icons-featured-icons-light-featured-icon-light-fg-success: #{raw-colors.$colors-success-200};
 
-    --component-colors-components-icons-featured-icons-modern-featured-icon-modern-border: #{$colors-gray__dark-mode-700};
+    --component-colors-components-icons-featured-icons-modern-featured-icon-modern-border: #{raw-colors.$colors-gray__dark-mode-700};
 
-    --component-colors-components-buttons-primary-error-button-primary-error-fg: #{$colors-base-white};
-    --component-colors-components-buttons-primary-error-button-primary-error-fg_hover: #{$colors-base-white};
-    --component-colors-components-buttons-primary-error-button-primary-error-bg: #{$colors-error-600};
-    --component-colors-components-buttons-primary-error-button-primary-error-bg_hover: #{$colors-error-700};
-    --component-colors-components-buttons-primary-error-button-primary-error-border: #{$colors-error-600};
-    --component-colors-components-buttons-primary-error-button-primary-error-border_hover: #{$colors-error-700};
+    --component-colors-components-buttons-primary-error-button-primary-error-fg: #{raw-colors.$colors-base-white};
+    --component-colors-components-buttons-primary-error-button-primary-error-fg_hover: #{raw-colors.$colors-base-white};
+    --component-colors-components-buttons-primary-error-button-primary-error-bg: #{raw-colors.$colors-error-600};
+    --component-colors-components-buttons-primary-error-button-primary-error-bg_hover: #{raw-colors.$colors-error-700};
+    --component-colors-components-buttons-primary-error-button-primary-error-border: #{raw-colors.$colors-error-600};
+    --component-colors-components-buttons-primary-error-button-primary-error-border_hover: #{raw-colors.$colors-error-700};
 
-    --component-colors-components-buttons-primary-button-primary-bg: #{$colors-brand-600};
-    --component-colors-components-buttons-primary-button-primary-bg_hover: #{$colors-brand-700};
-    --component-colors-components-buttons-primary-button-primary-fg: #{$colors-base-white};
-    --component-colors-components-buttons-primary-button-primary-border: #{$colors-brand-600};
-    --component-colors-components-buttons-primary-button-primary-border_hover: #{$colors-brand-700};
-    --component-colors-components-buttons-primary-button-primary-fg_hover: #{$colors-base-white};
+    --component-colors-components-buttons-primary-button-primary-bg: #{raw-colors.$colors-brand-600};
+    --component-colors-components-buttons-primary-button-primary-bg_hover: #{raw-colors.$colors-brand-700};
+    --component-colors-components-buttons-primary-button-primary-fg: #{raw-colors.$colors-base-white};
+    --component-colors-components-buttons-primary-button-primary-border: #{raw-colors.$colors-brand-600};
+    --component-colors-components-buttons-primary-button-primary-border_hover: #{raw-colors.$colors-brand-700};
+    --component-colors-components-buttons-primary-button-primary-fg_hover: #{raw-colors.$colors-base-white};
 
-    --component-colors-components-buttons-secondary-color-button-secondary-color-bg: #{$colors-gray__buck-900};
-    --component-colors-components-buttons-secondary-color-button-secondary-color-bg_hover: #{$colors-gray__buck-800};
-    --component-colors-components-buttons-secondary-color-button-secondary-color-border_hover: #{$colors-gray__buck-700};
-    --component-colors-components-buttons-secondary-color-button-secondary-color-border: #{$colors-gray__buck-700};
-    --component-colors-components-buttons-secondary-color-button-secondary-color-fg: #{$colors-gray__buck-300};
-    --component-colors-components-buttons-secondary-color-button-secondary-color-fg_hover: #{$colors-gray__buck-100};
+    --component-colors-components-buttons-secondary-color-button-secondary-color-bg: #{raw-colors.$colors-gray__buck-900};
+    --component-colors-components-buttons-secondary-color-button-secondary-color-bg_hover: #{raw-colors.$colors-gray__buck-800};
+    --component-colors-components-buttons-secondary-color-button-secondary-color-border_hover: #{raw-colors.$colors-gray__buck-700};
+    --component-colors-components-buttons-secondary-color-button-secondary-color-border: #{raw-colors.$colors-gray__buck-700};
+    --component-colors-components-buttons-secondary-color-button-secondary-color-fg: #{raw-colors.$colors-gray__buck-300};
+    --component-colors-components-buttons-secondary-color-button-secondary-color-fg_hover: #{raw-colors.$colors-gray__buck-100};
 
-    --component-colors-components-buttons-secondary-error-button-secondary-error-fg: #{$colors-error-200};
-    --component-colors-components-buttons-secondary-error-button-secondary-error-fg_hover: #{$colors-error-100};
-    --component-colors-components-buttons-secondary-error-button-secondary-error-bg: #{$colors-error-950};
-    --component-colors-components-buttons-secondary-error-button-secondary-error-bg_hover: #{$colors-error-900};
-    --component-colors-components-buttons-secondary-error-button-secondary-error-border: #{$colors-error-800};
-    --component-colors-components-buttons-secondary-error-button-secondary-error-border_hover: #{$colors-error-700};
+    --component-colors-components-buttons-secondary-error-button-secondary-error-fg: #{raw-colors.$colors-error-200};
+    --component-colors-components-buttons-secondary-error-button-secondary-error-fg_hover: #{raw-colors.$colors-error-100};
+    --component-colors-components-buttons-secondary-error-button-secondary-error-bg: #{raw-colors.$colors-error-950};
+    --component-colors-components-buttons-secondary-error-button-secondary-error-bg_hover: #{raw-colors.$colors-error-900};
+    --component-colors-components-buttons-secondary-error-button-secondary-error-border: #{raw-colors.$colors-error-800};
+    --component-colors-components-buttons-secondary-error-button-secondary-error-border_hover: #{raw-colors.$colors-error-700};
 
-    --component-colors-components-buttons-secondary-button-secondary-bg: #{$colors-gray__buck-900};
-    --component-colors-components-buttons-secondary-button-secondary-bg_hover: #{$colors-gray__buck-800};
-    --component-colors-components-buttons-secondary-button-secondary-fg: #{$colors-gray__buck-300};
-    --component-colors-components-buttons-secondary-button-secondary-fg_hover: #{$colors-gray__buck-100};
-    --component-colors-components-buttons-secondary-button-secondary-border: #{$colors-gray__buck-700};
-    --component-colors-components-buttons-secondary-button-secondary-border_hover: #{$colors-gray__buck-700};
+    --component-colors-components-buttons-secondary-button-secondary-bg: #{raw-colors.$colors-gray__buck-900};
+    --component-colors-components-buttons-secondary-button-secondary-bg_hover: #{raw-colors.$colors-gray__buck-800};
+    --component-colors-components-buttons-secondary-button-secondary-fg: #{raw-colors.$colors-gray__buck-300};
+    --component-colors-components-buttons-secondary-button-secondary-fg_hover: #{raw-colors.$colors-gray__buck-100};
+    --component-colors-components-buttons-secondary-button-secondary-border: #{raw-colors.$colors-gray__buck-700};
+    --component-colors-components-buttons-secondary-button-secondary-border_hover: #{raw-colors.$colors-gray__buck-700};
 
-    --component-colors-components-buttons-tertiary-color-button-tertiary-color-fg: #{$colors-gray__buck-300};
-    --component-colors-components-buttons-tertiary-color-button-tertiary-color-fg_hover: #{$colors-gray__buck-100};
-    --component-colors-components-buttons-tertiary-color-button-tertiary-color-bg_hover: #{$colors-gray__buck-800};
+    --component-colors-components-buttons-tertiary-color-button-tertiary-color-fg: #{raw-colors.$colors-gray__buck-300};
+    --component-colors-components-buttons-tertiary-color-button-tertiary-color-fg_hover: #{raw-colors.$colors-gray__buck-100};
+    --component-colors-components-buttons-tertiary-color-button-tertiary-color-bg_hover: #{raw-colors.$colors-gray__buck-800};
 
-    --component-colors-components-buttons-tertiary-error-button-tertiary-error-fg: #{$colors-error-300};
-    --component-colors-components-buttons-tertiary-error-button-tertiary-error-fg_hover: #{$colors-error-200};
-    --component-colors-components-buttons-tertiary-error-button-tertiary-error-bg_hover: #{$colors-error-900};
+    --component-colors-components-buttons-tertiary-error-button-tertiary-error-fg: #{raw-colors.$colors-error-300};
+    --component-colors-components-buttons-tertiary-error-button-tertiary-error-fg_hover: #{raw-colors.$colors-error-200};
+    --component-colors-components-buttons-tertiary-error-button-tertiary-error-bg_hover: #{raw-colors.$colors-error-900};
 
-    --component-colors-components-buttons-tertiary-button-tertiary-fg: #{$colors-gray__buck-400};
-    --component-colors-components-buttons-tertiary-button-tertiary-fg_hover: #{$colors-gray__buck-200};
-    --component-colors-components-buttons-tertiary-button-tertiary-bg_hover: #{$colors-gray__buck-800};
+    --component-colors-components-buttons-tertiary-button-tertiary-fg: #{raw-colors.$colors-gray__buck-400};
+    --component-colors-components-buttons-tertiary-button-tertiary-fg_hover: #{raw-colors.$colors-gray__buck-200};
+    --component-colors-components-buttons-tertiary-button-tertiary-bg_hover: #{raw-colors.$colors-gray__buck-800};
 
-    --colors-background-bg-primary: #{$colors-gray__buck-950};
-    --colors-background-bg-tertiary: #{$colors-gray__buck-800};
-    --colors-background-bg-brand-primary: #{$colors-brand-500};
-    --colors-background-bg-error-secondary: #{$colors-error-600};
-    --colors-background-bg-warning-primary: #{$colors-warning-500};
-    --colors-background-bg-warning-secondary: #{$colors-warning-600};
-    --colors-background-bg-success-primary: #{$colors-success-500};
-    --colors-background-bg-success-secondary: #{$colors-success-600};
-    --colors-background-bg-brand-solid: #{$colors-brand-600};
-    --colors-background-bg-secondary-solid: #{$colors-gray__buck-600};
-    --colors-background-bg-error-solid: #{$colors-error-600};
-    --colors-background-bg-warning-solid: #{$colors-warning-600};
-    --colors-background-bg-success-solid: #{$colors-success-600};
-    --colors-background-bg-secondary_hover: #{$colors-gray__buck-800};
-    --colors-background-bg-primary_hover: #{$colors-gray__buck-800};
-    --colors-background-bg-disabled: #{$colors-gray__buck-800};
-    --colors-background-bg-active: #{$colors-gray__buck-800};
-    --colors-background-bg-brand-solid_hover: #{$colors-brand-500};
-    --colors-background-bg-error-primary: #{$colors-error-500};
-    --colors-background-bg-brand-secondary: #{$colors-brand-600};
-    --colors-background-bg-secondary: #{$colors-gray__buck-900};
-    --colors-background-bg-disabled_subtle: #{$colors-gray__buck-900};
-    --colors-background-bg-quaternary: #{$colors-gray__buck-700};
+    --colors-background-bg-primary: #{raw-colors.$colors-gray__buck-950};
+    --colors-background-bg-tertiary: #{raw-colors.$colors-gray__buck-800};
+    --colors-background-bg-brand-primary: #{raw-colors.$colors-brand-500};
+    --colors-background-bg-error-secondary: #{raw-colors.$colors-error-600};
+    --colors-background-bg-warning-primary: #{raw-colors.$colors-warning-500};
+    --colors-background-bg-warning-secondary: #{raw-colors.$colors-warning-600};
+    --colors-background-bg-success-primary: #{raw-colors.$colors-success-500};
+    --colors-background-bg-success-secondary: #{raw-colors.$colors-success-600};
+    --colors-background-bg-brand-solid: #{raw-colors.$colors-brand-600};
+    --colors-background-bg-secondary-solid: #{raw-colors.$colors-gray__buck-600};
+    --colors-background-bg-error-solid: #{raw-colors.$colors-error-600};
+    --colors-background-bg-warning-solid: #{raw-colors.$colors-warning-600};
+    --colors-background-bg-success-solid: #{raw-colors.$colors-success-600};
+    --colors-background-bg-secondary_hover: #{raw-colors.$colors-gray__buck-800};
+    --colors-background-bg-primary_hover: #{raw-colors.$colors-gray__buck-800};
+    --colors-background-bg-disabled: #{raw-colors.$colors-gray__buck-800};
+    --colors-background-bg-active: #{raw-colors.$colors-gray__buck-800};
+    --colors-background-bg-brand-solid_hover: #{raw-colors.$colors-brand-500};
+    --colors-background-bg-error-primary: #{raw-colors.$colors-error-500};
+    --colors-background-bg-brand-secondary: #{raw-colors.$colors-brand-600};
+    --colors-background-bg-secondary: #{raw-colors.$colors-gray__buck-900};
+    --colors-background-bg-disabled_subtle: #{raw-colors.$colors-gray__buck-900};
+    --colors-background-bg-quaternary: #{raw-colors.$colors-gray__buck-700};
     --colors-background-bg-primary_alt: var(--colors-background-bg-secondary);
     --colors-background-bg-brand-primary_alt: var(
       --colors-background-bg-secondary
     );
     --colors-background-bg-secondary_alt: var(--colors-background-bg-primary);
-    --colors-background-bg-overlay: #{$colors-gray__buck-800};
-    --colors-background-bg-secondary_subtle: #{$colors-gray__buck-900};
+    --colors-background-bg-overlay: #{raw-colors.$colors-gray__buck-800};
+    --colors-background-bg-secondary_subtle: #{raw-colors.$colors-gray__buck-900};
     --colors-background-bg-brand-section: var(--colors-background-bg-secondary);
     --colors-background-bg-brand-section_subtle: var(
       --colors-background-bg-primary
     );
     --colors-background-bg-primary-solid: var(--colors-background-bg-secondary);
 
-    --colors-border-border-secondary: #{$colors-gray__buck-800};
-    --colors-border-border-error: #{$colors-error-400};
-    --colors-border-border-primary: #{$colors-gray__buck-700};
-    --colors-border-border-brand: #{$colors-brand-400};
-    --colors-border-border-brand-solid: #{$colors-brand-500};
-    --colors-border-border-disabled: #{$colors-gray__buck-700};
-    --colors-border-border-error-solid: #{$colors-error-500};
-    --colors-border-border-disabled_subtle: #{$colors-gray__buck-800};
-    --colors-border-border-tertiary: #{$colors-gray__buck-800};
-    --colors-border-border-brand-solid_alt: #{$colors-gray__buck-700};
+    --colors-border-border-secondary: #{raw-colors.$colors-gray__buck-800};
+    --colors-border-border-error: #{raw-colors.$colors-error-400};
+    --colors-border-border-primary: #{raw-colors.$colors-gray__buck-700};
+    --colors-border-border-brand: #{raw-colors.$colors-brand-400};
+    --colors-border-border-brand-solid: #{raw-colors.$colors-brand-500};
+    --colors-border-border-disabled: #{raw-colors.$colors-gray__buck-700};
+    --colors-border-border-error-solid: #{raw-colors.$colors-error-500};
+    --colors-border-border-disabled_subtle: #{raw-colors.$colors-gray__buck-800};
+    --colors-border-border-tertiary: #{raw-colors.$colors-gray__buck-800};
+    --colors-border-border-brand-solid_alt: #{raw-colors.$colors-gray__buck-700};
 
-    --colors-foreground-fg-secondary__700: #{$colors-gray__dark-mode-300};
-    --colors-foreground-fg-warning-primary: #{$colors-warning-500};
-    --colors-foreground-fg-success-primary: #{$colors-success-500};
-    --colors-foreground-fg-white: #{$colors-base-white};
-    --colors-foreground-fg-success-secondary: #{$colors-success-400};
-    --colors-foreground-fg-secondary_hover: #{$colors-gray__dark-mode-200};
-    --colors-foreground-fg-primary__900: #{$colors-base-white};
-    --colors-foreground-fg-disabled: #{$colors-gray__dark-mode-500};
-    --colors-foreground-fg-quaternary__500: #{$colors-gray__dark-mode-400};
-    --colors-foreground-fg-quaternary_hover: #{$colors-gray__dark-mode-300};
-    --colors-foreground-fg-brand-secondary__500: #{$colors-brand-500};
-    --colors-foreground-fg-brand-primary__600: #{$colors-brand-500};
-    --colors-foreground-fg-quinary__400: #{$colors-gray__dark-mode-500};
-    --colors-foreground-fg-quinary_hover: #{$colors-gray__dark-mode-400};
-    --colors-foreground-fg-error-primary: #{$colors-error-500};
-    --colors-foreground-fg-disabled_subtle: #{$colors-gray__dark-mode-600};
-    --colors-foreground-fg-warning-secondary: #{$colors-warning-400};
-    --colors-foreground-fg-error-secondary: #{$colors-error-400};
-    --colors-foreground-fg-senary__300: #{$colors-gray__dark-mode-600};
-    --colors-foreground-fg-tertiary__600: #{$colors-gray__dark-mode-400};
-    --colors-foreground-fg-tertiary_hover: #{$colors-gray__dark-mode-300};
-    --colors-foreground-fg-brand-primary_alt: #{$colors-gray__dark-mode-300};
+    --colors-foreground-fg-secondary__700: #{raw-colors.$colors-gray__dark-mode-300};
+    --colors-foreground-fg-warning-primary: #{raw-colors.$colors-warning-500};
+    --colors-foreground-fg-success-primary: #{raw-colors.$colors-success-500};
+    --colors-foreground-fg-white: #{raw-colors.$colors-base-white};
+    --colors-foreground-fg-success-secondary: #{raw-colors.$colors-success-400};
+    --colors-foreground-fg-secondary_hover: #{raw-colors.$colors-gray__dark-mode-200};
+    --colors-foreground-fg-primary__900: #{raw-colors.$colors-base-white};
+    --colors-foreground-fg-disabled: #{raw-colors.$colors-gray__dark-mode-500};
+    --colors-foreground-fg-quaternary__500: #{raw-colors.$colors-gray__dark-mode-400};
+    --colors-foreground-fg-quaternary_hover: #{raw-colors.$colors-gray__dark-mode-300};
+    --colors-foreground-fg-brand-secondary__500: #{raw-colors.$colors-brand-500};
+    --colors-foreground-fg-brand-primary__600: #{raw-colors.$colors-brand-500};
+    --colors-foreground-fg-quinary__400: #{raw-colors.$colors-gray__dark-mode-500};
+    --colors-foreground-fg-quinary_hover: #{raw-colors.$colors-gray__dark-mode-400};
+    --colors-foreground-fg-error-primary: #{raw-colors.$colors-error-500};
+    --colors-foreground-fg-disabled_subtle: #{raw-colors.$colors-gray__dark-mode-600};
+    --colors-foreground-fg-warning-secondary: #{raw-colors.$colors-warning-400};
+    --colors-foreground-fg-error-secondary: #{raw-colors.$colors-error-400};
+    --colors-foreground-fg-senary__300: #{raw-colors.$colors-gray__dark-mode-600};
+    --colors-foreground-fg-tertiary__600: #{raw-colors.$colors-gray__dark-mode-400};
+    --colors-foreground-fg-tertiary_hover: #{raw-colors.$colors-gray__dark-mode-300};
+    --colors-foreground-fg-brand-primary_alt: #{raw-colors.$colors-gray__dark-mode-300};
 
-    --colors-label-label-primary__900: #{$colors-gray__dark-mode-50};
-    --colors-label-label-tertiary__400: #{$colors-gray__dark-mode-400};
-    --colors-label-label-error-primary__600: #{$colors-error-400};
-    --colors-label-label-warning-primary__600: #{$colors-warning-400};
-    --colors-label-label-success-primary__600: #{$colors-success-400};
-    --colors-label-label-white: #{$colors-base-white};
-    --colors-label-label-secondary__500: #{$colors-gray__dark-mode-300};
-    --colors-label-label-disabled: #{$colors-gray__dark-mode-500};
-    --colors-label-label-secondary_hover: #{$colors-gray__dark-mode-200};
-    --colors-label-label-tertiary_hover: #{$colors-gray__dark-mode-300};
-    --colors-label-label-brand-secondary__700: #{$colors-gray__dark-mode-300};
-    --colors-label-label-placeholder: #{$colors-gray__dark-mode-500};
-    --colors-label-label-placeholder_subtle: #{$colors-gray__dark-mode-700};
-    --colors-label-label-brand-tertiary__800: #{$colors-gray__dark-mode-400};
-    --colors-label-label-quaternary__300: #{$colors-gray__dark-mode-400};
-    --colors-label-label-brand-primary__600: #{$colors-gray__dark-mode-50};
-    --colors-label-label-primary_on-brand: #{$colors-gray__dark-mode-50};
-    --colors-label-label-secondary_on-brand: #{$colors-gray__dark-mode-300};
-    --colors-label-label-tertiary_on-brand: #{$colors-gray__dark-mode-400};
-    --colors-label-label-quaternary_on-brand: #{$colors-gray__dark-mode-400};
-    --colors-label-label-brand-tertiary_alt: #{$colors-gray__dark-mode-50};
+    --colors-label-label-primary__900: #{raw-colors.$colors-gray__dark-mode-50};
+    --colors-label-label-tertiary__400: #{raw-colors.$colors-gray__dark-mode-400};
+    --colors-label-label-error-primary__600: #{raw-colors.$colors-error-400};
+    --colors-label-label-warning-primary__600: #{raw-colors.$colors-warning-400};
+    --colors-label-label-success-primary__600: #{raw-colors.$colors-success-400};
+    --colors-label-label-white: #{raw-colors.$colors-base-white};
+    --colors-label-label-secondary__500: #{raw-colors.$colors-gray__dark-mode-300};
+    --colors-label-label-disabled: #{raw-colors.$colors-gray__dark-mode-500};
+    --colors-label-label-secondary_hover: #{raw-colors.$colors-gray__dark-mode-200};
+    --colors-label-label-tertiary_hover: #{raw-colors.$colors-gray__dark-mode-300};
+    --colors-label-label-brand-secondary__700: #{raw-colors.$colors-gray__dark-mode-300};
+    --colors-label-label-placeholder: #{raw-colors.$colors-gray__dark-mode-500};
+    --colors-label-label-placeholder_subtle: #{raw-colors.$colors-gray__dark-mode-700};
+    --colors-label-label-brand-tertiary__800: #{raw-colors.$colors-gray__dark-mode-400};
+    --colors-label-label-quaternary__300: #{raw-colors.$colors-gray__dark-mode-400};
+    --colors-label-label-brand-primary__600: #{raw-colors.$colors-gray__dark-mode-50};
+    --colors-label-label-primary_on-brand: #{raw-colors.$colors-gray__dark-mode-50};
+    --colors-label-label-secondary_on-brand: #{raw-colors.$colors-gray__dark-mode-300};
+    --colors-label-label-tertiary_on-brand: #{raw-colors.$colors-gray__dark-mode-400};
+    --colors-label-label-quaternary_on-brand: #{raw-colors.$colors-gray__dark-mode-400};
+    --colors-label-label-brand-tertiary_alt: #{raw-colors.$colors-gray__dark-mode-50};
   }
 }

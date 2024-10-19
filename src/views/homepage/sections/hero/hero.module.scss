@@ -1,11 +1,11 @@
-@import "../../../../styles/variables/raw-breakpoints";
+@use "../../../../styles/variables/raw-breakpoints";
 
 .topMostContainer {
   overflow-x: clip;
   margin: var(--spacing-9xl) auto;
 }
 
-@include until($tabletMin) {
+@include raw-breakpoints.until(raw-breakpoints.$tabletMin) {
   .topMostContainer {
     margin: var(--spacing-4xl) auto;
   }
@@ -40,7 +40,7 @@
   transition: opacity 0.5s ease-in-out;
 }
 
-@include until($tabletMin) {
+@include raw-breakpoints.until(raw-breakpoints.$tabletMin) {
   .leftWaveContainer,
   .rightWaveContainer {
     opacity: 0;
@@ -132,14 +132,14 @@
   grid-row: 1 / 3;
 }
 
-@include until($desktopMin) {
+@include raw-breakpoints.until(raw-breakpoints.$desktopMin) {
   .cardsGrid {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto;
   }
 }
 
-@include until($tabletMin) {
+@include raw-breakpoints.until(raw-breakpoints.$tabletMin) {
   .cardsGrid {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
@@ -147,7 +147,7 @@
 }
 
 .hideCardOnMobile {
-  @include until($tabletMin) {
+  @include raw-breakpoints.until(raw-breakpoints.$tabletMin) {
     display: none !important;
   }
 }

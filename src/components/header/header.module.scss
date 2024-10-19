@@ -1,0 +1,92 @@
+@use "../../styles/variables/raw-breakpoints.scss";
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+// Mobile
+@include raw-breakpoints.until(raw-breakpoints.$tabletMin) {
+  .header {
+    padding: var(--spacing-lg, 12px);
+    padding-bottom: 0;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+    padding-left: 16px;
+
+    border-radius: var(--radius-3xl, 20px);
+    border: 1px solid var(--colors-border-border-tertiary, #eef2f6);
+    background: var(
+                    --component-colors-alpha-alpha-white-80,
+                    rgba(255, 255, 255, 0.8)
+    );
+    box-shadow:
+            0px 1px 1px -0.5px rgba(24, 34, 48, 0.04),
+            0px 3px 3px -1.5px rgba(24, 34, 48, 0.04),
+            0px 6px 6px -3px rgba(24, 34, 48, 0.04),
+            0px 12px 12px -6px rgba(25, 65, 133, 0.06),
+            0px 24px 24px -12px rgba(25, 65, 133, 0.06);
+    backdrop-filter: blur(16px);
+  }
+
+  .logoContainer {
+    margin-right: auto;
+  }
+}
+
+// Desktop
+@include raw-breakpoints.from(raw-breakpoints.$tabletMin) {
+  .header {
+    background: white;
+    border-bottom: 1px solid rgba(122, 90, 248, 0);
+    box-shadow: 0px 2px 4px 0px rgba(14, 165, 233, 0.06);
+    backdrop-filter: blur(16px);
+  }
+
+  .container {
+    max-width: raw-breakpoints.$desktopMin;
+    margin: 0 auto;
+    padding: 12px 24px;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+.logoContainer {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo {
+  height: 30px;
+  width: 30px;
+}
+
+.logoText {
+  font-family: Epilogue, sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-left: 6px;
+}
+
+@include raw-breakpoints.until(raw-breakpoints.$tabletMin) {
+  .hideOnMobile {
+    display: none !important;
+  }
+}
+
+@include raw-breakpoints.from(raw-breakpoints.$tabletMin) {
+  .hideOnDesktop {
+    display: none !important;
+  }
+}

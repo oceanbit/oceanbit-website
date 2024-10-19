@@ -1,4 +1,4 @@
-@import "../../../../styles/variables/raw-breakpoints";
+@use "../../../../styles/variables/raw-breakpoints";
 
 .container {
   display: flex;
@@ -30,7 +30,7 @@
   border-right-width: 1px;
 }
 
-@include until($tabletMin) {
+@include raw-breakpoints.until(raw-breakpoints.$tabletMin) {
   .container[data-index="0"],
   .container[data-index="2"] {
     border-right-style: solid;

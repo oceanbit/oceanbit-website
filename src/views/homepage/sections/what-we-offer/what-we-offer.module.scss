@@ -1,4 +1,4 @@
-@import "../../../../styles/variables/raw-breakpoints";
+@use "../../../../styles/variables/raw-breakpoints";
 
 .topContainer {
   margin: var(--spacing-9xl) auto;
@@ -17,7 +17,7 @@
   grid-template-rows: repeat(2, 1fr);
 }
 
-@include until($tabletMin) {
+@include raw-breakpoints.until(raw-breakpoints.$tabletMin) {
   .cardsContainer {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 1fr);
@@ -44,7 +44,7 @@
   );
 }
 
-@include from($tabletMin) {
+@include raw-breakpoints.from(raw-breakpoints.$tabletMin) {
   .twoWideBorderLine {
     left: -100px;
     width: calc(200% + 200px);
@@ -55,7 +55,7 @@
   }
 }
 
-@include until($tabletMin) {
+@include raw-breakpoints.until(raw-breakpoints.$tabletMin) {
   .twoWideBorderLine,
   .oneWideBorderLine {
     left: -16px;

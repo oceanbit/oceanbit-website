@@ -1,4 +1,4 @@
-@import "../../../../styles/variables/raw-breakpoints";
+@use "../../../../styles/variables/raw-breakpoints";
 
 .container {
   display: flex;
@@ -76,7 +76,7 @@
 .rightComponents,
 .leftComponents {
   position: absolute;
-  @include until($tabletMin) {
+  @include raw-breakpoints.until(raw-breakpoints.$tabletMin) {
     display: none !important;
   }
 }
