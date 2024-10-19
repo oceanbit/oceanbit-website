@@ -1,8 +1,8 @@
 ---
 import styles from "./solutions-card.module.scss";
 import ObButtonTransparent from "../../../../components/buttons/ob-button-transparent.astro";
-import ObButton from "../../../../components/buttons/ob-button.astro";
 import RightArrow from "../../../../assets/icons/right_arrow.astro";
+import { getHrefContainerProps } from "../../../../utils/href-container-script";
 
 interface Props {
   iconSrc: string;
@@ -15,12 +15,14 @@ interface Props {
 const { iconSrc, title, description, href, index } = Astro.props;
 ---
 
-<!-- TODO: Add the card props from Playful Programming -->
-<div class={styles.container} data-index={index}>
+<div
+  class={styles.container}
+  data-index={index}
+  {...getHrefContainerProps(href)}
+>
   <img loading="eager" src={iconSrc} class={styles.icon} alt="" />
   <h3 class={styles.title}>{title}</h3>
   <p class={styles.description}>{description}</p>
-  <!-- TODO: Add arrow -->
   <ObButtonTransparent className={styles.gettingStarted} href="#"
     >Get started
     <RightArrow stroke="currentColor" />
