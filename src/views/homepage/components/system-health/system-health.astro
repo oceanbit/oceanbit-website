@@ -1,0 +1,31 @@
+---
+import styles from "./system-health.module.scss";
+---
+
+<div class={styles.container}>
+  <div class={styles.circle}>
+    <div class={`${styles.circlePart} ${styles.blue}`}></div>
+    <div class={`${styles.circlePart} ${styles.orange}`}></div>
+    <div class={`${styles.circlePart} ${styles.red}`}></div>
+  </div>
+</div>
+<svg
+  style="visibility: hidden; position: absolute"
+  width="0"
+  height="0"
+  xmlns="http://www.w3.org/2000/svg"
+  version="1.1"
+>
+  <defs>
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"
+      ></feGaussianBlur>
+      <feColorMatrix
+        in="blur"
+        mode="matrix"
+        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+        result="goo"></feColorMatrix>
+      <feComposite in="SourceGraphic" in2="goo" operator="atop"></feComposite>
+    </filter>
+  </defs>
+</svg>

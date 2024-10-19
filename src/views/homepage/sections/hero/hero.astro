@@ -14,6 +14,7 @@ import Health from "../../../../assets/icons/health.astro";
 import User from "../../../../assets/icons/user.astro";
 import Mobo from "../../components/mobo/mobo.astro";
 import UserSatisfaction from "../../components/user-satisfaction/user-satisfaction.astro";
+import SystemHealth from "../../components/system-health/system-health.astro";
 import styles from "./hero.module.scss";
 ---
 
@@ -81,6 +82,7 @@ import styles from "./hero.module.scss";
         </HeroCard>
         <HeroCard className={styles.hideCardOnMobile} title="System Health">
           <Health slot="icon" />
+          <SystemHealth />
         </HeroCard>
         <HeroCard title="Revenue increase">
           <Money slot="icon" />
