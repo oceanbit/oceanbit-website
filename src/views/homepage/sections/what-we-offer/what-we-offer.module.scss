@@ -1,7 +1,7 @@
 @use "../../../../styles/variables/raw-breakpoints";
 
 .topContainer {
-  margin: var(--spacing-9xl) auto;
+  margin: var(--spacing-9xl) auto 0;
   max-width: var(--width-xl, 48rem);
   padding: 0 var(--spacing-xl, 1rem);
 }
