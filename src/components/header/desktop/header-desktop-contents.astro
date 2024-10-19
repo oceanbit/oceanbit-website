@@ -1,6 +1,6 @@
 ---
 import HeaderDropdown from "./header-dropdown.astro";
-import ObButton from "../../ob-button-v1/ob-button.astro";
+import ObButton from "../../buttons/ob-button.astro";
 import HeaderButton from "./header-button.astro";
 import HeaderSolutionsList from "./header-solutions-list.astro";
 import HeaderProjectsList from "./header-projects-list.astro";
@@ -29,7 +29,7 @@ const { className } = Astro.props;
   </nav>
 </div>
 <div class={`rightArea ${className}`}>
-  <ObButton
+  <ObButton href="#"
     ><span style="padding-left: 6px">Book a call</span>
     <RightArrow />
   </ObButton>

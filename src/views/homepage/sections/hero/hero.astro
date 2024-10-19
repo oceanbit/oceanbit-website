@@ -1,7 +1,7 @@
 ---
 import WaveLeft from "../../components/waves/wave-left.astro";
 import WaveRight from "../../components/waves/wave-right.astro";
-import ObButton from "../../../../components/ob-button-v1/ob-button.astro";
+import ObButton from "../../../../components/buttons/ob-button.astro";
 import RightArrow from "../../../../assets/icons/right_arrow.astro";
 import CodeBlock from "../../components/code-block/code-block.astro";
 import RevIncrease from "../../components/rev-increase/rev-increase.astro";
@@ -33,12 +33,12 @@ import styles from "./hero.module.scss";
       </p>
 
       <div style="display: flex; gap: 24px; justify-content: center">
-        <ObButton disabled>
+        <ObButton disabled href="#">
           <span style="margin-left: 6px">Contact us</span>
           <RightArrow stroke="currentColor" />
         </ObButton>
 
-        <ObButton>
+        <ObButton href="#">
           <span style="margin-left: 6px">Book a call</span>
           <RightArrow stroke="currentColor" />
         </ObButton>

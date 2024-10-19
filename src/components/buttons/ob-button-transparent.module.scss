@@ -1,0 +1,47 @@
+.button {
+  text-decoration: none;
+  display: inline-flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-xs, 4px);
+  border-radius: var(--radius-full, 9999px);
+  border: 2px solid transparent;
+  background: transparent;
+
+  color: var(
+    --component-colors-components-buttons-tertiary-color-button-tertiary-color-fg,
+    #0098ff
+  );
+
+  font-family: "Geist variable";
+  font-size: var(--size-text-sm, 14px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: var(--line-height-text-sm, 20px); /* 142.857% */
+}
+
+.button:hover {
+  background: var(
+    --component-colors-components-buttons-tertiary-color-button-tertiary-color-bg_hover,
+    #f5faff
+  );
+}
+
+.button:active {
+  background: var(
+    --component-colors-components-buttons-tertiary-color-button-tertiary-color-bg_pressed,
+    #e7f0ff
+  );
+}
+
+.button:focus {
+  outline: 4px solid rgba(21, 112, 239, 0.24);
+}
+
+.button:disabled,
+.button[disabled],
+.button[disabled="true"],
+.button[disabled=""] {
+  color: var(--colors-foreground-fg-disabled, #9aa4b2);
+}

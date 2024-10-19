@@ -1,5 +1,8 @@
 ---
 import styles from "./solutions-card.module.scss";
+import ObButtonTransparent from "../../../../components/buttons/ob-button-transparent.astro";
+import ObButton from "../../../../components/buttons/ob-button.astro";
+import RightArrow from "../../../../assets/icons/right_arrow.astro";
 
 interface Props {
   iconSrc: string;
@@ -18,5 +21,8 @@ const { iconSrc, title, description, href, index } = Astro.props;
   <h3 class={styles.title}>{title}</h3>
   <p class={styles.description}>{description}</p>
   <!-- TODO: Add arrow -->
-  <a href={href} class={styles.link}>Get started</a>
+  <ObButtonTransparent className={styles.gettingStarted} href="#"
+    >Get started
+    <RightArrow stroke="currentColor" />
+  </ObButtonTransparent>
 </div>
