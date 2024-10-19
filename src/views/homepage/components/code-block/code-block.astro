@@ -1,209 +1,100 @@
 ---
 import Error from "../../../../assets/icons/error.astro";
 import Warning from "../../../../assets/icons/warning.astro";
+import styles from "./code-block.module.scss";
 ---
 
-<pre
-  class="shiki github-light-default vp-code"
-  style="background-color:#ffffff;color:#1f2328">
-    <code class="black">
-      <span class="line">
-        <span class="lightBlue">import</span>
+<div>
+  <pre
+    class={`shiki github-light-default vp-code ${styles.pre}`}
+    style="background-color:#ffffff;color:#1f2328">
+    <code class={`${styles.code} ${styles.black}`}>
+      <span class={styles.line}>
+        <span class={styles.lightBlue}>import</span>
         <span> OceanBit, </span>
-        <span class="lightGrey">{"{"}</span>
+        <span class={styles.lightGrey}>{"{"}</span>
         <span> expertise </span>
-        <span class="lightGrey">{"}"} </span>
-        <span class="lightBlue">from</span>
+        <span class={styles.lightGrey}>{"}"} </span>
+        <span class={styles.lightBlue}>from</span>
         <span> "training"</span>
-        <span class="lightGrey">;</span>
+        <span class={styles.lightGrey}>;</span>
       </span>
-      <span class="line" />
-      <span class="line">
-        <span class="lightGrey">// Audits testing - 88% complete...</span>
+      <span class={styles.line} />
+      <span class={styles.line}>
+        <span class={styles.lightGrey}>// Audits testing - 88% complete...</span>
       </span>
-      <span class="line" />
-      <span class="line">
-        <span class="red">class</span>
-        <span class="pink"> App</span>
-        <span class="lightGrey">{" {"}</span>
+      <span class={styles.line} />
+      <span class={styles.line}>
+        <span class={styles.red}>class</span>
+        <span class={styles.pink}> App</span>
+        <span class={styles.lightGrey}>{" {"}</span>
       </span>
-      <span class="line">
-        <span class="lightBlue">  constructor</span>
-        <span class="lightGrey">{"() {"}</span>
+      <span class={styles.line}>
+        <span class={styles.lightBlue}>  constructor</span>
+        <span class={styles.lightGrey}>{"() {"}</span>
       </span>
-      <span class="line">
-        <span class="pink">    this</span>
+      <span class={styles.line}>
+        <span class={styles.pink}>    this</span>
         <span>.data </span>
-        <span class="lightGrey">= </span>
-        <span class="fetchDataError"><Error /><span>fetchData<span class="lighter">{"({"}</span> apiURL <span class="lighter">{"})"}</span></span></span>
-        <span class="lightGrey">;</span>
+        <span class={styles.lightGrey}>= </span>
+        <span class={styles.fetchDataError}><Error /><span>fetchData<span class={styles.lighter}>{"({"}</span> apiURL <span class={styles.lighter}>{"})"}</span></span></span>
+        <span class={styles.lightGrey}>;</span>
       </span>
-      <span class="line">
-        <span class="lightGrey">{"  }"}</span>
+      <span class={styles.line}>
+        <span class={styles.lightGrey}>{"  }"}</span>
       </span>
-      <span class="line" />
-      <span class="line">
-        <span class="lightBlue">  onSuccess</span>
-        <span class="lightGrey">{"() {"}</span>
+      <span class={styles.line} />
+      <span class={styles.line}>
+        <span class={styles.lightBlue}>  onSuccess</span>
+        <span class={styles.lightGrey}>{"() {"}</span>
       </span>
-      <span class="line">
-        <span class="purple">    log</span>
-        <span class="lightGrey">(</span>
+      <span class={styles.line}>
+        <span class={styles.purple}>    log</span>
+        <span class={styles.lightGrey}>(</span>
         <span>"Data fetch successfully"</span>
-        <span class="lightGrey">);</span>
+        <span class={styles.lightGrey}>);</span>
       </span>
-      <span class="line">
-        <span class="lightGrey">  }</span>
+      <span class={styles.line}>
+        <span class={styles.lightGrey}>  }</span>
       </span>
-      <span class="line" />
-      <span class="line">
-        <span class="lightBlue">  onData</span>
-        <span class="lightGrey">(</span>
+      <span class={styles.line} />
+      <span class={styles.line}>
+        <span class={styles.lightBlue}>  onData</span>
+        <span class={styles.lightGrey}>(</span>
         <span>data</span>
-        <span class="lightGrey">{") {"}</span>
+        <span class={styles.lightGrey}>{") {"}</span>
       </span>
-      <span class="line">
-        <span class="pink">    if </span>
-        <span class="nullWarningCheck"><Warning /><span><span class="lighter">(</span>data === null<span class="lighter">)</span></span></span>
-        <span class="lightGrey"> {"{"}</span>
+      <span class={styles.line}>
+        <span class={styles.pink}>    if </span>
+        <span class={styles.nullWarningCheck}><Warning /><span><span class={styles.lighter}>(</span>data === null<span class={styles.lighter}>)</span></span></span>
+        <span class={styles.lightGrey}> {"{"}</span>
       </span>
-      <span class="line">
-        <span class="pink">      throw new </span>
-        <span class="purple">Error</span>
-        <span class="lightGrey">(</span>
+      <span class={styles.line}>
+        <span class={styles.pink}>      throw new </span>
+        <span class={styles.purple}>Error</span>
+        <span class={styles.lightGrey}>(</span>
         <span>"Data is null"</span>
-        <span class="lightGrey">);</span>
+        <span class={styles.lightGrey}>);</span>
       </span>
-      <span class="line">
-        <span class="lightGrey">    {"}"}</span>
+      <span class={styles.line}>
+        <span class={styles.lightGrey}>    {"}"}</span>
       </span>
-      <span class="line">
-        <span class="purple">    recordTime</span>
-        <span class="lightGrey">();</span>
+      <span class={styles.line}>
+        <span class={styles.purple}>    recordTime</span>
+        <span class={styles.lightGrey}>();</span>
       </span>
-      <span class="line">
-        <span class="pink">    this</span>
-        <span class="lightGrey">.</span>
-        <span class="purple">onSuccess</span>
-        <span class="lightGrey">();</span>
+      <span class={styles.line}>
+        <span class={styles.pink}>    this</span>
+        <span class={styles.lightGrey}>.</span>
+        <span class={styles.purple}>onSuccess</span>
+        <span class={styles.lightGrey}>();</span>
       </span>
-      <span class="line">
-        <span class="lightGrey">  }</span>
+      <span class={styles.line}>
+        <span class={styles.lightGrey}>  }</span>
       </span>
-      <span class="line">
-        <span class="lightGrey">}</span>
+      <span class={styles.line}>
+        <span class={styles.lightGrey}>}</span>
       </span>
     </code>
   </pre>
-
-<style>
-  pre {
-    margin: 0;
-    white-space: unset;
-    margin-top: -1em;
-  }
-
-  code {
-    font-family: "Geist Mono Variable";
-    font-size: 0.75rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    white-space: pre-line;
-  }
-
-  .line {
-    display: inline-flex;
-    white-space: normal;
-    align-items: center;
-  }
-
-  .line > span {
-    white-space: pre;
-  }
-
-  .black {
-    color: var(--colors-label-label-primary-900, #121926);
-  }
-
-  .lightGrey {
-    color: var(--colors-label-label-tertiary-400, #9aa4b2);
-  }
-
-  .lightBlue {
-    color: var(--colors-label-label-brand-primary-600, #0091f3);
-  }
-
-  .red {
-    color: var(--component-colors-utility-error-utility-error-500, #f04438);
-  }
-
-  .pink {
-    color: var(--component-colors-utility-pink-utility-pink-700, #c11574);
-  }
-
-  .fetchDataError {
-    display: flex;
-    padding: var(--spacing-none, 0rem) var(--spacing-md, 0.5rem)
-      var(--spacing-none, 0rem) var(--spacing-sm, 0.375rem);
-    align-items: center;
-    gap: var(--spacing-xs, 0.25rem);
-    border-radius: var(--radius-full, 624.9375rem);
-    border: 1px solid
-      var(--component-colors-utility-error-utility-error-200, #fecdca);
-    background: var(--component-colors-utility-error-utility-error-50, #fef3f2);
-    box-shadow:
-      0px 2px 6px 0px rgba(249, 112, 102, 0.02),
-      0px 2px 8px 0px rgba(249, 112, 102, 0.04),
-      0px 4px 4px 0px rgba(249, 112, 102, 0.08),
-      0px 1px 4px 0px rgba(249, 112, 102, 0.12);
-    color: var(--Component-colors-Utility-Error-utility-error-700, #b42318);
-    text-align: center;
-
-    /* Text xs/Medium */
-    font-family: var(--family-body, "Geist Mono Variable");
-    font-size: var(--size-text-xs, 0.75rem);
-    font-style: normal;
-    font-weight: 500;
-    line-height: var(--line-height-text-xs, 1.125rem); /* 150% */
-  }
-
-  .fetchDataError > .lighter {
-    color: var(--component-colors-utility-error-utility-error-500, #f04438);
-  }
-
-  .nullWarningCheck {
-    display: flex;
-    padding: var(--spacing-none, 0rem) var(--spacing-md, 0.5rem)
-      var(--spacing-none, 0rem) var(--spacing-sm, 0.375rem);
-    align-items: center;
-    gap: var(--spacing-xs, 0.25rem);
-    border-radius: var(--radius-full, 624.9375rem);
-    border: 1px solid
-      var(--component-colors-utility-warning-utility-warning-200, #fedf89);
-    background: var(
-      --component-colors-utility-warning-utility-warning-50,
-      #fffaeb
-    );
-    box-shadow:
-      0px 2px 6px 0px rgba(253, 176, 34, 0.02),
-      0px 2px 8px 0px rgba(253, 176, 34, 0.04),
-      0px 4px 4px 0px rgba(253, 176, 34, 0.08),
-      0px 1px 4px 0px rgba(253, 176, 34, 0.12);
-
-    color: var(--component-colors-utility-warning-utility-warning-700, #b54708);
-    font-family: var(--family-mono, "Geist Mono Variable");
-    font-size: var(--size-text-xs, 0.75rem);
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.125rem;
-  }
-
-  .nullWarningCheck > .lighter {
-    color: var(--component-colors-utility-warning-utility-warning-500, #f79009);
-  }
-
-  .purple {
-    color: var(--component-colors-utility-purple-utility-purple-500, #7a5af8);
-  }
-</style>
+</div>
