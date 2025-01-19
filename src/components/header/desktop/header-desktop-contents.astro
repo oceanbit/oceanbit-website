@@ -11,6 +11,7 @@ interface Props {
 }
 
 const { className } = Astro.props;
+const isContact = Astro.url.pathname.includes("contact");
 ---
 
 <div class={`centerArea ${className}`}>
@@ -29,10 +30,14 @@ const { className } = Astro.props;
   <!--</nav>-->
 </div>
 <div class={`rightArea ${className}`}>
-  <ObButton href="/contact"
-    ><span style="padding-left: 6px">Book a call</span>
-    <RightArrow />
-  </ObButton>
+  {
+    isContact ? null : (
+      <ObButton href="/contact">
+        <span style="padding-left: 6px">Book a call</span>
+        <RightArrow />
+      </ObButton>
+    )
+  }
 </div>
 
 <!--<script src="./desktop-dropdown-script.ts"></script>-->

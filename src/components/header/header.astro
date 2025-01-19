@@ -7,14 +7,14 @@ import styles from "./header.module.scss";
 
 <header class={styles.header}>
   <div class=`${styles.container}`>
-    <div class=`${styles.logoContainer}`>
+    <a href="/" class=`${styles.logoContainer}`>
       <img
         class="logo"
         src="/logo.svg"
         alt="An ocean wave contained in an invisible box"
       />
       <span class=`${styles.logoText}`>OceanBit</span>
-    </div>
+    </a>
     <HeaderDesktopContents className=`${styles.hideOnMobile}` />
     <!--<HeaderMobileContents className=`${styles.hideOnDesktop}` />-->
     <TempHeaderMobileContents className=`${styles.hideOnDesktop}` />
