@@ -2,11 +2,24 @@
 import Subheading from "../../components/headings/subheading.astro";
 import Heading from "../../components/headings/heading.astro";
 import SupportingText from "../../components/headings/supporting-text.astro";
+import FlickerBg from "../../components/flicker-bg/flicker-bg.astro";
+import styles from "./solve-problems.module.scss";
+import triforce from "../../components/triforce/triforce.svg";
 ---
 
 <Subheading as="h2">Solve problems</Subheading>
 <Heading>Set the stage for a<br />positive-net impact</Heading>
 <SupportingText
   >Every investment leads to tangible results, ensuring a<br />brighter future
-  for your business.</SupportingText
->
+  for your business.
+</SupportingText>
+
+<div class={styles.flickerRowContainer} style="position: relative">
+  <div class={styles.triforceContainer}>
+    <img src={triforce.src} alt="" class={styles.triforceImg} />
+  </div>
+
+  <div class={styles.flickerContainer}>
+    <FlickerBg />
+  </div>
+</div>
