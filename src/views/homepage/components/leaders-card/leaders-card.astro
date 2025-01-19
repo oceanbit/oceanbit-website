@@ -1,0 +1,37 @@
+---
+import styles from "./leaders-card.module.scss";
+
+interface Props {
+  logoUrl: string;
+  logoAlt: string;
+  quote: string;
+  personName: string;
+  personImage: string;
+  personTitle: string;
+  className?: undefined | string;
+}
+
+const {
+  logoUrl,
+  logoAlt,
+  quote,
+  personName,
+  personImage,
+  personTitle,
+  className = "",
+} = Astro.props;
+---
+
+<div class={`${styles.container} ${className}`}>
+  <div class={styles.quoteHeader}>
+    <img class={styles.logo} src={logoUrl} alt={logoAlt} />
+    <p class={styles.quote}>{quote}</p>
+  </div>
+  <div class={styles.quoteFooter}>
+    <img class={styles.personImage} src={personImage} alt={personName} />
+    <div class={styles.personTextGroup}>
+      <p class={styles.personName}>{personName}</p>
+      <p class={styles.personTitle}>{personTitle}</p>
+    </div>
+  </div>
+</div>

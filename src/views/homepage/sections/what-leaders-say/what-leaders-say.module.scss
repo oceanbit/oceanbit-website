@@ -1,0 +1,37 @@
+.container {
+  max-width: var(--width-3lg, 1200px);
+  margin: 0 auto;
+  padding: var(--spacing-9xl, 96px);
+}
+
+.cardsGrid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  justify-content: center;
+  margin-top: var(--spacing-7xl, 64px);
+}
+
+.outlineCard,
+.hoverCard {
+  border-radius: var(--radius-2xl, 16px);
+  border: 2px solid var(--Colors-Border-border-tertiary, #eef2f6);
+  background: var(--Colors-Background-bg-primary, #fff);
+}
+
+.outlineCard {
+  border-style: dashed;
+}
+
+.hoverCard {
+  box-shadow:
+    0px -15px 25px -15px rgba(21, 112, 239, 0.08) inset,
+    0px 1px 1px -0.5px rgba(24, 34, 48, 0.04),
+    0px 3px 3px -1.5px rgba(24, 34, 48, 0.04),
+    0px 6px 12px -3px rgba(24, 34, 48, 0.04),
+    0px 12px 24px -4px rgba(25, 65, 133, 0.06),
+    0px 24px 32px -12px rgba(25, 65, 133, 0.08);
+}
