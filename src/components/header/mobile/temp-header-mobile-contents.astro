@@ -1,0 +1,17 @@
+---
+import RightArrow from "../../../assets/icons/right_arrow.astro";
+import ObButton from "../../buttons/ob-button.astro";
+
+interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<div class={`rightArea ${className}`}>
+  <ObButton href="/contact"
+    ><span style="padding-left: 6px">Book a call</span>
+    <RightArrow />
+  </ObButton>
+</div>

@@ -14,19 +14,19 @@ const { className } = Astro.props;
 ---
 
 <div class={`centerArea ${className}`}>
-  <nav class="navContainer">
-    <HeaderDropdown
-      title="Solutions"
-      dataOpen="solutions-templ"
-      dropdownClass="solutions-class"
-    >
-      <HeaderSolutionsList />
-    </HeaderDropdown>
-    <HeaderDropdown title="Projects" dataOpen="projects-templ">
-      <HeaderProjectsList />
-    </HeaderDropdown>
-    <HeaderButton as="a" href="#">About us</HeaderButton>
-  </nav>
+  <!--<nav class="navContainer">-->
+  <!--  <HeaderDropdown-->
+  <!--    title="Solutions"-->
+  <!--    dataOpen="solutions-templ"-->
+  <!--    dropdownClass="solutions-class"-->
+  <!--  >-->
+  <!--    <HeaderSolutionsList />-->
+  <!--  </HeaderDropdown>-->
+  <!--  <HeaderDropdown title="Projects" dataOpen="projects-templ">-->
+  <!--    <HeaderProjectsList />-->
+  <!--  </HeaderDropdown>-->
+  <!--  <HeaderButton as="a" href="#">About us</HeaderButton>-->
+  <!--</nav>-->
 </div>
 <div class={`rightArea ${className}`}>
   <ObButton href="/contact"
@@ -35,7 +35,7 @@ const { className } = Astro.props;
   </ObButton>
 </div>
 
-<script src="./desktop-dropdown-script.ts"></script>
+<!--<script src="./desktop-dropdown-script.ts"></script>-->
 
 <style>
   .centerArea {

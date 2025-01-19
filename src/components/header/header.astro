@@ -1,6 +1,7 @@
 ---
 import HeaderDesktopContents from "./desktop/header-desktop-contents.astro";
-import HeaderMobileContents from "./mobile/header-mobile-contents.astro";
+// import HeaderMobileContents from "./mobile/header-mobile-contents.astro";
+import TempHeaderMobileContents from "./mobile/temp-header-mobile-contents.astro";
 import styles from "./header.module.scss";
 ---
 
@@ -15,6 +16,7 @@ import styles from "./header.module.scss";
       <span class=`${styles.logoText}`>OceanBit</span>
     </div>
     <HeaderDesktopContents className=`${styles.hideOnMobile}` />
-    <HeaderMobileContents className=`${styles.hideOnDesktop}` />
+    <!--<HeaderMobileContents className=`${styles.hideOnDesktop}` />-->
+    <TempHeaderMobileContents className=`${styles.hideOnDesktop}` />
   </div>
 </header>
