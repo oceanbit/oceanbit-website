@@ -5,12 +5,14 @@ import tanstack from "../../../assets/project_cards/tanstack.png";
 import astro from "../../../assets/project_cards/astro.png";
 import unicorn from "../../../assets/project_cards/unicorn.png";
 import clerk from "../../../assets/project_cards/clerk.png";
+
+import styles from "../header-styles.module.scss";
 ---
 
 <ul class="container">
   <li>
     <a href="#">
-      <img src={tanstack.src} alt="" />
+      <img class={styles.projectImage} src={tanstack.src} alt="" />
       <div>
         <h2>TanStack</h2>
         <p>Owning engineering and docs work for various TanStack projects...</p>
@@ -22,7 +24,7 @@ import clerk from "../../../assets/project_cards/clerk.png";
   </li>
   <li>
     <a href="#">
-      <img src={astro.src} alt="" />
+      <img class={styles.projectImage} src={astro.src} alt="" />
       <div>
         <h2>Astro.build</h2>
         <p>Consulting Astro on two key documentation pages...</p>
@@ -34,7 +36,7 @@ import clerk from "../../../assets/project_cards/clerk.png";
   </li>
   <li>
     <a href="#">
-      <img src={unicorn.src} alt="" />
+      <img class={styles.projectImage} src={unicorn.src} alt="" />
       <div>
         <h2>Unicorn Utterances</h2>
         <p>Leading development, community growth, and content strategy...</p>
@@ -46,11 +48,12 @@ import clerk from "../../../assets/project_cards/clerk.png";
   </li>
   <li>
     <a href="#">
-      <img src={clerk.src} alt="" />
+      <img class={styles.projectImage} src={clerk.src} alt="" />
       <div>
         <h2>Clerk, Inc.</h2>
         <p>
-          Migrated their docs from Sanity to MDX and rewrote most of their docs pages...
+          Migrated their docs from Sanity to MDX and rewrote most of their docs
+          pages...
         </p>
         <div class="pill-container">
           <PillBadge size="sm">Documentation</PillBadge>

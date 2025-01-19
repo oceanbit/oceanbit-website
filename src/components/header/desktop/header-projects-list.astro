@@ -6,13 +6,15 @@ import astro from "../../../assets/project_cards/astro.png";
 import unicorn from "../../../assets/project_cards/unicorn.png";
 import clerk from "../../../assets/project_cards/clerk.png";
 import RightArrow from "../../../assets/icons/right_arrow.astro";
+
+import styles from "../header-styles.module.scss";
 ---
 
 <div class="header-list-container">
   <ul class="left-list" role="list">
     <li>
       <a href="#">
-        <img src={tanstack.src} alt="" />
+        <img class={styles.projectImage} src={tanstack.src} alt="" />
         <div>
           <h2>TanStack</h2>
           <p>
@@ -27,7 +29,7 @@ import RightArrow from "../../../assets/icons/right_arrow.astro";
     </li>
     <li>
       <a href="#">
-        <img src={astro.src} alt="" />
+        <img class={styles.projectImage} src={astro.src} alt="" />
         <div>
           <h2>Astro.build</h2>
           <p>Consulting Astro on two key documentation pages...</p>
@@ -39,7 +41,7 @@ import RightArrow from "../../../assets/icons/right_arrow.astro";
     </li>
     <li>
       <a href="#">
-        <img src={unicorn.src} alt="" />
+        <img class={styles.projectImage} src={unicorn.src} alt="" />
         <div>
           <h2>Unicorn Utterances</h2>
           <p>Leading development, community growth, and content strategy...</p>
@@ -54,7 +56,7 @@ import RightArrow from "../../../assets/icons/right_arrow.astro";
   <section class="right-list">
     <a href="#">
       <h2>Latest Project</h2>
-      <img src={clerk.src} alt="" />
+      <img class={styles.projectImage} src={clerk.src} alt="" />
       <h3>Clerk, Inc.</h3>
       <p class="descr">
         Seamlessly migrating from Sanity to MDX, rewriting the majority of their
