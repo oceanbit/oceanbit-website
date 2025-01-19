@@ -1,0 +1,18 @@
+---
+import styles from "./solve-problems-card.module.scss";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<li class="card">
+  <div class={styles.cardHeader}>
+    <slot name="icon" />
+    <h2 class={styles.cardTitle}>{title}</h2>
+  </div>
+  <p class={styles.cardDesc}>{description}</p>
+</li>

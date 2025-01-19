@@ -45,3 +45,26 @@
     rgba(0, 0, 0, 0) 100%
   );
 }
+
+.cardGrid {
+  max-width: 1200px;
+  list-style: none;
+  margin: 0 auto;
+  padding: var(--spacing-3xl, 24px) 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  margin-top: 6rem;
+}
+
+@include raw-breakpoints.until(raw-breakpoints.$desktopMin) {
+  .cardGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@include raw-breakpoints.until(raw-breakpoints.$tabletMin) {
+  .cardGrid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

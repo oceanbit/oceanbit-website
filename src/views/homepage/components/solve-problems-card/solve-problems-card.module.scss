@@ -1,0 +1,34 @@
+.card {
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardTitle {
+  flex-grow: 1;
+  margin: 0;
+  margin-left: 0.5rem;
+  color: var(--colors-text-text-primary-900, #101828);
+  /* Text base/Semibold */
+  font-family: var(--family-display, "Geist variable");
+  font-size: var(--Size-Text-base, 1rem);
+  font-style: normal;
+  font-weight: 600;
+  line-height: var(--Line-height-Text-base, 1.5rem); /* 150% */
+}
+
+.cardDesc {
+  margin: 0;
+  margin-top: 0.5rem;
+  color: var(--colors-label-label-secondary-500, #697586);
+
+  /* Text base/Normal */
+  font-family: var(--family-display, "Geist variable");
+  font-size: var(--Size-Text-base, 1rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--Line-height-Text-base, 1.5rem); /* 150% */
+}
