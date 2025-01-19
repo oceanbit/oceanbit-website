@@ -1,13 +1,26 @@
 ---
 import Header from "../../components/header/header.astro";
 import Document from "../../layouts/document.astro";
+import ClientLogos from "../../components/client-logos/client-logos.astro";
 import { CalEmbed } from "./components/cal-embed/cal-embed";
+import SupportingText from "../../components/headings/supporting-text.astro";
+import Heading from "../../components/headings/heading.astro";
+import Subheading from "../../components/headings/subheading.astro";
 ---
 
 <Document>
   <Header />
   <main>
+    <div style="height: 6rem"></div>
+    <Subheading as="h1">Book a call</Subheading>
+    <Heading>Lead your industry<br />with confidence</Heading>
+    <SupportingText
+      >Explore how OceanBit can help you<br />achieve your goals and drive
+      growth.
+    </SupportingText>
+    <div style="height: 6rem"></div>
     <CalEmbed client:load />
+    <ClientLogos />
     <div style="padding-bottom: 150rem"></div>
   </main>
 </Document>
