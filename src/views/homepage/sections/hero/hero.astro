@@ -47,20 +47,20 @@ import styles from "./hero.module.scss";
       <div class={styles.leftWaveContainer}>
         <div><WaveLeft /></div>
         <div style="position: absolute; top: 200px">
-          <WaveLeft pathClass={styles.pathClass2} />
+          <WaveLeft delay={0.4} />
         </div>
         <div style="position: absolute; top: 400px">
-          <WaveLeft pathClass={styles.pathClass3} />
+          <WaveLeft delay={0.8} />
         </div>
       </div>
 
       <div class={styles.rightWaveContainer}>
         <div><WaveRight /></div>
         <div style="position: absolute; left: 0; top: 200px">
-          <WaveRight pathClass={styles.pathClass2} />
+          <WaveRight delay={0.4} />
         </div>
         <div style="position: absolute; left: 0; top: 400px">
-          <WaveRight pathClass={styles.pathClass3} />
+          <WaveRight delay={0.8} />
         </div>
       </div>
     </div>

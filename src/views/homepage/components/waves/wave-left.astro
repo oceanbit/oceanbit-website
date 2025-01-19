@@ -4,10 +4,10 @@ import WaveRight from "./wave-right.astro";
 
 interface Props {
   className?: string | undefined;
-  pathClass?: string | undefined;
+  delay?: number;
 }
 
-const { pathClass = "", className = "" } = Astro.props;
+const { className = "", delay = 0 } = Astro.props;
 ---
 
-<WaveRight className={`${styles.flip} ${className}`} pathClass={pathClass} />
+<WaveRight className={`${styles.flip} ${className}`} delay={delay} />

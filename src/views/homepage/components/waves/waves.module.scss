@@ -1,4 +1,5 @@
 .container {
+  position: relative;
   /* Fade out the left-hand side to 0% opacity */
   mask-image: linear-gradient(to left, transparent 30%, black 100%);
 }
@@ -21,21 +22,4 @@
 
 .waveBlur {
   filter: blur(2px);
-}
-
-@keyframes draw_line {
-  0% {
-    stroke-opacity: 0;
-    stroke-dashoffset: 0;
-  }
-  20% {
-    stroke-opacity: 1;
-  }
-  80% {
-    stroke-opacity: 1;
-  }
-  100% {
-    stroke-opacity: 0;
-    stroke-dashoffset: 100;
-  }
 }
