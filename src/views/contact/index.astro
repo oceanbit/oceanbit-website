@@ -1,0 +1,13 @@
+---
+import Header from "../../components/header/header.astro";
+import Document from "../../layouts/document.astro";
+import { CalEmbed } from "./components/cal-embed/cal-embed";
+---
+
+<Document>
+  <Header />
+  <main>
+    <CalEmbed client:load />
+    <div style="padding-bottom: 150rem"></div>
+  </main>
+</Document>
