@@ -1,7 +1,9 @@
+@use "../../../../styles/variables/raw-breakpoints";
+
 .container {
   max-width: var(--width-3lg, 1200px);
   margin: 0 auto;
-  padding: var(--spacing-9xl, 96px);
+  padding: var(--spacing-9xl, 96px) 16px;
 }
 
 .cardsGrid {
@@ -34,4 +36,10 @@
     0px 6px 12px -3px rgba(24, 34, 48, 0.04),
     0px 12px 24px -4px rgba(25, 65, 133, 0.06),
     0px 24px 32px -12px rgba(25, 65, 133, 0.08);
+}
+
+@include raw-breakpoints.until(raw-breakpoints.$tabletMin) {
+  .cardsGrid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
