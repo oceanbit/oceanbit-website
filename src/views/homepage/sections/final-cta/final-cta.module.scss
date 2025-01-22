@@ -1,12 +1,16 @@
 @use "../../../../styles/variables/raw-breakpoints";
 
+:root {
+  --mobile-illustration-height: 200px;
+}
+
 .container {
-  padding: var(--spacing-10xl, 128px) 48px var(--spacing-7xl, 64px) 48px;
+  padding: var(--spacing-4xl, 128px) 48px var(--spacing-7xl, 64px) 48px;
 }
 
 @include raw-breakpoints.until(raw-breakpoints.$tabletMin) {
   .container {
-    padding: var(--spacing-4xl, 32px) var(--spacing-xl, 16px)
+    padding: var(--spacing-2xl, 32px) var(--spacing-xl, 16px)
       var(--spacing-7xl, 64px) var(--spacing-xl, 16px);
   }
 }
@@ -42,8 +46,44 @@
 @include raw-breakpoints.until(raw-breakpoints.$tabletMin) {
   .card {
     padding: var(--spacing-3xl, 24px);
+    padding-top: var(--mobile-illustration-height);
     gap: var(--spacing-4xl, 32px);
   }
+}
+
+.textContainer {
+  // :LOLSOB:
+  z-index: 3;
+  max-width: 50%;
+}
+
+@include raw-breakpoints.until(raw-breakpoints.$tabletMin) {
+  .textContainer {
+    max-width: 100%;
+  }
+}
+
+.title {
+  color: var(--colors-label-label-primary-900, #121926);
+
+  /* Display md/Semibold */
+  font-family: var(--family-body, "Geist variable");
+  font-size: var(--Size-Display-md, 36px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: var(--Line-height-Display-md, 44px); /* 122.222% */
+  letter-spacing: -0.72px;
+}
+
+.description {
+  color: var(--colors-label-label-secondary-500, #697586);
+
+  /* Text base/Normal */
+  font-family: var(--family-body, "Geist variable");
+  font-size: var(--Size-Text-base, 16px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--Line-height-Text-base, 24px); /* 150% */
 }
 
 .illustrationContainer {
@@ -52,6 +92,14 @@
   right: 0;
   width: 50%;
   height: 100%;
+}
+
+@include raw-breakpoints.until(raw-breakpoints.$tabletMin) {
+  .illustrationContainer {
+    position: absolute;
+    width: 100%;
+    height: calc(var(--mobile-illustration-height) + 40px);
+  }
 }
 
 /**
@@ -127,9 +175,9 @@
   mix-blend-mode: color-burn;
   z-index: 0;
   background: linear-gradient(
-                  292deg,
-                  rgba(0, 36, 255, 0) 0%,
-                  rgba(0, 36, 255, 1) 100%
+    292deg,
+    rgba(0, 36, 255, 0) 0%,
+    rgba(0, 36, 255, 1) 100%
   );
 }
 
