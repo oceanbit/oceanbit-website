@@ -1,9 +1,33 @@
-.oceanBitLogo {
+@use "../../styles/variables/raw-breakpoints";
+
+.bigOceanBitLogo {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+  margin-top: -100px;
   display: block;
   transform: translateY(45%);
+}
+
+.smallOceanBitLogo {
+  max-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: -100px;
+  display: block;
+  transform: translateY(35%);
+}
+
+@include raw-breakpoints.until(raw-breakpoints.$tabletMin) {
+  .bigOceanBitLogo {
+    display: none;
+  }
+}
+
+@include raw-breakpoints.from(raw-breakpoints.$tabletMin) {
+  .smallOceanBitLogo {
+    display: none;
+  }
 }
 
 .contentContainer {
