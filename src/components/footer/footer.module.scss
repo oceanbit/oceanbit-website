@@ -1,0 +1,40 @@
+.oceanBitLogo {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  transform: translateY(45%);
+}
+
+.contentContainer {
+  position: relative;
+  background-image: url("/white-noise.png");
+  background-repeat: repeat;
+  background-color: var(
+    --Component-colors-Alpha-alpha-white-50,
+    rgba(255, 255, 255, 0.5)
+  );
+
+  /* Backdrop blurs/backdrop-blur-lg */
+  backdrop-filter: blur(12px);
+}
+
+.contentContainerTop {
+  opacity: 0.32;
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(122, 90, 248, 0) 5%,
+    rgba(126, 224, 255, 1) 21%,
+    rgba(122, 90, 248, 1) 33%,
+    rgba(126, 224, 255, 1) 43%,
+    rgba(23, 92, 211, 1) 52%,
+    rgba(126, 224, 255, 1) 64%,
+    rgba(122, 90, 248, 0.44) 80%,
+    rgba(126, 224, 255, 0) 94%
+  );
+}
