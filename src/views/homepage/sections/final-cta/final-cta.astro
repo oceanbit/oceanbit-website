@@ -1,0 +1,21 @@
+---
+import FinalCTAIllustration from "../../components/final-cta-illustration/final-cta-illustration.astro";
+
+import styles from "./final-cta.module.scss";
+---
+
+<div class={styles.container}>
+  <div class={styles.card}>
+    <p>Testing 123</p>
+    <p>Testing 123</p>
+    <p>Testing 123</p>
+    <div class={styles.illustrationContainer}>
+      <div class={styles.illustrationTop}></div>
+      <div class={styles.illustrationBottom}></div>
+      <div class={styles.illustrationLeft}></div>
+      <div class={styles.illustrationRight}></div>
+      <div class={styles.illustrationFades}></div>
+      <FinalCTAIllustration className={styles.illustration} />
+    </div>
+  </div>
+</div>
