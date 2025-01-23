@@ -6,6 +6,7 @@ import { CalEmbed } from "./components/cal-embed/cal-embed";
 import SupportingText from "../../components/headings/supporting-text.astro";
 import Heading from "../../components/headings/heading.astro";
 import Subheading from "../../components/headings/subheading.astro";
+import Footer from "../../components/footer/footer.astro";
 ---
 
 <Document>
@@ -21,6 +22,6 @@ import Subheading from "../../components/headings/subheading.astro";
     <div style="height: 6rem"></div>
     <CalEmbed client:load />
     <ClientLogos />
-    <div style="padding-bottom: 150rem"></div>
   </main>
+  <Footer />
 </Document>
