@@ -2,19 +2,48 @@
 import styles from "./footer.module.scss";
 ---
 
-<div>
-  <img class={styles.bigOceanBitLogo} src="/logo-clay.svg" />
-  <img class={styles.smallOceanBitLogo} src="/logo-clay-small.svg" />
+<footer>
+  <img alt="" class={styles.bigOceanBitLogo} src="/logo-clay.svg" />
+  <img alt="" class={styles.smallOceanBitLogo} src="/logo-clay-small.svg" />
   <div class={styles.contentContainer}>
     <div class={styles.contentContainerTop}></div>
-    <p style="margin: 0;">Testing</p>
-    <p style="margin: 0;">Testing</p>
-    <p style="margin: 0;">Testing</p>
-    <p style="margin: 0;">Testing</p>
-    <p style="margin: 0;">Testing</p>
-    <p style="margin: 0;">Testing</p>
-    <p style="margin: 0;">Testing</p>
-    <p style="margin: 0;">Testing</p>
+    <div class={styles.contentMaxWidth}>
+      <div class={styles.topPart}>
+        <div class={styles.leftSideContainer}>
+          <a href="/" class=`${styles.logoContainer}`>
+            <img
+              class="logo"
+              src="/logo.svg"
+              alt="An ocean wave contained in an invisible box"
+            />
+            <span class=`${styles.logoText}`>OceanBit</span>
+          </a>
+          <p class={styles.underLogoText}>
+            Ensure a positive impact on your company,<br />all while fostering
+            efficient team growth.
+          </p>
+        </div>
+        <div class={styles.rightSideContainer}>
+          <div class={styles.navContainer}>
+            <p class={styles.navTitle}>Navigation</p>
+            <ul class={styles.navList} role="list">
+              <li>
+                <a href="/" class={styles.navLink}>Home</a>
+              </li>
+              <li>
+                <a href="/contact" class={styles.navLink}>Contact us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class={styles.subFooter}>
+        <div class={styles.contentContainerTop}></div>
+        <div class={styles.subFooterContents}>
+          <p class={styles.ccText}>© 2024 OceanBit, LLC.</p>
+        </div>
+      </div>
+    </div>
     <div class={styles.aurora}>
       <div class={styles.auroraSkyOne}></div>
       <div class={styles.auroraSkyTwo}></div>
@@ -22,4 +51,4 @@ import styles from "./footer.module.scss";
       <div class={styles.auroraPurple}></div>
     </div>
   </div>
-</div>
+</footer>

@@ -59,7 +59,11 @@
 .flickerRowContainer {
   max-width: 100%;
   overflow: hidden;
+  height: calc(9.25rem + 96px);
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .triforceContainer {
@@ -92,9 +96,8 @@
   width: 100%;
   height: 6rem;
   margin: 0 auto;
-  margin-top: 6rem;
   position: relative;
-  overflow: visible;
+  overflow: hidden;
   mask-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0) 0%,
