@@ -136,7 +136,6 @@ export class WaveCanvas {
         ctx.scale(-1, 1);
       }
       const img = this.images.get(imageSrc)!;
-      ctx.globalAlpha = opacity;
       ctx.drawImage(img, 0, 0);
       if (type === "left") {
         ctx.scale(-1, 1);
