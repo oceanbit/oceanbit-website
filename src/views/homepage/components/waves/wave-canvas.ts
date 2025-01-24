@@ -12,6 +12,7 @@ interface WaveConfig {
   y: number;
   scale?: number;
   delay: number;
+  imageSrc?: string;
 }
 
 export class WaveCanvas {
@@ -22,6 +23,7 @@ export class WaveCanvas {
   private observer: IntersectionObserver | null = null;
   private isVisible: boolean = false;
   private waves: { config: WaveConfig; progress: number }[];
+  private images: Map<string, HTMLImageElement> = new Map();
 
   constructor(
     canvas: HTMLCanvasElement,
@@ -33,7 +35,25 @@ export class WaveCanvas {
       config,
       progress: config.delay || 0,
     }));
+    this.loadImages(waveConfigs);
     this.init();
+  }
+
+  private async loadImages(waveConfigs: ReadonlyArray<WaveConfig>) {
+    const uniqueImageSrcs = new Set(
+      waveConfigs.map((config) => config.imageSrc).filter(Boolean),
+    );
+    const imagePromises = [...uniqueImageSrcs].filter(Boolean).map((src) => {
+      return new Promise<[string, HTMLImageElement]>((resolve, reject) => {
+        const img = new Image();
+        img.src = src!;
+        img.onload = () => resolve([src!, img]);
+        img.onerror = reject;
+      });
+    });
+
+    const loadedImages = await Promise.all(imagePromises);
+    loadedImages.forEach(([src, img]) => this.images.set(src, img));
   }
 
   private init() {
@@ -94,7 +114,7 @@ export class WaveCanvas {
     blur: boolean = false,
   ) {
     const ctx = this.ctx;
-    const { x, y, scale = 1, type } = wave.config;
+    const { x, y, scale = 1, type, imageSrc } = wave.config;
 
     ctx.save();
     if (blur) {
@@ -109,6 +129,19 @@ export class WaveCanvas {
     }
     ctx.translate(ourX, y);
     ctx.scale(scale, scale);
+
+    // Draw image if available
+    if (imageSrc && this.images.has(imageSrc)) {
+      if (type === "left") {
+        ctx.scale(-1, 1);
+      }
+      const img = this.images.get(imageSrc)!;
+      ctx.globalAlpha = opacity;
+      ctx.drawImage(img, 0, 0);
+      if (type === "left") {
+        ctx.scale(-1, 1);
+      }
+    }
 
     ctx.beginPath();
     ctx.strokeStyle = `rgba(58, 175, 255, ${opacity})`;
@@ -165,5 +198,6 @@ export class WaveCanvas {
       this.observer.disconnect();
       this.observer = null;
     }
+    this.images.clear();
   }
 }

@@ -13,36 +13,6 @@ const { className = "" } = Astro.props;
     data-is-wave="true"
     style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"
   ></canvas>
-  <img
-    style="position: fixed; top: 100px; right: 300px; transform: translateX(100%);"
-    src="/wave.svg"
-    alt=""
-  />
-  <img
-    style="position: fixed; top: 400px; right: 300px; transform: translateX(100%);"
-    src="/wave.svg"
-    alt=""
-  />
-  <img
-    style="position: fixed; top: 700px; right: 300px; transform: translateX(100%);"
-    src="/wave.svg"
-    alt=""
-  />
-  <img
-    style="position: fixed; top: 100px; left: 300px; transform: scaleX(-1) translateX(100%);"
-    src="/wave.svg"
-    alt=""
-  />
-  <img
-    style="position: fixed; top: 400px; left: 300px; transform: scaleX(-1) translateX(100%);"
-    src="/wave.svg"
-    alt=""
-  />
-  <img
-    style="position: fixed; top: 700px; left: 300px; transform: scaleX(-1) translateX(100%);"
-    src="/wave.svg"
-    alt=""
-  />
 </div>
 
 <script>
@@ -51,13 +21,55 @@ const { className = "" } = Astro.props;
   document.querySelectorAll(`canvas[data-is-wave="true"]`).forEach((canvas) => {
     const waveConfigs = [
       // Right waves
-      { type: "right", x: -300, y: 100, scale: 1, delay: 0 },
-      { type: "right", x: -300, y: 400, scale: 1, delay: 0.3 },
-      { type: "right", x: -300, y: 700, scale: 1, delay: 0.6 },
+      {
+        type: "right",
+        x: -300,
+        y: 100,
+        scale: 1,
+        delay: 0,
+        imageSrc: "/wave.svg",
+      },
+      {
+        type: "right",
+        x: -300,
+        y: 400,
+        scale: 1,
+        delay: 0.3,
+        imageSrc: "/wave.svg",
+      },
+      {
+        type: "right",
+        x: -300,
+        y: 700,
+        scale: 1,
+        delay: 0.6,
+        imageSrc: "/wave.svg",
+      },
       // Left waves
-      { type: "left", x: 300, y: 100, scale: 1, delay: 0.2 },
-      { type: "left", x: 300, y: 400, scale: 1, delay: 0.5 },
-      { type: "left", x: 300, y: 700, scale: 1, delay: 0.8 },
+      {
+        type: "left",
+        x: 300,
+        y: 100,
+        scale: 1,
+        delay: 0.2,
+        imageSrc: "/wave.svg",
+      },
+      {
+        type: "left",
+        x: 300,
+        y: 400,
+        scale: 1,
+        delay: 0.5,
+        imageSrc: "/wave.svg",
+      },
+      {
+        type: "left",
+        x: 300,
+        y: 700,
+        scale: 1,
+        delay: 0.8,
+        imageSrc: "/wave.svg",
+      },
     ] as const;
 
     new WaveCanvas(canvas as HTMLCanvasElement, waveConfigs);
