@@ -10,11 +10,11 @@ const { title, className = "" } = Astro.props;
 ---
 
 <li class={`${styles.container} ${className}`}>
-  <h2 class={styles.title}>
+  <p class={styles.title}>
     <span class={styles.titleInner}>
       <span aria-hidden="true" class={styles.icon}><slot name="icon" /></span>
       {title}
     </span>
-  </h2>
+  </p>
   <slot />
 </li>
