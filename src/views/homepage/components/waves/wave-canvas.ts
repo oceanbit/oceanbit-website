@@ -108,6 +108,10 @@ export class WaveCanvas {
     }
   }
 
+  private getScreenCenterX(): number {
+    return this.canvas.width / 2;
+  }
+
   private drawWave(
     wave: { config: WaveConfig; progress: number },
     opacity: number,
@@ -123,11 +127,11 @@ export class WaveCanvas {
       ctx.filter = "none";
     }
 
-    let ourX = x;
-    if (ourX < 0) {
-      ourX = this.canvas.width + x;
-    }
-    ctx.translate(ourX, y);
+    // Convert x from center-relative to absolute position
+    const centerX = this.getScreenCenterX();
+    const absoluteX = centerX + x;
+
+    ctx.translate(absoluteX, y);
     ctx.scale(scale, scale);
 
     // Draw image if available
