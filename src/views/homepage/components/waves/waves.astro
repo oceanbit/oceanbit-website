@@ -20,30 +20,31 @@ const { className = "" } = Astro.props;
 
   document.querySelectorAll(`canvas[data-is-wave="true"]`).forEach((canvas) => {
     const x = 600;
+    const scale = 0.6;
 
     const waveConfigs = [
       // Right waves
       {
         type: "right",
         x: x,
-        y: 100,
-        scale: 1,
+        y: 150,
+        scale,
         delay: 0,
         imageSrc: "/wave.svg",
       },
       {
         type: "right",
         x: x,
-        y: 400,
-        scale: 1,
+        y: 350,
+        scale,
         delay: 0.3,
         imageSrc: "/wave.svg",
       },
       {
         type: "right",
         x: x,
-        y: 700,
-        scale: 1,
+        y: 500,
+        scale,
         delay: 0.6,
         imageSrc: "/wave.svg",
       },
@@ -51,24 +52,24 @@ const { className = "" } = Astro.props;
       {
         type: "left",
         x: -x,
-        y: 100,
-        scale: 1,
+        y: 150,
+        scale,
         delay: 0.2,
         imageSrc: "/wave.svg",
       },
       {
         type: "left",
         x: -x,
-        y: 400,
-        scale: 1,
+        y: 350,
+        scale,
         delay: 0.5,
         imageSrc: "/wave.svg",
       },
       {
         type: "left",
         x: -x,
-        y: 700,
-        scale: 1,
+        y: 500,
+        scale,
         delay: 0.8,
         imageSrc: "/wave.svg",
       },

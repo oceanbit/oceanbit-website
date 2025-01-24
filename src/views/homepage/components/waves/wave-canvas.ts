@@ -24,6 +24,8 @@ export class WaveCanvas {
   private isVisible: boolean = false;
   private waves: { config: WaveConfig; progress: number }[];
   private images: Map<string, HTMLImageElement> = new Map();
+  private baseWidth = 1920; // Base width for scaling calculations
+  private baseHeight = 1080; // Base height for scaling calculations
 
   constructor(
     canvas: HTMLCanvasElement,
@@ -57,9 +59,10 @@ export class WaveCanvas {
   }
 
   private init() {
-    // Match canvas size to viewport
-    this.canvas.width = window.innerWidth;
-    this.canvas.height = window.innerHeight;
+    this.handleResize();
+
+    // Setup resize listener
+    window.addEventListener("resize", this.handleResize);
 
     // Setup intersection observer
     this.observer = new IntersectionObserver(
@@ -72,6 +75,11 @@ export class WaveCanvas {
 
     this.observer.observe(this.canvas);
   }
+
+  private handleResize = () => {
+    this.canvas.width = window.innerWidth;
+    this.canvas.height = window.innerHeight;
+  };
 
   private handleVisibilityChange(isVisible: boolean) {
     this.isVisible = isVisible;
@@ -112,6 +120,17 @@ export class WaveCanvas {
     return this.canvas.width / 2;
   }
 
+  private getScale(): number {
+    const windowRatio = window.innerWidth / window.innerHeight;
+    const baseRatio = this.baseWidth / this.baseHeight;
+
+    if (windowRatio > baseRatio) {
+      return window.innerWidth / this.baseWidth;
+    } else {
+      return window.innerHeight / this.baseHeight;
+    }
+  }
+
   private drawWave(
     wave: { config: WaveConfig; progress: number },
     opacity: number,
@@ -119,6 +138,7 @@ export class WaveCanvas {
   ) {
     const ctx = this.ctx;
     const { x, y, scale = 1, type, imageSrc } = wave.config;
+    const globalScale = this.getScale();
 
     ctx.save();
     if (blur) {
@@ -129,10 +149,11 @@ export class WaveCanvas {
 
     // Convert x from center-relative to absolute position
     const centerX = this.getScreenCenterX();
-    const absoluteX = centerX + x;
+    const absoluteX = centerX + x * globalScale;
+    const scaledY = y * globalScale;
 
-    ctx.translate(absoluteX, y);
-    ctx.scale(scale, scale);
+    ctx.translate(absoluteX, scaledY);
+    ctx.scale(scale * globalScale, scale * globalScale);
 
     // Draw image if available
     if (imageSrc && this.images.has(imageSrc)) {
@@ -201,6 +222,7 @@ export class WaveCanvas {
       this.observer.disconnect();
       this.observer = null;
     }
+    window.removeEventListener("resize", this.handleResize);
     this.images.clear();
   }
 }
