@@ -1,6 +1,5 @@
 ---
-import WaveLeft from "../../components/waves/wave-left.astro";
-import WaveRight from "../../components/waves/wave-right.astro";
+import Waves from "../../components/waves/waves.astro";
 import ObButton from "../../../../components/buttons/ob-button.astro";
 import RightArrow from "../../../../assets/icons/right_arrow.astro";
 import CodeBlock from "../../components/code-block/code-block.astro";
@@ -44,24 +43,8 @@ import styles from "./hero.module.scss";
         </ObButton>
       </div>
 
-      <div class={styles.leftWaveContainer}>
-        <div><WaveLeft /></div>
-        <div style="position: absolute; top: 200px">
-          <WaveLeft delay={0.4} />
-        </div>
-        <div style="position: absolute; top: 400px">
-          <WaveLeft delay={0.8} />
-        </div>
-      </div>
-
-      <div class={styles.rightWaveContainer}>
-        <div><WaveRight /></div>
-        <div style="position: absolute; left: 0; top: 200px">
-          <WaveRight delay={0.4} />
-        </div>
-        <div style="position: absolute; left: 0; top: 400px">
-          <WaveRight delay={0.8} />
-        </div>
+      <div class={styles.wavesContainer}>
+        <Waves />
       </div>
     </div>
   </div>
