@@ -3,18 +3,22 @@ import styles from "./hero-card.module.scss";
 
 interface Props {
   title: string;
+  titleId: string;
+  ariaLabel: string;
   className?: string | undefined;
 }
 
-const { title, className = "" } = Astro.props;
+const { title, titleId, ariaLabel, className = "" } = Astro.props;
 ---
 
 <li class={`${styles.container} ${className}`}>
-  <p class={styles.title}>
+  <p id={titleId} class={styles.title}>
     <span class={styles.titleInner}>
       <span aria-hidden="true" class={styles.icon}><slot name="icon" /></span>
       {title}
     </span>
   </p>
-  <slot />
+  <div role="img" aria-label={ariaLabel} aria-describedby={titleId}>
+    <slot />
+  </div>
 </li>

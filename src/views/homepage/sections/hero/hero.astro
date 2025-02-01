@@ -55,19 +55,37 @@ import styles from "./hero.module.scss";
         class={styles.cardsGrid}
         role="list"
       >
-        <HeroCard className={styles.engTraining} title="Engineering training">
+        <HeroCard
+          className={styles.engTraining}
+          ariaLabel="A code block with cursors labelled 'OceanBit' and 'Your dev team'"
+          titleId="hero-card-eng-training"
+          title="Engineering training"
+        >
           <Code slot="icon" />
           <CodeBlock />
         </HeroCard>
-        <HeroCard title="Performance">
+        <HeroCard
+          ariaLabel="A spedometer with 96% faster times and benchmarks showing for 'bundle size', 'load time' and 'cpu cycles'"
+          titleId="hero-card-performance"
+          title="Performance"
+        >
           <Lightning slot="icon" />
           <Performance />
         </HeroCard>
-        <HeroCard className={styles.hideCardOnMobile} title="System Health">
+        <HeroCard
+          className={styles.hideCardOnMobile}
+          ariaLabel="A pie chart with '85%' incident reduction and three metrics of 'solves issues', 'pending issues' and 'active issues'"
+          titleId="hero-card-system-health"
+          title="System Health"
+        >
           <Health slot="icon" />
           <SystemHealth />
         </HeroCard>
-        <HeroCard title="Revenue increase">
+        <HeroCard
+          ariaLabel="A graph showing costs going from $130,000 to $80,000 with $60,000 operational, $20,000 server costs and $50,000 saved"
+          titleId="hero-card-rev-increase"
+          title="Revenue increase"
+        >
           <Money slot="icon" />
           <div
             style="height: 100%; width: 100%; display: flex;flex-wrap: wrap;align-content: center;"
@@ -75,8 +93,12 @@ import styles from "./hero.module.scss";
             <RevIncrease />
           </div>
         </HeroCard>
-
-        <HeroCard className={styles.hideCardOnMobile} title="User satisfaction">
+        <HeroCard
+          className={styles.hideCardOnMobile}
+          ariaLabel="A graph showing an upward trend in user satisfaction from 75% to 100%"
+          titleId="hero-card-user-satis"
+          title="User satisfaction"
+        >
           <User slot="icon" />
           <UserSatisfaction />
         </HeroCard>
