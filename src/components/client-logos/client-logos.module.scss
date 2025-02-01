@@ -1,0 +1,29 @@
+.container {
+  max-width: 902px;
+  margin: 0 auto;
+  margin-top: var(--spacing-9xl);
+  padding: 0 var(--spacing-4xl);
+}
+
+.heading {
+  color: var(--colors-label-label-secondary-500, #697586);
+  text-align: center;
+
+  /* Text sm/Medium */
+  font-family: var(--family-body, "Geist variable");
+  font-size: var(--size-text-sm, 14px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: var(--line-height-text-sm, 20px); /* 142.857% */
+  margin-bottom: var(--spacing-4xl);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: var(--spacing-4xl);
+}

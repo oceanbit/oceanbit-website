@@ -1,0 +1,181 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 230px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 2 / 1;
+}
+
+.textContainer {
+  margin-top: var(--spacing-4xl);
+  display: flex;
+  justify-content: space-around;
+}
+
+.textContainer > * {
+  display: flex;
+  align-items: center;
+  color: var(--colors-label-label-secondary-500, #697586);
+  margin: 0;
+
+  /* Text xs/Normal */
+  font-family: var(--family-body, "Geist variable");
+  font-size: var(--size-text-xs, 0.75rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--line-height-text-xs, 1.125rem); /* 150% */
+}
+
+.color1,
+.color2,
+.color3 {
+  display: block;
+  width: 4px;
+  height: 8px;
+  border-radius: 2px;
+  margin-right: 6px;
+}
+
+.color1 {
+  background: #48d8ff;
+}
+
+.color2 {
+  background: var(--colors-brand-500, #007ACC);
+}
+
+.color3 {
+  background: #6586fb;
+}
+
+.outerContainer:hover .outerSpeedometer {
+  transform: rotate(130deg);
+}
+
+.outerSpeedometer {
+  transition: 500ms;
+  background: linear-gradient(
+    0deg,
+    #fbfeff -0.29%,
+    #f2f6ff 25.21%,
+    #f0f3ff 64.71%,
+    #e7f4ff 82.71%
+  );
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 1;
+  padding: 6%;
+  box-sizing: border-box;
+  border-radius: 50%;
+  transform: rotate(109deg);
+  mask:
+    linear-gradient(#0000 0 0) content-box intersect,
+    conic-gradient(#000 320deg, #0000 0);
+  transform-origin: center center;
+  z-index: -1;
+}
+
+.outerContainer:hover .middleSpeedometer {
+  transform: translateX(calc(var(--offest) / 2)) rotate(130deg);
+}
+
+.middleSpeedometer {
+  transition: 500ms;
+  --offest: 10%;
+  left: 0;
+  top: var(--offest);
+  position: absolute;
+  width: calc(100% - var(--offest));
+  aspect-ratio: 1;
+  padding: 30%;
+  box-sizing: border-box;
+  border-radius: 50%;
+  transform: translateX(calc(var(--offest) / 2)) rotate(110deg);
+  mask:
+    linear-gradient(#0000 0 0) content-box intersect,
+    conic-gradient(#000 320deg, #0000 0);
+  background: linear-gradient(
+    90deg,
+    #0098ff -0.29%,
+    #6586fb 25.21%,
+    #6586fb 64.71%,
+    #48d8ff 82.71%
+  );
+  transform-origin: center center;
+  z-index: -2;
+}
+
+.innerSpeedometer {
+  background: white;
+  z-index: 0;
+  position: absolute;
+  border-radius: 50%;
+  left: 50%;
+  width: 75%;
+  aspect-ratio: 1 / 1;
+  top: -50%;
+  transform: translateY(50%) translateX(-50%);
+  transform-origin: bottom center;
+  z-index: 0;
+  filter: drop-shadow(0px -4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.innerSpeedometerTextContainer {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+  container-name: innerSpeedometerTextContainer;
+}
+
+.percentage {
+  color: var(--colors-label-label-primary-900, #121926);
+  text-align: center;
+
+  /* Text xl/Semibold */
+  font-family: var(--Family-Body, "Geist variable");
+  font-size: var(--Size-Text-xl, 20px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px; /* 150% */
+}
+
+.fasterTimes {
+  color: var(--colors-label-label-secondary-500, #697586);
+  text-align: center;
+
+  /* Text xs/Normal */
+  font-family: var(--Family-Body, "Geist variable");
+  font-size: var(--Size-Text-xs, 12px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 150% */
+}
+
+@property --perf-num {
+  syntax: "<integer>";
+  initial-value: 96;
+  inherits: false;
+}
+
+.percentage {
+  counter-reset: perf-num var(--perf-num);
+  transition: --perf-num 300ms;
+}
+
+.percentage::after {
+  content: counter(perf-num) "%";
+}
+
+.outerContainer:hover .percentage {
+  --perf-num: 100;
+}

@@ -1,0 +1,15 @@
+---
+import styles from "./ob-button-transparent.module.scss";
+
+interface Props {
+  disabled?: boolean;
+  className?: string;
+  href: string;
+  as?: string | undefined;
+}
+const { className = "", disabled, as: As = "a", href } = Astro.props;
+---
+
+<As href={href} disabled={disabled} class={`${styles.button} ${className}`}>
+  <slot />
+</As>

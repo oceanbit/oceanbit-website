@@ -1,0 +1,76 @@
+---
+import HeaderDropdown from "./header-dropdown.astro";
+import ObButton from "../../buttons/ob-button.astro";
+import HeaderButton from "./header-button.astro";
+import HeaderSolutionsList from "./header-solutions-list.astro";
+import HeaderProjectsList from "./header-projects-list.astro";
+import RightArrow from "../../../assets/icons/right_arrow.astro";
+
+interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+const isContact = Astro.url.pathname.includes("contact");
+---
+
+<div class={`centerArea ${className}`}>
+  <!--<nav class="navContainer">-->
+  <!--  <HeaderDropdown-->
+  <!--    title="Solutions"-->
+  <!--    dataOpen="solutions-templ"-->
+  <!--    dropdownClass="solutions-class"-->
+  <!--  >-->
+  <!--    <HeaderSolutionsList />-->
+  <!--  </HeaderDropdown>-->
+  <!--  <HeaderDropdown title="Projects" dataOpen="projects-templ">-->
+  <!--    <HeaderProjectsList />-->
+  <!--  </HeaderDropdown>-->
+  <!--  <HeaderButton as="a" href="#">About us</HeaderButton>-->
+  <!--</nav>-->
+</div>
+<div class={`rightArea ${className}`}>
+  {
+    isContact ? null : (
+      <ObButton href="/contact">
+        <span style="padding-left: 6px">Book a call</span>
+        <RightArrow />
+      </ObButton>
+    )
+  }
+</div>
+
+<!--<script src="./desktop-dropdown-script.ts"></script>-->
+
+<style>
+  .centerArea {
+    display: flex;
+    justify-content: center;
+  }
+
+  .rightArea {
+    display: flex;
+    justify-content: end;
+  }
+
+  .navContainer {
+    display: inline-flex;
+    padding: 4px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 9999px;
+    border: 2px solid var(--colors-border-border-secondary, #eaecf0);
+    background: var(
+      --component-colors-alpha-alpha-white-80,
+      rgba(255, 255, 255, 0.8)
+    );
+
+    /* Backdrop blurs/backdrop-blur-xl */
+    backdrop-filter: blur(20px);
+  }
+
+  :global(.solutions-class) {
+    max-width: 318px;
+  }
+</style>

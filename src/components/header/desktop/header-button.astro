@@ -1,0 +1,77 @@
+---
+// @ts-ignore
+interface Props {
+  ["data-open-desktop"]?: string;
+  as?: string;
+  href?: string;
+  buttonClass?: string;
+}
+
+const {
+  ["data-open-desktop"]: dataOpen,
+  as: As = "button",
+  href,
+  buttonClass = "",
+} = Astro.props;
+---
+
+<As class={`btn ${buttonClass}`} data-open-desktop={dataOpen} href={href}
+  ><slot /></As
+>
+
+<style>
+  .btn {
+    all: unset;
+    text-decoration: none;
+    display: flex;
+    padding: 6px 10px;
+    justify-content: center;
+    align-items: center;
+    color: var(--colors-label-label-primary-900, #121926);
+    border-radius: var(--radius-full, 9999px);
+
+    border: 1px solid transparent;
+
+    /* Text sm/Medium */
+    font-family: "Geist variable";
+    font-size: var(--size-text-sm, 14px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: var(--line-height-text-sm, 20px); /* 142.857% */
+  }
+
+  .btn:focus {
+    outline: 2px solid
+      var(
+        --component-colors-components-buttons-primary-button-primary-bg,
+        #0098ff
+      );
+  }
+
+  .btn[aria-expanded="true"],
+  .btn:hover {
+    border-radius: var(--radius-full, 9999px);
+    border: 1px solid
+      var(--component-colors-utility-brand-utility-brand-100, #d1e9ff);
+    background: var(--component-colors-utility-brand-utility-brand-50, #eff8ff);
+    position: relative;
+    color: var(--colors-label-label-brand-primary-600, #007acc);
+  }
+
+  .btn[aria-expanded="true"]::after {
+    content: " ";
+    position: absolute;
+    width: 28px;
+    height: 4px;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: var(--radius-md, 8px) var(--radius-md, 8px)
+      var(--radius-none, 0px) var(--radius-none, 0px);
+    background: var(
+      --component-colors-utility-brand-utility-brand-600,
+      #0091f3
+    );
+    box-shadow: 0px 0px 6px 0px rgba(21, 112, 239, 0.72);
+  }
+</style>

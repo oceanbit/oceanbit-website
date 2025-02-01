@@ -1,0 +1,13 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  --removeOffSides: 10%;
+  mask-image: linear-gradient(
+    to left,
+    transparent 0%,
+    black var(--removeOffSides),
+    black calc(100% - var(--removeOffSides)),
+    transparent 100%
+  );
+}

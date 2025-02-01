@@ -1,0 +1,84 @@
+---
+import Subheading from "../../../../components/headings/subheading.astro";
+import Heading from "../../../../components/headings/heading.astro";
+import SupportingText from "../../../../components/headings/supporting-text.astro";
+import FlickerBg from "../../components/flicker-bg/flicker-bg.astro";
+import styles from "./solve-problems.module.scss";
+import triforce from "../../components/triforce/triforce.svg";
+import Lightning from "../../../../assets/icons/lightning.astro";
+import Money from "../../../../assets/icons/money.astro";
+import Info from "../../../../assets/icons/info.astro";
+import Language from "../../../../assets/icons/language.astro";
+import Chart from "../../../../assets/icons/chart.astro";
+import Shield from "../../../../assets/icons/shield.astro";
+import SolveProblemsCard from "../../components/solve-problems-card/solve-problems-card.astro";
+---
+
+<div class={styles.container}>
+  <div class={styles.leftLine}></div>
+  <div class={styles.rightLine}></div>
+  <Subheading as="h2">Solve problems</Subheading>
+  <Heading>Set the stage for a<br />positive-net impact</Heading>
+  <SupportingText
+    >Every investment leads to tangible results, ensuring a<br />brighter future
+    for your business.
+  </SupportingText>
+
+  <div class={styles.flickerRowContainer} style="position: relative">
+    <div class={styles.triforceContainer}>
+      <img src={triforce.src} alt="" class={styles.triforceImg} />
+    </div>
+
+    <div class={styles.flickerContainer}>
+      <FlickerBg />
+    </div>
+  </div>
+
+  <div class={styles.cardGridContainer}>
+    <div class={styles.topLine}></div>
+    <ul class={styles.cardGrid}>
+      <SolveProblemsCard
+        title="Streamline operations"
+        description="Optimize workflows and reduce technical complexity, ensuring efficient project execution and accelerated time-to-market."
+      >
+        <Info slot="icon" />
+      </SolveProblemsCard>
+
+      <SolveProblemsCard
+        title="Boost developer efficiency"
+        description="Empower your team with our training to tackle complex challenges with confidence, boosting productivity and innovation."
+      >
+        <Language slot="icon" />
+      </SolveProblemsCard>
+
+      <SolveProblemsCard
+        title="Drive positive impact"
+        description="Boost conversion rates with enhanced site and app performance. Elevate UX for increased satisfaction and business growth."
+      >
+        <Chart slot="icon" />
+      </SolveProblemsCard>
+
+      <SolveProblemsCard
+        title="Reduce running costs"
+        description="Deploy optimized code and infrastructure for maximum efficiency, cut operational expenses and secure long-term cost savings."
+      >
+        <Money slot="icon" />
+      </SolveProblemsCard>
+
+      <SolveProblemsCard
+        title="Enhance product performance"
+        description="Prioritize performance optimization, ensuring resilient and bug-free code for maximum customer satisfaction."
+      >
+        <Lightning slot="icon" />
+      </SolveProblemsCard>
+
+      <SolveProblemsCard
+        title="Ensure legal compliance"
+        description="Safeguard against legal risks by prioritizing accessibility compliances and ensuring inclusivity for all your users."
+      >
+        <Shield slot="icon" />
+      </SolveProblemsCard>
+    </ul>
+    <div class={styles.bottomLine}></div>
+  </div>
+</div>

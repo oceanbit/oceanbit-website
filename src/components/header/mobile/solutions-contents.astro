@@ -1,0 +1,124 @@
+<ul role="list">
+  <li>
+    <a href="#">
+      <img src="/service-icons/consultancy.svg" alt="" />
+      <div>
+        <h2>Consultancy</h2>
+        <p>Boost digital accessibility and team expertise.</p>
+      </div>
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <img src="/service-icons/docs.svg" alt="" />
+      <div>
+        <h2>Documentation</h2>
+        <p>Enhance user experience for smoother journeys.</p>
+      </div>
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <img src="/service-icons/dev.svg" alt="" />
+      <div>
+        <h2>Development</h2>
+        <p>Build user interfaces and optimize backend systems.</p>
+      </div>
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <img src="/service-icons/design.svg" alt="" />
+      <div>
+        <h2>Product Design</h2>
+        <p>
+          Blend aesthetics and functionality to create product masterpieces.
+        </p>
+      </div>
+    </a>
+  </li>
+</ul>
+
+<style>
+  ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    padding: var(--spacing-md, 8px) var(--spacing-xl, 16px)
+      var(--spacing-xl, 16px) var(--spacing-xl, 16px);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xl, 16px);
+  }
+
+  li {
+    width: 100%;
+  }
+
+  li > a {
+    display: flex;
+    padding: 8px;
+    margin: 0;
+    /* Create the illusion of bottom margin 8px*/
+    padding-bottom: calc(8px + 0.5rem);
+    padding-top: calc(8px + 0.5rem);
+    text-align: left;
+    background: none;
+    border: none;
+    text-decoration: none;
+    border-radius: var(--radius-md, 8px);
+    transition: background 0.2s;
+  }
+
+  li > a:hover {
+    background: var(--colors-background-bg-secondary, #f1f1f1);
+  }
+
+  li > a:hover h2 {
+    color: var(--colors-label-label-brand-primary-600, #007acc);
+  }
+
+  li:first-child > a {
+    padding-top: 8px;
+  }
+
+  li:last-child > a {
+    padding-bottom: 8px;
+  }
+
+  li img {
+    margin-right: 16px;
+    height: 48px;
+    width: 48px;
+    filter: drop-shadow(0px 15.086px 4.114px rgba(24, 34, 48, 0))
+      drop-shadow(0px 9.6px 4.114px rgba(24, 34, 48, 0.01))
+      drop-shadow(0px 5.486px 3.429px rgba(24, 34, 48, 0.04))
+      drop-shadow(0px 2.057px 2.057px rgba(24, 34, 48, 0.07))
+      drop-shadow(0px 0.686px 1.371px rgba(24, 34, 48, 0.08));
+  }
+
+  li h2 {
+    margin: 0;
+    margin-bottom: 2px;
+    color: var(--colors-labels-label-primary, #000);
+    /* Text sm/Medium */
+    font-family: var(--paragraph, "Geist variable");
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 142.857% */
+  }
+
+  li p {
+    margin: 0;
+
+    color: var(--colors-label-label-secondary-500, #697586);
+
+    /* Text sm/Normal */
+    font-family: var(--paragraph, "Geist variable");
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+  }
+</style>

@@ -1,0 +1,12 @@
+.blueItem,
+.greyItem {
+  transition: opacity 300ms ease-in-out;
+}
+
+.svgCpuContainer.active .greyItem {
+  opacity: 0 !important;
+}
+
+.svgCpuContainer.active .blueItem {
+  opacity: 1 !important;
+}

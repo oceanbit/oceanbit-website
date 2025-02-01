@@ -1,0 +1,25 @@
+---
+interface Props {
+  as?: string | undefined;
+}
+
+const { as: As = "p" } = Astro.props;
+---
+
+<As class="heading"><slot /></As>
+
+<style>
+  .heading {
+    color: var(--colors-label-label-primary-900, #121926);
+    text-align: center;
+
+    /* Display md/Semibold */
+    font-family: var(--family-display, "Geist variable");
+    font-size: var(--size-display-md, 2.25rem);
+    font-style: normal;
+    font-weight: 600;
+    line-height: var(--line-height-display-md, 2.75rem); /* 122.222% */
+    letter-spacing: -0.045rem;
+    margin: var(--spacing-xl) auto;
+  }
+</style>

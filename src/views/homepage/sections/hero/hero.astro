@@ -1,0 +1,109 @@
+---
+import Waves from "../../components/waves/waves.astro";
+import ObButton from "../../../../components/buttons/ob-button.astro";
+import RightArrow from "../../../../assets/icons/right_arrow.astro";
+import CodeBlock from "../../components/code-block/code-block.astro";
+import RevIncrease from "../../components/rev-increase/rev-increase.astro";
+import HeroCard from "../../components/hero-card/hero-card.astro";
+import Code from "../../../../assets/icons/code.astro";
+import Money from "../../../../assets/icons/money.astro";
+import Lightning from "../../../../assets/icons/lightning.astro";
+import Performance from "../../components/performance/performance.astro";
+import Health from "../../../../assets/icons/health.astro";
+import User from "../../../../assets/icons/user.astro";
+import Mobo from "../../components/mobo/mobo.astro";
+import UserSatisfaction from "../../components/user-satisfaction/user-satisfaction.astro";
+import SystemHealth from "../../components/system-health/system-health.astro";
+import styles from "./hero.module.scss";
+---
+
+<section>
+  <div class={styles.topMostContainer}>
+    <div class={styles.topContainer}>
+      <h1 class={styles.headerTitle}>
+        Empowering growth,<br /><span class={styles.engineering}
+          >Engineering</span
+        > excellence.
+      </h1>
+
+      <p style="max-width: 512px" class={styles.subtitle}>
+        Meet your consulting partners — leverage our expertise to guarantee a
+        positive impact on your company and efficient team growth.
+      </p>
+
+      <div style="display: flex; gap: 24px; justify-content: center">
+        <!--<ObButton disabled href="#">-->
+        <!--  <span style="margin-left: 6px">Contact us</span>-->
+        <!--  <RightArrow stroke="currentColor" />-->
+        <!--</ObButton>-->
+
+        <ObButton href="/contact">
+          <span style="margin-left: 6px">Book a call</span>
+          <RightArrow stroke="currentColor" />
+        </ObButton>
+      </div>
+    </div>
+  </div>
+
+  <div class={styles.wavesContainer}>
+    <Waves />
+  </div>
+  <div class={styles.cardsContainer}>
+    <div class={styles.cardsOutline}>
+      <ul
+        aria-description="A mock dashboard grid of improvements we could make to your product"
+        class={styles.cardsGrid}
+        role="list"
+      >
+        <HeroCard
+          className={styles.engTraining}
+          ariaLabel="A code block with cursors labelled 'OceanBit' and 'Your dev team'"
+          titleId="hero-card-eng-training"
+          title="Engineering training"
+        >
+          <Code slot="icon" />
+          <CodeBlock />
+        </HeroCard>
+        <HeroCard
+          ariaLabel="A spedometer with 96% faster times and benchmarks showing for 'bundle size', 'load time' and 'cpu cycles'"
+          titleId="hero-card-performance"
+          title="Performance"
+        >
+          <Lightning slot="icon" />
+          <Performance />
+        </HeroCard>
+        <HeroCard
+          className={styles.hideCardOnMobile}
+          ariaLabel="A pie chart with '85%' incident reduction and three metrics of 'solves issues', 'pending issues' and 'active issues'"
+          titleId="hero-card-system-health"
+          title="System Health"
+        >
+          <Health slot="icon" />
+          <SystemHealth />
+        </HeroCard>
+        <HeroCard
+          ariaLabel="A graph showing costs going from $130,000 to $80,000 with $60,000 operational, $20,000 server costs and $50,000 saved"
+          titleId="hero-card-rev-increase"
+          title="Revenue increase"
+        >
+          <Money slot="icon" />
+          <div
+            style="height: 100%; width: 100%; display: flex;flex-wrap: wrap;align-content: center;"
+          >
+            <RevIncrease />
+          </div>
+        </HeroCard>
+        <HeroCard
+          className={styles.hideCardOnMobile}
+          ariaLabel="A graph showing an upward trend in user satisfaction from 75% to 100%"
+          titleId="hero-card-user-satis"
+          title="User satisfaction"
+        >
+          <User slot="icon" />
+          <UserSatisfaction />
+        </HeroCard>
+      </ul>
+    </div>
+  </div>
+  <Mobo />
+</section>

@@ -1,0 +1,21 @@
+---
+import Svg from "./user-satisfaction-svg.astro";
+import styles from "./user-satisfaction.module.scss";
+---
+
+<div id="user-satisfaction-container">
+  <div class={styles.labelsAndSvgGrid}>
+    <div class={styles.gridPercentages}>
+      <p class={styles.gridPercent}>100%</p>
+      <p class={styles.gridPercent}>75%</p>
+      <p class={styles.gridPercent}>50%</p>
+    </div>
+    <Svg className={styles.svg} />
+    <div class={styles.monthLabelContainer}>
+      <p class={styles.monthLabel}>Month</p>
+    </div>
+  </div>
+</div>
+<script>
+  import "./user-satisfaction-svg";
+</script>

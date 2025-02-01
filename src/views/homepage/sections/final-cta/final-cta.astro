@@ -1,0 +1,29 @@
+---
+import styles from "./final-cta.module.scss";
+import RightArrow from "../../../../assets/icons/right_arrow.astro";
+import ObButton from "../../../../components/buttons/ob-button.astro";
+---
+
+<div class={styles.container}>
+  <div class={styles.card}>
+    <div class={styles.textContainer}>
+      <p class={styles.title}>The expertise you need, available today!</p>
+      <p class={styles.description}>
+        Lead your industry with confidence - elevate your products and craft
+        solutions that drive growth.
+      </p>
+      <ObButton href="/contact">
+        <span style="padding-left: 6px">Book a call</span>
+        <RightArrow />
+      </ObButton>
+    </div>
+    <div class={styles.illustrationContainer}>
+      <div class={styles.illustrationTop}></div>
+      <div class={styles.illustrationBottom}></div>
+      <div class={styles.illustrationLeft}></div>
+      <div class={styles.illustrationRight}></div>
+      <div class={styles.illustrationFades}></div>
+      <img alt="" src="/board.svg" class={styles.illustration} />
+    </div>
+  </div>
+</div>

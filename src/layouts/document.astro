@@ -1,0 +1,35 @@
+---
+import "../styles/global.scss";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <script
+      defer
+      data-domain="playfulprogramming.com"
+      src="/areyoumyuser/js/script.js"
+      data-api="/areyoumyuser/api/event"></script>
+    <script is:inline>
+      window.plausible =
+        window.plausible ||
+        function () {
+          (window.plausible.q = window.plausible.q || []).push(arguments);
+        };
+    </script>
+    <slot name="head" />
+  </head>
+  <body>
+    <div id="portal-injection-site"></div>
+    <div id="rest-of-site">
+      <slot />
+    </div>
+
+    <!--<script>-->
+    <!--  import "../utils/href-container-script";-->
+    <!--</script>-->
+  </body>
+</html>

@@ -1,0 +1,93 @@
+@use "../../../../styles/variables/raw-breakpoints";
+
+.container {
+  display: flex;
+  padding: 1.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-2xl);
+
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-image: linear-gradient(0deg, #eaecf000 0%, #eaecf0 31%, #eaecf000 100%)
+    1 100%;
+}
+
+.container::before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: calc(50% - calc(1.875rem / 2));
+  width: 1px;
+  height: 1.875rem;
+  background: var(--Colors-Brand-500, #007ACC);
+  transition:
+    height 300ms ease-in-out,
+    top 300ms ease-in-out;
+}
+
+.container:hover::before {
+  height: 50%;
+}
+
+.container[data-index="1"],
+.container[data-index="3"] {
+  border-right-style: solid;
+  border-right-width: 1px;
+}
+
+@include raw-breakpoints.until(raw-breakpoints.$tabletMin) {
+  .container[data-index="0"],
+  .container[data-index="2"] {
+    border-right-style: solid;
+    border-right-width: 1px;
+  }
+}
+
+.icon {
+  width: 4rem;
+  height: 4rem;
+}
+
+.title {
+  margin: 0;
+  color: var(--colors-label-label-primary-900, #121926);
+
+  /* Text xl/Semibold */
+  font-family: var(--Family-Body, "Geist variable");
+  font-size: var(--Size-Text-xl, 1.25rem);
+  font-style: normal;
+  font-weight: 600;
+  line-height: var(--Line-height-Text-xl, 1.875rem); /* 150% */
+  transition: color 300ms ease-in-out;
+}
+
+.container:hover .title {
+  color: var(--colors-label-label-brand-primary-600, #007ACC);
+}
+
+.description {
+  margin: 0;
+  color: var(--colors-label-label-secondary-500, #697586);
+
+  /* Text base/Normal */
+  font-family: var(--Family-Body, "Geist variable");
+  font-size: var(--Size-Text-base, 1rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--Line-height-Text-base, 1.5rem); /* 150% */
+}
+
+.gettingStarted {
+  margin-left: -12px;
+  margin-bottom: -12px;
+  margin-top: -12px;
+}
+
+.rightArrow {
+  transition: margin-left 300ms ease-in-out;
+}
+
+.container:hover .rightArrow {
+  margin-left: 0.25rem;
+}

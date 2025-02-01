@@ -1,0 +1,211 @@
+.container {
+  flex-grow: 1;
+}
+
+.barTopText {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-sm);
+  color: var(--colors-label-label-secondary-500, #697586);
+
+  /* Text xs/Normal */
+  font-family: var(--Family-Body, "Geist variable");
+  font-size: var(--Size-Text-xs, 0.75rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--Line-height-Text-xs, 1.125rem); /* 150% */
+}
+
+.barTopText {
+  margin: 0;
+}
+
+.barContainer {
+  height: fit-content;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-lg, 12px);
+  align-self: stretch;
+}
+
+.bar {
+  border-radius: var(--radius-xs, 4px);
+  box-shadow:
+    0px 15px 6px 0px rgba(245, 250, 255, 0.02),
+    0px 8px 5px 0px rgba(245, 250, 255, 0.08),
+    0px 4px 4px 0px rgba(245, 250, 255, 0.14),
+    0px 1px 2px 0px rgba(245, 250, 255, 0.16),
+    0px 2px 5px 0px rgba(148, 209, 255, 0.4);
+  height: 24px;
+}
+
+@property --rev-total-num {
+  syntax: "<integer>";
+  initial-value: 80;
+  inherits: false;
+}
+
+@property --rev-operational-num {
+  syntax: "<integer>";
+  initial-value: 60;
+  inherits: false;
+}
+
+@property --rev-server-num {
+  syntax: "<integer>";
+  initial-value: 20;
+  inherits: false;
+}
+
+@property --rev-saved-num {
+  syntax: "<integer>";
+  initial-value: 50;
+  inherits: false;
+}
+
+.revMetricTotal {
+  counter-reset: rev-total-num var(--rev-total-num);
+  transition: --rev-total-num 300ms;
+}
+
+.revMetricTotal::after {
+  content: "$" counter(rev-total-num) "k";
+}
+
+.revMetricServer {
+  counter-reset: rev-server-num var(--rev-server-num);
+  transition: --rev-server-num 300ms;
+}
+
+.revMetricServer::after {
+  content: "$" counter(rev-server-num) "k";
+}
+
+.revMetricOperational {
+  counter-reset: rev-operational-num var(--rev-operational-num);
+  transition: --rev-operational-num 300ms;
+}
+
+.revMetricOperational::after {
+  content: "$" counter(rev-operational-num) "k";
+}
+
+.revMetricSaved {
+  counter-reset: rev-saved-num var(--rev-saved-num);
+  transition: --rev-saved-num 300ms;
+}
+
+.revMetricSaved::after {
+  content: "$" counter(rev-saved-num) "k";
+}
+
+.revMetricServer {
+  counter-reset: rev-server-num var(--rev-server-num);
+  transition: --rev-server-num 300ms;
+}
+
+.revMetricServer::after {
+  content: "$" counter(rev-server-num) "k";
+}
+
+.container:hover {
+  .light {
+    width: 20px;
+  }
+
+  .pinstripes {
+    width: 200px;
+  }
+
+  .revMetricServer {
+    --rev-server-num: 8;
+  }
+
+  .revMetricSaved {
+    --rev-saved-num: 82;
+  }
+
+  .revMetricOperational {
+    --rev-operational-num: 30;
+  }
+
+  .revMetricTotal {
+    --rev-total-num: 38;
+  }
+}
+
+.dark,
+.light,
+.pinstripes {
+  transition: all 0.3s;
+}
+
+.colorBadge {
+  width: 0.5rem !important;
+  height: 0.75rem;
+  border-radius: var(--radius-xl);
+  display: inline-block;
+  flex-grow: 0 !important;
+  margin-right: var(--spacing-sm);
+}
+
+.dark {
+  background: var(--colors-brand-500, #007ACC);
+  flex-grow: 1;
+  width: 1px;
+}
+
+.light {
+  background: #48d8ff;
+  width: 47px;
+}
+
+.pinstripes {
+  width: 81px;
+  background-image: url("/pinstripe_horiz_repeat.svg");
+  background-size: cover;
+  background-repeat: repeat-x;
+}
+
+.darkerPinstripes {
+  background-image: url("/darker_pinstripe_horiz_repeat.svg");
+  background-size: 40px !important;
+  background-repeat: repeat-x;
+  background-color: #E7F0FF;
+  width: calc(0.5rem - 2px) !important;
+  border: 1px solid rgba(0, 152, 255, 0.4);
+}
+
+.metricsList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: var(--spacing-4xl);
+}
+
+.metricName {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  color: var(--colors-label-label-secondary-500, #697586);
+
+  /* Text xs/Normal */
+  font-family: var(--family-body, "Geist variable");
+  font-size: var(--size-text-xs, 0.75rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--line-height-text-xs, 1.125rem); /* 150% */
+}
+
+.metricCost {
+  margin: 0;
+  color: var(--colors-label-label-primary-900, #121926);
+  font-variant-numeric: tabular-nums;
+
+  /* Text xl/Semibold */
+  font-family: var(--family-body, "Geist variable");
+  font-size: var(--size-text-xl, 1.25rem);
+  font-style: normal;
+  font-weight: 600;
+  line-height: var(--line-height-text-xl, 1.875rem); /* 150% */
+}

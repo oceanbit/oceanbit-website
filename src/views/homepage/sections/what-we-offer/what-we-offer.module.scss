@@ -1,0 +1,70 @@
+@use "../../../../styles/variables/raw-breakpoints";
+
+.topContainer {
+  margin: var(--spacing-9xl) auto 0;
+  max-width: var(--width-xl, 48rem);
+  padding: 0 var(--spacing-xl, 1rem);
+}
+
+.cardsContainer {
+  overflow: hidden;
+  max-width: var(--width-3lg, 75rem);
+  margin: 0 auto;
+  list-style: none;
+  padding: var(--spacing-7xl, 4rem) var(--spacing-xl, 1rem)
+    var(--spacing-9xl, 6rem) var(--spacing-xl, 1rem);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+@include raw-breakpoints.until(raw-breakpoints.$tabletMin) {
+  .cardsContainer {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
+
+.cardListItem {
+  position: relative;
+}
+
+.twoWideBorderLine,
+.oneWideBorderLine {
+  position: absolute;
+  border-radius: 0.5625rem;
+  height: 1px;
+  bottom: 0;
+  border: none;
+  background: linear-gradient(
+    90deg,
+    #eaecf000 0%,
+    #eaecf0 9%,
+    #eaecf0 93%,
+    #eaecf000 100%
+  );
+}
+
+@include raw-breakpoints.from(raw-breakpoints.$tabletMin) {
+  .twoWideBorderLine {
+    left: -100px;
+    width: calc(200% + 200px);
+  }
+
+  .oneWideBorderLine {
+    display: none;
+  }
+}
+
+@include raw-breakpoints.until(raw-breakpoints.$tabletMin) {
+  .twoWideBorderLine,
+  .oneWideBorderLine {
+    left: -16px;
+    width: calc(100% + 32px);
+  }
+}
+
+.topLine {
+  top: 0 !important;
+  bottom: unset !important;
+}

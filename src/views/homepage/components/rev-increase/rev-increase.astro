@@ -1,0 +1,49 @@
+---
+import styles from "./rev-increase.module.scss";
+---
+
+<div class={styles.container}>
+  <div class={styles.outerBarContainer}>
+    <div class={styles.barTopText}>
+      <p>Cut costs</p>
+      <p>from $130k to <strong class={styles.revMetricTotal}></strong></p>
+    </div>
+    <div class={styles.barContainer}>
+      <div class={`${styles.bar} ${styles.dark}`}></div>
+      <div class={`${styles.bar} ${styles.light}`}></div>
+      <div class={`${styles.bar} ${styles.pinstripes}`}></div>
+    </div>
+  </div>
+  <div class={styles.metricsList}>
+    <div>
+      <p class={styles.metricName}>
+        <span class={`${styles.light} ${styles.colorBadge}`}></span>Operational
+      </p>
+      <p class={`${styles.metricCost} ${styles.revMetricOperational}`}></p>
+    </div>
+
+    <div>
+      <p class={styles.metricName}>
+        <span class={`${styles.dark} ${styles.colorBadge}`}></span>Server
+      </p>
+      <div style="position: relative">
+        <p
+          class={`${styles.metricCost} ${styles.revMetricServer}`}
+          style="position: absolute; top: 0; left: 0;"
+        >
+        </p>
+        <p aria-hidden="true" class={styles.metricCost} style="opacity: 0">
+          $20k
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <p class={styles.metricName}>
+        <span class={`${styles.darkerPinstripes} ${styles.colorBadge}`}
+        ></span>Saved
+      </p>
+      <p class={`${styles.metricCost} ${styles.revMetricSaved}`}></p>
+    </div>
+  </div>
+</div>

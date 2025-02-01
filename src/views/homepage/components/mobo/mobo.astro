@@ -1,0 +1,79 @@
+---
+import Cpu from "./cpu.astro";
+import cpuStyles from "./cpu.module.scss";
+import styles from "./mobo.module.scss";
+---
+
+<div class={styles.container}>
+  <div class={styles.imgContainer}>
+    <div class={styles.coreContainer}>
+      <div class={styles.linesContainer}>
+        <svg
+          class={styles.lines}
+          width="72"
+          height="100"
+          viewBox="0 0 72 100"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M0.5 0L0.500004 100" stroke="#E3E8EF"></path>
+          <path d="M36.7344 0L36.7344 100" stroke="#E3E8EF"></path>
+          <path d="M71.5 0L71.5 100" stroke="#E3E8EF"></path>
+        </svg>
+        <svg
+          class={styles.blueLines}
+          width="72"
+          height="100"
+          viewBox="0 0 72 100"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0.5 0L0.500004 100"
+            class={styles.blueLineOne}
+            stroke="#0098ff"></path>
+          <path
+            d="M36.7344 0L36.7344 100"
+            class={styles.blueLineTwo}
+            stroke="#0098ff"></path>
+          <path
+            d="M71.5 0L71.5 100"
+            class={styles.blueLineThree}
+            stroke="#0098ff"></path>
+        </svg>
+      </div>
+      <Cpu className={styles.core} />
+    </div>
+    <img
+      class={styles.leftComponents}
+      src="/illustrations/mobo-components.svg"
+      alt=""
+    />
+    <img
+      class={styles.rightComponents}
+      src="/illustrations/mobo-components.svg"
+      alt=""
+    />
+  </div>
+</div>
+
+<script define:vars={{ cpuStyles, styles }}>
+  const coreContainer = document.querySelector(`.${styles.coreContainer}`);
+  const cpuContrainer = document.querySelector(`.${cpuStyles.svgCpuContainer}`);
+  const linesContrainer = document.querySelector(`.${styles.linesContainer}`);
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          cpuContrainer.classList.add(cpuStyles.active);
+          linesContrainer.classList.add(styles.active);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { rootMargin: "0px 0px -50% 0px" },
+  );
+
+  observer.observe(coreContainer);
+</script>

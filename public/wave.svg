@@ -1,0 +1,28 @@
+  <svg
+    width="900"
+    height="734"
+    viewBox="0 0 900 734"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g>
+      <path
+        stroke="url(#paint0_radial_2_3)"
+        stroke-opacity=".2"
+        d="M492 92C425-8 243-39 139 67c-52 53-83 67-120 60-12-2-23 12-15 22l228 311 149 217c59 87 182 54 236 27 50-27 159-61 256-34 14 4 32-18 24-30L492 92Z"
+      ></path>
+    </g>
+    <defs>
+      <radialGradient
+        id="paint0_radial_2_3"
+        cx="0"
+        cy="0"
+        r="1"
+        gradientUnits="userSpaceOnUse"
+        gradientTransform="translate(345.232 143.183) rotate(54.9741) scale(436.999 1390.49)"
+      >
+        <stop stop-color="#0062FF" stop-opacity="0"></stop>
+        <stop offset="1" stop-color="#0062FF"></stop>
+      </radialGradient>
+    </defs>
+  </svg>

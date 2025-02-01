@@ -1,0 +1,187 @@
+---
+import ObButton from "../../buttons/ob-button.astro";
+import DownArrow from "../../../assets/icons/down_arrow.astro";
+import ShowcaseContents from "./showcase-contents.astro";
+import SolutionsContents from "./solutions-contents.astro";
+---
+
+<div class="outer-container">
+  <div class="header-mobile-dropdown-contents-link-container">
+    <details>
+      <summary
+        ><span>Solutions</span>
+        <DownArrow className="summary-details-arrow" /></summary
+      >
+
+      <SolutionsContents />
+    </details>
+    <hr class="hr" />
+    <details>
+      <summary
+        ><span>Showcase</span>
+        <DownArrow className="summary-details-arrow" /></summary
+      >
+      <ShowcaseContents />
+    </details>
+    <hr class="hr" />
+
+    <a href="#" class="summary-span">About us</a>
+  </div>
+
+  <hr class="button-divider" />
+  <div class="button-container">
+    <ObButton className="dropdown-mobile-contents-button" disabled href="#"
+      >Contact us</ObButton
+    >
+    <ObButton href="/contact" className="dropdown-mobile-contents-button"
+      >Book a call</ObButton
+    >
+  </div>
+</div>
+
+<style lang="scss">
+  .outer-container {
+    padding: 16px;
+  }
+
+  .header-mobile-dropdown-contents-link-container {
+    max-height: calc(100vh - 14rem);
+    overflow-y: scroll;
+    overflow-x: clip;
+    margin-right: -0.5rem;
+  }
+
+  //Style scrollbar
+  :global(.header-mobile-dropdown-contents-link-container) {
+    &::-webkit-scrollbar {
+      height: 0.5rem;
+      width: 0.5rem;
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #bcc1c7;
+      -webkit-border-radius: 90px;
+      -webkit-box-shadow: none;
+    }
+
+    ::-webkit-scrollbar-corner {
+      background: #000;
+    }
+  }
+
+  .button-divider {
+    margin-top: 8px;
+    border: none;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      rgba(122, 90, 248, 0) 5.36%,
+      rgba(126, 224, 255, 0.24) 21.45%,
+      rgba(122, 90, 248, 0.24) 32.69%,
+      rgba(126, 224, 255, 0.24) 42.56%,
+      rgba(23, 92, 211, 0.24) 51.69%,
+      rgba(126, 224, 255, 0.24) 64.05%,
+      rgba(122, 90, 248, 0.11) 79.74%,
+      rgba(126, 224, 255, 0) 94.29%
+    );
+  }
+
+  .button-container {
+    width: 100%;
+    display: flex;
+    padding: var(--spacing-xl, 16px) var(--spacing-xl, 16px) 0px
+      var(--spacing-xl, 16px);
+    align-items: center;
+    gap: var(--spacing-3xl, 24px);
+    box-sizing: border-box;
+  }
+
+  :global(.dropdown-mobile-contents-button) {
+    flex-grow: 1;
+  }
+
+  .summary-span {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* The min-height of the dropdown button */
+    min-height: calc(24px + 8px);
+  }
+
+  details {
+    width: 100%;
+  }
+
+  details > summary,
+  .summary-span {
+    padding: var(--spacing-xs, 4px) var(--spacing-lg, 12px)
+      var(--spacing-xs, 4px) var(--spacing-xl, 16px);
+  }
+
+  details > summary {
+    display: flex;
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+  }
+
+  details > summary > span {
+    width: 1px;
+    flex-grow: 1;
+  }
+
+  details > summary > span,
+  .summary-span {
+    text-decoration: none;
+    color: var(--labels-label-primary, #000);
+
+    /* Text base/Medium */
+    font-family: var(--family-body, "Geist variable");
+    font-size: var(--size-text-base, 16px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: var(--line-height-text-base, 24px); /* 150% */
+  }
+
+  details > summary :global(.summary-details-arrow) {
+    margin-left: 16px;
+    padding: 8px;
+    height: 24px;
+    width: 24px;
+    transition: transform 250ms ease-in-out;
+  }
+
+  details[open] > summary :global(.summary-details-arrow) {
+    transform: rotate(-180deg);
+  }
+
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .hr {
+    display: flex;
+    width: calc(100% - 32px);
+    margin: 2px 16px;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 1px;
+    border-radius: 29px;
+    background: var(--component-colors-utility-gray-utility-gray-200, #e3e8ef);
+    border: none;
+  }
+
+  .link-container {
+    display: flex;
+    padding-bottom: var(--spacing-xl, 16px);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xxs, 2px);
+  }
+</style>

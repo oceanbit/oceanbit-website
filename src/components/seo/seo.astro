@@ -1,0 +1,88 @@
+---
+import OpenGraph from "./open-graph.astro";
+import { type SEOProps } from "./shared";
+import Twitter from "./twitter.astro";
+
+const {
+  description = "",
+  title,
+  keywords,
+  shareImage,
+} = Astro.props as SEOProps;
+
+const siteTitle = "OceanBit";
+const siteUrl = "https://oceanbit.dev";
+const twitterHandle = "oceanbit";
+const siteDescription =
+  "Empowering Growth, Engineering Excellence. Your consulting partners.\n";
+const siteKeywords = [
+  "consulting",
+  "documentation",
+  "programming",
+  "development",
+  "partners",
+  "engineering",
+];
+
+const pathName = Astro.url.pathname;
+
+const metaDescription = description || siteDescription;
+const metaKeywords = keywords ? keywords.join(",") : siteKeywords.join(",");
+const metaImage = `${siteUrl}${shareImage ?? "/share-banner.png"}`;
+
+const ogType = "website";
+
+const removeTrailingSlash = (str: string) =>
+  str.endsWith("/") ? str.slice(0, -1) : str;
+
+const currentPath = removeTrailingSlash(siteUrl + (pathName || ""));
+---
+
+<title>{title}</title>
+<link rel="canonical" href={currentPath} />
+<meta property="name" content={siteTitle} />
+<meta name="description" content={metaDescription} />
+<meta property="keywords" content={metaKeywords} />
+<link
+  rel="preload"
+  href="/fonts/Geist/GeistVF.ttf"
+  as="font"
+  type="font/ttf"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="/fonts/Geist/GeistMonoVF.ttf"
+  as="font"
+  type="font/ttf"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="/fonts/Epilogue/Epilogue-Italic-VariableFont_wght.ttf"
+  as="font"
+  type="font/ttf"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="/fonts/Epilogue/Epilogue-VariableFont_wght.ttf"
+  as="font"
+  type="font/ttf"
+  crossorigin
+/>
+<Twitter
+  title={title}
+  metaDescription={metaDescription}
+  twitterHandle={twitterHandle}
+  metaImage={metaImage}
+/>
+<OpenGraph
+  currentPath={currentPath}
+  siteTitle={siteTitle}
+  title={title}
+  metaDescription={metaDescription}
+  metaImage={metaImage}
+  ogType={ogType}
+/>
+<slot />

@@ -1,0 +1,103 @@
+@use "../../../../styles/variables/raw-breakpoints";
+
+.container {
+  display: flex;
+  margin-top: calc(0px - var(--spacing-xl) - var(--radius-4xl));
+  justify-content: center;
+}
+
+.imgContainer {
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+}
+
+.coreContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(90deg, transparent, white, transparent);
+}
+
+.lines {
+  margin-bottom: -36px;
+}
+
+.blueLines {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.blueLineOne,
+.blueLineTwo,
+.blueLineThree {
+  animation-play-state: paused;
+  opacity: 0;
+  will-change: stroke-dashoffset opacity;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  stroke-dasharray: 30 300;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  animation-name: mobo_line_draw;
+}
+
+.linesContainer.active {
+  .blueLineOne,
+  .blueLineTwo,
+  .blueLineThree {
+    opacity: 1;
+    animation-play-state: running;
+  }
+}
+
+.blueLineOne {
+}
+.blueLineTwo {
+  animation-delay: -1s;
+}
+.blueLineThree {
+  animation-delay: -0.2s;
+}
+
+.linesContainer {
+  position: relative;
+}
+
+.core {
+  width: 200px;
+  // The SVG is not perfectly centered, so we need to adjust it
+  margin-left: 20px;
+}
+
+.rightComponents,
+.leftComponents {
+  position: absolute;
+  @include raw-breakpoints.until(raw-breakpoints.$tabletMin) {
+    display: none !important;
+  }
+}
+
+.leftComponents {
+  bottom: 32px;
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.rightComponents {
+  bottom: 32px;
+  right: 0;
+  transform: translateX(100%) rotateY(180deg);
+}
+
+@keyframes mobo_line_draw {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 330;
+  }
+}

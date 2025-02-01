@@ -1,0 +1,23 @@
+---
+import type { SEOProps } from "./shared";
+
+type Props = Pick<SEOProps, "title"> & {
+  currentPath: string;
+  metaDescription: string;
+  metaImage: string;
+  ogType: string;
+  siteTitle: string;
+};
+
+const { currentPath, siteTitle, title, metaDescription, metaImage, ogType } =
+  Astro.props as Props;
+---
+
+{/* Open Graph SEO */}
+<meta property="og:url" content={currentPath} />
+<meta property="og:site_name" content={siteTitle} />
+<meta property="og:title" content={title} />
+<meta property="og:locale" content={"en"} />
+<meta property="og:description" content={metaDescription} />
+<meta property="og:image" content={metaImage} />
+<meta property="og:type" content={ogType} />

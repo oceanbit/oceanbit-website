@@ -1,0 +1,42 @@
+---
+interface Props {
+  stroke?: string;
+  className?: string;
+}
+
+const { stroke = "#F79009", className } = Astro.props;
+---
+
+<svg
+  class={className}
+  width="13"
+  height="12"
+  viewBox="0 0 13 12"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g id="Group">
+    <g id="Group_2">
+      <path
+        id="Vector"
+        d="M6.5 6.55994V4.68994"
+        stroke={stroke}
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
+      <path
+        id="Vector_2"
+        d="M6.4995 8.0625C6.4305 8.0625 6.3745 8.1185 6.375 8.1875C6.375 8.2565 6.431 8.3125 6.5 8.3125C6.569 8.3125 6.625 8.2565 6.625 8.1875C6.625 8.1185 6.569 8.0625 6.4995 8.0625"
+        stroke={stroke}
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
+      <path
+        id="Vector_3"
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M7.51438 2.06959L11.3439 8.77159C11.7889 9.55059 11.2264 10.5201 10.3294 10.5201H2.67038C1.77288 10.5201 1.21038 9.55059 1.65588 8.77159L5.48538 2.06959C5.93388 1.28409 7.06588 1.28409 7.51438 2.06959Z"
+        stroke={stroke}
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
+    </g>
+  </g>
+</svg>

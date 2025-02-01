@@ -1,0 +1,107 @@
+---
+import Error from "../../../../assets/icons/error.astro";
+import Warning from "../../../../assets/icons/warning.astro";
+import Cursor from "../cursor/cursor.astro";
+import styles from "./code-block.module.scss";
+---
+
+<div class={styles.container}>
+  <pre
+    class={`shiki github-light-default vp-code ${styles.pre}`}
+    style="background-color:#ffffff;color:#1f2328">
+    <code class={`${styles.code} ${styles.black}`}>
+      <span class={styles.line}>
+        <span class={styles.lightBlue}>import</span>
+        <span> OceanBit, </span>
+        <span class={styles.lightGrey}>{"{"}</span>
+        <span> expertise </span>
+        <span class={styles.lightGrey}>{"}"} </span>
+        <span class={styles.lightBlue}>from</span>
+        <span> "training"</span>
+        <span class={styles.lightGrey}>;</span>
+      </span>
+      <span class={styles.line} />
+      <span class={styles.line}>
+        <span class={styles.lightGrey}>// Audits testing - 88% complete...</span>
+      </span>
+      <span class={styles.line} />
+      <span class={styles.line}>
+        <span class={styles.red}>class</span>
+        <span class={styles.pink}> App</span>
+        <span class={styles.lightGrey}>{" {"}</span>
+      </span>
+      <span class={styles.line}>
+        <span class={styles.lightBlue}>  constructor</span>
+        <span class={styles.lightGrey}>{"() {"}</span>
+      </span>
+      <span class={styles.line}>
+        <span class={styles.pink}>    this</span>
+        <span>.data </span>
+        <span class={styles.lightGrey}>= </span>
+        <span class={styles.fetchDataError}><Error /><span>fetchData<span class={styles.lighter}>{"({"}</span> apiURL <span class={styles.lighter}>{"})"}</span><div class={styles.oceanBitCursor}>
+              <Cursor />
+            <div class={styles.oceanBitCursorTag}>OceanBit</div>
+        </div></span></span>
+        <span class={styles.lightGrey}>;</span>
+      </span>
+      <span class={styles.line}>
+        <span class={styles.lightGrey}>{"  }"}</span>
+      </span>
+      <span class={styles.line} />
+      <span class={styles.line}>
+        <span class={styles.lightBlue}>  onSuccess</span>
+        <span class={styles.lightGrey}>{"() {"}</span>
+      </span>
+      <span class={styles.line}>
+        <span class={styles.purple}>    log</span>
+        <span class={styles.lightGrey}>(</span>
+        <span>"Data fetch successfully"</span>
+        <span class={styles.lightGrey}>);</span>
+      </span>
+      <span class={styles.line}>
+        <span class={styles.lightGrey}>  }</span>
+      </span>
+      <span class={styles.line} />
+      <span class={styles.line}>
+        <span class={styles.lightBlue}>  onData</span>
+        <span class={styles.lightGrey}>(</span>
+        <span>data</span>
+        <span class={styles.lightGrey}>{") {"}</span>
+      </span>
+      <span class={styles.line}>
+        <span class={styles.pink}>    if </span>
+        <span class={styles.nullWarningCheck}><Warning /><span><span class={styles.lighter}>(</span>data === null<span class={styles.lighter}>)</span><div class={styles.yourTeamCursor}>
+              <Cursor />
+            <div class={styles.yourTeamCursorTag}>Your dev team</div>
+        </div></span></span>
+        <span class={styles.lightGrey}> {"{"}</span>
+      </span>
+      <span class={styles.line}>
+        <span class={styles.pink}>      throw new </span>
+        <span class={styles.purple}>Error</span>
+        <span class={styles.lightGrey}>(</span>
+        <span>"Data is null"</span>
+        <span class={styles.lightGrey}>);</span>
+      </span>
+      <span class={styles.line}>
+        <span class={styles.lightGrey}>    {"}"}</span>
+      </span>
+      <span class={styles.line}>
+        <span class={styles.purple}>    recordTime</span>
+        <span class={styles.lightGrey}>();</span>
+      </span>
+      <span class={styles.line}>
+        <span class={styles.pink}>    this</span>
+        <span class={styles.lightGrey}>.</span>
+        <span class={styles.purple}>onSuccess</span>
+        <span class={styles.lightGrey}>();</span>
+      </span>
+      <span class={styles.line}>
+        <span class={styles.lightGrey}>  }</span>
+      </span>
+      <span class={styles.line}>
+        <span class={styles.lightGrey}>}</span>
+      </span>
+    </code>
+  </pre>
+</div>

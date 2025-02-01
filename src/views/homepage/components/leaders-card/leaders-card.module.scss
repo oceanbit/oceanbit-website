@@ -1,0 +1,73 @@
+.container {
+  padding: 24px;
+  gap: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.quoteHeader {
+  display: flex;
+  gap: 32px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logo {
+  height: 1.6rem;
+}
+
+.quote {
+  color: var(--colors-label-label-primary-900, #121926);
+  margin: 0;
+
+  /* Text base/Normal */
+  font-family: var(--family-body, "Geist variable");
+  font-size: var(--Size-Text-base, 1rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--Line-height-Text-base, 1.5rem); /* 150% */
+}
+
+.quoteFooter {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.personImage {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius-full, 9999px);
+}
+
+.personTextGroup {
+  width: 1px;
+  flex-grow: 1;
+}
+
+.personName {
+  color: var(--colors-label-label-primary-900, #121926);
+  margin: 0;
+
+  /* Text base/Semibold */
+  font-family: var(--family-body, "Geist variable");
+  font-size: var(--Size-Text-base, 1rem);
+  font-style: normal;
+  font-weight: 600;
+  line-height: var(--Line-height-Text-base, 1.5rem); /* 150% */
+}
+
+.personTitle {
+  color: var(--colors-label-label-secondary-500, #697586);
+  margin: 0;
+
+  /* Text xs/Medium */
+  font-family: var(--family-body, "Geist variable");
+  font-size: var(--Size-Text-xs, 0.75rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: var(--Line-height-Text-xs, 1.125rem); /* 150% */
+}

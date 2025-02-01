@@ -1,0 +1,243 @@
+---
+import PillBadge from "../../badge/pill-badge.astro";
+
+import tanstack from "../../../assets/project_cards/tanstack.png";
+import astro from "../../../assets/project_cards/astro.png";
+import unicorn from "../../../assets/project_cards/unicorn.png";
+import clerk from "../../../assets/project_cards/clerk.png";
+import RightArrow from "../../../assets/icons/right_arrow.astro";
+
+import styles from "../header-styles.module.scss";
+---
+
+<div class="header-list-container">
+  <ul class="left-list" role="list">
+    <li>
+      <a href="#">
+        <img class={styles.projectImage} src={tanstack.src} alt="" />
+        <div>
+          <h2>TanStack</h2>
+          <p>
+            Owning engineering and docs work for various TanStack projects...
+          </p>
+          <div class="pill-container">
+            <PillBadge size="sm">Engineering</PillBadge>
+            <PillBadge size="sm">Documentation</PillBadge>
+          </div>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <img class={styles.projectImage} src={astro.src} alt="" />
+        <div>
+          <h2>Astro.build</h2>
+          <p>Consulting Astro on two key documentation pages...</p>
+          <div class="pill-container">
+            <PillBadge size="sm">Documentation</PillBadge>
+          </div>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <img class={styles.projectImage} src={unicorn.src} alt="" />
+        <div>
+          <h2>Unicorn Utterances</h2>
+          <p>Leading development, community growth, and content strategy...</p>
+          <div class="pill-container">
+            <PillBadge size="sm">Strategy</PillBadge>
+            <PillBadge size="sm">Engineering</PillBadge>
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+  <section class="right-list">
+    <a href="#">
+      <h2>Latest Project</h2>
+      <img class={styles.projectImage} src={clerk.src} alt="" />
+      <h3>Clerk, Inc.</h3>
+      <p class="descr">
+        Seamlessly migrating from Sanity to MDX, rewriting the majority of their
+        documentation pages...
+      </p>
+      <p class="fake-button">
+        View project <RightArrow stroke="currentColor" />
+      </p>
+    </a>
+  </section>
+</div>
+
+<style>
+  .header-list-container {
+    display: flex;
+  }
+
+  .left-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    gap: 8px;
+    margin: 0;
+    max-width: 30rem;
+  }
+
+  .left-list li > a {
+    display: flex;
+    padding: 8px;
+    gap: 16px;
+    margin: 0;
+    text-align: left;
+    background: none;
+    border: none;
+    text-decoration: none;
+    border-radius: var(--radius-md, 8px);
+    transition: background 0.2s;
+  }
+
+  .left-list li > a:hover,
+  .right-list a:hover {
+    background: var(--colors-background-bg-secondary, #f1f1f1);
+  }
+
+  .left-list li > a:hover h2,
+  .right-list a:hover h3 {
+    color: var(--colors-label-label-brand-primary-600, #007acc);
+  }
+
+  .left-list li:first-child > a {
+    padding-top: 8px;
+  }
+
+  .left-list li:last-child > a {
+    padding-bottom: 8px;
+  }
+
+  .left-list li img {
+    height: 5.75rem;
+    width: 10rem;
+    filter: drop-shadow(0px 15.086px 4.114px rgba(24, 34, 48, 0))
+      drop-shadow(0px 9.6px 4.114px rgba(24, 34, 48, 0.01))
+      drop-shadow(0px 5.486px 3.429px rgba(24, 34, 48, 0.04))
+      drop-shadow(0px 2.057px 2.057px rgba(24, 34, 48, 0.07))
+      drop-shadow(0px 0.686px 1.371px rgba(24, 34, 48, 0.08));
+  }
+
+  .left-list li h2 {
+    margin: 0;
+    margin-bottom: 2px;
+    color: var(--colors-labels-label-primary, #000);
+    /* Text sm/Medium */
+    font-family: var(--paragraph, "Geist variable");
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 142.857% */
+  }
+
+  .left-list li p {
+    margin: 0;
+
+    color: var(--colors-label-label-secondary-500, #697586);
+
+    /* Text sm/Normal */
+    font-family: var(--paragraph, "Geist variable");
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+  }
+
+  .right-list {
+    width: 18rem;
+    min-height: 100%;
+    padding: 8px;
+  }
+
+  .right-list a {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    border: none;
+    text-align: left;
+    background: none;
+    border-radius: var(--radius-md, 8px);
+    transition: background 0.2s;
+    box-sizing: border-box;
+    padding: 8px;
+  }
+
+  .right-list h2 {
+    color: var(--colors-label-label-primary-900, #121926);
+
+    /* Text base/Medium */
+    font-family: var(--family-body, "Geist variable");
+    font-size: var(--size-text-base, 1rem);
+    font-style: normal;
+    font-weight: 500;
+    line-height: var(--line-height-text-base, 1.5rem); /* 150% */
+
+    margin: 0;
+    margin-bottom: auto;
+  }
+
+  .right-list img {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .right-list h3 {
+    margin: 0;
+
+    color: var(--colors-label-label-primary-900, #121926);
+
+    /* Text sm/Medium */
+    font-family: var(--family-body, "Geist variable");
+    font-size: var(--size-text-sm, 14px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: var(--line-height-text-sm, 20px); /* 142.857% */
+  }
+
+  .right-list .descr {
+    margin: 0;
+    margin-bottom: auto;
+
+    overflow: hidden;
+    color: var(--colors-label-label-secondary-500, #697586);
+    text-overflow: ellipsis;
+
+    /* Text sm/Normal */
+    font-family: var(--family-body, "Geist variable");
+    font-size: var(--size-text-sm, 14px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--line-height-text-sm, 20px); /* 142.857% */
+  }
+
+  .pill-container {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+  }
+
+  .fake-button {
+    display: flex;
+    align-items: center;
+
+    color: var(
+      --component-colors-components-buttons-tertiary-color-button-tertiary-color-fg,
+      #0098ff
+    );
+
+    /* Text sm/Semibold */
+    font-family: var(--family-body, "Geist variable");
+    font-size: var(--size-text-sm, 14px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: var(--line-height-text-sm, 20px); /* 142.857% */
+  }
+</style>

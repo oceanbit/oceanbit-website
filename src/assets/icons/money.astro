@@ -1,0 +1,44 @@
+---
+interface Props {
+  stroke?: string;
+  className?: string;
+}
+
+const { stroke = "#121926", className } = Astro.props;
+---
+
+<svg
+  width="17"
+  height="16"
+  viewBox="0 0 17 16"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  class={className}
+>
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M13.8335 12.6668H3.16683C2.43016 12.6668 1.8335 12.0702 1.8335 11.3335V4.66683C1.8335 3.93016 2.43016 3.3335 3.16683 3.3335H13.8335C14.5702 3.3335 15.1668 3.93016 15.1668 4.66683V11.3335C15.1668 12.0702 14.5702 12.6668 13.8335 12.6668Z"
+    stroke={stroke}
+    stroke-width="1.24"
+    stroke-linecap="round"
+    stroke-linejoin="round"></path>
+  <path
+    d="M9.67867 6.82165C10.3295 7.47253 10.3295 8.5278 9.67867 9.17867C9.0278 9.82955 7.97252 9.82955 7.32165 9.17867C6.67078 8.5278 6.67078 7.47252 7.32165 6.82165C7.97253 6.17078 9.0278 6.17078 9.67867 6.82165"
+    stroke={stroke}
+    stroke-width="1.24"
+    stroke-linecap="round"
+    stroke-linejoin="round"></path>
+  <path
+    d="M12.4992 7.74984C12.3612 7.7505 12.2498 7.8625 12.2498 8.0005C12.2498 8.1385 12.3618 8.2505 12.4998 8.24984C12.6378 8.24984 12.7498 8.13784 12.7498 7.99984C12.7498 7.86184 12.6378 7.74984 12.4992 7.74984"
+    stroke={stroke}
+    stroke-width="1.24"
+    stroke-linecap="round"
+    stroke-linejoin="round"></path>
+  <path
+    d="M4.49917 7.74984C4.36117 7.7505 4.24984 7.8625 4.24984 8.0005C4.24984 8.1385 4.36184 8.2505 4.49984 8.24984C4.63784 8.24984 4.74984 8.13784 4.74984 7.99984C4.74984 7.86184 4.63784 7.74984 4.49917 7.74984"
+    stroke={stroke}
+    stroke-width="1.24"
+    stroke-linecap="round"
+    stroke-linejoin="round"></path>
+</svg>

@@ -1,0 +1,55 @@
+---
+import Subheading from "../../../../components/headings/subheading.astro";
+import Heading from "../../../../components/headings/heading.astro";
+import SupportingText from "../../../../components/headings/supporting-text.astro";
+import LeadersCard from "../../components/leaders-card/leaders-card.astro";
+
+import styles from "./what-leaders-say.module.scss";
+---
+
+<div class={styles.container}>
+  <Subheading as="h2">What leaders say</Subheading>
+  <Heading>Trusted by industry leaders</Heading>
+  <SupportingText
+    >Hear from industry leaders and innovators<br />who rely on OceanBit for
+    empowerment.
+  </SupportingText>
+  <ul class={styles.cardsGrid}>
+    <LeadersCard
+      className={styles.hoverCard}
+      logoUrl="/client-logos/clerk.svg"
+      logoAlt="Clerk"
+      quote="“OceanBit restructured and ported our documentation, making updates much easier. The quality of rewrites drastically improved our customer experience, making Clerk easier to use. Highly recommend OceanBit for your documentation needs!”"
+      personImage="/client-pics/braden.jpg"
+      personName="Braden Sidoti"
+      personTitle="CTO @Clerk"
+    />
+    <LeadersCard
+      className={styles.outlineCard}
+      logoUrl="/client-logos/tanstack.svg"
+      logoAlt="TanStack"
+      quote="“Corbin's approach to engineering problems is unique and insightful, allowing him to solve challenging issues and build scalable solutions. With him at the helm of OceanBit, I know their quality of work will reflect the same level of polish I've come to expect of his work.”"
+      personImage="/client-pics/tanner.jpg"
+      personName="Tanner Linsley"
+      personTitle="Owner @TanStack"
+    />
+    <LeadersCard
+      className={styles.outlineCard}
+      logoUrl="/client-logos/playfulprogramming.svg"
+      logoAlt="Playful Programming"
+      quote="“Corbin is an immensely experienced, thoughtful, and detailed engineer that takes no compromise in the design or quality of his work. At OceanBit, he made a consistent effort to build resilient solutions that helped both us and the broader software ecosystem as a whole.”"
+      personImage="/client-pics/james.jpg"
+      personName="James Fenn"
+      personTitle="Board Chairperson @Playful Programming"
+    />
+    <LeadersCard
+      className={styles.hoverCard}
+      logoUrl="/client-logos/astro.svg"
+      logoAlt="Astro"
+      quote="“Corbin's technical writing for Astro Docs was top-notch. His guides were accurate, clear, and detailed. He collaborated well, asked the right questions, and provided exactly what we needed: helpful, instructive content our readers rely on today.”"
+      personImage="/client-pics/sarah.jpg"
+      personName="Sarah Rainsberger"
+      personTitle="Docs Lead @Astro"
+    />
+  </ul>
+</div>

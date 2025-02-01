@@ -1,0 +1,21 @@
+---
+import styles from "./performance.module.scss";
+---
+
+<div class={styles.outerContainer}>
+  <div class={styles.container} id="perf-container">
+    <div class={styles.outerSpeedometer}></div>
+    <div class={styles.middleSpeedometer}></div>
+    <div class={styles.innerSpeedometer}>
+      <div class={styles.innerSpeedometerTextContainer}>
+        <span class={styles.percentage}></span>
+        <span class={styles.fasterTimes}>Faster times</span>
+      </div>
+    </div>
+  </div>
+  <div class={styles.textContainer}>
+    <p><span class={styles.color1}></span>Bundle size</p>
+    <p><span class={styles.color2}></span>Load time</p>
+    <p><span class={styles.color3}></span>CPU cycles</p>
+  </div>
+</div>

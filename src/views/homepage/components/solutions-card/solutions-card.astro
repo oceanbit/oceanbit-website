@@ -1,0 +1,27 @@
+---
+import styles from "./solutions-card.module.scss";
+import ObButtonTransparent from "../../../../components/buttons/ob-button-transparent.astro";
+import RightArrow from "../../../../assets/icons/right_arrow.astro";
+import { getHrefContainerProps } from "../../../../utils/href-container-script";
+
+interface Props {
+  iconSrc: string;
+  title: string;
+  description: string;
+  href: string;
+  index: number;
+}
+
+const { iconSrc, title, description, href, index } = Astro.props;
+---
+
+<!--<div--><!--  class={styles.container}--><!--  data-index={index}--><!--  {...getHrefContainerProps(href)}--><!--&gt;-->
+<div class={styles.container} data-index={index}>
+  <img loading="eager" src={iconSrc} class={styles.icon} alt="" />
+  <h3 class={styles.title}>{title}</h3>
+  <p class={styles.description}>{description}</p>
+  <!--<ObButtonTransparent className={styles.gettingStarted} href="#"-->
+  <!--  >Get started-->
+  <!--  <RightArrow className={styles.rightArrow} stroke="currentColor" />-->
+  <!--</ObButtonTransparent>-->
+</div>

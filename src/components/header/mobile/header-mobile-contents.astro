@@ -1,0 +1,108 @@
+---
+import Menu from "../../../assets/icons/menu.astro";
+import X from "../../../assets/icons/x.astro";
+import HeaderMobileDropdownContents from "./header-mobile-dropdown-contents.astro";
+
+interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<button
+  aria-expanded="false"
+  class={`${className}`}
+  data-open-mobile="mobile-header-contents"
+>
+  <Menu className="hideOnClosed" />
+  <X className="hideOnExpanded" />
+</button>
+
+<template id="mobile-header-contents">
+  <div class={`dropdown`}>
+    <button id="close-dropdown-menu">Close the dropdown menu</button>
+    <HeaderMobileDropdownContents />
+  </div>
+</template>
+
+<script src="./mobile-dropdown-script.ts"></script>
+
+<style>
+  button {
+    padding: 8px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+  }
+
+  button:hover {
+    background: var(--colors-background-bg-secondary, #f1f1f1);
+  }
+
+  button:active {
+    background: var(--colors-background-bg-secondary, #dedede);
+  }
+
+  button[aria-expanded="false"] :global(.hideOnExpanded) {
+    display: none;
+  }
+
+  button[aria-expanded="true"] :global(.hideOnClosed) {
+    display: none;
+  }
+
+  #close-dropdown-menu {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  #close-dropdown-menu:focus-visible {
+    position: unset;
+    width: unset;
+    height: unset;
+    padding: unset;
+    margin: unset;
+    overflow: unset;
+    clip: unset;
+    white-space: unset;
+    border-width: unset;
+    background: white;
+    border-radius: 8px;
+    padding: 8px;
+    width: 100%;
+    font-weight: bold;
+  }
+
+  .dropdown {
+    margin-top: 4rem;
+    position: fixed;
+    width: calc(100% - calc(var(--spacing-lg, 12px) * 2));
+    left: var(--spacing-lg, 12px) !important;
+    z-index: 99;
+
+    border-radius: var(--radius-3xl, 20px);
+    border: 1px solid var(--colors-border-border-tertiary, #eef2f6);
+    background: var(
+      --component-colors-alpha-alpha-white-80,
+      rgba(255, 255, 255, 0.8)
+    );
+    box-shadow:
+      0px 1px 1px -0.5px rgba(24, 34, 48, 0.04),
+      0px 3px 3px -1.5px rgba(24, 34, 48, 0.04),
+      0px 6px 12px -3px rgba(24, 34, 48, 0.04),
+      0px 12px 24px -4px rgba(25, 65, 133, 0.06),
+      0px 24px 32px -12px rgba(25, 65, 133, 0.08);
+    backdrop-filter: blur(16px);
+  }
+</style>

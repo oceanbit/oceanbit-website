@@ -1,0 +1,22 @@
+---
+import HeaderDesktopContents from "./desktop/header-desktop-contents.astro";
+// import HeaderMobileContents from "./mobile/header-mobile-contents.astro";
+import TempHeaderMobileContents from "./mobile/temp-header-mobile-contents.astro";
+import styles from "./header.module.scss";
+---
+
+<header class={styles.header}>
+  <div class=`${styles.container}`>
+    <a href="/" class=`${styles.logoContainer}`>
+      <img
+        class="logo"
+        src="/logo.svg"
+        alt="An ocean wave contained in an invisible box"
+      />
+      <span class=`${styles.logoText}`>OceanBit</span>
+    </a>
+    <HeaderDesktopContents className=`${styles.hideOnMobile}` />
+    <!--<HeaderMobileContents className=`${styles.hideOnDesktop}` />-->
+    <TempHeaderMobileContents className=`${styles.hideOnDesktop}` />
+  </div>
+</header>
