@@ -22,7 +22,7 @@ const {
 } = Astro.props;
 ---
 
-<div class={`${styles.container} ${className}`}>
+<li class={`${styles.container} ${className}`}>
   <div class={styles.quoteHeader}>
     <img class={styles.logo} src={logoUrl} alt={logoAlt} />
     <p class={styles.quote}>{quote}</p>
@@ -34,4 +34,4 @@ const {
       <p class={styles.personTitle}>{personTitle}</p>
     </div>
   </div>
-</div>
+</li>

@@ -30,6 +30,7 @@
   width: 100%;
   height: 100%;
   transition: opacity 0.5s ease-in-out;
+  z-index: -1;
 }
 
 @include raw-breakpoints.until(raw-breakpoints.$tabletMin) {

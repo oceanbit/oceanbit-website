@@ -9,7 +9,7 @@
   border: 2px solid rgba(16, 24, 40, 0.18);
   background: var(
     --component-colors-components-buttons-primary-button-primary-bg,
-    #0098ff
+    #007ACC
   );
 
   box-shadow:
@@ -34,7 +34,7 @@
 .button:hover {
   background: var(
     --component-colors-components-buttons-primary-button-primary-bg_hover,
-    #0091f3
+                  #0061a4
   );
 }
 
@@ -45,7 +45,7 @@
 .button:active {
   background: var(
     --component-colors-components-buttons-primary-button-primary-bg_pressed,
-    #0082da
+                  #004774
   );
 }
 
