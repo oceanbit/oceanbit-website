@@ -8,6 +8,18 @@ import "../styles/global.scss";
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <script
+      defer
+      data-domain="playfulprogramming.com"
+      src="/areyoumyuser/js/script.js"
+      data-api="/areyoumyuser/api/event"></script>
+    <script is:inline>
+      window.plausible =
+        window.plausible ||
+        function () {
+          (window.plausible.q = window.plausible.q || []).push(arguments);
+        };
+    </script>
     <slot name="head" />
   </head>
   <body>
