@@ -1,5 +1,5 @@
 import Cal from "@calcom/embed-react";
 
 export const CalEmbed = () => {
-  return <Cal calLink="team/oceanbit/intro" config={{ theme: "light" }}></Cal>;
+  return <Cal calLink="crutchcorn/consulting-chat" config={{ theme: "light" }}></Cal>;
 };
