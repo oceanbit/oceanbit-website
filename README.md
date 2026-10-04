@@ -14,15 +14,27 @@ pnpm dev
 
 ## Linting
 
-Run `pnpm lint` to check the project, or `pnpm lint:fix` to apply available fixes.
+Run `pnpm lint` to check the project, or `pnpm lint:fix` to apply available ESLint
+and Stylelint fixes.
 ESLint uses the recommended JavaScript, TypeScript, Astro, and React Hooks rules.
 Stylelint checks CSS, SCSS, and Astro style blocks, including `<style lang="scss">`,
 with the recommended SCSS rules and `stylelint-config-html/astro`.
 Prettier handles formatting.
 
+Knip checks for unused files, dependencies, and exports. Run it on its own with
+`pnpm knip`. Its Astro plugin discovers routes and follows component and script
+imports automatically.
+`knip.jsonc` lists the existing disabled navigation and link-card files as a
+baseline, plus the standalone CSS helper. New unused files still fail the check.
+Remove each exception when its file is activated or deleted; stale configuration
+hints also fail the check. The `postcss-scss` exception covers the parser loaded
+dynamically for Astro SCSS style blocks.
+
 The pre-commit hook formats and lints staged files. Its tasks run sequentially so
 the tools can safely update the same Astro file. Both lint commands fail on warnings.
 GitHub Actions runs `pnpm lint` for pull requests and pushes to `main`.
+Zizmor audits the GitHub Actions workflows in a separate security check using the
+[Playful Programming workflow template](https://github.com/playfulprogramming/playfulprogramming/blob/main/.github/workflows/zizmor.yml).
 
 For VS Code, install the ESLint and Stylelint extensions and include `astro` in
 `eslint.validate` and `stylelint.validate`. Include `scss` in `stylelint.validate`
@@ -72,9 +84,10 @@ See Cloudflare's [Astro guide](https://developers.cloudflare.com/pages/framework
 | `pnpm preview:pages` | Serve the existing build with the local Pages runtime        |
 | `pnpm run deploy`    | Build and upload to an existing Pages project using Wrangler |
 | `pnpm format`        | Format project files                                         |
-| `pnpm lint`          | Run ESLint and Stylelint                                     |
+| `pnpm lint`          | Run ESLint, Stylelint, and Knip                              |
 | `pnpm lint:js`       | Check JavaScript, TypeScript, React, and Astro code          |
 | `pnpm lint:styles`   | Check CSS, SCSS, and Astro style blocks                      |
 | `pnpm lint:fix`      | Apply available ESLint and Stylelint fixes                   |
+| `pnpm knip`          | Check for unused files, dependencies, and exports            |
 
 For manual uploads, authenticate with `pnpm exec wrangler login` first. `pnpm run deploy` uses the current Git branch: `main` targets Production, while other branches create Preview deployments. For previews, ensure `PUBLIC_GOOGLE_ANALYTICS_ID` is unset in your build environment (including local `.env` files).
