@@ -54,6 +54,14 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .blueLineOne,
+  .blueLineTwo,
+  .blueLineThree {
+    animation: none;
+  }
+}
+
 .blueLineOne {
 }
 .blueLineTwo {

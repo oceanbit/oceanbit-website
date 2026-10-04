@@ -1,27 +1,30 @@
 :global {
   @font-face {
     font-family: "Epilogue";
-    src: url("/fonts/Epilogue/Epilogue-VariableFont_wght.ttf")
-      format("truetype-variations");
+    src: url("/fonts/Epilogue/Epilogue-VariableFont_wght.woff2") format("woff2");
     font-weight: 1 999;
+    font-display: swap;
   }
 
   @font-face {
     font-family: "Epilogue";
     font-style: italic;
-    src: url("/fonts/Epilogue/Epilogue-Italic-VariableFont_wght.ttf")
-      format("truetype-variations");
+    src: url("/fonts/Epilogue/Epilogue-Italic-VariableFont_wght.woff2")
+      format("woff2");
     font-weight: 1 999;
+    font-display: swap;
   }
 
   @font-face {
     font-family: "Geist variable";
-    src: url("/fonts/Geist/GeistVF.ttf") format("truetype-variations");
+    src: url("/fonts/Geist/GeistVF.woff2") format("woff2");
     font-weight: 1 999;
+    font-display: swap;
   }
   @font-face {
     font-family: "Geist mono variable";
-    src: url("/fonts/Geist/GeistMonoVF.ttf") format("truetype-variations");
+    src: url("/fonts/Geist/GeistMonoVF.woff2") format("woff2");
     font-weight: 1 999;
+    font-display: swap;
   }
 }

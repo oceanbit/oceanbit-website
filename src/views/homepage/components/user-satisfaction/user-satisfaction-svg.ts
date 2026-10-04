@@ -31,6 +31,8 @@ function userSatisAnimate(targetX: number, duration: number) {
 
   userSatisIsAnimating = true;
   const startX = userSatisX;
+  // The SVG scales with the card; its circle size stays fixed during this animation.
+  const circleHeight = userSatisInnerCircle.getBoundingClientRect().height;
   const startTime = performance.now();
 
   function step() {
@@ -41,8 +43,6 @@ function userSatisAnimate(targetX: number, duration: number) {
 
     userSatisX = startX + (targetX - startX) * easedProgress;
     const { x: newX, y: newY } = userSatisLinePath.getPointAtLength(userSatisX);
-    // We can't just use `7` despite the circle being 14x14 because the circle is not scaled 1:1
-    const circleHeight = userSatisInnerCircle.getBoundingClientRect().height;
     userSatisCircle.setAttribute("x", `${newX - 83 - circleHeight / 2}`);
     userSatisCircle.setAttribute("y", `${newY - 83 - circleHeight / 2}`);
 
@@ -56,10 +56,10 @@ function userSatisAnimate(targetX: number, duration: number) {
   userSatisAnimationFrameId = requestAnimationFrame(step);
 }
 
-userSatisContainer.addEventListener("mouseover", () => {
+userSatisContainer.addEventListener("mouseenter", () => {
   userSatisAnimate(userSatisMax, 300);
 });
 
-userSatisContainer.addEventListener("mouseout", () => {
+userSatisContainer.addEventListener("mouseleave", () => {
   userSatisAnimate(userSatisMin, 300);
 });

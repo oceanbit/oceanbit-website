@@ -1,4 +1,4 @@
-<canvas id="flickeringGrid" class="full"></canvas>
+<canvas id="flickeringGrid" class="full" aria-hidden="true"></canvas>
 <style>
   .full {
     width: 100%;
@@ -6,28 +6,15 @@
   }
 </style>
 <script>
-  // Ported from React (https://magicui.design/docs/components/flickering-grid) to JS
-  // Types also added
   const canvas = document.getElementById("flickeringGrid") as HTMLCanvasElement;
   const squareSize = 4;
   const gridGap = 6;
   const flickerChance = 0.3;
-  const color = "rgb(46,144,250)";
-  let maxOpacity = { current: 0.6 };
+  const color = "rgba(46,144,250,";
+  let maxOpacity = 0.6;
   let isInView = false;
-
-  const toRGBA = (color: string) => {
-    const canvas = document.createElement("canvas");
-    canvas.width = canvas.height = 1;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return "rgba(255, 0, 0,";
-    ctx.fillStyle = color;
-    ctx.fillRect(0, 0, 1, 1);
-    const [r, g, b] = ctx.getImageData(0, 0, 1, 1).data;
-    return `rgba(${r}, ${g}, ${b},`;
-  };
-
-  const memoizedColor = toRGBA(color);
+  let activated = false;
+  const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   const setupCanvas = (canvas: HTMLCanvasElement) => {
     canvas.style.width = "";
@@ -46,7 +33,7 @@
 
     const squares = new Float32Array(cols * rows);
     for (let i = 0; i < squares.length; i++) {
-      squares[i] = Math.random() * maxOpacity.current;
+      squares[i] = Math.random() * maxOpacity;
     }
 
     return {
@@ -59,76 +46,93 @@
     };
   };
 
-  const updateSquares = (squares: Float32Array, deltaTime: number) => {
-    for (let i = 0; i < squares.length; i++) {
-      if (Math.random() < flickerChance * deltaTime) {
-        squares[i] = Math.random() * maxOpacity.current;
-      }
-    }
-  };
-
-  const drawGrid = (
-    ctx: CanvasRenderingContext2D,
-    width: number,
-    height: number,
-    cols: number,
-    rows: number,
-    squares: Float32Array,
-    dpr: number,
-  ) => {
-    ctx.clearRect(0, 0, width, height);
-    ctx.fillStyle = "transparent";
-    ctx.fillRect(0, 0, width, height);
-
-    for (let i = 0; i < cols; i++) {
-      for (let j = 0; j < rows; j++) {
-        const opacity = squares[i * rows + j];
-        ctx.fillStyle = `${memoizedColor}${opacity})`;
-        ctx.fillRect(
-          i * (squareSize + gridGap) * dpr,
-          j * (squareSize + gridGap) * dpr,
-          squareSize * dpr,
-          squareSize * dpr,
-        );
-      }
-    }
-  };
-
   const ctx = canvas.getContext("2d")!;
-  // if (!ctx) return;
-
-  let animationFrameId: number | undefined;
+  let animationFrameId: number | null = null;
   let { width, height, cols, rows, squares, dpr } = setupCanvas(canvas);
 
-  let lastTime = 0;
-  const animate = (time: number) => {
-    if (!isInView) return;
+  const drawSquare = (index: number, clear: boolean) => {
+    const x = Math.floor(index / rows) * (squareSize + gridGap) * dpr;
+    const y = (index % rows) * (squareSize + gridGap) * dpr;
+    const size = squareSize * dpr;
+    if (clear) {
+      // Include edge pixels at fractional display scales so opacity cannot build up.
+      const clearX = Math.floor(x);
+      const clearY = Math.floor(y);
+      ctx.clearRect(
+        clearX,
+        clearY,
+        Math.ceil(x + size) - clearX,
+        Math.ceil(y + size) - clearY,
+      );
+    }
+    ctx.fillStyle = `${color}${squares[index]})`;
+    ctx.fillRect(x, y, size, size);
+  };
 
-    const deltaTime = (time - lastTime) / 1000;
+  const drawGrid = () => {
+    ctx.clearRect(0, 0, width * dpr, height * dpr);
+    for (let i = 0; i < cols * rows; i++) {
+      drawSquare(i, false);
+    }
+  };
+
+  const updateSquares = (deltaTime: number) => {
+    for (let i = 0; i < squares.length; i++) {
+      if (Math.random() < flickerChance * deltaTime) {
+        squares[i] = Math.random() * maxOpacity;
+        // Most dots are unchanged on any frame. Preserve their pixels instead
+        // of clearing and repainting the entire grid at the display refresh rate.
+        drawSquare(i, true);
+      }
+    }
+  };
+
+  const canAnimate = () =>
+    isInView && activated && !document.hidden && !motionQuery.matches;
+
+  let lastTime: number | null = null;
+  const animate = (time: number) => {
+    animationFrameId = null;
+    if (!canAnimate()) {
+      lastTime = null;
+      return;
+    }
+
+    const deltaTime = lastTime === null ? 0 : (time - lastTime) / 1000;
     lastTime = time;
 
-    updateSquares(squares, deltaTime);
-    drawGrid(ctx, width * dpr, height * dpr, cols, rows, squares, dpr);
+    updateSquares(deltaTime);
     animationFrameId = requestAnimationFrame(animate);
+  };
+
+  const syncPlayback = () => {
+    if (canAnimate()) {
+      // Both observers can fire in one delivery. Only ever create one loop.
+      if (animationFrameId === null) {
+        animationFrameId = requestAnimationFrame(animate);
+      }
+    } else {
+      if (animationFrameId !== null) {
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
+      }
+      lastTime = null;
+    }
   };
 
   const handleResize = () => {
     ({ width, height, cols, rows, squares, dpr } = setupCanvas(canvas));
+    drawGrid();
   };
 
-  let paused = true;
-
-  const pausedObserver = new IntersectionObserver(
+  const activationObserver = new IntersectionObserver(
     ([entry]) => {
-      isInView = entry!.isIntersecting;
-      if (!isInView) return;
-      paused = false;
-      maxOpacity.current = 0.8;
+      if (!entry!.isIntersecting) return;
+      activated = true;
+      maxOpacity = 0.8;
       handleResize();
-      pausedObserver.unobserve(canvas);
-      if (!animationFrameId) {
-        animationFrameId = requestAnimationFrame(animate);
-      }
+      activationObserver.unobserve(canvas);
+      syncPlayback();
     },
     { rootMargin: "0px 0px -50% 0px" },
   );
@@ -136,21 +140,16 @@
   const observer = new IntersectionObserver(
     ([entry]) => {
       isInView = entry!.isIntersecting;
-      if (isInView && !paused) {
-        animationFrameId = requestAnimationFrame(animate);
-      } else {
-        cancelAnimationFrame(animationFrameId!);
-      }
+      syncPlayback();
     },
     { threshold: 0 },
   );
 
   observer.observe(canvas);
-  pausedObserver.observe(canvas);
-  const deltaTime = (performance.now() - lastTime) / 1000;
-
-  updateSquares(squares, deltaTime);
-  drawGrid(ctx, width * dpr, height * dpr, cols, rows, squares, dpr);
+  activationObserver.observe(canvas);
+  drawGrid();
 
   window.addEventListener("resize", handleResize);
+  document.addEventListener("visibilitychange", syncPlayback);
+  motionQuery.addEventListener("change", syncPlayback);
 </script>

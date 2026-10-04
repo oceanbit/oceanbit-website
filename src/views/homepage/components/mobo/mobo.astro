@@ -62,15 +62,25 @@ import styles from "./mobo.module.scss";
 
 <script define:vars={{ cpuStyles, styles }}>
   const coreContainer = document.querySelector(`.${styles.coreContainer}`);
-  const cpuContrainer = document.querySelector(`.${cpuStyles.svgCpuContainer}`);
-  const linesContrainer = document.querySelector(`.${styles.linesContainer}`);
+  const cpuContainer = document.querySelector(`.${cpuStyles.svgCpuContainer}`);
+  const linesContainer = document.querySelector(`.${styles.linesContainer}`);
+  let hasRevealed = false;
+  let linesInViewport = false;
 
-  const observer = new IntersectionObserver(
+  function updateLineAnimation() {
+    linesContainer.classList.toggle(
+      styles.active,
+      hasRevealed && linesInViewport && !document.hidden,
+    );
+  }
+
+  const revealObserver = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          cpuContrainer.classList.add(cpuStyles.active);
-          linesContrainer.classList.add(styles.active);
+          hasRevealed = true;
+          cpuContainer.classList.add(cpuStyles.active);
+          updateLineAnimation();
           observer.unobserve(entry.target);
         }
       });
@@ -78,5 +88,14 @@ import styles from "./mobo.module.scss";
     { rootMargin: "0px 0px -50% 0px" },
   );
 
-  observer.observe(coreContainer);
+  const viewportObserver = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      linesInViewport = entry.isIntersecting;
+      updateLineAnimation();
+    }
+  });
+
+  revealObserver.observe(coreContainer);
+  viewportObserver.observe(linesContainer);
+  document.addEventListener("visibilitychange", updateLineAnimation);
 </script>

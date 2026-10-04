@@ -4,7 +4,7 @@ import Heading from "../../../../components/headings/heading.astro";
 import SupportingText from "../../../../components/headings/supporting-text.astro";
 import FlickerBg from "../../components/flicker-bg/flicker-bg.astro";
 import styles from "./solve-problems.module.scss";
-import triforce from "../../components/triforce/triforce.svg";
+import Triforce from "../../components/triforce/triforce.astro";
 import Lightning from "../../../../assets/icons/lightning.astro";
 import Money from "../../../../assets/icons/money.astro";
 import Info from "../../../../assets/icons/info.astro";
@@ -29,7 +29,7 @@ import SolveProblemsCard from "../../components/solve-problems-card/solve-proble
 
   <div class={styles.flickerRowContainer} style="position: relative">
     <div class={styles.triforceContainer}>
-      <img src={triforce.src} alt="" class={styles.triforceImg} />
+      <Triforce className={styles.triforceImg} />
     </div>
 
     <div class={styles.flickerContainer}>
