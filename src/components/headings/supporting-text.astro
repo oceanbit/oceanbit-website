@@ -1,6 +1,6 @@
 ---
 interface Props {
-  as?: string | undefined;
+  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | undefined;
 }
 
 const { as: As = "p" } = Astro.props;

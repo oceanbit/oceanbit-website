@@ -5,11 +5,10 @@ interface Props {
   disabled?: boolean;
   className?: string;
   href: string;
-  as?: string | undefined;
 }
-const { className = "", disabled, as: As = "a", href } = Astro.props;
+const { className = "", disabled, href } = Astro.props;
 ---
 
-<As href={href} disabled={disabled} class={`${styles.button} ${className}`}>
+<a href={href} aria-disabled={disabled} class={`${styles.button} ${className}`}>
   <slot />
-</As>
+</a>

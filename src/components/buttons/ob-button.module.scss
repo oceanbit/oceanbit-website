@@ -50,9 +50,9 @@
 }
 
 .button:disabled,
-.button[disabled],
-.button[disabled="true"],
-.button[disabled=""] {
+.button[aria-disabled],
+.button[aria-disabled="true"],
+.button[aria-disabled=""] {
   border: 1px solid var(--colors-border-border-disabled_subtle, #e3e8ef);
   background: var(--colors-background-bg-disabled, #eef2f6);
   box-shadow: none;
