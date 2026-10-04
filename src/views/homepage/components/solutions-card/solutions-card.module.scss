@@ -20,7 +20,7 @@
   top: calc(50% - calc(1.875rem / 2));
   width: 1px;
   height: 1.875rem;
-  background: var(--Colors-Brand-500, #007ACC);
+  background: var(--Colors-Brand-500, #007acc);
   transition:
     height 300ms ease-in-out,
     top 300ms ease-in-out;
@@ -63,7 +63,7 @@
 }
 
 .container:hover .title {
-  color: var(--colors-label-label-brand-primary-600, #007ACC);
+  color: var(--colors-label-label-brand-primary-600, #007acc);
 }
 
 .description {

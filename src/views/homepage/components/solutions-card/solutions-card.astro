@@ -15,7 +15,11 @@ interface Props {
 const { iconSrc, title, description, href, index } = Astro.props;
 ---
 
-<!--<div--><!--  class={styles.container}--><!--  data-index={index}--><!--  {...getHrefContainerProps(href)}--><!--&gt;-->
+<!--<div-->
+<!--  class={styles.container}-->
+<!--  data-index={index}-->
+<!--  {...getHrefContainerProps(href)}-->
+<!--&gt;-->
 <div class={styles.container} data-index={index}>
   <img loading="eager" src={iconSrc} class={styles.icon} alt="" />
   <h3 class={styles.title}>{title}</h3>

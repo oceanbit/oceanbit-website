@@ -150,7 +150,7 @@
 }
 
 .dark {
-  background: var(--colors-brand-500, #007ACC);
+  background: var(--colors-brand-500, #007acc);
   flex-grow: 1;
   width: 1px;
 }
@@ -171,7 +171,7 @@
   background-image: url("/darker_pinstripe_horiz_repeat.svg");
   background-size: 40px !important;
   background-repeat: repeat-x;
-  background-color: #E7F0FF;
+  background-color: #e7f0ff;
   width: calc(0.5rem - 2px) !important;
   border: 1px solid rgba(0, 152, 255, 0.4);
 }

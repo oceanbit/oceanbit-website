@@ -11,9 +11,9 @@ interface Props {
 const { title, dataOpen, dropdownClass = "" } = Astro.props;
 ---
 
-<HeaderButton data-open-desktop={dataOpen} buttonClass="headerButton"
-  >{title} <DownArrow stroke="currentColor" /></HeaderButton
->
+<HeaderButton data-open-desktop={dataOpen} buttonClass="headerButton">
+  {title} <DownArrow stroke="currentColor" />
+</HeaderButton>
 
 <template id={dataOpen}>
   <div class={`dropdown ${dropdownClass}`}>

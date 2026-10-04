@@ -23,15 +23,15 @@
     border-radius: var(--radius-3xl, 20px);
     border: 1px solid var(--colors-border-border-tertiary, #eef2f6);
     background: var(
-                    --component-colors-alpha-alpha-white-80,
-                    rgba(255, 255, 255, 0.8)
+      --component-colors-alpha-alpha-white-80,
+      rgba(255, 255, 255, 0.8)
     );
     box-shadow:
-            0px 1px 1px -0.5px rgba(24, 34, 48, 0.04),
-            0px 3px 3px -1.5px rgba(24, 34, 48, 0.04),
-            0px 6px 6px -3px rgba(24, 34, 48, 0.04),
-            0px 12px 12px -6px rgba(25, 65, 133, 0.06),
-            0px 24px 24px -12px rgba(25, 65, 133, 0.06);
+      0px 1px 1px -0.5px rgba(24, 34, 48, 0.04),
+      0px 3px 3px -1.5px rgba(24, 34, 48, 0.04),
+      0px 6px 6px -3px rgba(24, 34, 48, 0.04),
+      0px 12px 12px -6px rgba(25, 65, 133, 0.06),
+      0px 24px 24px -12px rgba(25, 65, 133, 0.06);
     backdrop-filter: blur(16px);
   }
 

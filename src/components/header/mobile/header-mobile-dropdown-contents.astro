@@ -8,34 +8,36 @@ import SolutionsContents from "./solutions-contents.astro";
 <div class="outer-container">
   <div class="header-mobile-dropdown-contents-link-container">
     <details>
-      <summary
-        ><span>Solutions</span>
-        <DownArrow className="summary-details-arrow" /></summary
-      >
+      <summary>
+        <span>Solutions</span>
+        <DownArrow className="summary-details-arrow" />
+      </summary>
 
       <SolutionsContents />
     </details>
     <hr class="hr" />
     <details>
-      <summary
-        ><span>Showcase</span>
-        <DownArrow className="summary-details-arrow" /></summary
-      >
+      <summary>
+        <span>Showcase</span>
+        <DownArrow className="summary-details-arrow" />
+      </summary>
       <ShowcaseContents />
     </details>
     <hr class="hr" />
 
-    <a href="#" class="summary-span">About us</a>
+    <a href="#" class="summary-span">
+      About us
+    </a>
   </div>
 
   <hr class="button-divider" />
   <div class="button-container">
-    <ObButton className="dropdown-mobile-contents-button" disabled href="#"
-      >Contact us</ObButton
-    >
-    <ObButton href="/contact" className="dropdown-mobile-contents-button"
-      >Book a call</ObButton
-    >
+    <ObButton className="dropdown-mobile-contents-button" disabled href="#">
+      Contact us
+    </ObButton>
+    <ObButton href="/contact" className="dropdown-mobile-contents-button">
+      Book a call
+    </ObButton>
   </div>
 </div>
 

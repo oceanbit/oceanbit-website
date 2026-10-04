@@ -6,7 +6,9 @@ import styles from "./rev-increase.module.scss";
   <div class={styles.outerBarContainer}>
     <div class={styles.barTopText}>
       <p>Cut costs</p>
-      <p>from $130k to <strong class={styles.revMetricTotal}></strong></p>
+      <p>
+        from $130k to <strong class={styles.revMetricTotal}></strong>
+      </p>
     </div>
     <div class={styles.barContainer}>
       <div class={`${styles.bar} ${styles.dark}`}></div>
@@ -30,8 +32,7 @@ import styles from "./rev-increase.module.scss";
         <p
           class={`${styles.metricCost} ${styles.revMetricServer}`}
           style="position: absolute; top: 0; left: 0;"
-        >
-        </p>
+        ></p>
         <p aria-hidden="true" class={styles.metricCost} style="opacity: 0">
           $20k
         </p>
@@ -40,8 +41,8 @@ import styles from "./rev-increase.module.scss";
 
     <div>
       <p class={styles.metricName}>
-        <span class={`${styles.darkerPinstripes} ${styles.colorBadge}`}
-        ></span>Saved
+        <span class={`${styles.darkerPinstripes} ${styles.colorBadge}`}></span>
+        Saved
       </p>
       <p class={`${styles.metricCost} ${styles.revMetricSaved}`}></p>
     </div>

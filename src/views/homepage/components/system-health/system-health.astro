@@ -10,11 +10,13 @@ import styles from "./system-health.module.scss";
       <div class={`${styles.circlePart} ${styles.red}`}></div>
     </div>
     <p class={styles.innerText}>
-      <span class={styles.percentage}></span><br /><span
-        class={styles.innerTextLower}
-        >Incident<br />
-        reduction</span
-      >
+      <span class={styles.percentage}></span>
+      <br />
+      <span class={styles.innerTextLower}>
+        Incident
+        <br />
+        reduction
+      </span>
     </p>
   </div>
   <div class={styles.issuesGrid}>
@@ -35,13 +37,17 @@ import styles from "./system-health.module.scss";
 >
   <defs>
     <filter id="goo">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"
+      <feGaussianBlur
+        in="SourceGraphic"
+        stdDeviation="5"
+        result="blur"
       ></feGaussianBlur>
       <feColorMatrix
         in="blur"
         mode="matrix"
         values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
-        result="goo"></feColorMatrix>
+        result="goo"
+      ></feColorMatrix>
       <feComposite in="SourceGraphic" in2="goo" operator="atop"></feComposite>
     </filter>
   </defs>

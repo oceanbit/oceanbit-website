@@ -6,7 +6,9 @@ interface Props {
 const { as: As = "p" } = Astro.props;
 ---
 
-<As class="heading"><slot /></As>
+<As class="heading">
+  <slot />
+</As>
 
 <style>
   .heading {

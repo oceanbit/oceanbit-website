@@ -6,7 +6,9 @@ interface Props {
 const { as: As = "h2" } = Astro.props;
 ---
 
-<As class="subheader"><slot /></As>
+<As class="subheader">
+  <slot />
+</As>
 
 <style>
   .subheader {

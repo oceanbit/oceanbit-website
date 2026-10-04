@@ -12,24 +12,24 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/react": "^4.2.0",
-    "@astrojs/sitemap": "^3.4.0",
-    "@calcom/embed-react": "^1.5.2",
-    "astro": "^5.2.3",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "sass": "^1.83.4",
-    "typescript": "^5.7.3"
+    "@astrojs/check": "^0.9.10",
+    "@astrojs/react": "^7.0.0",
+    "@astrojs/sitemap": "^3.7.4",
+    "@calcom/embed-react": "^1.5.3",
+    "astro": "^7.3.5",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "sass": "^1.105.1",
+    "typescript": "^7.0.2"
   },
   "devDependencies": {
-    "@types/node": "^22.13.0",
-    "@types/react": "^19.0.8",
-    "@types/react-dom": "^19.0.3",
+    "@types/node": "^26.6.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "husky": "^9.1.7",
-    "lint-staged": "^15.4.3",
-    "prettier": "^3.4.2",
-    "prettier-plugin-astro": "^0.14.1"
+    "lint-staged": "^17.6.0",
+    "prettier": "^3.9.9",
+    "prettier-plugin-astro": "^1.1.0"
   },
   "lint-staged": {
     "*.{ts,tsx,css,md,astro}": "prettier --write"

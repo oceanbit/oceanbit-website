@@ -11,12 +11,10 @@ const isContact = Astro.url.pathname.includes("contact");
 ---
 
 <div class={`rightArea ${className}`}>
-  {
-    isContact ? null : (
-      <ObButton href="/contact">
-        <span style="padding-left: 6px">Book a call</span>
-        <RightArrow />
-      </ObButton>
-    )
-  }
+  {isContact ? null : (
+    <ObButton href="/contact">
+      <span style="padding-left: 6px">Book a call</span>
+      <RightArrow />
+    </ObButton>
+  )}
 </div>
