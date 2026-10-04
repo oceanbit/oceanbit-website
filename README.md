@@ -1,47 +1,60 @@
-# Astro Starter Kit: Minimal
+# OceanBit website
+
+A static Astro site hosted on Cloudflare Pages, with Google Analytics 4.
+
+## Development
+
+Use the Node.js version in `.node-version` and the pnpm version in `package.json`.
 
 ```sh
-npm create astro@latest -- --template minimal
+npm install --global pnpm@12.4.1
+pnpm install --frozen-lockfile
+pnpm dev
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## Google Analytics
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Set `PUBLIC_GOOGLE_ANALYTICS_ID` to the GA4 web stream measurement ID at **build time**. The production stream is `G-QPR56LYC6D`.
 
-## 🚀 Project Structure
+For a local production build, copy `.env.example` to `.env.production` and fill in the ID. Development never loads analytics, and production builds without an ID omit the Google scripts. GA4's Google tag sends page views on each full-page navigation. Enable outbound-click tracking in the stream's Enhanced Measurement settings to replace Plausible's outbound-link tracking.
 
-Inside of your Astro project, you'll see the following folders and files:
+On Cloudflare Pages, set the ID in **Settings → Variables and Secrets** for the **Production** environment. Leave it unset for **Preview** so preview deployments don't send events to the production stream. Preview builds also run Astro in production mode. Changing the ID requires a rebuild; this is a static site, so runtime bindings in `wrangler.jsonc` cannot configure analytics.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+See [Google's tag installation and verification guide](https://developers.google.com/tag-platform/gtagjs/install).
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Cloudflare Pages
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Connect `oceanbit/oceanbit-website` through **Workers & Pages → Create application → Pages → Import an existing Git repository**. If prompted, authorize the Cloudflare Workers and Pages GitHub app for this repository.
 
-Any static assets, like images, can be placed in the `public/` directory.
+| Setting                | Value              |
+| ---------------------- | ------------------ |
+| Project name           | `oceanbit-website` |
+| Production branch      | `main`             |
+| Framework preset       | Astro              |
+| Root directory         | Repository root    |
+| Build command          | `pnpm run build`   |
+| Build output directory | `dist`             |
+| Build system           | v3                 |
 
-## 🧞 Commands
+Set `PNPM_VERSION=12.4.1` in both Production and Preview build environments. The `.node-version` file pins Node.js to `26.7.0`. Set `PUBLIC_GOOGLE_ANALYTICS_ID=G-QPR56LYC6D` in Production only.
 
-All commands are run from the root of the project, from a terminal:
+The site uses Astro's static output and needs no Cloudflare adapter or Pages Functions. `wrangler.jsonc` defines the Pages project and output directory. `src/pages/404.astro` generates `dist/404.html`, giving unknown URLs a real 404 response instead of Pages' default SPA fallback.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+A Git-integrated project automatically deploys `main` and creates branch previews. Create it through Git integration first; a Direct Upload project cannot later be converted to Git integration.
 
-## 👀 Want to learn more?
+Before switching hosting, verify the Pages deployment's homepage, `/contact`, static assets, and an unknown URL. Associate `oceanbit.dev` under **Custom domains** in the Pages project, then update its website DNS records to the Pages hostname. Verify HTTPS and Google Analytics Realtime before disconnecting the old Vercel project.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+See Cloudflare's [Astro guide](https://developers.cloudflare.com/pages/framework-guides/deploy-an-astro-site/), [build environment documentation](https://developers.cloudflare.com/pages/configuration/build-image/), and [custom domain documentation](https://developers.cloudflare.com/pages/configuration/custom-domains/).
+
+## Commands
+
+| Command              | Action                                                       |
+| -------------------- | ------------------------------------------------------------ |
+| `pnpm dev`           | Start Astro's development server                             |
+| `pnpm build`         | Run Astro checks and build into `dist/`                      |
+| `pnpm preview`       | Preview the Astro production build                           |
+| `pnpm preview:pages` | Serve the existing build with the local Pages runtime        |
+| `pnpm run deploy`    | Build and upload to an existing Pages project using Wrangler |
+| `pnpm format`        | Format project files                                         |
+
+For manual uploads, authenticate with `pnpm exec wrangler login` first. `pnpm run deploy` uses the current Git branch: `main` targets Production, while other branches create Preview deployments. For previews, ensure `PUBLIC_GOOGLE_ANALYTICS_ID` is unset in your build environment (including local `.env` files).

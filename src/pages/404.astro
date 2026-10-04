@@ -1,0 +1,36 @@
+---
+import Document from "../layouts/document.astro";
+import Header from "../components/header/header.astro";
+import Footer from "../components/footer/footer.astro";
+import Heading from "../components/headings/heading.astro";
+import SupportingText from "../components/headings/supporting-text.astro";
+import Button from "../components/buttons/ob-button.astro";
+---
+
+<Document>
+  <Fragment slot="head">
+    <title>Page not found | OceanBit</title>
+    <meta name="robots" content="noindex" />
+  </Fragment>
+  <Header />
+  <main>
+    <Heading as="h1">Page not found</Heading>
+    <SupportingText>The page you're looking for doesn't exist.</SupportingText>
+    <div class="home-link">
+      <Button href="/">Back to home</Button>
+    </div>
+  </main>
+  <Footer />
+</Document>
+
+<style>
+  main {
+    padding: 6rem var(--container-padding-mobile);
+  }
+
+  .home-link {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--spacing-xl);
+  }
+</style>

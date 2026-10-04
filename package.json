@@ -9,7 +9,9 @@
     "preview": "astro preview",
     "astro": "astro",
     "prepare": "husky",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "preview:pages": "wrangler pages dev",
+    "deploy": "pnpm run build && wrangler pages deploy"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",
@@ -29,9 +31,11 @@
     "husky": "^9.1.7",
     "lint-staged": "^17.6.0",
     "prettier": "^3.9.9",
-    "prettier-plugin-astro": "^1.1.0"
+    "prettier-plugin-astro": "^1.1.0",
+    "wrangler": "^4.147.0"
   },
   "lint-staged": {
     "*.{ts,tsx,css,md,astro}": "prettier --write"
-  }
+  },
+  "packageManager": "pnpm@12.4.1"
 }
