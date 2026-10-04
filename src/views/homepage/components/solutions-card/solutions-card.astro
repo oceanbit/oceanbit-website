@@ -1,8 +1,5 @@
 ---
 import styles from "./solutions-card.module.scss";
-import ObButtonTransparent from "../../../../components/buttons/ob-button-transparent.astro";
-import RightArrow from "../../../../assets/icons/right_arrow.astro";
-import { getHrefContainerProps } from "../../../../utils/href-container-script";
 
 interface Props {
   iconSrc: string;
@@ -12,7 +9,7 @@ interface Props {
   index: number;
 }
 
-const { iconSrc, title, description, href, index } = Astro.props;
+const { iconSrc, title, description, index } = Astro.props;
 ---
 
 <!--<div-->

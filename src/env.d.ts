@@ -1,6 +1,8 @@
-/// <reference path="../.astro/types.d.ts" />
-/// <reference types="astro/client" />
+import "../.astro/types.d.ts";
+import "astro/client";
 
-interface ImportMetaEnv {
-  readonly PUBLIC_GOOGLE_ANALYTICS_ID?: string;
+declare global {
+  interface ImportMetaEnv {
+    readonly PUBLIC_GOOGLE_ANALYTICS_ID?: string;
+  }
 }

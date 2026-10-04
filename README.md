@@ -12,6 +12,22 @@ pnpm install --frozen-lockfile
 pnpm dev
 ```
 
+## Linting
+
+Run `pnpm lint` to check the project, or `pnpm lint:fix` to apply available fixes.
+ESLint uses the recommended JavaScript, TypeScript, Astro, and React Hooks rules.
+Stylelint checks CSS, SCSS, and Astro style blocks, including `<style lang="scss">`,
+with the recommended SCSS rules and `stylelint-config-html/astro`.
+Prettier handles formatting.
+
+The pre-commit hook formats and lints staged files. Its tasks run sequentially so
+the tools can safely update the same Astro file. Both lint commands fail on warnings.
+GitHub Actions runs `pnpm lint` for pull requests and pushes to `main`.
+
+For VS Code, install the ESLint and Stylelint extensions and include `astro` in
+`eslint.validate` and `stylelint.validate`. Include `scss` in `stylelint.validate`
+to check the standalone stylesheets.
+
 ## Google Analytics
 
 Set `PUBLIC_GOOGLE_ANALYTICS_ID` to the GA4 web stream measurement ID at **build time**. The production stream is `G-QPR56LYC6D`.
@@ -56,5 +72,9 @@ See Cloudflare's [Astro guide](https://developers.cloudflare.com/pages/framework
 | `pnpm preview:pages` | Serve the existing build with the local Pages runtime        |
 | `pnpm run deploy`    | Build and upload to an existing Pages project using Wrangler |
 | `pnpm format`        | Format project files                                         |
+| `pnpm lint`          | Run ESLint and Stylelint                                     |
+| `pnpm lint:js`       | Check JavaScript, TypeScript, React, and Astro code          |
+| `pnpm lint:styles`   | Check CSS, SCSS, and Astro style blocks                      |
+| `pnpm lint:fix`      | Apply available ESLint and Stylelint fixes                   |
 
 For manual uploads, authenticate with `pnpm exec wrangler login` first. `pnpm run deploy` uses the current Git branch: `main` targets Production, while other branches create Preview deployments. For previews, ensure `PUBLIC_GOOGLE_ANALYTICS_ID` is unset in your build environment (including local `.env` files).

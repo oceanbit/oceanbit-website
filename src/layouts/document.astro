@@ -22,6 +22,7 @@ const enableAnalytics = import.meta.env.PROD && googleAnalyticsId;
         <script define:vars={{ googleAnalyticsId }}>
           window.dataLayer = window.dataLayer || [];
           window.gtag = function () {
+            // eslint-disable-next-line prefer-rest-params -- Google's gtag queue uses the arguments object.
             window.dataLayer.push(arguments);
           };
           window.gtag("js", new Date());

@@ -62,19 +62,17 @@ const { className } = Astro.props;
     padding: 0;
     margin: -1px;
     overflow: hidden;
-    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
     white-space: nowrap;
     border-width: 0;
   }
 
   #close-dropdown-menu:focus-visible {
     position: unset;
-    width: unset;
     height: unset;
-    padding: unset;
     margin: unset;
     overflow: unset;
-    clip: unset;
+    clip-path: none;
     white-space: unset;
     border-width: unset;
     background: white;

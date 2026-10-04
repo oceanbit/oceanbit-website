@@ -10,6 +10,10 @@
     "astro": "astro",
     "prepare": "husky",
     "format": "prettier --write .",
+    "lint": "pnpm run lint:js && pnpm run lint:styles",
+    "lint:js": "eslint . --max-warnings 0",
+    "lint:styles": "stylelint \"src/**/*.{css,scss,astro}\" --max-warnings 0",
+    "lint:fix": "pnpm run lint:js --fix && pnpm run lint:styles --fix",
     "preview:pages": "wrangler pages dev",
     "deploy": "pnpm run build && wrangler pages deploy"
   },
@@ -25,17 +29,30 @@
     "typescript": "^6.0.2"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@types/node": "^26.6.4",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
+    "eslint": "^10.12.0",
+    "eslint-plugin-astro": "^3.2.1",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.13.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.6.0",
+    "postcss-html": "^2.0.0",
+    "postcss-scss": "^4.0.9",
     "prettier": "^3.9.9",
     "prettier-plugin-astro": "^1.1.0",
+    "stylelint": "^17.16.0",
+    "stylelint-config-html": "^2.0.0",
+    "stylelint-config-recommended-scss": "^17.0.1",
+    "typescript-eslint": "^8.71.0",
     "wrangler": "^4.147.0"
   },
   "lint-staged": {
-    "*.{ts,tsx,css,md,astro}": "prettier --write"
+    "*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,css,scss,md,astro}": "prettier --write",
+    "*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,astro}": "eslint --fix --max-warnings 0",
+    "*.{css,scss,astro}": "stylelint --fix --max-warnings 0"
   },
   "packageManager": "pnpm@12.4.1"
 }
